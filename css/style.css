@@ -155,9 +155,20 @@ li {
 }
 
 /* HEADER */
+@media (min-width: 1367px) {
+  .main-header {
+    background-image: linear-gradient(to top, #000000bb, #000000ee), url("img/cover-lg.jpg");
+  }
+}
+
+@media (max-width: 1366px) {
+  .main-header {
+    background-image: linear-gradient(to top, #000000bb, #000000ee), url("img/cover-md.jpg");
+  }
+}
+
+
 .main-header {
-  background-image: linear-gradient(to top, #000000bb, #000000ee),
-    url("img/bg.jpg");
   height: 100vh;
   background-position: center;
   background-size: cover;
