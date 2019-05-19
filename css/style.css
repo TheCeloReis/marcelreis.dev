@@ -20,11 +20,10 @@ body {
   font-size: 20px;
 }
 
-/* REUSABLE */
-
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
@@ -51,19 +50,53 @@ h3 {
   display: block;
   font-weight: 400;
   font-size: 125%;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
+h4 {
+  font-size: 110%;
+  font-weight: 400;
+}
+
+h3::after,
+h4::after {
+  display: block;
+  height: 2px;
+  background-color: var(--brand-color);
+  content: " ";
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+h4::after {
+  margin-top: 0.5rem;
+}
+
+
+li {
+  list-style-type: none;
+}
+
 .content-box {
-  padding-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .content-box p {
   line-height: 140%;
   padding: 1rem;
-  text-align: left;
+  text-align: left; 
+}
+
+.big-icon {
+  font-size: 300%;
+  display: block;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--brand-color)
 }
 
 
@@ -168,16 +201,6 @@ h3 {
 
 /* ABOUT */
 
-#about h3::after {
-  display: block;
-  height: 2px;
-  background-color: var(--brand-color);
-  content: " ";
-  width: 100px;
-  margin: 0 auto;
-  margin-top: 1rem;
-}
-
 #about img {
   display: block;
   margin: 0 auto;
@@ -187,6 +210,48 @@ h3 {
   height: auto;
 }
 
-#about .content-box:first-child {
-  background-color: #000;
+/* SKILLS */
+#skills {
+  margin-top: 2rem;
+  background-color: #f2f2f2;
+  padding-bottom: 2rem;
+}
+
+.card-box {
+  margin-top: 2rem;
+}
+
+.skill-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.1);
+}
+
+.skill-card ul {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.skill-card ul li {
+  text-align: center;
+}
+
+.skill-card ul li::after {
+  display: block;
+  height: 1px;
+  background-color: #ddd;
+  content: " ";
+  width: 50%;
+  margin: 0.2rem auto;
+}
+
+.skill-card ul li:last-of-type::after {
+  height: 0px;
+}
+
+.skill-card:hover {
+  box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.3);
+  transition: all 0.5s;
 }
