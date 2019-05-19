@@ -3,6 +3,8 @@
   --brand-color: #3a40c3;
 }
 
+/* REUSABLE CODE */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,37 +14,58 @@
 html,
 body {
   background-color: #fff;
-  color: #555;
-  font-family: 'Roboto', 'Arial', sans-serif;
+  color: #333333;
+  font-family: "Roboto", "Arial", sans-serif;
   font-weight: 300;
   font-size: 20px;
 }
 
+/* REUSABLE */
+
 h1,
-h2 {
+h2,
+h3 {
   font-weight: 300;
   text-transform: uppercase;
+  text-align: center;
 }
 
-
 h1 {
-  font-size: 175%;
+  font-size: 200%;
   margin-top: 0;
-  text-align: center;
   margin-bottom: 20px;
   color: white;
   word-spacing: 4px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 h2 {
   font-size: 150%;
-  text-align: center;
   margin-bottom: 30px;
   color: #cccccc;
   word-spacing: 2px;
   letter-spacing: 1px;
 }
+
+h3 {
+  display: block;
+  font-weight: 400;
+  font-size: 125%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-box {
+  padding-top: 2rem;
+}
+
+.content-box p {
+  line-height: 140%;
+  padding: 1rem;
+  text-align: left;
+}
+
 
 @media (min-width: 576px) {
   h1 {
@@ -51,7 +74,14 @@ h2 {
   h2 {
     font-size: 200%;
   }
+  h3 {
+    font-size: 180%;
+  }
+  .content-box p {
+    text-align: justify;
+  }
 }
+
 /* NAVBAR */
 .main-nav {
   padding-top: 4%;
@@ -92,8 +122,9 @@ h2 {
 }
 
 /* HEADER */
-header {
-  background-image: linear-gradient(to top, #000000bb, #000000ee),  url('img/bg.jpg');
+.main-header {
+  background-image: linear-gradient(to top, #000000bb, #000000ee),
+    url("img/bg.jpg");
   height: 100vh;
   background-position: center;
   background-size: cover;
@@ -108,23 +139,54 @@ header {
 
 .type-it {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid var(--brand-color); /* The typwriter cursor */
+  border-right: 0.15em solid var(--brand-color); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 2s steps(40, end),
-    blink-caret .75s step-end infinite;
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--brand-color ); }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--brand-color);
+  }
+}
+
+/* ABOUT */
+
+#about h3::after {
+  display: block;
+  height: 2px;
+  background-color: var(--brand-color);
+  content: " ";
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+#about img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
+
+#about .content-box:first-child {
+  background-color: #000;
 }
