@@ -24,25 +24,9 @@ h2 {
   text-transform: uppercase;
 }
 
-@media only screen and (max-width: 600px) {
-  h1 {
-    font-size: 200%;
-  }
-  h2 {
-    font-size: 150%;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  h1 {
-    font-size: 300%;
-  }
-  h2 {
-    font-size: 200%;
-  }
-}
 
 h1 {
+  font-size: 175%;
   margin-top: 0;
   text-align: center;
   margin-bottom: 20px;
@@ -52,6 +36,7 @@ h1 {
 }
 
 h2 {
+  font-size: 150%;
   text-align: center;
   margin-bottom: 30px;
   color: #cccccc;
@@ -59,6 +44,14 @@ h2 {
   letter-spacing: 1px;
 }
 
+@media (min-width: 576px) {
+  h1 {
+    font-size: 300%;
+  }
+  h2 {
+    font-size: 200%;
+  }
+}
 /* NAVBAR */
 .main-nav {
   padding-top: 4%;
@@ -86,6 +79,16 @@ h2 {
   border-bottom: 3px solid var(--brand-color);
   font-size: 115%;
   transition: all 0.3s;
+}
+
+@media (max-width: 576px) {
+  .main-nav {
+    padding-top: 2%;
+  }
+
+  .main-nav li {
+    padding-top: 2%;
+  }
 }
 
 /* HEADER */
