@@ -4,7 +4,7 @@ if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || lo
   node = document.createElement("h3");
   node.style.color = "#cccccc"
   node.style.position = "absolute"
-  node.style.bottom = "5%"
+  node.style.bottom = "0%"
   node.style.left = "50%"
   node.style.transform = "translate(-50%, -50%)"
   node.textContent = 'Em Construção'
