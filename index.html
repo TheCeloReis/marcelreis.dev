@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="Sou Marcelo Reis, entusiasta em desenvolvimento web, veja aqui os meus trabalhos e contato">
+    <meta
+      name="description"
+      content="Sou Marcelo Reis, entusiasta em desenvolvimento web, veja aqui os meus trabalhos e contato"
+    />
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i&display=swap"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -25,21 +28,21 @@
       <nav class="container">
         <ul class="row main-nav">
           <li class="col-sm-3"><a href="#about">Sobre</a></li>
+          <li class="col-sm-3"><a href="#">Skills</a></li>
           <li class="col-sm-3"><a href="#">Projetos</a></li>
-          <li class="col-sm-3"><a href="#">Blog</a></li>
           <li class="col-sm-3"><a href="#">Contato</a></li>
         </ul>
       </nav>
       <div class="cover-box">
         <h1 class="type-it">Marcelo Reis</h1>
-        <h2>Web Developer</h2>
+        <h1>Web Developer</h1>
       </div>
     </header>
     <main>
-      <section id="about">
+      <section id="about" class="section-about">
         <div class="container">
           <header class="row">
-            <h3>Sobre mim</h3>
+            <h2>Sobre mim</h2>
           </header>
           <div class="row content-box">
             <div class="col-sm-4">
@@ -50,59 +53,95 @@
             </div>
             <div class="col-sm-8">
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Voluptatum vel ullam consectetur, esse aut inventore atque?
-                Quaerat, doloribus ex harum error dolorum similique, dolorem
-                sint consequatur ad eius nobis est?
+                Sou um estudante de Sistemas de Informação apaixonado por
+                desenvolvimento. Autodidata e extremamente curioso, busco sempre
+                estar informado e aprender mais sobre desenvolvimento Front-end
+                e Back-End. Atualmente busco uma oportunidade de estágio para
+                desenvolvimento.
               </p>
               <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Voluptatum vel ullam consectetur, esse aut inventore atque?
-                Quaerat, doloribus ex harum error dolorum similique, dolorem
-                sint consequatur ad eius nobis est?
+                No meu tempo livre adoro aprender coisas novas, seja um novo
+                idioma ou como criar bolas de plasma em um microndas. Acredito
+                que sei tocar teclado, algumas pessoas discordam, mas estou
+                melhorando isso.
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section id="skills">
+      <section id="skills" class="skill-section">
+        <h2>Skills</h2>
         <div class="container">
-          <header class="row">
-            <h3>Habilidades</h3>
-          </header>
-          <div class="row card-box">
-            <div class="col-sm-4">
-              <div class="skill-card">
-                <i class="fas fa-laptop big-icon"></i>
-                <h4>Front-end</h4>
-                <ul>
-                  <li>Javascript</li>
-                  <li>HTML/CSS</li>
-                  <li>React</li>
-                </ul>
-              </div>
+          <div class="row">
+            <div class="col-sm-8 skill-box">
+              <header>
+                <h3>Linguagens</h3>
+              </header>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <div class="skill-tittle">
+                    Python
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress w-60"></div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-tittle">
+                    HTML/CSS
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress w-50"></div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-tittle">
+                    JavaScript
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress w-50"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <div class="col-sm-4">
-              <div class="skill-card">
-                <i class="fas fa-pencil-ruler big-icon"></i>
-                <h4>Design</h4>
-                <ul>
-                  <li>Gimp</li>
-                  <li>Canva</li>
-                  <li>Mockplus</li>
-                </ul>
-              </div>
+            <div class="col-sm-4 big-icon">
+              <i class="fas fa-code"></i>
             </div>
-            <div class="col-sm-4">
-              <div class="skill-card">
-                <i class="fas fa-server big-icon"></i>
-                <h4>Back-end</h4>
-                <ul>
-                  <li>Python</li>
-                  <li>Node.js</li>
-                  <li>C#</li>
-                </ul>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4 big-icon">
+              <i class="fas fa-tools"></i>
+            </div>
+            <div class="col-sm-8 skill-box">
+              <header>
+                <h3>FrameWorks</h3>
+              </header>
+              <ul class="skill-list">
+                <li class="skill-item">
+                  <div class="skill-tittle">
+                    React
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress w-30"></div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-tittle">
+                    Bootstrap
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress w-20"></div>
+                  </div>
+                </li>
+                <li class="skill-item">
+                  <div class="skill-tittle">
+                    Next.js
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress w-10"></div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
