@@ -284,3 +284,20 @@ section {
   width: 100%;
   text-shadow: 0px 0px 20px rgba(58,64,195, 0.5);
 }
+
+/* FOOTER */
+.main-footer {
+  text-align: center;
+  line-height: 100px;
+  background-color: #0e0e0e;
+}
+
+.main-footer div {
+  display: inline-block;
+  vertical-align: middle;
+  color: #c0c0c0;
+}
+
+.main-footer p {
+  line-height: 1rem;
+}
