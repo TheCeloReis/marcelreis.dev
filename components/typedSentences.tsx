@@ -3,6 +3,31 @@ import styled from "styled-components";
 
 const Text = styled.h1`
   color: #fff;
+  width: 100%;
+
+  ::after {
+    content: "";
+    border-right: 0.1em solid white;
+    margin-left: 0.5rem;
+    animation: caret 1s steps(1) infinite;
+  }
+
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+`;
+const Cursor = styled.span`
+  border-right: 0.1em solid white;
+  margin-left: 0.5rem;
+  animation: caret 1s steps(1) infinite;
+
+  @keyframes caret {
+    50% {
+      border-color: transparent;
+    }
+  }
 `;
 
 type PropsType = {
@@ -53,7 +78,6 @@ export default function TypedSentences(props: PropsType) {
       }, 500);
     } else {
       let i = currentSentence.length - index;
-      console.log("i :", i);
       setRenderedLetters(currentSentence.slice(0, i < 2 ? 0 : i));
       setIndex(index + 2);
     }
@@ -76,5 +100,10 @@ export default function TypedSentences(props: PropsType) {
     };
   }, [index]);
 
-  return <Text>{renderedLetters}</Text>;
+  return (
+    <Text>
+      {renderedLetters}
+      {/* <Cursor /> */}
+    </Text>
+  );
 }
