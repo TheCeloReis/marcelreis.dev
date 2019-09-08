@@ -26,13 +26,21 @@ const NavItem = styled.div`
   height: 2rem;
   margin: auto;
   display: none;
+  transition: 0.6s;
+  border-bottom: 0.25rem solid transparent;
   @media screen and (min-width: 768px) {
     display: flex;
     font-weight: 700;
     font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
   }
+  :hover {
+    border-bottom: 0.25rem solid #000;
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
 `;
+
 const Initials = styled.h1`
   @media screen and (min-width: 768px) {
     display: none;
@@ -62,8 +70,16 @@ export default function nav() {
             <a>About</a>
           </Link>
         </NavItem>
-        <NavItem>Projects</NavItem>
-        <NavItem>Contact</NavItem>
+        <NavItem>
+          <Link href="/about">
+            <a>Projetos</a>
+          </Link>
+        </NavItem>
+        <NavItem>
+          <Link href="/about">
+            <a>Contato</a>
+          </Link>
+        </NavItem>
       </NavContainer>
     </NavBackground>
   );
