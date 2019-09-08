@@ -1,4 +1,4 @@
-import React, { ReactChild } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Background = styled.section`
@@ -13,9 +13,7 @@ const Container = styled.div`
   flex-wrap: wrap;
   @media screen and (min-width: 960px) {
     margin: 2rem 1rem 2rem 1rem;
-    padding: 2rem;
   }
-  padding: 2rem 1rem 2rem 1rem;
   max-width: 1000px;
   width: 100%;
   background-color: #fff;

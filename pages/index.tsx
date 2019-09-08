@@ -43,7 +43,7 @@ const ProfileImg = styled.img`
   }
 `;
 const AboutMe = styled.div`
-  width: 100%;
+  width: calc(100% - 1rem);
   display: flex;
   flex-wrap: wrap;
   @media screen and (min-width: 600px) {
@@ -54,11 +54,14 @@ const AboutMe = styled.div`
 `;
 const TextSection = styled.div`
   font-size: 1.1rem;
+  line-height: 1.5;
+  width: calc(100% - 2rem);
+  margin: 0 1rem;
   @media screen and (min-width: 600px) {
     text-align: justify;
+    width: calc(100% - 4rem);
+    margin: 0 2rem;
   }
-  width: 100%;
-  line-height: 1.5;
   & p {
     margin: 1rem 0;
   }
