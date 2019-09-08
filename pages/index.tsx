@@ -17,15 +17,16 @@ const HeroHeader = styled.div`
     font-size: 3rem;
     max-width: 800px;
   }
-  font-size: 1.5rem;
-  text-align: center;
-  width: calc(100% - 0.25rem);
   display: flex;
+  width: calc(100% - 0.5rem);
   position: absolute;
-  justify-content: center;
   top: calc(50% + 2rem);
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  text-align: center;
+  justify-content: center;
+  overflow: hidden;
 `;
 
 const Home = () => (
