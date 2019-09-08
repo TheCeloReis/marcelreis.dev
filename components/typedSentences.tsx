@@ -7,22 +7,17 @@ const Text = styled.h1`
   font-family: "Roboto Mono", monospace;
 
   ::after {
+    position: absolute;
+    height: 3.5rem;
     content: "";
-    border-right: 0.1em solid white;
+    border-left: 0.1em solid white;
     margin-left: 0.5rem;
     animation: caret 1s steps(1) infinite;
-  }
 
-  @keyframes caret {
-    50% {
-      border-color: transparent;
+    @media screen and (min-width: 600px) {
+      height: 7rem;
     }
   }
-`;
-const Cursor = styled.span`
-  border-right: 0.1em solid white;
-  margin-left: 0.5rem;
-  animation: caret 1s steps(1) infinite;
 
   @keyframes caret {
     50% {
@@ -101,10 +96,5 @@ export default function TypedSentences(props: PropsType) {
     };
   }, [index]);
 
-  return (
-    <Text>
-      {renderedLetters}
-      {/* <Cursor /> */}
-    </Text>
-  );
+  return <Text>{renderedLetters}</Text>;
 }

@@ -17,13 +17,13 @@ const HeroHeader = styled.div`
     font-size: 3rem;
     max-width: 800px;
   }
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   text-align: center;
-  width: 100%;
+  width: calc(100% - 0.25rem);
   display: flex;
   position: absolute;
   justify-content: center;
-  top: 50%;
+  top: calc(50% + 2rem);
   left: 50%;
   transform: translate(-50%, -50%);
 `;
