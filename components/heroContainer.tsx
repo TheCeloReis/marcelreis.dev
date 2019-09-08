@@ -2,7 +2,7 @@ import React, { ReactChild, Props } from "react";
 import styled from "styled-components";
 
 const Background = styled.div`
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 4rem);
   background-color: #171717;
 `;
