@@ -8,7 +8,7 @@ import styled from "styled-components";
 const SENTENCES = [
   "Oi, eu sou Marcelo Reis",
   "Front-End Developer",
-  "Participante de vários Meetups",
+  "Vivendo de Javascript",
   "E apaixonado por codar s2",
 ];
 

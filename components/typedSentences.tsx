@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Text = styled.h1`
   color: #fff;
   width: 100%;
+  font-family: "Roboto Mono", monospace;
 
   ::after {
     content: "";

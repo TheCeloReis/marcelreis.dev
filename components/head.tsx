@@ -12,10 +12,15 @@ export default function Head(props: PropsType) {
       <NextHead>
         <link rel="icon" href="static/icon.png" type="image/x-icon" />
         <link
+          href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap"
+          rel="stylesheet"
+        ></link>
+        <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         />
         <title>{props.title}</title>
+        <meta name="theme-color" content="#f7e019" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={props.description} />
       </NextHead>{" "}
@@ -28,7 +33,7 @@ export default function Head(props: PropsType) {
         h6,
         p {
           margin: 0;
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: "Roboto", Arial, Helvetica, sans-serif;
         }
         a {
           color: #000;
