@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@types/styled-components": "^4.1.18",
+    "babel-plugin-styled-components": "^1.10.6",
+    "next": "9.0.5",
+    "next-offline": "^4.0.5",
+    "normalize.css": "^8.0.1",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "styled-components": "^4.3.2",
+    "styled-icons": "^8.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.4",
+    "@types/react": "^16.9.2",
+    "typescript": "^3.6.2"
+  }
+}
