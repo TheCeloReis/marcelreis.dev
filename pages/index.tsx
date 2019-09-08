@@ -15,7 +15,7 @@ const SENTENCES = [
 const HeroHeader = styled.div`
   @media screen and (min-width: 600px) {
     font-size: 3rem;
-    width: 80%;
+    max-width: 800px;
   }
   font-size: 1.75rem;
   text-align: center;
