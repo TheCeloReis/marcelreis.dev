@@ -43,7 +43,7 @@ const ProfileImg = styled.img`
   }
 `;
 const AboutMe = styled.div`
-  width: calc(100% - 1rem);
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   @media screen and (min-width: 600px) {
@@ -97,6 +97,68 @@ const ImageRow = styled.div`
   }
 `;
 
+const ProjectRow = styled.div`
+  width: calc(100% - 2.5rem);
+  display: grid;
+  margin: 0 1rem;
+
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+
+  grid-template-columns: repeat(2, 50%);
+  @media screen and (min-width: 600px) {
+    width: calc(100% - 3rem);
+    grid-template-columns: repeat(3, 33.33%);
+  }
+`;
+
+const ProjectThumb = styled.figure`
+  width: 100%;
+  position: relative;
+  margin: 0;
+  cursor: default;
+  transition: 0.3s;
+
+  :hover {
+    z-index: 1;
+    transform: scale(1.05);
+  }
+
+  & img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  :hover img {
+    filter: blur(1px);
+  }
+
+  & figcaption {
+    opacity: 0;
+    position: absolute;
+    background-color: rgba(247, 224, 25, 0.8);
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.6s;
+
+    & span {
+      font-size: 2rem;
+      color: #000;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+  :hover figcaption {
+    opacity: 1;
+  }
+`;
+
 const Home = () => (
   <>
     <Head
@@ -141,6 +203,48 @@ const Home = () => (
         <img src="/static/magr4.jpg" alt="Marcelo Reis" />
         <img src="/static/magr5.jpg" alt="Marcelo Reis" />
       </ImageRow>
+    </Section>
+
+    <Section>
+      <SectionHeader>O que o Marcelo fez?</SectionHeader>
+      <ProjectRow>
+        <ProjectThumb>
+          <img src="https://placekitten.com/500/500" alt="" />
+          <figcaption>
+            <span>Memory Game</span>
+          </figcaption>
+        </ProjectThumb>
+        <ProjectThumb>
+          <img src="https://placekitten.com/500/500" alt="" />
+          <figcaption>
+            <span>Piggy Game</span>
+          </figcaption>
+        </ProjectThumb>
+        <ProjectThumb>
+          <img src="https://placekitten.com/500/500" alt="" />
+          <figcaption>
+            <span>LeanLine</span>
+          </figcaption>
+        </ProjectThumb>
+        <ProjectThumb>
+          <img src="https://placekitten.com/500/500" alt="" />
+          <figcaption>
+            <span>Mussca</span>
+          </figcaption>
+        </ProjectThumb>
+        <ProjectThumb>
+          <img src="https://placekitten.com/500/500" alt="" />
+          <figcaption>
+            <span>CBX</span>
+          </figcaption>
+        </ProjectThumb>
+        <ProjectThumb>
+          <img src="https://placekitten.com/500/500" alt="" />
+          <figcaption>
+            <span>BrainE</span>
+          </figcaption>
+        </ProjectThumb>
+      </ProjectRow>
     </Section>
   </>
 );

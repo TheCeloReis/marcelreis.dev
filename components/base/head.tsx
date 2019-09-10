@@ -31,7 +31,8 @@ export default function Head(props: PropsType) {
         h4,
         h5,
         h6,
-        p {
+        p,
+        span {
           margin: 0;
           font-family: "Roboto", Arial, Helvetica, sans-serif;
         }
