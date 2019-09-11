@@ -205,7 +205,7 @@ const Home = () => (
       </ImageRow>
     </Section>
 
-    <Section>
+    {/* <Section>
       <SectionHeader>O que o Marcelo fez?</SectionHeader>
       <ProjectRow>
         <ProjectThumb>
@@ -245,7 +245,7 @@ const Home = () => (
           </figcaption>
         </ProjectThumb>
       </ProjectRow>
-    </Section>
+    </Section> */}
   </>
 );
 
