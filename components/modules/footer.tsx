@@ -27,6 +27,7 @@ export default function Footer() {
         href="https://github.com/MarcelReis"
         target="_blank"
         title="Perfil do GitHub"
+        rel="noopener"
       >
         <Github size={32} />
       </a>
@@ -34,6 +35,7 @@ export default function Footer() {
         href="https://www.linkedin.com/in/marcelreis/"
         target="_blank"
         title="Perfil do Linkedin"
+        rel="noopener"
       >
         <LinkedinSquare size={32} />
       </a>
