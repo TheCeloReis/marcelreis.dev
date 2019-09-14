@@ -25,6 +25,9 @@ export default function Head(props: PropsType) {
         <meta name="description" content={props.description} />
       </NextHead>{" "}
       <style jsx global>{`
+        * {
+          box-sizing: border-box;
+        }
         h1,
         h2,
         h3,

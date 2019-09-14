@@ -47,6 +47,7 @@ const AboutMe = styled.div`
   display: flex;
   flex-wrap: wrap;
   @media screen and (min-width: 600px) {
+    width: calc(100% - 1rem);
     display: grid;
     grid-template-columns: 30% 70%;
     column-gap: 1rem;
@@ -59,15 +60,16 @@ const TextSection = styled.div`
   margin: 0 1rem;
   @media screen and (min-width: 600px) {
     text-align: justify;
-    width: calc(100% - 4rem);
-    margin: 0 2rem;
+    width: 100%;
+    padding: 0 2rem;
+    margin 0;
   }
   & p {
     margin: 1rem 0;
   }
 `;
 const LinkLetras = styled.a`
-  color: #00ffff;
+  color: #c2c901;
   font-weight: bold;
 `;
 const ImageRow = styled.div`
@@ -168,7 +170,7 @@ const Home = () => (
     <Nav />
     <HeroContainer>
       <HeroHeader>
-        <TypedSentences sentences={SENTENCES} speed={100} />
+        <TypedSentences sentences={SENTENCES} speed={50} />
       </HeroHeader>
     </HeroContainer>
     <Section>
@@ -205,21 +207,9 @@ const Home = () => (
       </ImageRow>
     </Section>
 
-    {/* <Section>
-      <SectionHeader>O que o Marcelo fez?</SectionHeader>
+    <Section>
+      <SectionHeader>Principais Projetos</SectionHeader>
       <ProjectRow>
-        <ProjectThumb>
-          <img src="https://placekitten.com/500/500" alt="" />
-          <figcaption>
-            <span>Memory Game</span>
-          </figcaption>
-        </ProjectThumb>
-        <ProjectThumb>
-          <img src="https://placekitten.com/500/500" alt="" />
-          <figcaption>
-            <span>Piggy Game</span>
-          </figcaption>
-        </ProjectThumb>
         <ProjectThumb>
           <img src="https://placekitten.com/500/500" alt="" />
           <figcaption>
@@ -235,17 +225,11 @@ const Home = () => (
         <ProjectThumb>
           <img src="https://placekitten.com/500/500" alt="" />
           <figcaption>
-            <span>CBX</span>
-          </figcaption>
-        </ProjectThumb>
-        <ProjectThumb>
-          <img src="https://placekitten.com/500/500" alt="" />
-          <figcaption>
             <span>BrainE</span>
           </figcaption>
         </ProjectThumb>
       </ProjectRow>
-    </Section> */}
+    </Section>
   </>
 );
 
