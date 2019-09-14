@@ -212,19 +212,25 @@ const Home = () => (
       <SectionHeader>Principais Projetos</SectionHeader>
       <ProjectRow>
         <ProjectThumb>
-          <img src="https://placekitten.com/500/500" alt="" />
+          <img
+            src="https://placekitten.com/500/500"
+            alt="Interface de um app mobile"
+          />
           <figcaption>
             <span>LeanLine</span>
           </figcaption>
         </ProjectThumb>
         <ProjectThumb>
-          <img src="https://placekitten.com/500/500" alt="" />
+          <img src="https://placekitten.com/500/500" alt="Player de música" />
           <figcaption>
             <span>Mussca</span>
           </figcaption>
         </ProjectThumb>
         <ProjectThumb>
-          <img src="https://placekitten.com/500/500" alt="" />
+          <img
+            src="https://placekitten.com/500/500"
+            alt="Interface de ecommerce"
+          />
           <figcaption>
             <span>BrainE</span>
           </figcaption>

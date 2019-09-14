@@ -15,10 +15,6 @@ export default function Head(props: PropsType) {
           href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap"
           rel="stylesheet"
         ></link>
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        />
         <title>{props.title}</title>
         <meta name="theme-color" content="#f7e019" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,6 +22,7 @@ export default function Head(props: PropsType) {
       </NextHead>{" "}
       <style jsx global>{`
         * {
+          font-family: "Roboto", Arial, Helvetica, sans-serif;
           box-sizing: border-box;
         }
         h1,
@@ -35,9 +32,13 @@ export default function Head(props: PropsType) {
         h5,
         h6,
         p,
-        span {
+        div,
+        span,
+        body {
           margin: 0;
-          font-family: "Roboto", Arial, Helvetica, sans-serif;
+        }
+        body {
+          font-family: inherit;
         }
         a {
           color: #000;
