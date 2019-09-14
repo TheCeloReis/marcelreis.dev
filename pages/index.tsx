@@ -63,7 +63,7 @@ const TextSection = styled.div`
     text-align: justify;
     width: 100%;
     padding: 0 2rem;
-    margin 0;
+    margin: 0;
   }
   & p {
     margin: 1rem 0;
