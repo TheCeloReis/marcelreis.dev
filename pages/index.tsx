@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 import Section from "../components/base/section";
 import { SectionHeader } from "../components/base/titles";
+import Footer from "../components/modules/footer";
 
 const SENTENCES = [
   "Oi, eu sou Marcelo Reis",
@@ -230,6 +231,8 @@ const Home = () => (
         </ProjectThumb>
       </ProjectRow>
     </Section>
+
+    <Footer />
   </>
 );
 
