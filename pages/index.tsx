@@ -70,7 +70,7 @@ const TextSection = styled.div`
   }
 `;
 const LinkLetras = styled.a`
-  color: #c2c901;
+  color: #70039a;
   font-weight: bold;
 `;
 const ImageRow = styled.div`
@@ -178,7 +178,10 @@ const Home = () => (
       <SectionHeader>Quem é o Marcelo?</SectionHeader>
 
       <AboutMe>
-        <ProfileImg src="/static/marcelo.jpeg" />
+        <ProfileImg
+          src="/static/marcelo.jpeg"
+          alt="Pessoa com plantas no fundo"
+        />
         <TextSection>
           <p>
             Sou um ser humano que já vagou por várias áreas, mas encotrou paixão
