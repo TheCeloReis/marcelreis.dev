@@ -19,7 +19,7 @@ export default function Head(props: PropsType) {
         <meta name="theme-color" content="#f7e019" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={props.description} />
-      </NextHead>{" "}
+      </NextHead>
       <style jsx global>{`
         * {
           font-family: "Roboto", Arial, Helvetica, sans-serif;

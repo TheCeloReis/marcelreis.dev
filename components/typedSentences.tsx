@@ -38,7 +38,6 @@ export default function TypedSentences(props: PropsType) {
   const [typing, setTyping] = useState(true);
 
   useEffect(() => {
-    console.log("props", props);
     setCurrentSentence(props.sentences[0]);
     setIndex(0);
   }, []);
