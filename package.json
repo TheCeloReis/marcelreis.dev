@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "dotenv": "^8.1.0",
     "next": "9.0.5",
     "next-offline": "^4.0.5",
     "raw-loader": "^3.1.0",
@@ -20,6 +21,7 @@
     "styled-normalize": "^8.0.6"
   },
   "devDependencies": {
+    "@types/dotenv": "^6.1.1",
     "@types/node": "^12.7.4",
     "@types/react": "^16.9.2",
     "@types/styled-components": "^4.1.18",
@@ -27,7 +29,6 @@
     "@typescript-eslint/eslint-plugin": "^2.2.0",
     "@typescript-eslint/parser": "^2.2.0",
     "babel-plugin-styled-components": "^1.10.6",
-    "dotenv": "^8.1.0",
     "eslint": "^6.4.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
@@ -37,6 +38,6 @@
     "eslint-plugin-standard": "^4.0.1",
     "frontmatter-markdown-loader": "^2.0.0",
     "typescript": "^3.6.2",
-    "webpack": "^4.39.3"
+    "webpack": "^4.41.0"
   }
 }
