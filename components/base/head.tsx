@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NextHead from "next/head";
 import styledNormalize from "styled-normalize";
 import { createGlobalStyle } from "styled-components";
+import { initGA } from "../../utils/analytics";
 
 const GlobalStyle = createGlobalStyle`
-  // You can continue writing global styles
   * {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     box-sizing: border-box;
@@ -35,6 +35,13 @@ type PropsType = {
 };
 
 export default function Head(props: PropsType) {
+  useEffect(() => {
+    if (!(window as any).GA_INITIALIZED) {
+      initGA();
+      (window as any).GA_INITIALIZED = true;
+    }
+  }, []);
+
   return (
     <>
       <NextHead>

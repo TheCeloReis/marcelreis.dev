@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Nav from "../components/nav";
 import Head from "../components/base/head";
 import HeroContainer from "../components/heroContainer";
 import TypedSentences from "../components/typedSentences";
 import styled from "styled-components";
+import { logPageView } from "../utils/analytics";
 
 import Section from "../components/base/section";
 import { SectionHeader } from "../components/base/titles";
@@ -162,87 +163,96 @@ const ProjectThumb = styled.figure`
   }
 `;
 
-const Home = () => (
-  <>
-    <Head
-      title="MarcelReis FrontEnd Developer"
-      description="Desenvolvedor apaixonado pelo Front End, pode ser encontrado codando ou em algum MeetUp de Belo Horizonte, mas pra saber o que codar depois"
-    ></Head>
-    <Nav />
-    <HeroContainer>
-      <HeroHeader>
-        <TypedSentences sentences={SENTENCES} speed={50} />
-      </HeroHeader>
-    </HeroContainer>
-    <Section>
-      <SectionHeader>Quem é o Marcelo?</SectionHeader>
+export default function index() {
+  useEffect(() => {
+    logPageView();
+  }, []);
 
-      <AboutMe>
-        <ProfileImg
-          src="/static/marcelo.jpeg"
-          alt="Pessoa com plantas no fundo"
-        />
-        <TextSection>
-          <p>
-            Sou um ser humano que já vagou por várias áreas, mas encotrou paixão
-            pelo que faz no desenvolvimento. Independente do que fazia ou
-            estudava sempre descomplicava com um script.
-          </p>
-          <p>
-            Desde 2019 resolvi seguir a area, frequentando vários MeetUps
-            percebi que o Front End era o que mais me encantava. Atualmente
-            curso Sistemas de Informação na estácio e sou estagiario de Front
-            End na exceléntissma{" "}
-            <LinkLetras href="https://www.letras.mus.br">Letras</LinkLetras>
-          </p>
-          <p>
-            Quando não estou aprendendo sobre uma tecnologia do Front End gosto
-            de correr, pedalar e tentar tocar teclado. Também gosto de usar meu
-            tempo participando de foruns.
-          </p>
-        </TextSection>
-      </AboutMe>
-      <ImageRow>
-        <img src="/static/magr1.jpg" alt="Marcelo Reis" />
-        <img src="/static/magr2.jpg" alt="Marcelo Reis" />
-        <img src="/static/magr3.jpg" alt="Marcelo Reis" />
-        <img src="/static/magr4.jpg" alt="Marcelo Reis" />
-        <img src="/static/magr5.jpg" alt="Marcelo Reis" />
-      </ImageRow>
-    </Section>
+  return (
+    <>
+      <Head
+        title="MarcelReis FrontEnd Developer"
+        description="Desenvolvedor apaixonado pelo Front End, pode ser encontrado codando ou em algum MeetUp de Belo Horizonte, mas pra saber o que codar depois"
+      ></Head>
+      <Nav />
+      <HeroContainer>
+        <HeroHeader>
+          <TypedSentences sentences={SENTENCES} speed={50} />
+        </HeroHeader>
+      </HeroContainer>
+      <Section>
+        <SectionHeader>Quem é o Marcelo?</SectionHeader>
 
-    <Section>
-      <SectionHeader>Principais Projetos</SectionHeader>
-      <ProjectRow>
-        <ProjectThumb>
-          <img
-            src="https://placekitten.com/500/500"
-            alt="Interface de um app mobile"
+        <AboutMe>
+          <ProfileImg
+            src="/static/marcelo.jpeg"
+            alt="Pessoa com plantas no fundo"
           />
-          <figcaption>
-            <span>LeanLine</span>
-          </figcaption>
-        </ProjectThumb>
-        <ProjectThumb>
-          <img src="https://placekitten.com/500/500" alt="Player de música" />
-          <figcaption>
-            <span>Mussca</span>
-          </figcaption>
-        </ProjectThumb>
-        <ProjectThumb>
-          <img
-            src="https://placekitten.com/500/500"
-            alt="Interface de ecommerce"
-          />
-          <figcaption>
-            <span>BrainE</span>
-          </figcaption>
-        </ProjectThumb>
-      </ProjectRow>
-    </Section>
+          <TextSection>
+            <p>
+              Sou um ser humano que já vagou por várias áreas, mas encotrou
+              paixão pelo que faz no desenvolvimento. Independente do que fazia
+              ou estudava sempre descomplicava com um script.
+            </p>
+            <p>
+              Desde 2019 resolvi seguir a area, frequentando vários MeetUps
+              percebi que o Front End era o que mais me encantava. Atualmente
+              curso Sistemas de Informação na estácio e sou estagiario de Front
+              End na exceléntissma{" "}
+              <LinkLetras href="https://www.letras.mus.br">Letras</LinkLetras>
+            </p>
+            <p>
+              Mas bem, não da pra viver só de tecnologia, quando sobra um
+              tempinho gosto de afastar o sedentarismo com minha bicileta, corda
+              ou com uma corrida. Também gosto de literatura, Fyodor Dostoevsky
+              e George Orwell estão entre meus favoritos.
+            </p>
+          </TextSection>
+        </AboutMe>
+        <ImageRow>
+          <img src="/static/magr1.jpg" alt="Lorem ipsum dolor" />
+          <img src="/static/magr2.jpg" alt="Lorem ipsum dolor" />
+          <img src="/static/magr3.jpg" alt="Lorem ipsum dolor" />
+          <img src="/static/magr4.jpg" alt="Lorem ipsum dolor" />
+          <img src="/static/magr5.jpg" alt="Lorem ipsum dolor" />
+        </ImageRow>
+      </Section>
 
-    <Footer />
-  </>
-);
+      <Section>
+        <SectionHeader>Principais Projetos</SectionHeader>
+        <ProjectRow>
+          <ProjectThumb>
+            <img
+              src="https://placekitten.com/500/500"
+              alt="Lorem ipsum dolo."
+            />
 
-export default Home;
+            <figcaption>
+              <span>Placeholder</span>
+            </figcaption>
+          </ProjectThumb>
+          <ProjectThumb>
+            <img
+              src="https://placekitten.com/500/500"
+              alt="Lorem ipsum dolor"
+            />
+            <figcaption>
+              <span>Placeholder</span>
+            </figcaption>
+          </ProjectThumb>
+          <ProjectThumb>
+            <img
+              src="https://placekitten.com/500/500"
+              alt="Lorem ipsum dolor"
+            />
+            <figcaption>
+              <span>Placeholder</span>
+            </figcaption>
+          </ProjectThumb>
+        </ProjectRow>
+      </Section>
+
+      <Footer />
+    </>
+  );
+}
