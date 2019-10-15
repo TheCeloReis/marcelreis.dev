@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { logPageView } from "../utils/analytics";
 
 import Footer from "../components/modules/footer";
+import HeroHeader from "../components/heroContainer";
 
 const SENTENCES = [
   "Oi, eu sou Marcelo Reis",
@@ -14,23 +15,6 @@ const SENTENCES = [
   "WebDesinger nas horas vagas",
   "E apaixonado por Javascript",
 ];
-
-const HeroHeader = styled.div`
-  @media screen and (min-width: 600px) {
-    font-size: 3rem;
-    max-width: 800px;
-  }
-  display: flex;
-  width: calc(100% - 0.5rem);
-  position: absolute;
-  top: calc(50% + 2rem);
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  text-align: center;
-  justify-content: center;
-  overflow: hidden;
-`;
 
 export default function index() {
   useEffect(() => {
@@ -44,11 +28,9 @@ export default function index() {
         description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
       ></Head>
       <Nav />
-      <HeroContainer>
-        <HeroHeader>
-          <TypedSentences sentences={SENTENCES} speed={50} />
-        </HeroHeader>
-      </HeroContainer>
+      <HeroHeader>
+        <TypedSentences sentences={SENTENCES} speed={50} />
+      </HeroHeader>
       <Footer />
     </>
   );
