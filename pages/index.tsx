@@ -41,7 +41,7 @@ export default function index() {
     <>
       <Head
         title="MarcelReis FrontEnd Developer"
-        description="Desenvolvedor apaixonado pelo Front End, pode ser encontrado codando ou em algum MeetUp de Belo Horizonte, mas pra saber o que codar depois"
+        description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
       ></Head>
       <Nav />
       <HeroContainer>
