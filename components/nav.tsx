@@ -6,12 +6,16 @@ import { Menu } from "styled-icons/material/Menu";
 import styled from "styled-components";
 
 const NavBackground = styled.nav`
+  position: fixed;
+  z-index: 100;
+  width: 100%;
   height: 4rem;
   background-color: #f7e019;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
 
 const NavContainer = styled.div`
+  position: relative;
   display: flex;
   width: 100%;
   height: 100%;
@@ -22,10 +26,10 @@ const NavContainer = styled.div`
 `;
 
 const NavList: any = styled.li`
-  position: fixed;
+  position: absolute;
   top: 4rem;
   width: 100%;
-  height: calc(100vh - 4rem);
+  height: 100vh;
   display: flex;
 
   @media screen and (max-width: 767px) {
@@ -33,7 +37,6 @@ const NavList: any = styled.li`
     flex-direction: column;
     transform: ${(props: any) =>
       props.active ? "translateX(100%)" : "translateX(0%)"};
-    z-index: 100;
     background-color: #222;
     transition: transform 0.6s ease;
   }
@@ -132,6 +135,11 @@ const Initials = styled.div`
     }
   }
 `;
+
+const NavSpace = styled.div`
+  height: 4rem;
+`;
+
 const MenuIcon = styled(Menu)`
   color: #000;
   padding: 1rem;
@@ -150,32 +158,35 @@ export default function nav() {
   };
 
   return (
-    <NavBackground>
-      <NavContainer>
-        <MenuIcon size={64} onClick={toggleNavbar} />
-        <Initials>
-          <div>
-            <span>MR</span>
-          </div>
-        </Initials>
-        <NavList active={activeNavbar}>
-          <NavItem>
-            <Link href="/">
-              <a>Sobre</a>
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link href="/">
-              <a>Projetos</a>
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link href="/">
-              <a>Blog</a>
-            </Link>
-          </NavItem>
-        </NavList>
-      </NavContainer>
-    </NavBackground>
+    <>
+      <NavBackground>
+        <NavContainer>
+          <MenuIcon size={64} onClick={toggleNavbar} />
+          <Initials>
+            <div>
+              <span>MR</span>
+            </div>
+          </Initials>
+          <NavList active={activeNavbar}>
+            <NavItem>
+              <Link href="/">
+                <a>Sobre</a>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link href="/">
+                <a>Projetos</a>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link href="/">
+                <a>Blog</a>
+              </Link>
+            </NavItem>
+          </NavList>
+        </NavContainer>
+      </NavBackground>
+      <NavSpace />
+    </>
   );
 }

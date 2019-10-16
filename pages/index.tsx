@@ -9,9 +9,9 @@ import HeroHeader from "../components/heroHeader";
 
 const SENTENCES = [
   "Oi, eu sou Marcelo Reis",
-  "Front-End Developer",
-  "WebDesinger nas horas vagas",
-  "E apaixonado por Javascript",
+  "Front-End Developer no Letras",
+  "WebDesigner Entusiasta nas horas vagas",
+  "E apaixonado por Javascript e Typescript",
 ];
 
 export default function index() {
