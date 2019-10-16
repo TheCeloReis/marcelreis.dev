@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 import { Menu } from "styled-icons/material/Menu";
@@ -21,43 +21,74 @@ const NavContainer = styled.div`
   }
 `;
 
-const NavList = styled.li`
+const NavList: any = styled.li`
+  position: fixed;
+  top: 4rem;
+  width: 100%;
+  height: calc(100vh - 4rem);
   display: flex;
-  height: 100%;
-  width: 33%;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 1rem;
+
+  @media screen and (max-width: 767px) {
+    right: 100%;
+    flex-direction: column;
+    transform: ${(props: any) =>
+      props.active ? "translateX(100%)" : "translateX(0%)"};
+    z-index: 100;
+    background-color: #222;
+    transition: transform 0.6s ease;
+  }
+  @media screen and (min-width: 768px) {
+    position: static;
+    height: 100%;
+    width: 33%;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1rem;
+  }
 `;
 
 const NavItem = styled.ul`
   height: 1.75rem;
-  display: none;
-  transition: 0.6s;
+  transition: transform ease 0.6s;
   border-bottom: 0.25rem solid transparent;
+  display: block;
+  font-weight: 700;
+  font-size: 1.25rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: lowercase;
+  text-align: center;
+
+  &::after {
+    content: " ";
+    display: block;
+    width: 100%;
+    background-color: #000;
+    margin-top: 0.5rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    padding: 3rem;
+    a {
+      color: #fff;
+    }
+    &::after {
+      height: 0.125rem;
+      background-color: #eee;
+    }
+  }
 
   @media screen and (min-width: 768px) {
     margin: 0;
-    display: block;
-    font-weight: 700;
-    font-size: 1.25rem;
-    font-family: Arial, Helvetica, sans-serif;
-    text-transform: lowercase;
 
     &::after {
-      content: " ";
-      display: block;
-      margin-top: 0.5rem;
-      width: 100%;
-      transform: scaleX(0);
       height: 0.25rem;
-      background-color: #000;
-      transition: 0.3s;
-      transition-timing-function: ease;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
     }
     :hover ::after {
       transform: scaleX(1.1);
-      transition: 0.3s;
+      transition: transform 0.3s ease;
     }
   }
 `;
@@ -111,16 +142,23 @@ const MenuIcon = styled(Menu)`
 `;
 
 export default function nav() {
+  const [activeNavbar, setActiveNavbar] = useState(false);
+
+  const toggleNavbar = () => {
+    setActiveNavbar(!activeNavbar);
+    document.body.style.overflow = activeNavbar ? "auto" : "hidden";
+  };
+
   return (
     <NavBackground>
       <NavContainer>
-        <MenuIcon size={64} />
+        <MenuIcon size={64} onClick={toggleNavbar} />
         <Initials>
           <div>
             <span>MR</span>
           </div>
         </Initials>
-        <NavList>
+        <NavList active={activeNavbar}>
           <NavItem>
             <Link href="/">
               <a>Sobre</a>

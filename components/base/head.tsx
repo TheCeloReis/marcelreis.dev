@@ -5,6 +5,8 @@ import { createGlobalStyle } from "styled-components";
 import { initGA } from "../../utils/analytics";
 
 const GlobalStyle = createGlobalStyle`
+  ${styledNormalize}
+  
   * {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     box-sizing: border-box;
@@ -15,19 +17,21 @@ const GlobalStyle = createGlobalStyle`
   h4,
   h5,
   h6,
+  ul,
+  ol,
+  li,
   p,
   div,
   span,
   body {
+    padding: 0;
     margin: 0;
   }
-  ${styledNormalize}
   a {
     color: #000;
     text-decoration: none;
   }
   ul, ol {
-    padding: 0;
     list-style-type: none;
   }
 `;
