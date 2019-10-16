@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 
 import { Menu } from "styled-icons/material/Menu";
@@ -13,6 +13,7 @@ const NavBackground = styled.nav`
 
 const NavContainer = styled.div`
   display: flex;
+  width: 100%;
   height: 100%;
   margin: auto;
   max-width: 800px;
@@ -42,55 +43,67 @@ const NavItem = styled.ul`
     font-size: 1.25rem;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: lowercase;
-  }
 
-  &::after {
-    content: " ";
-    display: block;
-    margin-top: 0.5rem;
-    width: 100%;
-    transform: scaleX(0);
-    height: 0.25rem;
-    background-color: #000;
-    transition: 0.3s;
-    transition-timing-function: ease;
-  }
-  :hover ::after {
-    transform: scaleX(1.1);
-    transition: 0.3s;
+    &::after {
+      content: " ";
+      display: block;
+      margin-top: 0.5rem;
+      width: 100%;
+      transform: scaleX(0);
+      height: 0.25rem;
+      background-color: #000;
+      transition: 0.3s;
+      transition-timing-function: ease;
+    }
+    :hover ::after {
+      transform: scaleX(1.1);
+      transition: 0.3s;
+    }
   }
 `;
 
 const Initials = styled.div`
-  @media screen and (min-width: 768px) {
-    border: solid black 2px;
-    font-size: 1rem;
-    height: 3rem;
-    width: 3rem;
-    position: relative;
-    margin-left: 1rem;
-    cursor: default;
-    pointer-events: none;
-  }
-  transform: translate(-25px, 0);
   font-size: 2rem;
   line-height: 2rem;
   text-align: center;
-  margin: auto;
   cursor: default;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
 
   span {
+    padding: 1rem;
     position: absolute;
-    bottom: 0.25rem;
-    right: 0.25rem;
-    line-height: 1.125rem;
-    font-size: 1.125rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 67%;
+    div {
+      position: relative;
+      border: solid black 2px;
+      font-size: 1rem;
+      height: 3rem;
+      width: 3rem;
+      cursor: default;
+      pointer-events: none;
+      margin: 0.5rem 1rem;
+    }
+
+    span {
+      position: absolute;
+      bottom: 0.25rem;
+      right: 0.25rem;
+      line-height: 1.125rem;
+      font-size: 1.125rem;
+      padding: 0;
+      transform: translateX(0);
+    }
   }
 `;
 const MenuIcon = styled(Menu)`
   color: #000;
+  padding: 1rem;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -101,23 +114,25 @@ export default function nav() {
   return (
     <NavBackground>
       <NavContainer>
-        <MenuIcon size={32} />
+        <MenuIcon size={64} />
         <Initials>
-          <span>MR</span>
+          <div>
+            <span>MR</span>
+          </div>
         </Initials>
         <NavList>
           <NavItem>
-            <Link href="/about">
+            <Link href="/">
               <a>Sobre</a>
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/about">
+            <Link href="/">
               <a>Projetos</a>
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/about">
+            <Link href="/">
               <a>Blog</a>
             </Link>
           </NavItem>
