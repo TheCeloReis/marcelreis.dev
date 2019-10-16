@@ -6,35 +6,44 @@ import { Menu } from "styled-icons/material/Menu";
 import styled from "styled-components";
 
 const NavBackground = styled.nav`
-  padding: 1rem;
   height: 4rem;
   background-color: #f7e019;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
 
 const NavContainer = styled.div`
+  display: flex;
+  height: 100%;
+  margin: auto;
+  max-width: 800px;
   @media screen and (min-width: 768px) {
-    grid-template-columns: 4rem repeat(3, calc(33.33% - 0.5rem));
   }
-  grid-template-columns: 2rem auto;
-  grid-template-rows: 2rem;
-  margin: auto;
-  max-width: 1000px;
-  display: grid;
-  column-gap: 0.75rem;
 `;
-const NavItem = styled.div`
-  height: 2rem;
-  margin: auto;
+
+const NavList = styled.li`
+  display: flex;
+  height: 100%;
+  width: 33%;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1rem;
+`;
+
+const NavItem = styled.ul`
+  height: 1.75rem;
   display: none;
   transition: 0.6s;
   border-bottom: 0.25rem solid transparent;
+
   @media screen and (min-width: 768px) {
+    margin: 0;
     display: block;
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-family: Arial, Helvetica, sans-serif;
+    text-transform: lowercase;
   }
+
   &::after {
     content: " ";
     display: block;
@@ -52,20 +61,33 @@ const NavItem = styled.div`
   }
 `;
 
-const Initials = styled.h1`
+const Initials = styled.div`
   @media screen and (min-width: 768px) {
-    transform: translate(0px, -0.5rem);
-    border: solid black 0.25rem;
+    border: solid black 2px;
+    font-size: 1rem;
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+    margin-left: 1rem;
+    cursor: default;
+    pointer-events: none;
   }
   transform: translate(-25px, 0);
-  width: 4rem;
-  height: 3rem;
   font-size: 2rem;
+  line-height: 2rem;
   text-align: center;
   margin: auto;
   cursor: default;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
+
+  span {
+    position: absolute;
+    bottom: 0.25rem;
+    right: 0.25rem;
+    line-height: 1.125rem;
+    font-size: 1.125rem;
+  }
 `;
 const MenuIcon = styled(Menu)`
   color: #000;
@@ -80,22 +102,26 @@ export default function nav() {
     <NavBackground>
       <NavContainer>
         <MenuIcon size={32} />
-        <Initials>MR</Initials>
-        <NavItem>
-          <Link href="/about">
-            <a>Sobre</a>
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link href="/about">
-            <a>Projetos</a>
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link href="/about">
-            <a>Blog</a>
-          </Link>
-        </NavItem>
+        <Initials>
+          <span>MR</span>
+        </Initials>
+        <NavList>
+          <NavItem>
+            <Link href="/about">
+              <a>Sobre</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/about">
+              <a>Projetos</a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/about">
+              <a>Blog</a>
+            </Link>
+          </NavItem>
+        </NavList>
       </NavContainer>
     </NavBackground>
   );

@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
 import Nav from "../components/nav";
 import Head from "../components/base/head";
-import HeroContainer from "../components/heroContainer";
 import TypedSentences from "../components/typedSentences";
-import styled from "styled-components";
 import { logPageView } from "../utils/analytics";
 
 import Footer from "../components/modules/footer";
-import HeroHeader from "../components/heroContainer";
+import HeroHeader from "../components/heroHeader";
 
 const SENTENCES = [
   "Oi, eu sou Marcelo Reis",

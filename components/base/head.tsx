@@ -21,11 +21,15 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
   }
+  ${styledNormalize}
   a {
     color: #000;
     text-decoration: none;
   }
-  ${styledNormalize}
+  ul, ol {
+    padding: 0;
+    list-style-type: none;
+  }
 `;
 
 type PropsType = {
