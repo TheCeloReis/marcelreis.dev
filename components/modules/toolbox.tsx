@@ -26,13 +26,14 @@ const SkillsRow = styled.ul`
 const Skill: any = styled.li`
   position: absolute;
   top: 160px;
-  left: ${(props: any) => props.order * 33}%;
+  left: ${(props: any) => props.order * 33.33}%;
   width: 33.33%;
   height: auto;
   text-align: center;
+
   animation-name: ${(props: any) => outOfBox(props.order)};
   animation-duration: 2s;
-  animation-timing-function: ease-in;
+  animation-timing-function: ease;
   animation-play-state: ${(props: any) => (props.open ? "running" : "paused")};
 
   h4 {
@@ -60,11 +61,14 @@ const IconContainer: any = styled.div`
 const ToolboxContainer = styled.div`
   margin: 0 auto 3.5rem auto;
   height: 128px;
+  background: ${(props: any) => props.theme.color.primary};
+  border-radius: 64px;
   z-index: 1;
 `;
 
 const ToolboxIcon = styled(Toolbox)`
-  color: ${(props: any) => props.theme.color.primary};
+  color: ${(props: any) => props.theme.color.contrast};
+  padding: 2rem;
 `;
 const ReactIcon = styled(ReactLogo)`
   color: #61dafb;

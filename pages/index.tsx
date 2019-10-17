@@ -27,7 +27,7 @@ export default function index() {
     <Head
       title="MarcelReis FrontEnd Developer"
       description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
-      theme={jsTheme}
+      theme={tsTheme}
     >
       <HeroHeader>
         <TypedSentences sentences={SENTENCES} speed={50} />
