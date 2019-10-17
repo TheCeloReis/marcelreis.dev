@@ -5,12 +5,12 @@ import { Menu } from "styled-icons/material/Menu";
 
 import styled from "styled-components";
 
-const NavBackground = styled.nav`
+const NavBackground: any = styled.nav`
   position: fixed;
   z-index: 100;
   width: 100%;
   height: 4rem;
-  background-color: #f7e019;
+  background-color: ${(props: any) => props.theme.color.primary};
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
 
@@ -65,7 +65,7 @@ const NavItem = styled.ul`
     content: " ";
     display: block;
     width: 100%;
-    background-color: #000;
+    background-color: ${(props: any) => props.theme.color.contrast};
     margin-top: 0.5rem;
   }
 
@@ -77,12 +77,16 @@ const NavItem = styled.ul`
     }
     &::after {
       height: 0.125rem;
-      background-color: #eee;
+      background-color: #fff;
     }
   }
 
   @media screen and (min-width: 768px) {
     margin: 0;
+
+    a {
+      color: ${(props: any) => props.theme.color.contrast};
+    }
 
     &::after {
       height: 0.25rem;
@@ -103,6 +107,7 @@ const Initials = styled.div`
   cursor: default;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
+  color: ${(props: any) => props.theme.color.contrast};
 
   span {
     padding: 1rem;
@@ -115,7 +120,7 @@ const Initials = styled.div`
     width: 67%;
     div {
       position: relative;
-      border: solid black 2px;
+      border: solid ${(props: any) => props.theme.color.contrast} 2px;
       font-size: 1rem;
       height: 3rem;
       width: 3rem;
@@ -141,7 +146,7 @@ const NavSpace = styled.div`
 `;
 
 const MenuIcon = styled(Menu)`
-  color: #000;
+  color: ${(props: any) => props.theme.color.contrast};
   padding: 1rem;
 
   @media screen and (min-width: 768px) {

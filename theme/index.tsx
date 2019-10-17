@@ -32,3 +32,49 @@ export const GlobalStyle = createGlobalStyle`
     list-style-type: none;
   }
 `;
+
+export const jsTheme = {
+  color: {
+    primaryL: "#f7e019",
+    primary: "#f7e019",
+    primaryD: "#f7e019",
+
+    contrastH: "#000",
+    contrast: "#242124",
+    contrastL: "#333",
+
+    gray50: "#fafafa",
+    gray100: "#f5f5f5",
+    gray200: "#eeeeee",
+    gray300: "#e0e0e0",
+    gray400: "#bdbdbd",
+    gray500: "#9e9e9e",
+    gray600: "#757575",
+    gray700: "#616161",
+    gray800: "#424242",
+    gray900: "#212121 ",
+  },
+};
+
+export const tsTheme = {
+  color: {
+    primaryL: "#007acc",
+    primary: "#007acc",
+    primaryD: "#007acc",
+
+    contrastH: "#fff",
+    contrast: "#eee",
+    contrastL: "#ddd",
+
+    gray50: "#fafafa",
+    gray100: "#f5f5f5",
+    gray200: "#eeeeee",
+    gray300: "#e0e0e0",
+    gray400: "#bdbdbd",
+    gray500: "#9e9e9e",
+    gray600: "#757575",
+    gray700: "#616161",
+    gray800: "#424242",
+    gray900: "#212121 ",
+  },
+};

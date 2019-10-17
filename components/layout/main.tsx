@@ -4,14 +4,19 @@ import NextHead from "next/head";
 import { initGA } from "../../utils/analytics";
 
 import { GlobalStyle } from "../../theme";
+import { ThemeProvider } from "styled-components";
+
+import Nav from "../modules/nav";
+import Footer from "../modules/footer";
 
 type PropsType = {
   title: string;
   description: string;
-  themeColor?: string;
+  theme?: any;
+  children?: any;
 };
 
-export default function Head(props: PropsType) {
+export default function MainLayout(props: PropsType) {
   useEffect(() => {
     if (!(window as any).GA_INITIALIZED) {
       initGA();
@@ -33,6 +38,13 @@ export default function Head(props: PropsType) {
         <meta name="description" content={props.description} />
       </NextHead>
       <GlobalStyle />
+      <ThemeProvider theme={props.theme ? props.theme : {}}>
+        <>
+          <Nav />
+          {props.children}
+          <Footer />
+        </>
+      </ThemeProvider>
     </>
   );
 }
