@@ -58,9 +58,9 @@ export const jsTheme = {
 
 export const tsTheme = {
   color: {
-    primaryL: "#007acc",
-    primary: "#007acc",
-    primaryD: "#007acc",
+    primaryL: "#2E92D5",
+    primary: "#007ACC",
+    primaryD: "#0064A7",
 
     contrastH: "#fff",
     contrast: "#eee",

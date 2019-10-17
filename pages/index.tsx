@@ -8,6 +8,9 @@ import HeroHeader from "../components/modules/heroHeader";
 
 import { jsTheme, tsTheme } from "../theme";
 
+import Section from "../components/base/section";
+import ToolBox from "../components/modules/toolbox";
+
 const SENTENCES = [
   "Oi, eu sou Marcelo Reis",
   "Front-End Developer no Letras",
@@ -24,11 +27,15 @@ export default function index() {
     <Head
       title="MarcelReis FrontEnd Developer"
       description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
-      theme={tsTheme}
+      theme={jsTheme}
     >
       <HeroHeader>
         <TypedSentences sentences={SENTENCES} speed={50} />
       </HeroHeader>
+      <Section>
+        <h2>Minha caixinha de ferramentas</h2>
+        <ToolBox />
+      </Section>
     </Head>
   );
 }
