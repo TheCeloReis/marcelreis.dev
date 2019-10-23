@@ -15,25 +15,35 @@ const Container = styled.div`
   position: relative;
 `;
 
-const SkillsRow = styled.ul`
+const SkillsRow: any = styled.ul`
   width: 100%;
-  height: 100%;
-
   height: 0;
-  padding-bottom: calc(33.33% + 6rem);
+  padding-bottom: ${(props: any) => (props.active ? `calc(33.33% + 6rem)` : 0)};
+  transition: 2s ease;
 `;
 
 const Skill: any = styled.li`
   position: absolute;
   top: 160px;
-  left: ${(props: any) => props.order * 33.33}%;
+  left: 33.33%;
   width: 33.33%;
   height: auto;
   text-align: center;
+  z-index: ${(props: any) => 3 - props.order};
+
+  transform: ${(props: any) => {
+    return props.order === 0
+      ? "translate(-100%, 0)"
+      : props.order === 1
+      ? "translate(0%, 0)"
+      : props.order === 2
+      ? "translate(100%, 0)"
+      : 0;
+  }};
 
   animation-name: ${(props: any) => outOfBox(props.order)};
   animation-duration: 2s;
-  animation-timing-function: ease;
+  animation-timing-function: linear;
   animation-play-state: ${(props: any) => (props.open ? "running" : "paused")};
 
   h4 {
@@ -58,12 +68,26 @@ const IconContainer: any = styled.div`
   }
 `;
 
-const ToolboxContainer = styled.div`
+const ToolboxButton = styled.button`
   margin: 0 auto 3.5rem auto;
   height: 128px;
   background: ${(props: any) => props.theme.color.primary};
   border-radius: 64px;
-  z-index: 1;
+  z-index: 10;
+
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 8px 6px #888888;
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: translate(0px, 0px);
+    box-shadow: none;
+    background: ${(props: any) => props.theme.color.primaryD};
+
+    svg {
+      color: ${(props: any) => props.theme.color.contrastL};
+    }
+  }
 `;
 
 const ToolboxIcon = styled(Toolbox)`
@@ -84,29 +108,31 @@ export default function index() {
   const [openReact, setOpenReact] = useState(false);
   const [openCss, setOpenCss] = useState(false);
   const [openJquery, setOpenJquery] = useState(false);
+  const [startAnimation, setStartAnimation] = useState(false);
 
   const playAnimation = () => {
-    console.log("vai tocar");
+    setStartAnimation(true);
+
     setTimeout(() => {
       setOpenReact(true);
-    }, 0);
+    }, 300);
 
     setTimeout(() => {
       setOpenCss(true);
-    }, 750);
+    }, 600);
 
     setTimeout(() => {
       setOpenJquery(true);
-    }, 1500);
+    }, 900);
   };
 
   return (
     <Container>
-      <ToolboxContainer>
+      <ToolboxButton>
         <ToolboxIcon size="128" onClick={playAnimation} />
-      </ToolboxContainer>
+      </ToolboxButton>
 
-      <SkillsRow>
+      <SkillsRow active={startAnimation}>
         <Skill order={0} open={openReact}>
           <IconContainer relativeWidth={100}>
             <div>
@@ -129,13 +155,14 @@ export default function index() {
               <CssIcon size={"100%"} />
             </div>
           </IconContainer>
-          <div></div>
-          <h4>CSS</h4>
-          <ul>
-            <li>SASS</li>
-            <li>Flexbox</li>
-            <li>Grid</li>
-          </ul>
+          <div>
+            <h4>CSS3</h4>
+            <ul>
+              <li>Flexbox</li>
+              <li>Animations</li>
+              <li>Sass</li>
+            </ul>
+          </div>
         </Skill>
 
         <Skill order={2} open={openJquery}>
@@ -148,7 +175,7 @@ export default function index() {
             <h4>jQuery</h4>
             <ul>
               <li>BackBone</li>
-              <li>Underscore</li>
+              <li>Lodash</li>
               <li>Resiliência</li>
             </ul>
           </div>

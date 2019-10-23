@@ -33,7 +33,7 @@ export default function MainLayout(props: PropsType) {
           rel="stylesheet"
         ></link>
         <title>{props.title}</title>
-        <meta name="theme-color" content="#f7e019" />
+        <meta name="theme-color" content={props.theme.color.primary} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={props.description} />
       </NextHead>

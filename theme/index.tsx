@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   p,
   div,
   span,
+  button,
   body {
     padding: 0;
     margin: 0;
@@ -31,13 +32,19 @@ export const GlobalStyle = createGlobalStyle`
   ul, ol {
     list-style-type: none;
   }
+
+  button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
 `;
 
 export const jsTheme = {
   color: {
-    primaryL: "#f7e019",
-    primary: "#f7e019",
-    primaryD: "#f7e019",
+    primaryL: "#F8E542",
+    primary: "#F7E019",
+    primaryD: "#CBB815",
 
     contrastH: "#000",
     contrast: "#242124",

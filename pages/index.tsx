@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import Head from "../components/layout/main";
 import TypedSentences from "../components/base/typedSentences";
@@ -15,10 +15,12 @@ const SENTENCES = [
   "Oi, eu sou Marcelo Reis",
   "Front-End Developer no Letras",
   "WebDesigner Entusiasta nas horas vagas",
-  "E apaixonado por Javascript e Typescript",
+  "E amante do Javascript e Typescript",
 ];
 
 export default function index() {
+  const [ts, setTs] = useState(false);
+
   useEffect(() => {
     logPageView();
   }, []);
@@ -27,7 +29,7 @@ export default function index() {
     <Head
       title="MarcelReis FrontEnd Developer"
       description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
-      theme={tsTheme}
+      theme={ts ? tsTheme : jsTheme}
     >
       <HeroHeader>
         <TypedSentences sentences={SENTENCES} speed={50} />
@@ -35,6 +37,8 @@ export default function index() {
       <Section>
         <h2>Minha caixinha de ferramentas</h2>
         <ToolBox />
+
+        <button onClick={() => setTs(!ts)}>Mudar Tema</button>
       </Section>
     </Head>
   );
