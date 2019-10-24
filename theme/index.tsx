@@ -3,6 +3,12 @@ import styledNormalize from "styled-normalize";
 
 export const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
+
+  #__next {
+    min-height: calc(100vh);
+    background-color: #eee;
+    position: relative;
+  }
   
   * {
     font-family: "Roboto", Arial, Helvetica, sans-serif;

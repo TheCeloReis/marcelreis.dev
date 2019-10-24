@@ -19,7 +19,7 @@ const SENTENCES = [
 ];
 
 export default function index() {
-  const [ts, setTs] = useState(false);
+  const [ts, setTs] = useState(true);
 
   useEffect(() => {
     logPageView();
@@ -37,8 +37,6 @@ export default function index() {
       <Section>
         <h2>Minha caixinha de ferramentas</h2>
         <ToolBox />
-
-        <button onClick={() => setTs(!ts)}>Mudar Tema</button>
       </Section>
     </Head>
   );
