@@ -12,32 +12,32 @@ import Section from "../components/base/section";
 import ToolBox from "../components/modules/toolbox";
 
 const SENTENCES = [
-  "Oi, eu sou Marcelo Reis",
-  "Front-End Developer no Letras",
-  "WebDesigner Entusiasta nas horas vagas",
-  "E amante do Javascript e Typescript",
+	"Oi, eu sou Marcelo Reis",
+	"Front-End Developer no Letras",
+	"WebDesigner Entusiasta nas horas vagas",
+	"E amante do Javascript e Typescript"
 ];
 
 export default function index() {
-  const [ts, setTs] = useState(true);
+	const [ts, setTs] = useState(true);
 
-  useEffect(() => {
-    logPageView();
-  }, []);
+	useEffect(() => {
+		logPageView();
+	}, []);
 
-  return (
-    <Head
-      title="MarcelReis FrontEnd Developer"
-      description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
-      theme={ts ? tsTheme : jsTheme}
-    >
-      <HeroHeader>
-        <TypedSentences sentences={SENTENCES} speed={50} />
-      </HeroHeader>
-      <Section>
-        <h2>Minha caixinha de ferramentas</h2>
-        <ToolBox />
-      </Section>
-    </Head>
-  );
+	return (
+		<Head
+			title="MarcelReis FrontEnd Developer"
+			description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
+			theme={ts ? tsTheme : jsTheme}
+		>
+			<HeroHeader>
+				<TypedSentences sentences={SENTENCES} speed={50} />
+			</HeroHeader>
+			<Section>
+				<h2>Minha caixinha de ferramentas</h2>
+				<ToolBox />
+			</Section>
+		</Head>
+	);
 }
