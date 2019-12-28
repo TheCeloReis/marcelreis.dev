@@ -34,10 +34,6 @@ export default function index() {
 			<HeroHeader>
 				<TypedSentences sentences={SENTENCES} speed={50} />
 			</HeroHeader>
-			<Section>
-				<h2>Minha caixinha de ferramentas</h2>
-				<ToolBox />
-			</Section>
 		</Head>
 	);
 }
