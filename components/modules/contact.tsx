@@ -49,7 +49,7 @@ const StyledButton = styled(Button)`
 export default function Contact() {
 	const onSubmit = (event: any) => {
 		fetch("/", {
-			method: "POST", // *GET, POST, PUT, DELETE, etc.
+			method: "POST",
 			body: serialize(event.target)
 		}).then(() => alert("Obrigado, em breve entrarei em contato"));
 
