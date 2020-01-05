@@ -1,9 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { Button } from "./button";
 
 const Container = styled.div`
 	position: relative;
 	padding-top: 100%;
+`;
+const StyledButton = styled(Button)`
+	position: absolute;
+	width: 50%;
+	bottom: -48px;
+	left: 25%;
+
+	border-radius: 8px 8px 0 0;
+	background-color: ${({ theme }) => theme.color.baseL};
 `;
 const Overlay = styled.div`
 	position: absolute;
@@ -13,7 +23,7 @@ const Overlay = styled.div`
 	width: 100%;
 	opacity: 0;
 	transition: 0.3s ease;
-	background-color: ${({ theme }) => theme.color.primaryL}77;
+	background-color: ${({ theme }) => theme.color.primaryL}d0;
 	user-select: none;
 
 	span {
@@ -29,12 +39,18 @@ const Overlay = styled.div`
 const ImageContainer = styled.div`
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 	position: absolute;
 	top: 0;
 
 	:hover {
 		${Overlay} {
 			opacity: 1;
+		}
+		${StyledButton} {
+			transform: translateY(-100%);
+			transition: 0.3s ease;
+			transition-delay: 0.3s;
 		}
 	}
 `;
@@ -60,6 +76,7 @@ export default function Card() {
 				<Overlay>
 					<span>{num1}</span>
 				</Overlay>
+				<StyledButton>MAIS</StyledButton>
 			</ImageContainer>
 		</Container>
 	);
