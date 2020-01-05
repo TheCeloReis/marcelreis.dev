@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
 
 const Container = styled.div`
 	user-select: none;
@@ -30,7 +31,6 @@ const Container = styled.div`
 			pointer-events: none;
 			margin: 0.5rem 1rem;
 		}
-
 		span {
 			position: absolute;
 			bottom: 0.25rem;
@@ -47,7 +47,9 @@ export default function Logo() {
 	return (
 		<Container>
 			<div>
-				<span>MR</span>
+				<Link href="/">
+					<span>MR</span>
+				</Link>
 			</div>
 		</Container>
 	);

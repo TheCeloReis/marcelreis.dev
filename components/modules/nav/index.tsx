@@ -131,12 +131,12 @@ export default function nav() {
 							</Link>
 						</NavItem>
 						<NavItem>
-							<Link href="/">
+							<Link href="/projects">
 								<a>Projetos</a>
 							</Link>
 						</NavItem>
 						<NavItem>
-							<Link href="/">
+							<Link href="/blog">
 								<a>Blog</a>
 							</Link>
 						</NavItem>
