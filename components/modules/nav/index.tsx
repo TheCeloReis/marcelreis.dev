@@ -118,6 +118,13 @@ type PropsType = {
 export default function Nav(props: PropsType) {
 	const [activeNavbar, setActiveNavbar] = useState(false);
 
+	const closeNavbar = () => {
+		if (activeNavbar) {
+			setActiveNavbar(false);
+			document.body.style.overflow = "auto";
+		}
+	};
+
 	const toggleNavbar = () => {
 		setActiveNavbar(!activeNavbar);
 		document.body.style.overflow = activeNavbar ? "auto" : "hidden";
@@ -128,19 +135,19 @@ export default function Nav(props: PropsType) {
 			<NavBackground>
 				<NavContainer>
 					<MenuIcon size={64} onClick={toggleNavbar} />
-					<Logo />
+					<Logo onClick={closeNavbar} />
 					<NavList active={activeNavbar}>
-						<NavItem>
+						<NavItem onClick={closeNavbar}>
 							<Link href="/">
 								<a>Sobre</a>
 							</Link>
 						</NavItem>
-						<NavItem>
+						<NavItem onClick={closeNavbar}>
 							<Link href="/projects">
 								<a>Projetos</a>
 							</Link>
 						</NavItem>
-						<NavItem>
+						<NavItem onClick={closeNavbar}>
 							<Link href="/blog">
 								<a>Blog</a>
 							</Link>

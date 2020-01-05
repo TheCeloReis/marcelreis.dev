@@ -43,9 +43,9 @@ const Container = styled.div`
 	}
 `;
 
-export default function Logo() {
+export default function Logo(props: any) {
 	return (
-		<Container>
+		<Container {...props}>
 			<div>
 				<Link href="/">
 					<span>MR</span>
