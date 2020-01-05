@@ -48,7 +48,7 @@ const StyledButton = styled(Button)`
 
 export default function Contact() {
 	return (
-		<StyledForm name="contact" method="post" data-netlify="true">
+		<StyledForm name="contact" method="POST" data-netlify="true">
 			<NameLabel>
 				<span>Seu Nome:</span>
 				<Input type="text" name="name" placeholder="Insira seu nome" required />
