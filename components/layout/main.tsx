@@ -19,6 +19,8 @@ type PropsType = {
 export default function MainLayout(props: PropsType) {
 	const [theme, setTheme] = useState(1);
 
+	const toggleTheme = () => setTheme(Number(!theme));
+
 	useEffect(() => {
 		if (!(window as any).GA_INITIALIZED) {
 			initGA();
@@ -49,7 +51,7 @@ export default function MainLayout(props: PropsType) {
 			<GlobalStyle />
 			<ThemeProvider theme={themes[theme]}>
 				<>
-					<Nav />
+					<Nav toggleTheme={toggleTheme} />
 					{props.children}
 					<Footer />
 				</>

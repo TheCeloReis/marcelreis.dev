@@ -5,6 +5,7 @@ import { Menu } from "styled-icons/material/Menu";
 
 import styled from "styled-components";
 import Logo from "./logo";
+import DarkModeBtn from "../darkModeBtn";
 
 const NavBackground: any = styled.nav`
 	position: fixed;
@@ -110,7 +111,11 @@ const MenuIcon = styled(Menu)`
 	}
 `;
 
-export default function nav() {
+type PropsType = {
+	toggleTheme: () => void;
+};
+
+export default function Nav(props: PropsType) {
 	const [activeNavbar, setActiveNavbar] = useState(false);
 
 	const toggleNavbar = () => {
@@ -141,6 +146,7 @@ export default function nav() {
 							</Link>
 						</NavItem>
 					</NavList>
+					<DarkModeBtn toogleTheme={props.toggleTheme} />
 				</NavContainer>
 			</NavBackground>
 			<div style={{ height: "4rem" }} />

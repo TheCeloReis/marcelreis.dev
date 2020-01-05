@@ -59,6 +59,7 @@ const commonColors = {
 	gray900: "#212121"
 };
 const jsTheme = {
+	darkTheme: false,
 	color: {
 		...commonColors,
 		primaryL: "#F8E542",
@@ -71,6 +72,7 @@ const jsTheme = {
 	}
 };
 const tsTheme = {
+	darkTheme: true,
 	color: {
 		...commonColors,
 		primaryL: "#2E92D5",
