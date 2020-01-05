@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
 const Text = styled.h1`
@@ -32,21 +33,36 @@ type PropsType = {
 };
 
 export default function TypedSentences(props: PropsType) {
-	const [index, setIndex] = useState(-1);
+	const [index, setIndex] = useState(undefined);
 	const [renderedLetters, setRenderedLetters] = useState("");
 	const [currentSentence, setCurrentSentence] = useState("");
 	const [typing, setTyping] = useState(true);
 
+	const router = useRouter();
+
 	useEffect(() => {
 		if (process.browser) {
-			window.onload = () => {
-				setTimeout(() => {
-					setCurrentSentence(props.sentences[0]);
-					setIndex(0);
-				}, 500);
+			const start = () => {
+				setCurrentSentence(props.sentences[0]);
+				setIndex(0);
 			};
+
+			let notCleared = true;
+			const timeout = setTimeout(() => {
+				start();
+				notCleared = false;
+			}, 500);
+
+			window.onload = () => {
+				if (notCleared) {
+					clearTimeout(timeout);
+					start();
+				}
+			};
+
+			return () => (window.onload = null);
 		}
-	}, []);
+	}, [router.pathname]);
 
 	function nextSentence() {
 		if (props.sentences.length > props.sentences.indexOf(currentSentence) + 1) {
