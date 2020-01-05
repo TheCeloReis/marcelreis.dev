@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
 	${styledNormalize}
 
 	#__next {
-		min-height: calc(100vh);
+		min-height: 100vh;
 		background-color: #eee;
 		position: relative;
 	}
