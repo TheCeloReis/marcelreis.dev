@@ -6,10 +6,11 @@ const Background = styled.section`
 	width: 100%;
 	background-color: ${({ theme }) => theme.color.base};
 	justify-content: center;
-	min-height: calc(100vh - 7rem);
 
-	@media screen and (min-width: 600px) {
-		min-height: auto;
+	:only-of-type {
+		@media screen and (max-width: 599px) {
+			min-height: calc(100vh - 7rem);
+		}
 	}
 `;
 

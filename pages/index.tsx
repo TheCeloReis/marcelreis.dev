@@ -29,6 +29,17 @@ export default function index() {
 			<HeroHeader>
 				<TypedSentences sentences={SENTENCES} speed={50} />
 			</HeroHeader>
+
+			<Section>
+				<H1>Sobre</H1>
+				<p>
+					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
+					pariatur iste voluptas porro laborum totam voluptate molestias, ipsum
+					itaque quam corrupti voluptates fugiat, esse dignissimos debitis nam,
+					nostrum accusantium quibusdam!
+				</p>
+			</Section>
+
 			<Section>
 				<H1>Contato</H1>
 				<Contact />
