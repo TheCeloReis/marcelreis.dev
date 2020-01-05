@@ -5,6 +5,8 @@ import { Input } from "../base/input";
 import { Button } from "../base/button";
 import { Textarea } from "../base/textarea";
 
+import serialize from "../utils/serialize";
+
 const StyledForm = styled.form`
 	display: grid;
 	grid-template-columns: 1fr;
@@ -45,8 +47,17 @@ const StyledButton = styled(Button)`
 `;
 
 export default function Contact() {
+	const onSubmit = (event: any) => {
+		fetch("/", {
+			method: "POST", // *GET, POST, PUT, DELETE, etc.
+			body: serialize(event.target)
+		}).then(() => alert("Obrigado, em breve entrarei em contato"));
+
+		event.preventDefault();
+	};
+
 	return (
-		<StyledForm name="contact" method="post">
+		<StyledForm name="contact" method="post" onSubmit={onSubmit}>
 			<NameLabel>
 				<span>Seu Nome:</span>
 				<Input type="text" name="name" placeholder="Insira seu nome" required />
