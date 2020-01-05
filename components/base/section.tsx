@@ -6,7 +6,6 @@ const Background = styled.section`
 	width: 100%;
 	background-color: #eee;
 	justify-content: center;
-	min-height: calc(100vh - 7rem);
 `;
 
 const Container = styled.div`

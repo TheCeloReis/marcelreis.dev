@@ -17,7 +17,7 @@ type PropsType = {
 };
 
 export default function MainLayout(props: PropsType) {
-	const [theme, setTheme] = useState(0);
+	const [theme, setTheme] = useState(1);
 
 	useEffect(() => {
 		if (!(window as any).GA_INITIALIZED) {
