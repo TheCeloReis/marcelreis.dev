@@ -40,7 +40,7 @@ const NavList: any = styled.ul`
 		transform: ${(props: any) =>
 			props.active ? "translateX(100%)" : "translateX(0%)"};
 		background-color: ${(props: any) => props.theme.color.gray900};
-		transition: transform 0.6s ease;
+		transition: transform 0.3s ease;
 	}
 	@media screen and (min-width: 768px) {
 		position: static;
