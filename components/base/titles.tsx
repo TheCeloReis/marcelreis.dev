@@ -10,6 +10,7 @@ const H1Continer = styled.div`
 `;
 const H1text = styled.h1`
 	display: inline-block;
+	text-align: center;
 	font-size: 1.5rem;
 	letter-spacing: 4px;
 

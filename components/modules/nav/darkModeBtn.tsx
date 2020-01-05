@@ -1,11 +1,16 @@
 import React from "react";
-import { Button } from "../base/button";
+import { Button } from "../../base/button";
 
 import { Moon } from "styled-icons/boxicons-solid/Moon";
 import { Sun } from "styled-icons/boxicons-solid/Sun";
 import styled from "styled-components";
 
 const StyledButton = styled(Button)`
+	background-color: ${({ theme }) => theme.color.primaryL};
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
+	position: absolute;
+	right: 8px;
+	top: 8px;
 	width: 48px;
 
 	> div {

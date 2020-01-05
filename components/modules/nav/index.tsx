@@ -5,7 +5,7 @@ import { Menu } from "styled-icons/material/Menu";
 
 import styled from "styled-components";
 import Logo from "./logo";
-import DarkModeBtn from "../darkModeBtn";
+import DarkModeBtn from "./darkModeBtn";
 
 const NavBackground: any = styled.nav`
 	position: fixed;
@@ -48,7 +48,7 @@ const NavList: any = styled.ul`
 		width: 33%;
 		justify-content: space-between;
 		align-items: center;
-		padding-right: 1rem;
+		padding-right: 72px;
 	}
 `;
 
