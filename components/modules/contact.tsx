@@ -5,8 +5,6 @@ import { Input } from "../base/input";
 import { Button } from "../base/button";
 import { Textarea } from "../base/textarea";
 
-import serialize from "../utils/serialize";
-
 const StyledForm = styled.form`
 	display: grid;
 	grid-template-columns: 1fr;
@@ -74,7 +72,7 @@ export default function Contact() {
 				></Textarea>
 			</MessageLabel>
 
-			<StyledButton type="submit">Send</StyledButton>
+			<StyledButton type="submit">ENVIAR</StyledButton>
 		</StyledForm>
 	);
 }
