@@ -47,17 +47,8 @@ const StyledButton = styled(Button)`
 `;
 
 export default function Contact() {
-	const onSubmit = (event: any) => {
-		fetch("/", {
-			method: "POST",
-			body: serialize(event.target)
-		}).then(() => alert("Obrigado, em breve entrarei em contato"));
-
-		event.preventDefault();
-	};
-
 	return (
-		<StyledForm name="contact" method="post" onSubmit={onSubmit}>
+		<StyledForm name="contact" method="post" data-netlify="true">
 			<NameLabel>
 				<span>Seu Nome:</span>
 				<Input type="text" name="name" placeholder="Insira seu nome" required />
