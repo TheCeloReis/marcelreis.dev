@@ -13,7 +13,6 @@ const CardContainer = styled.div`
 	display: grid;
 	position: relative;
 	left: -1rem;
-	/* bottom: -1rem; */
 	width: calc(100% + 2rem);
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: 4px;

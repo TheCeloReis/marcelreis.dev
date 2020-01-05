@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 
 const Text = styled.h1`
+	user-select: none;
 	color: #fff;
 	width: 100%;
 	font-family: "Roboto Mono", monospace;
