@@ -38,8 +38,14 @@ export default function TypedSentences(props: PropsType) {
 	const [typing, setTyping] = useState(true);
 
 	useEffect(() => {
-		setCurrentSentence(props.sentences[0]);
-		setIndex(0);
+		if (process.browser) {
+			window.onload = () => {
+				setTimeout(() => {
+					setCurrentSentence(props.sentences[0]);
+					setIndex(0);
+				}, 500);
+			};
+		}
 	}, []);
 
 	function nextSentence() {

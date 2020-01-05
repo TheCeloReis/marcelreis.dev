@@ -8,9 +8,6 @@ import HeroHeader from "../components/modules/heroHeader";
 
 import { jsTheme, tsTheme } from "../theme";
 
-import Section from "../components/base/section";
-import ToolBox from "../components/modules/toolbox";
-
 const SENTENCES = [
 	"Oi, eu sou Marcelo Reis",
 	"Front-End Developer no Letras",

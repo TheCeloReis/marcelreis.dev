@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Menu } from "styled-icons/material/Menu";
 
 import styled from "styled-components";
+import Logo from "./logo";
 
 const NavBackground: any = styled.nav`
 	position: fixed;
@@ -25,7 +26,7 @@ const NavContainer = styled.div`
 	}
 `;
 
-const NavList: any = styled.li`
+const NavList: any = styled.ul`
 	position: absolute;
 	top: 4rem;
 	width: 100%;
@@ -50,7 +51,7 @@ const NavList: any = styled.li`
 	}
 `;
 
-const NavItem = styled.ul`
+const NavItem = styled.li`
 	height: 1.75rem;
 	transition: transform ease 0.6s;
 	border-bottom: 0.25rem solid transparent;
@@ -100,51 +101,6 @@ const NavItem = styled.ul`
 	}
 `;
 
-const Initials = styled.div`
-	font-size: 2rem;
-	line-height: 2rem;
-	text-align: center;
-	cursor: default;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 700;
-	color: ${(props: any) => props.theme.color.contrast};
-
-	span {
-		padding: 1rem;
-		position: absolute;
-		right: 50%;
-		transform: translateX(50%);
-	}
-
-	@media screen and (min-width: 768px) {
-		width: 67%;
-		div {
-			position: relative;
-			border: solid ${(props: any) => props.theme.color.contrast} 2px;
-			font-size: 1rem;
-			height: 3rem;
-			width: 3rem;
-			cursor: default;
-			pointer-events: none;
-			margin: 0.5rem 1rem;
-		}
-
-		span {
-			position: absolute;
-			bottom: 0.25rem;
-			right: 0.25rem;
-			line-height: 1.125rem;
-			font-size: 1.125rem;
-			padding: 0;
-			transform: translateX(0);
-		}
-	}
-`;
-
-const NavSpace = styled.div`
-	height: 4rem;
-`;
-
 const MenuIcon = styled(Menu)`
 	color: ${(props: any) => props.theme.color.contrast};
 	padding: 1rem;
@@ -167,11 +123,7 @@ export default function nav() {
 			<NavBackground>
 				<NavContainer>
 					<MenuIcon size={64} onClick={toggleNavbar} />
-					<Initials>
-						<div>
-							<span>MR</span>
-						</div>
-					</Initials>
+					<Logo />
 					<NavList active={activeNavbar}>
 						<NavItem>
 							<Link href="/">
@@ -191,7 +143,7 @@ export default function nav() {
 					</NavList>
 				</NavContainer>
 			</NavBackground>
-			<NavSpace />
+			<div style={{ height: "4rem" }} />
 		</>
 	);
 }
