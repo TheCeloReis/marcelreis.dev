@@ -46,48 +46,40 @@ export const GlobalStyle = createGlobalStyle`
 	}
 `;
 
-export const jsTheme = {
+const commonColors = {
+	gray50: "#fafafa",
+	gray100: "#f5f5f5",
+	gray200: "#eeeeee",
+	gray300: "#e0e0e0",
+	gray400: "#bdbdbd",
+	gray500: "#9e9e9e",
+	gray600: "#757575",
+	gray700: "#616161",
+	gray800: "#424242",
+	gray900: "#212121"
+};
+const jsTheme = {
 	color: {
+		...commonColors,
 		primaryL: "#F8E542",
 		primary: "#F7E019",
 		primaryD: "#CBB815",
 
 		contrastH: "#000",
 		contrast: "#242124",
-		contrastL: "#333",
-
-		gray50: "#fafafa",
-		gray100: "#f5f5f5",
-		gray200: "#eeeeee",
-		gray300: "#e0e0e0",
-		gray400: "#bdbdbd",
-		gray500: "#9e9e9e",
-		gray600: "#757575",
-		gray700: "#616161",
-		gray800: "#424242",
-		gray900: "#212121 "
+		contrastL: "#333"
 	}
 };
-
-export const tsTheme = {
+const tsTheme = {
 	color: {
+		...commonColors,
 		primaryL: "#2E92D5",
 		primary: "#007ACC",
 		primaryD: "#0064A7",
 
 		contrastH: "#fff",
 		contrast: "#eee",
-		contrastL: "#ddd",
-
-		gray50: "#fafafa",
-		gray100: "#f5f5f5",
-		gray200: "#eeeeee",
-		gray300: "#e0e0e0",
-		gray400: "#bdbdbd",
-		gray500: "#9e9e9e",
-		gray600: "#757575",
-		gray700: "#616161",
-		gray800: "#424242",
-		gray900: "#212121 "
+		contrastL: "#ddd"
 	}
 };
+export const themes = [jsTheme, tsTheme];

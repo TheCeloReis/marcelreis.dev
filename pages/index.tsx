@@ -6,8 +6,6 @@ import { logPageView } from "../utils/analytics";
 
 import HeroHeader from "../components/modules/heroHeader";
 
-import { jsTheme, tsTheme } from "../theme";
-
 const SENTENCES = [
 	"Oi, eu sou Marcelo Reis",
 	"Front-End Developer no Letras",
@@ -16,8 +14,6 @@ const SENTENCES = [
 ];
 
 export default function index() {
-	const [ts, setTs] = useState(true);
-
 	useEffect(() => {
 		logPageView();
 	}, []);
@@ -26,7 +22,6 @@ export default function index() {
 		<Head
 			title="MarcelReis FrontEnd Developer"
 			description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
-			theme={ts ? tsTheme : jsTheme}
 		>
 			<HeroHeader>
 				<TypedSentences sentences={SENTENCES} speed={50} />
