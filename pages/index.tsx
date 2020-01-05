@@ -5,6 +5,9 @@ import TypedSentences from "../components/base/typedSentences";
 import { logPageView } from "../utils/analytics";
 
 import HeroHeader from "../components/modules/heroHeader";
+import Section from "../components/base/section";
+import { H1 } from "../components/base/titles";
+import Contact from "../components/modules/contact";
 
 const SENTENCES = [
 	"Oi, eu sou Marcelo Reis",
@@ -26,6 +29,10 @@ export default function index() {
 			<HeroHeader>
 				<TypedSentences sentences={SENTENCES} speed={50} />
 			</HeroHeader>
+			<Section>
+				<H1>Contato</H1>
+				<Contact />
+			</Section>
 		</Head>
 	);
 }
