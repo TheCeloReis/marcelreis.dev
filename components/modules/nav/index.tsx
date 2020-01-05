@@ -5,6 +5,7 @@ import { Menu } from "styled-icons/material/Menu";
 
 import styled from "styled-components";
 import Logo from "./logo";
+import DarkModeBtn from "./darkModeBtn";
 
 const NavBackground: any = styled.nav`
 	position: fixed;
@@ -39,7 +40,7 @@ const NavList: any = styled.ul`
 		transform: ${(props: any) =>
 			props.active ? "translateX(100%)" : "translateX(0%)"};
 		background-color: ${(props: any) => props.theme.color.gray900};
-		transition: transform 0.6s ease;
+		transition: transform 0.3s ease;
 	}
 	@media screen and (min-width: 768px) {
 		position: static;
@@ -47,7 +48,7 @@ const NavList: any = styled.ul`
 		width: 33%;
 		justify-content: space-between;
 		align-items: center;
-		padding-right: 1rem;
+		padding-right: 72px;
 	}
 `;
 
@@ -110,8 +111,19 @@ const MenuIcon = styled(Menu)`
 	}
 `;
 
-export default function nav() {
+type PropsType = {
+	toggleTheme: () => void;
+};
+
+export default function Nav(props: PropsType) {
 	const [activeNavbar, setActiveNavbar] = useState(false);
+
+	const closeNavbar = () => {
+		if (activeNavbar) {
+			setActiveNavbar(false);
+			document.body.style.overflow = "auto";
+		}
+	};
 
 	const toggleNavbar = () => {
 		setActiveNavbar(!activeNavbar);
@@ -123,24 +135,25 @@ export default function nav() {
 			<NavBackground>
 				<NavContainer>
 					<MenuIcon size={64} onClick={toggleNavbar} />
-					<Logo />
+					<Logo onClick={closeNavbar} />
 					<NavList active={activeNavbar}>
-						<NavItem>
+						<NavItem onClick={closeNavbar}>
 							<Link href="/">
 								<a>Sobre</a>
 							</Link>
 						</NavItem>
-						<NavItem>
+						<NavItem onClick={closeNavbar}>
 							<Link href="/projects">
 								<a>Projetos</a>
 							</Link>
 						</NavItem>
-						<NavItem>
+						<NavItem onClick={closeNavbar}>
 							<Link href="/blog">
 								<a>Blog</a>
 							</Link>
 						</NavItem>
 					</NavList>
+					<DarkModeBtn toogleTheme={props.toggleTheme} />
 				</NavContainer>
 			</NavBackground>
 			<div style={{ height: "4rem" }} />
