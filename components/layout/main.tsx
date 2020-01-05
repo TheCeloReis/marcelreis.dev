@@ -48,13 +48,13 @@ export default function MainLayout(props: PropsType) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="description" content={props.description} />
 			</NextHead>
-			<GlobalStyle />
 			<ThemeProvider theme={themes[theme]}>
 				<>
 					<Nav toggleTheme={toggleTheme} />
 					{props.children}
 					<Footer />
 				</>
+				<GlobalStyle />
 			</ThemeProvider>
 		</>
 	);

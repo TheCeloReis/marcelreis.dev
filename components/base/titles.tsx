@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const H1Continer = styled.div`
 	width: 100%;
+	color: ${({ theme }: any) => theme.color.contrast};
 	display: flex;
 	justify-content: center;
 	margin: 12px 4px;
@@ -10,6 +11,7 @@ const H1Continer = styled.div`
 const H1text = styled.h1`
 	display: inline-block;
 	font-size: 1.5rem;
+	letter-spacing: 4px;
 
 	::after {
 		content: "";

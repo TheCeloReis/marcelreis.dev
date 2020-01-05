@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 
 	#__next {
 		min-height: 100vh;
-		background-color: #eee;
+		background-color: ${({ theme }: any) => theme.color.base};
 		position: relative;
 	}
 		
@@ -66,9 +66,13 @@ const jsTheme = {
 		primary: "#F7E019",
 		primaryD: "#CBB815",
 
-		contrastH: "#000",
+		contrastH: "#111",
 		contrast: "#242124",
-		contrastL: "#333"
+		contrastL: "#333",
+
+		baseL: "#fff",
+		base: "#eee",
+		baseD: "#ddd"
 	}
 };
 const tsTheme = {
@@ -81,7 +85,11 @@ const tsTheme = {
 
 		contrastH: "#fff",
 		contrast: "#eee",
-		contrastL: "#ddd"
+		contrastL: "#ddd",
+
+		baseL: "#333",
+		base: "#242124",
+		baseD: "#111"
 	}
 };
 export const themes = [jsTheme, tsTheme];
