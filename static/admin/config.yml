@@ -3,16 +3,28 @@ backend:
   branch: master
 media_folder: static/img
 collections:
-  - name: "blog" 
-    label: "Blog" 
-    folder: "content/" 
-    create: true 
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
-    fields: 
-      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "URL", name: url, widget: "string"}
-      - {label: "Author", name: "author", wdiget: "string", default: "Marcelo Reis"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "URL", name: url, widget: "string" }
+      - {
+          label: "Author",
+          name: "author",
+          wdiget: "string",
+          default: "Marcelo Reis",
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "project"
+    label: "Project"
+    folder: "content/projects"
+    create: true
+    fields:
+      - { label: "Nome", name: "name", widget: "string" }
