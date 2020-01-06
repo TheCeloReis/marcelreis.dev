@@ -35,7 +35,7 @@ export default function Footer() {
 					href="https://github.com/MarcelReis"
 					target="_blank"
 					title="Perfil do GitHub"
-					rel="noopener"
+					rel="noopener noreferrer"
 				>
 					<Github size={32} />
 				</a>
@@ -43,13 +43,13 @@ export default function Footer() {
 					href="https://www.linkedin.com/in/marcelreis/"
 					target="_blank"
 					title="Perfil do Linkedin"
-					rel="noopener"
+					rel="noopener noreferrer"
 				>
 					<LinkedinSquare size={32} />
 				</a>
 				<a
 					href="mailto:oi@marcelreis.dev?subject=Olá Marcelo, "
-					target="_blank"
+					rel="noopener noreferrer"
 					title="oi@marcelreis.dev"
 				>
 					<Mail size={32} />

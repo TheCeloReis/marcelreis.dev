@@ -7,7 +7,7 @@ import { logPageView } from "../utils/analytics";
 import Section from "../components/base/section";
 import { H1 } from "../components/base/titles";
 
-export default function index() {
+export default function Error() {
 	useEffect(() => {
 		logPageView();
 	}, []);

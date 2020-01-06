@@ -34,7 +34,7 @@ type PropsType = {
 };
 
 export default function TypedSentences(props: PropsType) {
-	const [index, setIndex] = useState(undefined);
+	const [index, setIndex] = useState(-1);
 	const [renderedLetters, setRenderedLetters] = useState("");
 	const [currentSentence, setCurrentSentence] = useState("");
 	const [typing, setTyping] = useState(true);
@@ -61,9 +61,11 @@ export default function TypedSentences(props: PropsType) {
 				}
 			};
 
-			return () => (window.onload = null);
+			return () => {
+				window.onload = null;
+			};
 		}
-	}, [router.pathname]);
+	}, [props.sentences, router.pathname]);
 
 	function nextSentence() {
 		if (props.sentences.length > props.sentences.indexOf(currentSentence) + 1) {
@@ -95,7 +97,7 @@ export default function TypedSentences(props: PropsType) {
 				nextSentence();
 			}, 500);
 		} else {
-			let i = currentSentence.length - index;
+			const i = currentSentence.length - index;
 			setRenderedLetters(currentSentence.slice(0, i < 2 ? 0 : i));
 			setIndex(index + 2);
 		}
@@ -116,6 +118,7 @@ export default function TypedSentences(props: PropsType) {
 		return () => {
 			clearTimeout(timer);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [index]);
 
 	return <Text>{renderedLetters}</Text>;

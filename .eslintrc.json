@@ -4,19 +4,35 @@
 		"es6": true,
 		"node": true
 	},
-	"extends": "eslint:recommended",
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
 	"globals": {
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly"
 	},
 	"parserOptions": {
-		"ecmaVersion": 2018
+		"ecmaVersion": 2018,
+		"sourceType": "module"
 	},
 	"rules": {
 		"indent": ["error", "tab"],
 		"linebreak-style": ["error", "unix"],
 		"quotes": ["error", "double"],
 		"semi": ["error", "always"],
-		"no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
-	}
+		"no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error",
+
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
+
+		"@typescript-eslint/no-explicit-any": 0,
+		"@typescript-eslint/explicit-function-return-type": 0
+	},
+	"plugins": ["react", "@typescript-eslint", "react-hooks"]
 }

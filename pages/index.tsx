@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import Head from "../components/layout/main";
 import TypedSentences from "../components/base/typedSentences";
@@ -8,6 +8,7 @@ import HeroHeader from "../components/modules/heroHeader";
 import Section from "../components/base/section";
 import { H1 } from "../components/base/titles";
 import Contact from "../components/modules/contact";
+import Toolbox from "../components/modules/toolbox";
 
 const SENTENCES = [
 	"Oi, eu sou Marcelo Reis",
@@ -16,7 +17,7 @@ const SENTENCES = [
 	"E amante do Javascript e Typescript"
 ];
 
-export default function index() {
+export default function Index() {
 	useEffect(() => {
 		logPageView();
 	}, []);
@@ -33,11 +34,16 @@ export default function index() {
 			<Section>
 				<H1>Sobre</H1>
 				<p>
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
-					pariatur iste voluptas porro laborum totam voluptate molestias, ipsum
-					itaque quam corrupti voluptates fugiat, esse dignissimos debitis nam,
-					nostrum accusantium quibusdam!
+					Sou um estudante de Sistemas de Informação com uma trajetória bem
+					curiosa. Apaixonado pelo Front-end e por JavaScript em seus diversos
+					flavours, procuro sempre estar atento as novidades. Membro de diversos
+					grupos de desenvolvedores em BH, acredito no poder das comunidades.
 				</p>
+			</Section>
+
+			<Section>
+				<H1>Skills</H1>
+				<Toolbox />
 			</Section>
 
 			<Section>

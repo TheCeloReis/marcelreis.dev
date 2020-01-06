@@ -18,7 +18,7 @@ const Container = styled.div`
 const SkillsRow: any = styled.ul`
 	width: 100%;
 	height: 0;
-	padding-bottom: ${(props: any) => (props.active ? `calc(33.33% + 6rem)` : 0)};
+	padding-bottom: ${(props: any) => (props.active ? "calc(33.33% + 6rem)" : 0)};
 	transition: 2s ease;
 `;
 
@@ -35,10 +35,10 @@ const Skill: any = styled.li`
 		return props.order === 0
 			? "translate(-100%, 0)"
 			: props.order === 1
-			? "translate(0%, 0)"
-			: props.order === 2
-			? "translate(100%, 0)"
-			: 0;
+				? "translate(0%, 0)"
+				: props.order === 2
+					? "translate(100%, 0)"
+					: 0;
 	}};
 
 	animation-name: ${(props: any) => outOfBox(props.order)};
@@ -104,7 +104,7 @@ const JQueryIcon = styled(Jquery)`
 	color: #21609b;
 `;
 
-export default function index() {
+export default function Toolbox2() {
 	const [openReact, setOpenReact] = useState(false);
 	const [openCss, setOpenCss] = useState(false);
 	const [openJquery, setOpenJquery] = useState(false);

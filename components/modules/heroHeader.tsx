@@ -1,4 +1,4 @@
-import React, { ReactChild, Props } from "react";
+import React, { ReactChild } from "react";
 import styled from "styled-components";
 
 const Background = styled.div`

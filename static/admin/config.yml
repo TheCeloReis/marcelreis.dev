@@ -25,10 +25,11 @@ collections:
     name: "project"
     folder: "content/projects"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{year}}-{{month}}-{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "URL", name: url, widget: "string" }
+      - { label: "GitHub Url", name: url, widget: "string", default: "Privado" }
+      - { label: "Website", name: "website", widget: "string", default: "Sem" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }

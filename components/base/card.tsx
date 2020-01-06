@@ -76,11 +76,6 @@ type PropsType = {
 };
 
 export default function Card(props: PropsType) {
-	const [num1, num2] = [
-		Math.floor(Math.random() * 10) + 290,
-		Math.floor(Math.random() * 10) + 290
-	];
-
 	return (
 		<Container>
 			<ImageContainer>
@@ -93,7 +88,7 @@ export default function Card(props: PropsType) {
 					<span>{props.overlayText}</span>
 				</Overlay>
 				<StyledButton>
-					<a href={props.url} target="_blank">
+					<a href={props.url} target="_blank" rel="noopener noreferrer">
 						MAIS
 					</a>
 				</StyledButton>

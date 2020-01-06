@@ -63,10 +63,10 @@ export default function Contact() {
 			</EmailLabel>
 
 			<MessageLabel>
-				<span>Message:</span>
+				<span>Mensagem:</span>
 				<Textarea
 					name="message"
-					rows="3"
+					rows="4"
 					placeholder="Escreve aqui o seu recado..."
 					required
 				></Textarea>

@@ -17,15 +17,18 @@ export const Textarea: any = (props: any) => {
 	const textarea = useRef(null);
 
 	const onChange = (event: any) => {
-		if (textarea.current && textarea.current.parentNode) {
-			const clone: any = textarea.current.cloneNode();
+		if (textarea.current && (textarea.current as any).parentNode) {
+			const clone: any = (textarea.current as any).cloneNode();
 
 			clone.style.display = "hidden";
 			clone.style.height = "auto";
 
-			textarea.current.parentNode.insertBefore(clone, textarea.current);
+			(textarea.current as any).parentNode.insertBefore(
+				clone,
+				textarea.current as any
+			);
 			setHeight(calcMinHeight(clone) + "px");
-			textarea.current.parentNode.removeChild(clone);
+			(textarea.current as any).parentNode.removeChild(clone);
 		}
 
 		if (props.onChange) {
