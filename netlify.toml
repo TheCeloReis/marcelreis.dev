@@ -1,7 +1,7 @@
 [build]
   base = "/"
   publish = "out/"
-  command = "npm rub build"
+  command = "npm run build"
 
 [context.branch-deploy.environment]
   NODE_ENV = "development"
