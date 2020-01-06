@@ -34,7 +34,7 @@ type PropsType = {
 };
 
 export default function TypedSentences(props: PropsType) {
-	const [index, setIndex] = useState(0);
+	const [index, setIndex] = useState(-1);
 	const [renderedLetters, setRenderedLetters] = useState("");
 	const [currentSentence, setCurrentSentence] = useState("");
 	const [typing, setTyping] = useState(true);
