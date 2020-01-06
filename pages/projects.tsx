@@ -47,8 +47,6 @@ export default function Projects(props: PropsType) {
 		logPageView();
 	}, []);
 
-	console.log("props :", props);
-
 	return (
 		<MainLayout
 			title="Projetos - MarcelReis"
@@ -58,7 +56,6 @@ export default function Projects(props: PropsType) {
 				<H1>Projetos</H1>
 				<CardContainer>
 					{props.projects.map((project, index) => {
-						console.log("project.atribute :", project.attributes);
 						return (
 							<Card
 								key={project.attributes.url}

@@ -5,7 +5,7 @@ export const initGA = () => {
 		console.log("GA init");
 		ReactGA.initialize(process.env.GA_TOKEN);
 	} else {
-		console.log("GA init in production");
+		console.log("GA init in development");
 	}
 };
 export const logPageView = () => {
