@@ -67,8 +67,12 @@ const Image = styled.img`
 `;
 
 type PropsType = {
+	overlayText: string;
+
 	title: string;
 	url: string;
+
+	img200: string;
 };
 
 export default function Card(props: PropsType) {
@@ -77,14 +81,16 @@ export default function Card(props: PropsType) {
 		Math.floor(Math.random() * 10) + 290
 	];
 
-	const src = `https://placekitten.com/${num1}/${num2}`;
-
 	return (
 		<Container>
 			<ImageContainer>
-				<Image src={src} alt="cat" />
+				<Image
+					src={props.img200}
+					title={props.title}
+					alt={`Tela do ${props.overlayText}`}
+				/>
 				<Overlay>
-					<span>{props.title}</span>
+					<span>{props.overlayText}</span>
 				</Overlay>
 				<StyledButton>
 					<a href={props.url} target="_blank">

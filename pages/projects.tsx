@@ -47,6 +47,8 @@ export default function Projects(props: PropsType) {
 		logPageView();
 	}, []);
 
+	console.log("props :", props);
+
 	return (
 		<MainLayout
 			title="Projetos - MarcelReis"
@@ -59,8 +61,10 @@ export default function Projects(props: PropsType) {
 						return (
 							<Card
 								key={project.attributes.url}
-								title={project.attributes.title}
+								overlayText={project.attributes.title}
+								title={project.attributes.description}
 								url={project.attributes.url}
+								img200={project.attributes.thumbnail}
 							/>
 						);
 					})}
