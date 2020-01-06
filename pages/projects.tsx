@@ -10,11 +10,7 @@ import { H1 } from "../components/base/titles";
 import Card from "../components/base/card";
 
 Projects.getInitialProps = async () => {
-	const markdownContext = require.context(
-		"../content/projects",
-		false,
-		/\.md$/
-	);
+	const markdownContext = require.context("/content/projects", false, /\.md$/);
 
 	const markdownFiles = markdownContext
 		.keys()
