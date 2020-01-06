@@ -47,8 +47,6 @@ export default function Projects(props: PropsType) {
 		logPageView();
 	}, []);
 
-	console.log("props :", props);
-
 	return (
 		<MainLayout
 			title="Projetos - MarcelReis"
