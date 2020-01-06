@@ -14,6 +14,10 @@ const StyledButton = styled(Button)`
 
 	border-radius: 8px 8px 0 0;
 	background-color: ${({ theme }) => theme.color.baseL};
+
+	a {
+		color: inherit;
+	}
 `;
 const Overlay = styled.div`
 	position: absolute;
@@ -28,6 +32,7 @@ const Overlay = styled.div`
 
 	span {
 		position: absolute;
+		text-align: center;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
@@ -61,7 +66,12 @@ const Image = styled.img`
 	background-color: ${({ theme }) => theme.color.gray300};
 `;
 
-export default function Card() {
+type PropsType = {
+	title: string;
+	url: string;
+};
+
+export default function Card(props: PropsType) {
 	const [num1, num2] = [
 		Math.floor(Math.random() * 10) + 290,
 		Math.floor(Math.random() * 10) + 290
@@ -74,9 +84,13 @@ export default function Card() {
 			<ImageContainer>
 				<Image src={src} alt="cat" />
 				<Overlay>
-					<span>{num1}</span>
+					<span>{props.title}</span>
 				</Overlay>
-				<StyledButton>MAIS</StyledButton>
+				<StyledButton>
+					<a href={props.url} target="_blank">
+						MAIS
+					</a>
+				</StyledButton>
 			</ImageContainer>
 		</Container>
 	);

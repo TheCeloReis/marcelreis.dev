@@ -8,11 +8,12 @@ import { logPageView } from "../utils/analytics";
 import Section from "../components/base/section";
 import { H1 } from "../components/base/titles";
 import Card from "../components/base/card";
+import { ProjectType } from "../types/projetc";
 
-Projects.getInitialProps = async () => {
+Projects.getInitialProps = () => {
 	const markdownContext = require.context("Content/projects", false, /\.md$/);
 
-	const markdownFiles = markdownContext
+	const markdownFiles: ProjectType[] = markdownContext
 		.keys()
 		.map(filename => markdownContext(filename));
 
@@ -37,7 +38,11 @@ const CardContainer = styled.div`
 	}
 `;
 
-export default function Projects(props: any) {
+type PropsType = {
+	projects: ProjectType[];
+};
+
+export default function Projects(props: PropsType) {
 	useEffect(() => {
 		logPageView();
 	}, []);
@@ -52,8 +57,15 @@ export default function Projects(props: any) {
 			<Section>
 				<H1>Projetos</H1>
 				<CardContainer>
-					{"xxxxxx".split("").map((_e: any, index: number) => {
-						return <Card key={index} />;
+					{props.projects.map((project, index) => {
+						console.log("project.atribute :", project.attributes);
+						return (
+							<Card
+								key={project.attributes.url}
+								title={project.attributes.title}
+								url={project.attributes.url}
+							/>
+						);
 					})}
 				</CardContainer>
 			</Section>
