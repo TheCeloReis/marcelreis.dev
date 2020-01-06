@@ -104,7 +104,7 @@ const JQueryIcon = styled(Jquery)`
 	color: #21609b;
 `;
 
-export default function index() {
+export default function Toolbox2() {
 	const [openReact, setOpenReact] = useState(false);
 	const [openCss, setOpenCss] = useState(false);
 	const [openJquery, setOpenJquery] = useState(false);

@@ -27,13 +27,13 @@ export default function MainLayout(props: PropsType) {
 			(window as any).GA_INITIALIZED = true;
 		}
 
-		if (process.browser) {
-			const currentTheme = parseInt(window.localStorage.getItem("theme"));
+		const currentTheme = parseInt(window.localStorage.getItem("theme"));
+		if (process.browser && !isNull(currentTheme)) {
 			if (!isNaN(currentTheme) && currentTheme !== theme) {
 				setTheme(currentTheme);
 			}
 		}
-	}, []);
+	}, [theme]);
 
 	return (
 		<>

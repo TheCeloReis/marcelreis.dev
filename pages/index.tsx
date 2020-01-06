@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import Head from "../components/layout/main";
 import TypedSentences from "../components/base/typedSentences";
@@ -16,7 +16,7 @@ const SENTENCES = [
 	"E amante do Javascript e Typescript"
 ];
 
-export default function index() {
+export default function Index() {
 	useEffect(() => {
 		logPageView();
 	}, []);
