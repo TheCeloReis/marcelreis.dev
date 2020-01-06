@@ -8,6 +8,7 @@ import HeroHeader from "../components/modules/heroHeader";
 import Section from "../components/base/section";
 import { H1 } from "../components/base/titles";
 import Contact from "../components/modules/contact";
+import Toolbox from "../components/modules/toolbox";
 
 const SENTENCES = [
 	"Oi, eu sou Marcelo Reis",
@@ -38,6 +39,11 @@ export default function Index() {
 					flavours, procuro sempre estar atento as novidades. Membro de diversos
 					grupos de desenvolvedores em BH, acredito no poder das comunidades.
 				</p>
+			</Section>
+
+			<Section>
+				<H1>Skills</H1>
+				<Toolbox />
 			</Section>
 
 			<Section>
