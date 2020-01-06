@@ -65,7 +65,7 @@ export default function TypedSentences(props: PropsType) {
 				window.onload = null;
 			};
 		}
-	}, [router.pathname]);
+	}, [props.sentences, router.pathname]);
 
 	function nextSentence() {
 		if (props.sentences.length > props.sentences.indexOf(currentSentence) + 1) {
@@ -118,6 +118,7 @@ export default function TypedSentences(props: PropsType) {
 		return () => {
 			clearTimeout(timer);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [index]);
 
 	return <Text>{renderedLetters}</Text>;
