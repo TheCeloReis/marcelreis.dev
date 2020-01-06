@@ -18,10 +18,6 @@ module.exports = {
 			}
 		];
 
-		config.entry().then(entry => {
-			return Object.assign({}, entry, { fooEntry: "./content" });
-		});
-
 		const env = Object.keys(process.env).reduce((acc, curr) => {
 			acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
 			return acc;
