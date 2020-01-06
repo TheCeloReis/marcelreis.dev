@@ -10,18 +10,6 @@ import { H1 } from "../components/base/titles";
 import Card from "../components/base/card";
 import { ProjectType } from "../types/projetc";
 
-Projects.getInitialProps = () => {
-	const markdownContext = require.context("Content/projects", false, /\.md$/);
-
-	const markdownFiles: ProjectType[] = markdownContext
-		.keys()
-		.map(filename => markdownContext(filename));
-
-	return {
-		projects: markdownFiles
-	};
-};
-
 const CardContainer = styled.div`
 	display: grid;
 	position: relative;
@@ -55,7 +43,7 @@ export default function Projects(props: PropsType) {
 			<Section>
 				<H1>Projetos</H1>
 				<CardContainer>
-					{props.projects.map((project, index) => {
+					{props.projects.map(project => {
 						return (
 							<Card
 								key={project.attributes.url}
@@ -71,3 +59,15 @@ export default function Projects(props: PropsType) {
 		</MainLayout>
 	);
 }
+
+Projects.getInitialProps = () => {
+	const markdownContext = require.context("Content/projects", false, /\.md$/);
+
+	const markdownFiles: ProjectType[] = markdownContext
+		.keys()
+		.map(filename => markdownContext(filename));
+
+	return {
+		projects: markdownFiles
+	};
+};
