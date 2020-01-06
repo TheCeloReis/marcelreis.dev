@@ -3,7 +3,7 @@ import ReactGA from "react-ga";
 export const initGA = () => {
 	if (process.env.NODE_ENV === "production") {
 		console.log("GA init");
-		ReactGA.initialize(process.env.GA_TOKEN);
+		ReactGA.initialize(process.env.GA_TOKEN || "");
 	} else {
 		console.log("GA init in development");
 	}

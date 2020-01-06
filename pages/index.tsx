@@ -33,10 +33,10 @@ export default function Index() {
 			<Section>
 				<H1>Sobre</H1>
 				<p>
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
-					pariatur iste voluptas porro laborum totam voluptate molestias, ipsum
-					itaque quam corrupti voluptates fugiat, esse dignissimos debitis nam,
-					nostrum accusantium quibusdam!
+					Sou um estudante de Sistemas de Informação com uma trajetória bem
+					curiosa. Apaixonado pelo Front-end e por JavaScript em seus diversos
+					flavours, procuro sempre estar atento as novidades. Membro de diversos
+					grupos de desenvolvedores em BH, acredito no poder das comunidades.
 				</p>
 			</Section>
 
