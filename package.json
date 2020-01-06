@@ -35,7 +35,7 @@
 		"eslint-plugin-promise": "^4.2.1",
 		"eslint-plugin-react": "^7.14.3",
 		"eslint-plugin-standard": "^4.0.1",
-		"frontmatter-markdown-loader": "^2.0.0",
+		"frontmatter-markdown-loader": "^2.3.0",
 		"typescript": "^3.6.2",
 		"webpack": "^4.41.0"
 	}
