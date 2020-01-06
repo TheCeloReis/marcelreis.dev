@@ -9,6 +9,22 @@ import Section from "../components/base/section";
 import { H1 } from "../components/base/titles";
 import Card from "../components/base/card";
 
+Projects.getInitialProps = async () => {
+	const markdownContext = require.context(
+		"../content/projects",
+		false,
+		/\.md$/
+	);
+
+	const markdownFiles = markdownContext
+		.keys()
+		.map(filename => markdownContext(filename));
+
+	return {
+		projects: markdownFiles
+	};
+};
+
 const CardContainer = styled.div`
 	display: grid;
 	position: relative;
@@ -25,10 +41,12 @@ const CardContainer = styled.div`
 	}
 `;
 
-export default function index() {
+export default function Projects(props: any) {
 	useEffect(() => {
 		logPageView();
 	}, []);
+
+	console.log("props :", props);
 
 	return (
 		<MainLayout
