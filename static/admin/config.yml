@@ -27,4 +27,4 @@ collections:
     folder: "content/projects"
     create: true
     fields:
-      - { label: "Nome", name: "name", widget: "string" }
+      - { label: "Nome", name: "title", widget: "string" }
