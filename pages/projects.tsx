@@ -11,7 +11,7 @@ import Card from "../components/base/card";
 
 Projects.getInitialProps = async () => {
 	const markdownContext = require.context(
-		"../content/projects",
+		"/opt/build/repo/content/projects",
 		false,
 		/\.md$/
 	);
