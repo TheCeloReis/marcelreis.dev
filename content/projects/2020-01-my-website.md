@@ -9,7 +9,7 @@ description: >-
 thumbnail: /static/img/200-my-website.jpg
 highlight: '3'
 ---
-## Principais Tecnologias## Principais Tecnologias
+## Principais Tecnologias
 * Typescript
 * React
 * Next.js
