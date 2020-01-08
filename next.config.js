@@ -39,6 +39,8 @@ module.exports = {
 		{ dev, dir, outDir, distDir, buildId }
 	) {
 		return {
+			"/": { page: "/" },
+			"/projects": { page: "/projects" },
 			...staticRouter.getProjects()
 		};
 	}
