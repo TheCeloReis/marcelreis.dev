@@ -45,7 +45,7 @@ type PropsType = {
 export default function Section(props: PropsType) {
 	return (
 		<Background>
-			<Container>{props.children}</Container>
+			<Container {...props} />
 		</Background>
 	);
 }
