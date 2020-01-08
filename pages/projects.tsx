@@ -30,7 +30,7 @@ type PropsType = {
 	projects: ProjectType[];
 };
 
-export default function Projects(props: PropsType) {
+function Projects(props: PropsType) {
 	useEffect(() => {
 		logPageView();
 	}, []);
@@ -71,3 +71,5 @@ Projects.getInitialProps = () => {
 		projects: markdownFiles
 	};
 };
+
+export default Projects;
