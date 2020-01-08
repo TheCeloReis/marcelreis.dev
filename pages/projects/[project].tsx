@@ -7,6 +7,37 @@ import { getProjects } from "../../utils/getContent";
 import Head from "../../components/layout/main";
 import { H1 } from "../../components/base/titles";
 import Section from "../../components/base/section";
+import { Content } from "../../components/base/content";
+import styled from "styled-components";
+import ProjectLinks from "../../components/modules/projectLinks";
+import Link from "next/link";
+
+const StyledSection = styled(Section)`
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 16px;
+
+	@media only screen and (min-width: 600px) {
+		grid-template-columns: 1fr 200px;
+	}
+
+	${Content} {
+		margin-top: 32px;
+	}
+`;
+const Header = styled.div`
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 16px;
+
+	@media only screen and (min-width: 600px) {
+		grid-template-columns: 1fr 300px;
+	}
+
+	p {
+		margin-bottom: 16px;
+	}
+`;
 
 type PropsType = {
 	project: ProjectType | undefined;
@@ -21,12 +52,45 @@ const Post = (props: PropsType) => {
 	return (
 		<Head
 			title={props.project.attributes.title}
-			description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
+			description={props.project.attributes.description}
 		>
-			<Section>
-				<H1>{props.project.attributes.title}</H1>
-				<div dangerouslySetInnerHTML={{ __html: props.project.html }}></div>
-			</Section>
+			<StyledSection>
+				<main>
+					<H1>{props.project.attributes.title}</H1>
+
+					<Header>
+						<img
+							src={props.project.attributes.thumbnail}
+							alt={"Capura de tela do " + props.project.attributes.title}
+							style={{ margin: "auto" }}
+						/>
+
+						<div>
+							<p>{props.project.attributes.description}</p>
+							<ProjectLinks
+								github={props.project.attributes.github}
+								website={props.project.attributes.website}
+							/>
+						</div>
+					</Header>
+
+					<Content dangerouslySetInnerHTML={{ __html: props.project.html }} />
+				</main>
+				<div>
+					<p>Outros Projetos</p>
+					<ul>
+						{getProjects().map(project => {
+							return (
+								<li key={project.attributes.url}>
+									<Link href={"/projects/" + project.attributes.url}>
+										<a>{project.attributes.title}</a>
+									</Link>
+								</li>
+							);
+						})}
+					</ul>
+				</div>
+			</StyledSection>
 		</Head>
 	);
 };
