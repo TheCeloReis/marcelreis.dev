@@ -28,14 +28,6 @@ const Container = styled.div`
 		border-radius: 2px;
 		margin: 2rem 1rem 2rem 1rem;
 	}
-
-	h2 {
-		color: ${props => props.theme.color.gray900};
-		text-align: center;
-		margin: 1rem auto 2rem auto;
-		text-transform: uppercase;
-		letter-spacing: 0.25rem;
-	}
 `;
 
 type PropsType = {
