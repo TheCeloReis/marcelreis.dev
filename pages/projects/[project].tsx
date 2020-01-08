@@ -1,9 +1,12 @@
 import React from "react";
 import { NextPageContext } from "next";
-import { getProjects } from "../../utils/getContent";
 import { ProjectType } from "../../types/projetc";
 
-import Router from "next/router";
+import Redirect from "../../components/base/redirect";
+import { getProjects } from "../../utils/getContent";
+import Head from "../../components/layout/main";
+import { H1 } from "../../components/base/titles";
+import Section from "../../components/base/section";
 
 type PropsType = {
 	project: ProjectType | undefined;
@@ -11,17 +14,21 @@ type PropsType = {
 };
 
 const Post = (props: PropsType) => {
-	console.log("props :", props);
-
-	if (!props.project && process.browser) {
-		Router.push("/projects");
-	}
-
 	if (!props.project) {
-		return <></>;
+		return <Redirect path="/projects" />;
 	}
 
-	return <p>Post: {props.project.attributes.title}</p>;
+	return (
+		<Head
+			title={props.project.attributes.title}
+			description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
+		>
+			<Section>
+				<H1>{props.project.attributes.title}</H1>
+				<div dangerouslySetInnerHTML={{ __html: props.project.html }}></div>
+			</Section>
+		</Head>
+	);
 };
 
 Post.getInitialProps = (context: NextPageContext) => {
