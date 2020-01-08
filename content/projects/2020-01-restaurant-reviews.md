@@ -6,6 +6,7 @@ description: 'Capstone do meu NanoDegree, ajustei o front e implementei testes u
 thumbnail: /static/img/200-restaurant-reviews.jpg
 highlight: '1'
 ---
+## Principais Tecnologias
 * JavaScript 
 * CSS3
 * Jasmine
