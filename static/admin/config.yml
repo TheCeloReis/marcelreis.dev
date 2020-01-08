@@ -9,17 +9,30 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "URL", name: url, widget: "string" }
-      - {
-          label: "Author",
-          name: "author",
-          wdiget: "string",
-          default: "Marcelo Reis",
-        }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "URL"
+        name: url
+        widget: "string"
+
+      - label: "Author"
+        name: "author"
+        wdiget: "string"
+        default: "Marcelo Reis"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+
+      - label: "Featured Image"
+        name: "thumbnail"
+        widget: "image"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
 
   - label: "Project"
     name: "project"
@@ -27,9 +40,37 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "GitHub Url", name: url, widget: "string", default: "Privado" }
-      - { label: "Website", name: "website", widget: "string", default: "Sem" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "GitHub Url"
+        name: url
+        widget: "string"
+        default: "Privado"
+
+      - label: "Website"
+        name: "website"
+        widget: "string"
+        default: "Sem"
+
+      - label: "Description"
+        name: "description"
+        widget: "string"
+
+      - label: "Featured Image"
+        name: "thumbnail"
+        widget: "image"
+
+      - label: "Highlight"
+        name: "highlight"
+        widget: "select"
+        options:
+          - { label: "No", value: "0" }
+          - { label: "Bottom", value: "1" }
+          - { label: "Middle", value: "2" }
+          - { label: "Top", value: "3" }
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
