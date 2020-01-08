@@ -1,5 +1,5 @@
 ---
-title: Marcelreis.dev
+title: My Website
 url: marcelreis
 github: 'https://github.com/MarcelReis/Personal-WebPage'
 website: 'https://marcelreis.dev'
