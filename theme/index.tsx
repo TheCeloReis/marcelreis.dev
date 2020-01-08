@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 
 	#__next {
 		min-height: 100vh;
-    color: ${({ theme }: any) => theme.color.contrast};
+		color: ${({ theme }: any) => theme.color.contrast};
 		background-color: ${({ theme }: any) => theme.color.base};
 		position: relative;
 	}

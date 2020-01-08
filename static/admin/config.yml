@@ -44,15 +44,19 @@ collections:
         name: "title"
         widget: "string"
 
-      - label: "GitHub Url"
-        name: url
+      - label: "URL"
+        name: "url"
         widget: "string"
-        default: "Privado"
+
+      - label: "GitHub"
+        name: "github"
+        widget: "string"
+        required: false
 
       - label: "Website"
         name: "website"
         widget: "string"
-        default: "Sem"
+        required: false
 
       - label: "Description"
         name: "description"
