@@ -9,6 +9,7 @@ import Section from "../components/base/section";
 import { H1 } from "../components/base/titles";
 import Card from "../components/base/card";
 import { ProjectType } from "../types/projetc";
+import { getProjects } from "../utils/getContent";
 
 const CardContainer = styled.div`
 	display: grid;
@@ -61,14 +62,8 @@ function Projects(props: PropsType) {
 }
 
 Projects.getInitialProps = () => {
-	const markdownContext = require.context("Content/projects", false, /\.md$/);
-
-	const markdownFiles: ProjectType[] = markdownContext
-		.keys()
-		.map(filename => markdownContext(filename));
-
 	return {
-		projects: markdownFiles
+		projects: getProjects()
 	};
 };
 

@@ -1,11 +1,18 @@
 import React from "react";
-import { useRouter } from "next/router";
+import { NextPageContext } from "next";
 
-const Post = () => {
-	const router = useRouter();
-	const { project } = router.query;
+type PropsType = {
+	project: string;
+};
 
-	return <p>Post: {project}</p>;
+const Post = (props: PropsType) => {
+	return <p>Post: {props.project}</p>;
+};
+
+Post.getInitialProps = (context: NextPageContext) => {
+	return {
+		project: context.query.project
+	};
 };
 
 export default Post;
