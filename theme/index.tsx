@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 		margin: 0;
 	}
 	a {
-		color: #000;
+		color: inherit;
 		text-decoration: none;
 	}
 
