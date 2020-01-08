@@ -1,6 +1,6 @@
 ---
 title: Bazar das Plugas
-url: 'https://github.com/MarcelReis/bazarDasPlugas'
+github: 'https://github.com/MarcelReis/bazarDasPlugas'
 website: 'https://www.bazardasplugas.com/'
 description: >-
   Site desenvolvido para o bazar que ocorreu na Escola de Formação Gerencial do

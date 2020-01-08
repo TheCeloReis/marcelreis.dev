@@ -1,6 +1,6 @@
 ---
 title: Marcelreis.dev
-url: 'https://github.com/MarcelReis/Personal-WebPage'
+github: 'https://github.com/MarcelReis/Personal-WebPage'
 website: 'https://marcelreis.dev'
 description: >-
   Meu próprio site, realizado toda a stack, desde hospenagem, DNS ao front e

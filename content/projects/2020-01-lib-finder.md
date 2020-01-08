@@ -1,6 +1,6 @@
 ---
 title: Lib Finder
-url: 'https://github.com/MarcelReis/Coding-Challenge-Studio-Sol'
+github: 'https://github.com/MarcelReis/Coding-Challenge-Studio-Sol'
 website: 'http://libfinder.marcelreis.dev/'
 description: >-
   Pequeno mecanismo de busca no Github, desafio realizado no processo seletivo
