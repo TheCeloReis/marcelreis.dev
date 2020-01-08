@@ -28,6 +28,9 @@ const NavContainer = styled.div`
 `;
 
 const NavList: any = styled.ul`
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 	position: absolute;
 	top: 4rem;
 	width: 100%;
@@ -37,8 +40,7 @@ const NavList: any = styled.ul`
 	@media screen and (max-width: 767px) {
 		right: 100%;
 		flex-direction: column;
-		transform: ${(props: any) =>
-			props.active ? "translateX(100%)" : "translateX(0%)"};
+		transform: ${(props: any) => props.active ? "translateX(100%)" : "translateX(0%)"};
 		background-color: ${(props: any) => props.theme.color.gray900};
 		transition: transform 0.3s ease;
 	}
