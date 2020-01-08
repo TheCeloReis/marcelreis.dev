@@ -9,6 +9,7 @@ description: >-
 thumbnail: /static/img/200-bazar-das-plugas.jpg
 highlight: '1'
 ---
+## Principais Tecnologias
 * Typescript 
 * React
 * Next.js
