@@ -1,5 +1,6 @@
 ---
 title: Marcelreis.dev
+url: marcelreis
 github: 'https://github.com/MarcelReis/Personal-WebPage'
 website: 'https://marcelreis.dev'
 description: >-
