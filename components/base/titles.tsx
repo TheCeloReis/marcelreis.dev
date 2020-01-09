@@ -6,8 +6,9 @@ const H1Continer = styled.div`
 	color: ${({ theme }: any) => theme.color.contrast};
 	display: flex;
 	justify-content: center;
-	margin: 12px 4px;
+	margin: 16px 0 32px 0;
 `;
+
 const H1text = styled.h1`
 	display: inline-block;
 	text-align: center;

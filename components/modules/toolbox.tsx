@@ -16,6 +16,9 @@ const Container = styled.div`
 `;
 
 const SkillsRow: any = styled.ul`
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 	width: 100%;
 	height: 0;
 	padding-bottom: ${(props: any) => (props.active ? "calc(33.33% + 6rem)" : 0)};
@@ -49,6 +52,12 @@ const Skill: any = styled.li`
 	h4 {
 		font-size: 1.5rem;
 		margin-bottom: 0.5rem;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
 	}
 
 	li {

@@ -88,9 +88,7 @@ export default function Card(props: PropsType) {
 					<span>{props.overlayText}</span>
 				</Overlay>
 				<StyledButton>
-					<a href={props.url} target="_blank" rel="noopener noreferrer">
-						MAIS
-					</a>
+					<a href={props.url}>MAIS</a>
 				</StyledButton>
 			</ImageContainer>
 		</Container>

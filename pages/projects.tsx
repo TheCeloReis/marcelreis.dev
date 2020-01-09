@@ -9,6 +9,7 @@ import Section from "../components/base/section";
 import { H1 } from "../components/base/titles";
 import Card from "../components/base/card";
 import { ProjectType } from "../types/projetc";
+import { getProjects } from "../utils/getContent";
 
 const CardContainer = styled.div`
 	display: grid;
@@ -30,7 +31,7 @@ type PropsType = {
 	projects: ProjectType[];
 };
 
-export default function Projects(props: PropsType) {
+function Projects(props: PropsType) {
 	useEffect(() => {
 		logPageView();
 	}, []);
@@ -49,7 +50,7 @@ export default function Projects(props: PropsType) {
 								key={project.attributes.url}
 								overlayText={project.attributes.title}
 								title={project.attributes.description}
-								url={project.attributes.url}
+								url={"/projects/" + project.attributes.url}
 								img200={project.attributes.thumbnail}
 							/>
 						);
@@ -61,13 +62,9 @@ export default function Projects(props: PropsType) {
 }
 
 Projects.getInitialProps = () => {
-	const markdownContext = require.context("Content/projects", false, /\.md$/);
-
-	const markdownFiles: ProjectType[] = markdownContext
-		.keys()
-		.map(filename => markdownContext(filename));
-
 	return {
-		projects: markdownFiles
+		projects: getProjects()
 	};
 };
+
+export default Projects;

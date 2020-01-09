@@ -1,5 +1,6 @@
 ---
 title: Lib Finder
+url: lib-finder
 github: 'https://github.com/MarcelReis/Coding-Challenge-Studio-Sol'
 website: 'http://libfinder.marcelreis.dev/'
 description: >-

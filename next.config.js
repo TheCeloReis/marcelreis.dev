@@ -1,7 +1,13 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const path = require("path");
 const webpack = require("webpack");
 const dotenv = require("dotenv");
 dotenv.config();
+
+const staticRouter = require("./utils/staticRouter");
 
 module.exports = {
 	webpack: config => {
@@ -26,5 +32,16 @@ module.exports = {
 		config.plugins.push(new webpack.DefinePlugin(env));
 
 		return config;
+	},
+
+	exportPathMap: async function(
+		defaultPathMap,
+		{ dev, dir, outDir, distDir, buildId }
+	) {
+		return {
+			"/": { page: "/" },
+			"/projects": { page: "/projects" },
+			...staticRouter.getProjects()
+		};
 	}
 };

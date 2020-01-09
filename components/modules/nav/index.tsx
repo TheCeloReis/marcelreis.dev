@@ -28,6 +28,9 @@ const NavContainer = styled.div`
 `;
 
 const NavList: any = styled.ul`
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 	position: absolute;
 	top: 4rem;
 	width: 100%;
@@ -45,10 +48,9 @@ const NavList: any = styled.ul`
 	@media screen and (min-width: 768px) {
 		position: static;
 		height: 100%;
-		width: 33%;
+		width: 25%;
 		justify-content: space-between;
 		align-items: center;
-		padding-right: 72px;
 	}
 `;
 
@@ -111,11 +113,7 @@ const MenuIcon = styled(Menu)`
 	}
 `;
 
-type PropsType = {
-	toggleTheme: () => void;
-};
-
-export default function Nav(props: PropsType) {
+export default function Nav() {
 	const [activeNavbar, setActiveNavbar] = useState(false);
 
 	const closeNavbar = () => {
@@ -139,21 +137,20 @@ export default function Nav(props: PropsType) {
 					<NavList active={activeNavbar}>
 						<NavItem onClick={closeNavbar}>
 							<Link href="/">
-								<a>Sobre</a>
+								<a>home</a>
 							</Link>
 						</NavItem>
 						<NavItem onClick={closeNavbar}>
 							<Link href="/projects">
-								<a>Projetos</a>
+								<a>projects</a>
 							</Link>
 						</NavItem>
 						<NavItem onClick={closeNavbar}>
 							<Link href="/blog">
-								<a>Blog</a>
+								<a>blog</a>
 							</Link>
 						</NavItem>
 					</NavList>
-					<DarkModeBtn toogleTheme={props.toggleTheme} />
 				</NavContainer>
 			</NavBackground>
 			<div style={{ height: "4rem" }} />
