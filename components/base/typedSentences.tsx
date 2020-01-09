@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
 const Text = styled.h1`
+	font-size: 1.8em;
 	user-select: none;
 	color: #fff;
 	width: 100%;
@@ -34,9 +35,9 @@ type PropsType = {
 };
 
 export default function TypedSentences(props: PropsType) {
-	const [index, setIndex] = useState(-1);
-	const [renderedLetters, setRenderedLetters] = useState("");
-	const [currentSentence, setCurrentSentence] = useState("");
+	const [index, setIndex] = useState(17);
+	const [renderedLetters, setRenderedLetters] = useState(props.sentences[0]);
+	const [currentSentence, setCurrentSentence] = useState(props.sentences[0]);
 	const [typing, setTyping] = useState(true);
 
 	const router = useRouter();
@@ -44,15 +45,14 @@ export default function TypedSentences(props: PropsType) {
 	useEffect(() => {
 		if (process.browser) {
 			const start = () => {
-				setCurrentSentence(props.sentences[0]);
-				setIndex(0);
+				setTyping(false);
 			};
 
 			let notCleared = true;
 			const timeout = setTimeout(() => {
 				start();
 				notCleared = false;
-			}, 500);
+			}, 3000);
 
 			window.onload = () => {
 				if (notCleared) {
@@ -67,59 +67,52 @@ export default function TypedSentences(props: PropsType) {
 		}
 	}, [props.sentences, router.pathname]);
 
-	function nextSentence() {
-		if (props.sentences.length > props.sentences.indexOf(currentSentence) + 1) {
-			setCurrentSentence(
-				props.sentences[props.sentences.indexOf(currentSentence) + 1]
-			);
-		} else {
-			setCurrentSentence(props.sentences[0]);
-		}
-	}
-
-	function typeText() {
-		if (renderedLetters.length === currentSentence.length) {
-			setTimeout(() => {
-				setTyping(false);
-				setIndex(0);
-			}, 2000);
-		} else {
-			setRenderedLetters(currentSentence.slice(0, index));
-			setIndex(index + 1);
-		}
-	}
-
-	function deleteText() {
-		if (renderedLetters.length <= 1) {
-			setTimeout(() => {
-				setTyping(true);
-				setIndex(0);
-				nextSentence();
-			}, 500);
-		} else {
-			const i = currentSentence.length - index;
-			setRenderedLetters(currentSentence.slice(0, i < 2 ? 0 : i));
-			setIndex(index + 2);
-		}
-	}
-
-	function sentenceHandler() {
+	const memoizedSentenceHandler = useCallback(() => {
 		if (typing) {
-			typeText();
-		} else {
-			deleteText();
+			if (renderedLetters.length === currentSentence.length) {
+				setTimeout(() => {
+					setTyping(false);
+					setIndex(0);
+				}, 2000);
+			} else {
+				setRenderedLetters(currentSentence.slice(0, index));
+				setIndex(index + 1);
+			}
 		}
-	}
+
+		if (!typing) {
+			if (renderedLetters.length <= 1) {
+				setTimeout(() => {
+					setTyping(true);
+					setIndex(0);
+
+					if (
+						props.sentences.length >
+						props.sentences.indexOf(currentSentence) + 1
+					) {
+						setCurrentSentence(
+							props.sentences[props.sentences.indexOf(currentSentence) + 1]
+						);
+					} else {
+						setCurrentSentence(props.sentences[0]);
+					}
+				}, 500);
+			} else {
+				const i = currentSentence.length - index;
+				setRenderedLetters(currentSentence.slice(0, i < 2 ? 0 : i));
+				setIndex(index + 2);
+			}
+		}
+	}, [currentSentence, index, props.sentences, renderedLetters.length, typing]);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			sentenceHandler();
+			memoizedSentenceHandler();
 		}, props.speed);
 		return () => {
 			clearTimeout(timer);
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [index]);
+	}, [index, memoizedSentenceHandler, props.speed]);
 
 	return <Text>{renderedLetters}</Text>;
 }
