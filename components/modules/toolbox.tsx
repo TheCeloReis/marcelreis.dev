@@ -139,7 +139,7 @@ export default function Toolbox2() {
 	return (
 		<Container>
 			<ToolboxButton>
-				<ToolboxIcon size="128" onClick={playAnimation}>
+				<ToolboxIcon size="128" onClick={playAnimation} role="img" >
 					<title>Toolbox</title>
 				</ToolboxIcon>
 				Veja
