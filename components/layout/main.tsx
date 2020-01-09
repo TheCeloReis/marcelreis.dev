@@ -43,15 +43,15 @@ export default function MainLayout(props: PropsType) {
 				<link
 					href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap"
 					rel="stylesheet"
-				></link>
+				/>
 				<title>{props.title}</title>
-				<meta name="theme-color" content={themes[theme].color.primary} />
+				<meta name="theme-color" content={themes[1].color.primary} />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="description" content={props.description} />
 			</NextHead>
-			<ThemeProvider theme={themes[theme]}>
+			<ThemeProvider theme={themes[1]}>
 				<>
-					<Nav toggleTheme={toggleTheme} />
+					<Nav />
 					{props.children}
 					<Footer />
 				</>
