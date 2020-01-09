@@ -17,29 +17,17 @@ type PropsType = {
 };
 
 export default function MainLayout(props: PropsType) {
-	const [theme, setTheme] = useState(1);
-
-	const toggleTheme = () => setTheme(Number(!theme));
-
 	useEffect(() => {
 		if (!(window as any).GA_INITIALIZED) {
 			initGA();
 			(window as any).GA_INITIALIZED = true;
 		}
-
-		const currentTheme = window.localStorage.getItem("theme");
-		if (process.browser && currentTheme !== null) {
-			const themeNumber = parseInt(currentTheme);
-			if (!isNaN(themeNumber) && themeNumber !== theme) {
-				setTheme(themeNumber);
-			}
-		}
-	}, [theme]);
+	}, []);
 
 	return (
 		<>
 			<NextHead>
-				<link rel="icon" href="static/icon.png" type="image/x-icon" />
+				<link rel="icon" href="static/img/icon.png" type="image/x-icon" />
 				<link
 					href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap"
 					rel="stylesheet"
