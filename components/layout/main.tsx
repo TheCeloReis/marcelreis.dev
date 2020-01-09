@@ -29,8 +29,9 @@ export default function MainLayout(props: PropsType) {
 			<NextHead>
 				<link rel="icon" href="static/img/icon.png" type="image/x-icon" />
 				<link
+					rel="preload"
 					href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap"
-					rel="stylesheet"
+					as="style"
 				/>
 				<title>{props.title}</title>
 				<meta name="theme-color" content={themes[1].color.primary} />
