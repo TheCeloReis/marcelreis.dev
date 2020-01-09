@@ -45,7 +45,7 @@ const Skill: any = styled.li`
 	}};
 
 	animation-name: ${(props: any) => outOfBox(props.order)};
-	animation-duration: 2s;
+	animation-duration: 1.2s;
 	animation-timing-function: linear;
 	animation-play-state: ${(props: any) => (props.open ? "running" : "paused")};
 
@@ -86,7 +86,7 @@ const ToolboxButton = styled.button`
 	font-size: 0;
 
 	transform: translate(-4px, -4px);
-	box-shadow: 4px 8px 6px #888888;
+	box-shadow: 4px 8px 6px ${(props: any) => props.theme.color.gray800};
 	transition: 0.3s ease;
 
 	&:hover {
@@ -125,21 +125,21 @@ export default function Toolbox2() {
 
 		setTimeout(() => {
 			setOpenReact(true);
-		}, 300);
+		}, 200);
 
 		setTimeout(() => {
 			setOpenCss(true);
-		}, 600);
+		}, 400);
 
 		setTimeout(() => {
 			setOpenJquery(true);
-		}, 900);
+		}, 600);
 	};
 
 	return (
 		<Container>
 			<ToolboxButton>
-				<ToolboxIcon size="128" onClick={playAnimation} role="img" >
+				<ToolboxIcon size="128" onClick={playAnimation} role="img">
 					<title>Toolbox</title>
 				</ToolboxIcon>
 				Veja
