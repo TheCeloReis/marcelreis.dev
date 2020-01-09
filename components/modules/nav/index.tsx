@@ -146,7 +146,7 @@ export default function Nav() {
 							</Link>
 						</NavItem>
 						<NavItem onClick={closeNavbar}>
-							<Link href="/blog">
+							<Link href="/">
 								<a>blog</a>
 							</Link>
 						</NavItem>
