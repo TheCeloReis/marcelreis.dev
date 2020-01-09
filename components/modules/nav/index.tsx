@@ -5,7 +5,6 @@ import { Menu } from "styled-icons/material/Menu";
 
 import styled from "styled-components";
 import Logo from "./logo";
-import DarkModeBtn from "./darkModeBtn";
 
 const NavBackground: any = styled.nav`
 	position: fixed;
