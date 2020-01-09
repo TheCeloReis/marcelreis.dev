@@ -88,7 +88,7 @@ export default function Card(props: PropsType) {
 					<span>{props.overlayText}</span>
 				</Overlay>
 				<StyledButton>
-					<a href={props.url}>MAIS</a>
+					<a href={props.url}>INFO</a>
 				</StyledButton>
 			</ImageContainer>
 		</Container>
