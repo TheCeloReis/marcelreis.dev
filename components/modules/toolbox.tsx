@@ -83,6 +83,7 @@ const ToolboxButton = styled.button`
 	background: ${(props: any) => props.theme.color.primary};
 	border-radius: 64px;
 	z-index: 10;
+	font-size: 0;
 
 	transform: translate(-4px, -4px);
 	box-shadow: 4px 8px 6px #888888;
@@ -138,7 +139,10 @@ export default function Toolbox2() {
 	return (
 		<Container>
 			<ToolboxButton>
-				<ToolboxIcon size="128" onClick={playAnimation} />
+				<ToolboxIcon size="128" onClick={playAnimation} role="img" >
+					<title>Toolbox</title>
+				</ToolboxIcon>
+				Veja
 			</ToolboxButton>
 
 			<SkillsRow active={startAnimation}>
