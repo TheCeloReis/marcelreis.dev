@@ -34,6 +34,7 @@ export default function MainLayout(props: PropsType) {
 					as="style"
 				/>
 				<title>{props.title}</title>
+				<link rel="preconnect" href="https://www.google-analytics.com"></link>
 				<meta name="theme-color" content={themes[1].color.primary} />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="description" content={props.description} />
