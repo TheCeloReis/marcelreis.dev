@@ -3,5 +3,17 @@
   publish = "out/"
   command = "npm run build"
 
-[context.branch-deploy.environment]
+[context.deploy-preview.environment]
   NODE_ENV = "development"
+
+[[redirects]]
+  from = "/admin"
+  to = "/static/admin/index.html"
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "frame-ancestors https://www.facebook.com"  
