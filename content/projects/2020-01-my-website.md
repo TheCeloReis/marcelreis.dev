@@ -15,3 +15,4 @@ highlight: '3'
 * Next.js
 * Styled Components
 * Netlify CMS
+* Google Analytics (Sim eu, estou monitorando seu acesso)

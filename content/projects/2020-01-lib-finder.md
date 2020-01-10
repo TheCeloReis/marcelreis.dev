@@ -9,6 +9,7 @@ description: >-
 thumbnail: /static/img/200-lib-finder.jpg
 highlight: '2'
 ---
+## Principais Tecnologias
 * JavaScript 
 * CSS3
 * HTML5
