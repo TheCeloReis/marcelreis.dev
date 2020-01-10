@@ -64,7 +64,7 @@ const Image = styled.img`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	background-color: ${({ theme }) => theme.color.gray500};
+	background-color: ${({ theme }) => theme.color.gray[5]};
 `;
 
 type PropsType = {

@@ -43,31 +43,27 @@ export const GlobalStyle = createGlobalStyle`
 	}
 `;
 
-const commonColors = {
-	gray50: "#fafafa",
-	gray100: "#f5f5f5",
-	gray200: "#eeeeee",
-	gray300: "#e0e0e0",
-	gray400: "#bdbdbd",
-	gray500: "#9e9e9e",
-	gray600: "#757575",
-	gray700: "#616161",
-	gray800: "#424242",
-	gray900: "#212121"
-};
-const commonTheme = {
+export const jsTheme = {
 	boxShadow: [
 		"none",
 		"rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px",
 		"rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px",
 		"rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px"
-	]
-};
-const jsTheme = {
-	...commonTheme,
+	],
 	darkTheme: false,
 	color: {
-		...commonColors,
+		gray: [
+			"#fafafa",
+			"#f5f5f5",
+			"#eeeeee",
+			"#e0e0e0",
+			"#bdbdbd",
+			"#9e9e9e",
+			"#757575",
+			"#616161",
+			"#424242",
+			"#212121"
+		],
 		primaryL: "#F8E542",
 		primary: "#F7E019",
 		primaryD: "#CBB815",
@@ -81,22 +77,4 @@ const jsTheme = {
 		baseD: "#ddd"
 	}
 };
-const tsTheme = {
-	...commonTheme,
-	darkTheme: true,
-	color: {
-		...commonColors,
-		primaryL: "#2E92D5",
-		primary: "#007ACC",
-		primaryD: "#0064A7",
-
-		contrastH: "#fff",
-		contrast: "#eee",
-		contrastL: "#ddd",
-
-		baseL: "#333",
-		base: "#242124",
-		baseD: "#111"
-	}
-};
-export const themes = [jsTheme, tsTheme];
+export const themes = [jsTheme];

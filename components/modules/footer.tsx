@@ -18,7 +18,7 @@ const FooterContainer = styled.footer`
 		transition: 0.3s;
 		margin: 0.5rem 2rem;
 		:hover {
-			color: ${(props: any) => props.theme.color.gray500};
+			color: ${(props: any) => props.theme.color.gray[5]};
 		}
 	}
 `;

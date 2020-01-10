@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import NextHead from "next/head";
 
 import { initGA } from "../../utils/analytics";
 
-import { GlobalStyle } from "../../theme";
+import { GlobalStyle, jsTheme } from "../../theme";
 import { ThemeProvider } from "styled-components";
-import { themes } from "../../theme";
 
 import Nav from "../modules/nav";
 import Footer from "../modules/footer";
@@ -35,11 +34,11 @@ export default function MainLayout(props: PropsType) {
 				/>
 				<title>{props.title}</title>
 				<link rel="preconnect" href="https://www.google-analytics.com"></link>
-				<meta name="theme-color" content={themes[1].color.primary} />
+				<meta name="theme-color" content={jsTheme.color.primary} />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="description" content={props.description} />
 			</NextHead>
-			<ThemeProvider theme={themes[1]}>
+			<ThemeProvider theme={jsTheme}>
 				<>
 					<Nav />
 					{props.children}

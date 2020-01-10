@@ -86,7 +86,7 @@ const ToolboxButton = styled.button`
 	font-size: 0;
 
 	transform: translate(-4px, -4px);
-	box-shadow: 4px 8px 6px ${(props: any) => props.theme.color.gray800};
+	box-shadow: 4px 8px 6px ${(props: any) => props.theme.color.gray[8]};
 	transition: 0.3s ease;
 
 	&:hover {
