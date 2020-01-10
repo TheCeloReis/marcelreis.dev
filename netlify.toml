@@ -3,5 +3,5 @@
   publish = "out/"
   command = "npm run build"
 
-[context.branch-deploy.environment]
+[context.deploy-preview.environment]
   NODE_ENV = "development"
