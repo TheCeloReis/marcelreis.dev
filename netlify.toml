@@ -5,3 +5,7 @@
 
 [context.deploy-preview.environment]
   NODE_ENV = "development"
+
+[[redirects]]
+  from = "/admin"
+  to = "/static/admin/index.html"
