@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
+
 import { Button } from "./button";
 
 const Container = styled.div`
@@ -89,7 +91,9 @@ export default function Card(props: PropsType) {
 					<span>{props.overlayText}</span>
 				</Overlay>
 				<StyledButton>
-					<a href={props.url}>INFO</a>
+					<Link href={props.url}>
+						<a>INFO</a>
+					</Link>
 				</StyledButton>
 			</ImageContainer>
 		</Container>
