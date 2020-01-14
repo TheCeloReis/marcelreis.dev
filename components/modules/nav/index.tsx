@@ -37,6 +37,7 @@ const NavList: any = styled.ul`
 	display: flex;
 
 	@media screen and (max-width: 767px) {
+		position: fixed;
 		right: 100%;
 		flex-direction: column;
 		transform: ${(props: any) =>

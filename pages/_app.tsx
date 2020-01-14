@@ -9,7 +9,9 @@ import Footer from "../components/modules/footer";
 
 const BackdropTransition = styled.div`
 	transform: translateY(-100%);
-	transition: transform 300ms;
+	transition: 300ms;
+	transition-timing-function: ease;
+	transition-property: transform;
 	z-index: 80;
 	background-color: ${(props: any) => props.theme.color.contrast};
 	position: fixed;
