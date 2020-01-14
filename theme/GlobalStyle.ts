@@ -11,26 +11,15 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
   }
     
-  * {
+  body {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     box-sizing: border-box;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  li,
-  p,
-  div,
-  span,
-  button,
-  body {
-    padding: 0;
-    margin: 0;
+  * {
+    box-sizing: inherit;
   }
+
   a {
     color: ${({ theme }) => theme.colors.main[7]};
     transition: color 300ms ease;
