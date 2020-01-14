@@ -5,7 +5,7 @@ import { PageTransition } from "next-page-transitions";
 import Nav from "../components/modules/nav";
 import Footer from "../components/modules/footer";
 import JsTheme from "../theme/jsTheme";
-import { GlobalStyle } from "../theme";
+import { GlobalStyle } from "../theme/GlobalStyle";
 
 const BackdropTransition = styled.div`
 	transform: translateY(-100%);
