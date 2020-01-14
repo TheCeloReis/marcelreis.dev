@@ -60,13 +60,10 @@ const NavList: any = styled.ul`
 const NavItem = styled.li`
 	height: 1.75rem;
 	transition: transform ease 0.6s;
-	border-bottom: 0.25rem solid transparent;
+	text-align: center;
 	display: block;
 	font-weight: 700;
 	font-size: 1.25rem;
-	font-family: Arial, Helvetica, sans-serif;
-	text-transform: lowercase;
-	text-align: center;
 
 	&::after {
 		content: " ";
