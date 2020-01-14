@@ -84,7 +84,7 @@ const Post = (props: PropsType) => {
 								<li key={project.attributes.url}>
 									<Link
 										href={"/projects/[project]"}
-										as={"/project/" + project.attributes.url}
+										as={"/projects/" + project.attributes.url}
 									>
 										<a>{project.attributes.title}</a>
 									</Link>
