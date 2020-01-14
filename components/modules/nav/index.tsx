@@ -5,12 +5,14 @@ import { Menu } from "styled-icons/material/Menu";
 
 import styled from "styled-components";
 import Logo from "./logo";
+import DarkModeButton from "./darkModeButton";
 
 const NavBackground: any = styled.nav`
 	position: fixed;
 	z-index: 100;
 	width: 100%;
 	height: 4rem;
+	transition: background-color 0.3s;
 	background-color: ${(props: any) => props.theme.color.primary};
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
@@ -41,14 +43,15 @@ const NavList: any = styled.ul`
 		right: 100%;
 		flex-direction: column;
 		transform: ${(props: any) =>
-		props.active ? "translateX(100%)" : "translateX(0%)"};
+			props.active ? "translateX(100%)" : "translateX(0%)"};
 		background-color: ${(props: any) => props.theme.color.gray[9]};
 		transition: transform 0.3s ease;
 	}
 	@media screen and (min-width: 768px) {
 		position: static;
+		padding-right: 72px;
 		height: 100%;
-		width: 25%;
+		width: 40%;
 		justify-content: space-between;
 		align-items: center;
 	}
@@ -89,6 +92,7 @@ const NavItem = styled.li`
 		margin: 0;
 
 		a {
+			transition: color 0.3s;
 			color: ${(props: any) => props.theme.color.contrast};
 		}
 
@@ -105,6 +109,7 @@ const NavItem = styled.li`
 `;
 
 const MenuIcon = styled(Menu)`
+	transition: color 0.3s;
 	color: ${(props: any) => props.theme.color.contrast};
 	padding: 1rem;
 
@@ -113,7 +118,11 @@ const MenuIcon = styled(Menu)`
 	}
 `;
 
-export default function Nav() {
+type PropsType = {
+	toogleDarkMode: () => void;
+};
+
+export default function Nav(props: PropsType) {
 	const [activeNavbar, setActiveNavbar] = useState(false);
 
 	const closeNavbar = () => {
@@ -151,6 +160,7 @@ export default function Nav() {
 							</Link>
 						</NavItem>
 					</NavList>
+					<DarkModeButton toogleTheme={props.toogleDarkMode} />
 				</NavContainer>
 			</NavBackground>
 			<div style={{ height: "4rem" }} />

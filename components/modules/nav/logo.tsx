@@ -20,7 +20,7 @@ const Container = styled.div`
 	}
 
 	@media screen and (min-width: 768px) {
-		width: 75%;
+		width: 60%;
 		div {
 			position: relative;
 			border: solid ${(props: any) => props.theme.color.contrast} 2px;
