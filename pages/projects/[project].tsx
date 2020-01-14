@@ -82,7 +82,10 @@ const Post = (props: PropsType) => {
 						{getProjects().map(project => {
 							return (
 								<li key={project.attributes.url}>
-									<Link href={"/projects/" + project.attributes.url}>
+									<Link
+										href={"/projects/[project]"}
+										as={"/project/" + project.attributes.url}
+									>
 										<a>{project.attributes.title}</a>
 									</Link>
 								</li>

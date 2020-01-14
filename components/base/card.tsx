@@ -91,7 +91,7 @@ export default function Card(props: PropsType) {
 					<span>{props.overlayText}</span>
 				</Overlay>
 				<StyledButton>
-					<Link href={props.url}>
+					<Link href="/projects/[project]" as={"/projects/" + props.url}>
 						<a>INFO</a>
 					</Link>
 				</StyledButton>
