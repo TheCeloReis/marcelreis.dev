@@ -13,7 +13,7 @@ const BackdropTransition = styled.div`
 	transition-timing-function: ease;
 	transition-property: transform;
 	z-index: 80;
-	background-color: ${({ theme }) => theme.colors.base[5]};
+	background-color: ${({ theme }) => theme.colors.base[1]};
 	border-bottom: solid 2px ${({ theme }) => theme.colors.base[5]};
 	position: fixed;
 	width: 100%;

@@ -42,7 +42,8 @@ const NavList: any = styled(Ul)`
 		flex-direction: column;
 		transform: ${(props: any) =>
 			props.active ? "translateX(100%)" : "translateX(0%)"};
-		background-color: ${({ theme }) => theme.colors.gray[9]};
+
+		background-color: ${({ theme }) => theme.colors.gray[8]};
 		transition: transform 0.3s ease;
 	}
 	@media screen and (min-width: 768px) {
