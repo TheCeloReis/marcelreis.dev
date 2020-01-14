@@ -41,6 +41,28 @@ export const GlobalStyle = createGlobalStyle`
 		border: none;
 		cursor: pointer;
 	}
+
+	/* PAGE TRANSITION */
+	.pt-enter {
+		.pt-backdrop {
+			transform: translateY(0);
+		}
+	}
+	.pt-enter-active {
+		.pt-backdrop {
+			transform: translateY(-100%);
+		}
+	}
+	.pt-exit {
+		.pt-backdrop {
+			transform: translateY(-100%);
+		}
+	}
+	.pt-exit-active {
+		.pt-backdrop {
+			transform: translateY(0);
+		}
+	}
 `;
 
 export const jsTheme = {

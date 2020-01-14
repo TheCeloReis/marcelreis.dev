@@ -3,11 +3,7 @@ import NextHead from "next/head";
 
 import { initGA } from "../../utils/analytics";
 
-import { GlobalStyle, jsTheme } from "../../theme";
-import { ThemeProvider } from "styled-components";
-
-import Nav from "../modules/nav";
-import Footer from "../modules/footer";
+import { jsTheme } from "../../theme";
 
 type PropsType = {
 	title: string;
@@ -38,14 +34,7 @@ export default function MainLayout(props: PropsType) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="description" content={props.description} />
 			</NextHead>
-			<ThemeProvider theme={jsTheme}>
-				<>
-					<Nav />
-					{props.children}
-					<Footer />
-				</>
-				<GlobalStyle />
-			</ThemeProvider>
+			{props.children}
 		</>
 	);
 }
