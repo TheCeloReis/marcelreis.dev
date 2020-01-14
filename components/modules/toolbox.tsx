@@ -38,10 +38,10 @@ const Skill: any = styled.li`
 		return props.order === 0
 			? "translate(-100%, 0)"
 			: props.order === 1
-				? "translate(0%, 0)"
-				: props.order === 2
-					? "translate(100%, 0)"
-					: 0;
+			? "translate(0%, 0)"
+			: props.order === 2
+			? "translate(100%, 0)"
+			: 0;
 	}};
 
 	animation-name: ${(props: any) => outOfBox(props.order)};
@@ -80,28 +80,28 @@ const IconContainer: any = styled.div`
 const ToolboxButton = styled.button`
 	margin: 0 auto 3.5rem auto;
 	height: 128px;
-	background: ${(props: any) => props.theme.color.primary};
+	background: ${({ theme }) => theme.colors.main[5]};
 	border-radius: 64px;
 	z-index: 10;
 	font-size: 0;
 
 	transform: translate(-4px, -4px);
-	box-shadow: 4px 8px 6px ${(props: any) => props.theme.color.gray[8]};
+	box-shadow: 4px 8px 6px ${({ theme }) => theme.colors.gray[8]};
 	transition: 0.3s ease;
 
 	&:hover {
 		transform: translate(0px, 0px);
 		box-shadow: none;
-		background: ${(props: any) => props.theme.color.primaryD};
+		background: ${({ theme }) => theme.colors.main[7]};
 
 		svg {
-			color: ${(props: any) => props.theme.color.contrastL};
+			color: ${({ theme }) => theme.colors.contrast[5]};
 		}
 	}
 `;
 
 const ToolboxIcon = styled(Toolbox)`
-	color: ${(props: any) => props.theme.color.contrast};
+	color: ${({ theme }) => theme.colors.contrast[3]};
 	padding: 2rem;
 `;
 const ReactIcon = styled(ReactLogo)`

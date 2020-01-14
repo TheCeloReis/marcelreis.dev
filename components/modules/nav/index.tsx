@@ -14,7 +14,7 @@ const NavBackground: any = styled.nav`
 	width: 100%;
 	height: 4rem;
 	transition: background-color 0.3s;
-	background-color: ${(props: any) => props.theme.color.primary};
+	background-color: ${({ theme }) => theme.colors.main[5]};
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
 
@@ -42,7 +42,7 @@ const NavList: any = styled(Ul)`
 		flex-direction: column;
 		transform: ${(props: any) =>
 			props.active ? "translateX(100%)" : "translateX(0%)"};
-		background-color: ${(props: any) => props.theme.color.gray[9]};
+		background-color: ${({ theme }) => theme.colors.gray[9]};
 		transition: transform 0.3s ease;
 	}
 	@media screen and (min-width: 768px) {
@@ -67,7 +67,7 @@ const NavItem = styled.li`
 		content: " ";
 		display: block;
 		width: 100%;
-		background-color: ${(props: any) => props.theme.color.contrast};
+		background-color: ${({ theme }) => theme.colors.contrast[3]};
 		margin-top: 0.5rem;
 	}
 
@@ -88,7 +88,7 @@ const NavItem = styled.li`
 
 		a {
 			transition: color 0.3s;
-			color: ${(props: any) => props.theme.color.contrast};
+			color: ${({ theme }) => theme.colors.contrast[3]};
 		}
 
 		&::after {
@@ -105,7 +105,7 @@ const NavItem = styled.li`
 
 const MenuIcon = styled(Menu)`
 	transition: color 0.3s;
-	color: ${(props: any) => props.theme.color.contrast};
+	color: ${({ theme }) => theme.colors.contrast[3]};
 	padding: 1rem;
 
 	@media screen and (min-width: 768px) {

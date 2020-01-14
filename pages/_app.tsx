@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { PageTransition } from "next-page-transitions";
 
-import { jsTheme, GlobalStyle, tsTheme } from "../theme";
-
 import Nav from "../components/modules/nav";
 import Footer from "../components/modules/footer";
+import JsTheme from "../theme/jsTheme";
+import { GlobalStyle } from "../theme";
 
 const BackdropTransition = styled.div`
 	transform: translateY(-100%);
@@ -13,8 +13,8 @@ const BackdropTransition = styled.div`
 	transition-timing-function: ease;
 	transition-property: transform;
 	z-index: 80;
-	background-color: ${(props: any) => props.theme.color.base};
-	border-bottom: solid 2px ${(props: any) => props.theme.color.baseL};
+	background-color: ${({ theme }) => theme.colors.base[5]};
+	border-bottom: solid 2px ${({ theme }) => theme.colors.base[5]};
 	position: fixed;
 	width: 100%;
 	height: calc(100vh - 64px);
@@ -38,7 +38,7 @@ function App({ Component, pageProps, router }: any) {
 	};
 
 	return (
-		<ThemeProvider theme={darkMode ? tsTheme : jsTheme}>
+		<ThemeProvider theme={darkMode ? JsTheme : JsTheme}>
 			<Nav toogleDarkMode={toggleDarkMode} />
 			<PageTransition timeout={400} classNames="pt" skipInitialTransition>
 				<>

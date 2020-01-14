@@ -10,7 +10,7 @@ const Container = styled.div`
 	cursor: default;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 700;
-	color: ${(props: any) => props.theme.color.contrast};
+	color: ${({ theme }) => theme.colors.contrast[3]};
 
 	span {
 		padding: 1rem;
@@ -23,7 +23,7 @@ const Container = styled.div`
 		width: 60%;
 		div {
 			position: relative;
-			border: solid ${(props: any) => props.theme.color.contrast} 2px;
+			border: solid 2px ${({ theme }) => theme.colors.contrast[3]};
 			font-size: 1rem;
 			height: 3rem;
 			width: 3rem;

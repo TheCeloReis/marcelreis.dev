@@ -10,7 +10,7 @@ const StyledButton = styled(Button)`
 	top: 8px;
 	right: 8px;
 	width: 48px;
-	background-color: ${({ theme }) => theme.color.primaryL};
+	background-color: ${({ theme }) => theme.colors.main[3]};
 	border-radius: 4px;
 	box-shadow: ${({ theme }) => theme.boxShadow[1]};
 

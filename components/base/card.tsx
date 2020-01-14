@@ -15,7 +15,7 @@ const StyledButton = styled(Button)`
 	left: 25%;
 
 	border-radius: 8px 8px 0 0;
-	background-color: ${({ theme }) => theme.color.baseL};
+	background-color: ${({ theme }) => theme.colors.base[5]};
 
 	a {
 		color: inherit;
@@ -29,7 +29,7 @@ const Overlay = styled.div`
 	width: 100%;
 	opacity: 0;
 	transition: 0.3s ease;
-	background-color: ${({ theme }) => theme.color.primaryL}d0;
+	background-color: ${({ theme }) => theme.colors.main[3]};
 	user-select: none;
 
 	span {
@@ -38,7 +38,7 @@ const Overlay = styled.div`
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		color: ${({ theme }) => theme.color.contrastH};
+		color: ${({ theme }) => theme.colors.contrast[1]};
 		font-weight: bold;
 		font-size: 1.25rem;
 	}
@@ -66,7 +66,7 @@ const Image = styled.img`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	background-color: ${({ theme }) => theme.color.gray[5]};
+	background-color: ${({ theme }) => theme.colors.gray[5]};
 `;
 
 type PropsType = {

@@ -7,18 +7,18 @@ import styled from "styled-components";
 const FooterContainer = styled.footer`
 	width: 100%;
 	height: 3rem;
-	background-color: ${(props: any) => props.theme.color.primary};
+	background-color: ${({ theme }) => theme.colors.main[5]};
 	display: flex;
 	justify-content: center;
 	position: absolute;
 	bottom: 0;
 
 	svg {
-		color: ${(props: any) => props.theme.color.contrastH};
+		color: ${({ theme }) => theme.colors.contrast[1]};
 		transition: 0.3s;
 		margin: 0.5rem 2rem;
 		:hover {
-			color: ${(props: any) => props.theme.color.gray[5]};
+			color: ${({ theme }) => theme.colors.gray[5]};
 		}
 	}
 `;

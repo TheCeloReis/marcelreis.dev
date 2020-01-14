@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Background = styled.section`
 	display: flex;
 	width: 100%;
-	background-color: ${({ theme }) => theme.color.base};
+	background-color: ${({ theme }) => theme.colors.main[5]};
 	justify-content: center;
 
 	:only-of-type {
@@ -20,7 +20,7 @@ const Container = styled.div`
 	padding: 1rem;
 	max-width: 800px;
 	width: 100%;
-	background-color: ${({ theme }) => theme.color.baseL};
+	background-color: ${({ theme }) => theme.colors.base[5]};
 
 	@media screen and (min-width: 600px) {
 		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
