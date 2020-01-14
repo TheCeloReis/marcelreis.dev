@@ -11,7 +11,7 @@ const Text = styled.h1`
 
 	::after {
 		position: absolute;
-		height: 3.5rem;
+		height: 3rem;
 		content: "";
 		border-left: 0.1em solid white;
 		margin-left: 0.5rem;

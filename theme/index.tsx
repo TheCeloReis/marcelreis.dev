@@ -65,14 +65,13 @@ export const GlobalStyle = createGlobalStyle`
 	}
 `;
 
-export const jsTheme = {
+const baseTheme = {
 	boxShadow: [
 		"none",
 		"rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px",
 		"rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px",
 		"rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px"
 	],
-	darkTheme: false,
 	color: {
 		gray: [
 			"#fafafa",
@@ -85,7 +84,15 @@ export const jsTheme = {
 			"#616161",
 			"#424242",
 			"#212121"
-		],
+		]
+	}
+};
+
+export const jsTheme = {
+	...baseTheme,
+	darkTheme: false,
+	color: {
+		...baseTheme.color,
 		primaryL: "#F8E542",
 		primary: "#F7E019",
 		primaryD: "#CBB815",
@@ -99,4 +106,24 @@ export const jsTheme = {
 		baseD: "#ddd"
 	}
 };
-export const themes = [jsTheme];
+
+export const tsTheme = {
+	...baseTheme,
+	darkTheme: true,
+	color: {
+		...baseTheme.color,
+		primaryL: "#2E92D5",
+		primary: "#007ACC",
+		primaryD: "#0064A7",
+
+		contrastH: "#fff",
+		contrast: "#eee",
+		contrastL: "#ddd",
+
+		baseL: "#333",
+		base: "#242124",
+		baseD: "#111"
+	}
+};
+
+export const themes = [jsTheme, tsTheme];
