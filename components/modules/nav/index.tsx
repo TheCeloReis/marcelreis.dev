@@ -6,6 +6,7 @@ import { Menu } from "styled-icons/material/Menu";
 import styled from "styled-components";
 import Logo from "./logo";
 import DarkModeButton from "./darkModeButton";
+import { Ul } from "../../base/list";
 
 const NavBackground: any = styled.nav`
 	position: fixed;
@@ -28,10 +29,7 @@ const NavContainer = styled.div`
 	}
 `;
 
-const NavList: any = styled.ul`
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+const NavList: any = styled(Ul)`
 	position: absolute;
 	top: 4rem;
 	width: 100%;
@@ -140,7 +138,7 @@ export default function Nav(props: PropsType) {
 				<NavContainer>
 					<MenuIcon size={64} onClick={toggleNavbar} />
 					<Logo onClick={closeNavbar} />
-					<NavList active={activeNavbar}>
+					<NavList simple horizontal active={activeNavbar}>
 						<NavItem onClick={closeNavbar}>
 							<Link href="/">
 								<a>home</a>

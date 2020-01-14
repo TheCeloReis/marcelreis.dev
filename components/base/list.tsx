@@ -5,7 +5,10 @@ export const Ul: any = styled.ul`
 	padding: ${(props: any) => (props.simple ? "0" : "")};
 	margin: ${(props: any) => (props.simple ? "0" : "")};
 
-	li:not(:last-of-type) {
-		margin-bottom: 0.5rem;
+	${(props: any) =>
+		props.horizontal ? "" : "li:not(:last-of-type) { margin-bottom: 0.5rem; }"};
+
+	a {
+		color: ${({ theme }) => "#fff"};
 	}
 `;
