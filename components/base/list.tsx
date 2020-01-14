@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export const Ul: any = styled.ul`
-	list-style: ${(props: any) => (props.simple ? "none" : "")};
-	padding: ${(props: any) => (props.simple ? "0" : "")};
-	margin: ${(props: any) => (props.simple ? "0" : "")};
+export const Ul: any = styled.ul<{ simple: boolean; horizontal: boolean }>`
+	list-style: ${props => (props.simple ? "none" : "")};
+	padding: ${props => (props.simple ? "0" : "")};
+	margin: ${props => (props.simple ? "0" : "")};
 
-	${(props: any) =>
+	${props =>
 		props.horizontal ? "" : "li:not(:last-of-type) { margin-bottom: 0.5rem; }"};
 
 	a {
-		color: ${({ theme }) => "#fff"};
+		color: ${({ theme }) => theme.colors.contrast[1]};
 	}
 `;
