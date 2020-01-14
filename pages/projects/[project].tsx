@@ -10,7 +10,7 @@ import Section from "../../components/base/section";
 import { Content } from "../../components/base/content";
 import styled from "styled-components";
 import ProjectLinks from "../../components/modules/projectLinks";
-import Link from "next/link";
+import SideSection from "../../components/modules/sideSection";
 
 const StyledSection = styled(Section)`
 	display: grid;
@@ -49,6 +49,14 @@ const Post = (props: PropsType) => {
 		return <Redirect path="/projects" />;
 	}
 
+	const links = getProjects().map(project => {
+		return {
+			title: project.attributes.title,
+			href: "/projects/[project]",
+			as: "/projects/" + project.attributes.url
+		};
+	});
+
 	return (
 		<Head
 			title={props.project.attributes.title}
@@ -76,23 +84,7 @@ const Post = (props: PropsType) => {
 
 					<Content dangerouslySetInnerHTML={{ __html: props.project.html }} />
 				</main>
-				<div>
-					<p>Outros Projetos</p>
-					<ul>
-						{getProjects().map(project => {
-							return (
-								<li key={project.attributes.url}>
-									<Link
-										href={"/projects/[project]"}
-										as={"/projects/" + project.attributes.url}
-									>
-										<a>{project.attributes.title}</a>
-									</Link>
-								</li>
-							);
-						})}
-					</ul>
-				</div>
+				<SideSection title="Outros Projetos" links={links} />
 			</StyledSection>
 		</Head>
 	);
