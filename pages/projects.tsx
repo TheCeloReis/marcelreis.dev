@@ -36,7 +36,6 @@ function Projects(props: PropsType) {
 								key={project.attributes.url}
 								overlayText={project.attributes.title}
 								title={project.attributes.description}
-								url={project.attributes.url}
 								img200={project.attributes.thumbnail}
 								link={{
 									href: "/projects/[project]",
