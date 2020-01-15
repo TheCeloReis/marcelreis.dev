@@ -7,6 +7,29 @@ declare module "styled-components" {
 		borderRadius: string[];
 		boxShadow: string[];
 
+		media: {
+			lessThan: {
+				huge: string;
+				large: string;
+				medium: string;
+				small: string;
+			};
+			between: {
+				smallAndMedium: string;
+				smallAndLarge: string;
+				smallAndHuge: string;
+				mediumAndLarge: string;
+				mediumAndHuge: string;
+				largeAndHuge: string;
+			};
+			greaterThan: {
+				huge: string;
+				large: string;
+				medium: string;
+				small: string;
+			};
+		};
+
 		colors: {
 			main: string[];
 			secondary: string[];

@@ -1,5 +1,12 @@
 import { DefaultTheme } from "styled-components";
 
+const breakpoint = {
+	huge: 1440,
+	large: 1170,
+	medium: 768,
+	small: 450
+};
+
 const JsTheme: DefaultTheme = {
 	darkTheme: false,
 
@@ -10,6 +17,29 @@ const JsTheme: DefaultTheme = {
 		"rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px",
 		"rgba(0, 0, 0, 0.2) 0px 3px 3px -2px, rgba(0, 0, 0, 0.14) 0px 3px 4px 0px, rgba(0, 0, 0, 0.12) 0px 1px 8px 0px"
 	],
+
+	media: {
+		lessThan: {
+			huge: `@media (max-width: ${breakpoint.huge}px)`,
+			large: `@media (max-width: ${breakpoint.large}px)`,
+			medium: `@media (max-width: ${breakpoint.medium}px)`,
+			small: `@media (max-width: ${breakpoint.small}px)`
+		},
+		between: {
+			smallAndMedium: ` @media (min-width: ${breakpoint.small}px) and (max-width: ${breakpoint.medium}px)`,
+			smallAndLarge: ` @media (min-width: ${breakpoint.small}px) and (max-width: ${breakpoint.large}px)`,
+			smallAndHuge: ` @media (min-width: ${breakpoint.small}px) and (max-width: ${breakpoint.huge}px)`,
+			mediumAndLarge: ` @media (min-width: ${breakpoint.medium}px) and (max-width: ${breakpoint.large}px)`,
+			mediumAndHuge: ` @media (min-width: ${breakpoint.medium}px) and (max-width: ${breakpoint.huge}px)`,
+			largeAndHuge: ` @media (min-width: ${breakpoint.large}px) and (max-width: ${breakpoint.huge}px)`
+		},
+		greaterThan: {
+			huge: `@media (min-width: ${breakpoint.huge}px)`,
+			large: `@media (min-width: ${breakpoint.large}px)`,
+			medium: `@media (min-width: ${breakpoint.medium}px)`,
+			small: `@media (min-width: ${breakpoint.small}px)`
+		}
+	},
 
 	colors: {
 		main: [
