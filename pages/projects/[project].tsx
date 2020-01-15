@@ -5,7 +5,7 @@ import { ProjectType } from "../../types/projetc";
 import Redirect from "../../utils/redirect";
 import { getProjects } from "../../utils/getContent";
 import Head from "../../components/layout";
-import { H1 } from "../../components/base/typography";
+import { Typography } from "../../components/base/typography";
 import { Content } from "../../components/base/content";
 import ProjectLinks from "../../components/modules/projectLinks";
 import SideSection from "../../components/modules/sideSection";
@@ -33,7 +33,9 @@ const Post = (props: PropsType) => {
 		>
 			<StyledSection>
 				<main>
-					<H1>{props.project.attributes.title}</H1>
+					<Typography dash variant="h1" as="h1">
+						{props.project.attributes.title}
+					</Typography>
 
 					<Header>
 						<img

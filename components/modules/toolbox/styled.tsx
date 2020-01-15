@@ -54,16 +54,6 @@ export const Skill = styled.li<{ order: number; open: boolean }>`
 		font-size: 1.5rem;
 		margin-bottom: 0.5rem;
 	}
-
-	ul {
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
-	}
-
-	li {
-		font-size: 1rem;
-	}
 `;
 
 export const IconContainer = styled.div<{ relativeWidth: number }>`

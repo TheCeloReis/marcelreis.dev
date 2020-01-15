@@ -14,6 +14,11 @@ export const StyledSection = styled(Section)`
 	${Content} {
 		margin-top: 32px;
 	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+	}
 `;
 export const Header = styled.div`
 	display: grid;

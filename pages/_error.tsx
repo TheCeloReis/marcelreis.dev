@@ -5,7 +5,7 @@ import MainLayout from "../components/layout";
 import { logPageView } from "../utils/analytics";
 
 import Section from "../components/base/section";
-import { H1 } from "../components/base/typography";
+import { Typography } from "../components/base/typography";
 
 export default function Error() {
 	useEffect(() => {
@@ -18,7 +18,9 @@ export default function Error() {
 			description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
 		>
 			<Section>
-				<H1>Página não encontrada</H1>
+				<Typography dash variant="h1" as="h1">
+					Página não encontrada
+				</Typography>
 			</Section>
 		</MainLayout>
 	);
