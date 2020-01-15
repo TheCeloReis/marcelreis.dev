@@ -6,6 +6,7 @@ import { SliderButton } from "../../base/buttons/sliderButton";
 import * as S from "./styled";
 
 type PropsType = {
+	isDarkMode: boolean;
 	toogleDarkMode: () => void;
 };
 
@@ -53,7 +54,10 @@ export default function Nav(props: PropsType) {
 							</Link>
 						</S.Item>
 					</S.List>
-					<SliderButton active={true} onClick={props.toogleDarkMode}>
+					<SliderButton
+						active={props.isDarkMode}
+						onClick={props.toogleDarkMode}
+					>
 						<S.StyledMoon size="32px" />
 						<S.StyledSun size="32px" />
 					</SliderButton>

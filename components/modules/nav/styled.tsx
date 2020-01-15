@@ -39,7 +39,7 @@ export const LogoContainer = styled.div`
 	cursor: default;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 700;
-	color: ${({ theme }) => theme.colors.contrast[3]};
+	color: ${({ theme }) => theme.colors.contrast[0]};
 
 	span {
 		padding: 1rem;
@@ -52,7 +52,7 @@ export const LogoContainer = styled.div`
 		width: 60%;
 		div {
 			position: relative;
-			border: solid 2px ${({ theme }) => theme.colors.contrast[3]};
+			border: solid 2px ${({ theme }) => theme.colors.contrast[0]};
 			font-size: 1rem;
 			height: 3rem;
 			width: 3rem;
@@ -109,7 +109,7 @@ export const Item = styled.li`
 		content: " ";
 		display: block;
 		width: 100%;
-		background-color: ${({ theme }) => theme.colors.contrast[3]};
+		background-color: ${({ theme }) => theme.colors.contrast[0]};
 		margin-top: 0.5rem;
 	}
 
@@ -130,7 +130,7 @@ export const Item = styled.li`
 
 		a {
 			transition: color 0.3s;
-			color: ${({ theme }) => theme.colors.contrast[3]};
+			color: ${({ theme }) => theme.colors.contrast[0]};
 		}
 
 		&::after {
@@ -155,7 +155,7 @@ export const MenuIcon = styled(Menu)`
 	}
 `;
 export const StyledMoon = styled(Moon)`
-	color: ${({ theme }) => theme.colors.gray[0]};
+	color: ${({ theme }) => theme.colors.gray[1]};
 `;
 export const StyledSun = styled(Sun)`
 	color: ${({ theme }) => theme.colors.gray[9]};

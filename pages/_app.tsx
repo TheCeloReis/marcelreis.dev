@@ -6,8 +6,9 @@ import { GlobalStyle } from "../theme/GlobalStyle";
 
 import Nav from "../components/modules/nav";
 import Footer from "../components/modules/footer";
-import JsTheme from "../theme/jsTheme";
 import { BackdropTransition } from "../components/pages/backdropTransition";
+import JsTheme from "../theme/jsTheme";
+import TsTheme from "../theme/tsTheme";
 
 function App({ Component, pageProps, router }: any) {
 	const [darkMode, setDarkMode] = useState(false);
@@ -19,6 +20,7 @@ function App({ Component, pageProps, router }: any) {
 	}, []);
 
 	const toggleDarkMode = () => {
+		console.log("darkMode :", darkMode);
 		const isDarkMode =
 			window.localStorage.getItem("darkMode") === "1" ? true : false;
 
@@ -27,8 +29,8 @@ function App({ Component, pageProps, router }: any) {
 	};
 
 	return (
-		<ThemeProvider theme={darkMode ? JsTheme : JsTheme}>
-			<Nav toogleDarkMode={toggleDarkMode} />
+		<ThemeProvider theme={darkMode ? TsTheme : JsTheme}>
+			<Nav isDarkMode={darkMode} toogleDarkMode={toggleDarkMode} />
 			<PageTransition timeout={400} classNames="pt" skipInitialTransition>
 				<React.Fragment key={router.route}>
 					<BackdropTransition className="pt-backdrop" />

@@ -6,7 +6,7 @@ export const Button = styled.button`
 	cursor: pointer;
 
 	background-color: ${({ theme }) => theme.colors.main[5]};
-	color: ${({ theme }) => theme.colors.contrast[1]};
+	color: ${({ theme }) => theme.colors.contrast[0]};
 	height: 48px;
 	font-weight: bold;
 	padding: 8px;
