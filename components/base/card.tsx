@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
-import { Button } from "./button";
+import { Button } from "./buttons/button";
 
 const Container = styled.div`
 	position: relative;

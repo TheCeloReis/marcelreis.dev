@@ -1,14 +1,12 @@
-import React, { useState } from "react";
-import Link from "next/link";
+import styled from "styled-components";
 
+import { Moon } from "styled-icons/boxicons-solid/Moon";
+import { Sun } from "styled-icons/boxicons-solid/Sun";
 import { Menu } from "styled-icons/material/Menu";
 
-import styled from "styled-components";
-import Logo from "./logo";
-import DarkModeButton from "./darkModeButton";
-import { Ul } from "../../base/list";
+import { Ul } from "../../../base/list";
 
-const NavBackground: any = styled.nav`
+export const Background: any = styled.nav`
 	position: fixed;
 	z-index: 100;
 	width: 100%;
@@ -17,19 +15,22 @@ const NavBackground: any = styled.nav`
 	background-color: ${({ theme }) => theme.colors.main[5]};
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `;
-
-const NavContainer = styled.div`
+export const Container = styled.div`
 	position: relative;
 	display: flex;
 	width: 100%;
 	height: 100%;
 	margin: auto;
 	max-width: 800px;
-	@media screen and (min-width: 768px) {
+
+	button:last-of-type {
+		position: absolute;
+		top: 8px;
+		right: 8px;
 	}
 `;
 
-const NavList = styled(Ul)<{ active: boolean }>`
+export const List = styled(Ul)<{ active: boolean }>`
 	position: absolute;
 	top: 4rem;
 	width: 100%;
@@ -56,7 +57,7 @@ const NavList = styled(Ul)<{ active: boolean }>`
 	}
 `;
 
-const NavItem = styled.li`
+export const Item = styled.li`
 	height: 1.75rem;
 	transition: transform ease 0.6s;
 	text-align: center;
@@ -104,7 +105,7 @@ const NavItem = styled.li`
 	}
 `;
 
-const MenuIcon = styled(Menu)`
+export const MenuIcon = styled(Menu)`
 	transition: color 0.3s;
 	color: ${({ theme }) => theme.colors.contrast[3]};
 	padding: 1rem;
@@ -113,53 +114,9 @@ const MenuIcon = styled(Menu)`
 		display: none;
 	}
 `;
-
-type PropsType = {
-	toogleDarkMode: () => void;
-};
-
-export default function Nav(props: PropsType) {
-	const [activeNavbar, setActiveNavbar] = useState(false);
-
-	const closeNavbar = () => {
-		if (activeNavbar) {
-			setActiveNavbar(false);
-			document.body.style.overflow = "auto";
-		}
-	};
-
-	const toggleNavbar = () => {
-		setActiveNavbar(!activeNavbar);
-		document.body.style.overflow = activeNavbar ? "auto" : "hidden";
-	};
-
-	return (
-		<>
-			<NavBackground>
-				<NavContainer>
-					<MenuIcon size={64} onClick={toggleNavbar} />
-					<Logo onClick={closeNavbar} />
-					<NavList simple horizontal active={activeNavbar}>
-						<NavItem onClick={closeNavbar}>
-							<Link href="/">
-								<a>home</a>
-							</Link>
-						</NavItem>
-						<NavItem onClick={closeNavbar}>
-							<Link href="/projects">
-								<a>projects</a>
-							</Link>
-						</NavItem>
-						<NavItem onClick={closeNavbar}>
-							<Link href="/">
-								<a>blog</a>
-							</Link>
-						</NavItem>
-					</NavList>
-					<DarkModeButton toogleTheme={props.toogleDarkMode} />
-				</NavContainer>
-			</NavBackground>
-			<div style={{ height: "4rem" }} />
-		</>
-	);
-}
+export const StyledMoon = styled(Moon)`
+	color: ${({ theme }) => theme.colors.gray[0]};
+`;
+export const StyledSun = styled(Sun)`
+	color: ${({ theme }) => theme.colors.gray[9]};
+`;

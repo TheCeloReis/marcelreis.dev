@@ -8,7 +8,7 @@ import { Css3 } from "styled-icons/boxicons-logos/Css3";
 import { ReactLogo } from "styled-icons/boxicons-logos/ReactLogo";
 
 import { outOfBox } from "../../theme/keyframes";
-import { Button } from "../base/button";
+import { Button } from "../base/buttons/button";
 
 const Container = styled.div`
 	display: flex;

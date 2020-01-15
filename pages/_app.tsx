@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { PageTransition } from "next-page-transitions";
 
-import Nav from "../components/modules/nav";
+import Nav from "../components/modules/nav/nav";
 import Footer from "../components/modules/footer";
 import JsTheme from "../theme/jsTheme";
 import { GlobalStyle } from "../theme/GlobalStyle";

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { Input } from "../base/input";
-import { Button } from "../base/button";
+import { Button } from "../base/buttons/button";
 import { Textarea } from "../base/textarea";
 
 const StyledForm = styled.form`
