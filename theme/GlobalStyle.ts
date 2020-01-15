@@ -30,12 +30,6 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  button {
-    outline: none;
-    border: none;
-    cursor: pointer;
-  }
-
   /* PAGE TRANSITION */
   .pt-enter {
     .pt-backdrop {
