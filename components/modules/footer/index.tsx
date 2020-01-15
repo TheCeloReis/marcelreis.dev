@@ -1,43 +1,22 @@
 import React from "react";
+
+import * as S from "./styled";
+
 import { Github } from "styled-icons/boxicons-logos/Github";
 import { LinkedinSquare } from "styled-icons/boxicons-logos/LinkedinSquare";
 import { Mail } from "styled-icons/material/Mail";
-import styled from "styled-components";
-
-const FooterContainer = styled.footer`
-	width: 100%;
-	height: 3rem;
-	background-color: ${({ theme }) => theme.colors.main[5]};
-	display: flex;
-	justify-content: center;
-	position: absolute;
-	bottom: 0;
-
-	svg {
-		color: ${({ theme }) => theme.colors.contrast[1]};
-		transition: 0.3s;
-		margin: 0.5rem 2rem;
-		:hover {
-			color: ${({ theme }) => theme.colors.gray[5]};
-		}
-	}
-`;
-
-const FooterSpace = styled.div`
-	height: 3rem;
-`;
 
 export default function Footer() {
 	return (
 		<>
-			<FooterContainer>
+			<S.Container>
 				<a
 					href="https://github.com/MarcelReis"
 					target="_blank"
 					title="Perfil do GitHub"
 					rel="noopener noreferrer"
 				>
-					<Github size={32} />
+					<Github size={32}>GitHub</Github>
 				</a>
 				<a
 					href="https://www.linkedin.com/in/marcelreis/"
@@ -45,17 +24,17 @@ export default function Footer() {
 					title="Perfil do Linkedin"
 					rel="noopener noreferrer"
 				>
-					<LinkedinSquare size={32} />
+					<LinkedinSquare size={32}>Linkedin</LinkedinSquare>
 				</a>
 				<a
 					href="mailto:oi@marcelreis.dev?subject=Olá Marcelo, "
 					rel="noopener noreferrer"
 					title="oi@marcelreis.dev"
 				>
-					<Mail size={32} />
+					<Mail size={32}>Email</Mail>
 				</a>
-			</FooterContainer>
-			<FooterSpace />
+			</S.Container>
+			<div style={{ height: "3rem" }} />
 		</>
 	);
 }
