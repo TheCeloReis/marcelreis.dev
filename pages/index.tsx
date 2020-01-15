@@ -6,7 +6,7 @@ import { logPageView } from "../utils/analytics";
 
 import HeroHeader from "../components/modules/heroHeader/heroHeader";
 import Section from "../components/base/section";
-import { H1 } from "../components/base/titles";
+import { H1 } from "../components/base/typography";
 import Contact from "../components/modules/contact";
 import Toolbox from "../components/modules/toolbox";
 

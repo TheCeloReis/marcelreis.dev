@@ -5,7 +5,7 @@ import { ProjectType } from "../../types/projetc";
 import Redirect from "../../utils/redirect";
 import { getProjects } from "../../utils/getContent";
 import Head from "../../components/layout/main";
-import { H1 } from "../../components/base/titles";
+import { H1 } from "../../components/base/typography";
 import Section from "../../components/base/section";
 import { Content } from "../../components/base/content";
 import styled from "styled-components";

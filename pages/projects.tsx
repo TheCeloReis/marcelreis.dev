@@ -6,7 +6,7 @@ import MainLayout from "../components/layout/main";
 import { logPageView } from "../utils/analytics";
 
 import Section from "../components/base/section";
-import { H1 } from "../components/base/titles";
+import { H1 } from "../components/base/typography";
 import Card from "../components/base/card";
 import { ProjectType } from "../types/projetc";
 import { getProjects } from "../utils/getContent";
@@ -52,6 +52,11 @@ function Projects(props: PropsType) {
 								title={project.attributes.description}
 								url={project.attributes.url}
 								img200={project.attributes.thumbnail}
+								link={{
+									href: "/projects/[project]",
+									as: "/projects/" + project.attributes.url,
+									title: "INFO"
+								}}
 							/>
 						);
 					})}

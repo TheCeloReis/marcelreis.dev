@@ -1,34 +1,24 @@
 import React, { useState, useRef } from "react";
-import styled from "styled-components";
 
-const Autosized = styled.textarea`
-	width: 100%;
-	resize: none;
-	border: 1px solid ${({ theme }) => theme.colors.base[5]};
-	border-radius: 4px;
-	padding: 8px;
-`;
+import * as S from "./styled";
 
 const calcMinHeight = (cloneNode: HTMLElement) =>
 	cloneNode.scrollHeight + cloneNode.offsetHeight - cloneNode.clientHeight;
 
 export const Textarea: any = (props: any) => {
 	const [height, setHeight] = useState("auto");
-	const textarea = useRef(null);
+	const textarea: any = useRef(null);
 
 	const onChange = (event: any) => {
-		if (textarea.current && (textarea.current as any).parentNode) {
-			const clone: any = (textarea.current as any).cloneNode();
+		if (textarea.current && textarea.current.parentNode) {
+			const clone: any = textarea.current.cloneNode();
 
 			clone.style.display = "hidden";
 			clone.style.height = "auto";
 
-			(textarea.current as any).parentNode.insertBefore(
-				clone,
-				textarea.current as any
-			);
+			textarea.current.parentNode.insertBefore(clone, textarea.current as any);
 			setHeight(calcMinHeight(clone) + "px");
-			(textarea.current as any).parentNode.removeChild(clone);
+			textarea.current.parentNode.removeChild(clone);
 		}
 
 		if (props.onChange) {
@@ -37,13 +27,11 @@ export const Textarea: any = (props: any) => {
 	};
 
 	return (
-		<Autosized
+		<S.Autosized
 			{...props}
 			onChange={onChange}
 			style={{ ...props.style, height }}
 			ref={textarea}
-		>
-			{props.children}
-		</Autosized>
+		/>
 	);
 };
