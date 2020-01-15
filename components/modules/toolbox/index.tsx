@@ -49,7 +49,7 @@ export default function Toolbox2() {
 						<h4>CSS3</h4>
 						<ul>
 							<li>Flexbox</li>
-							<li>Animations</li>
+							<li>CSS in JS</li>
 							<li>Sass</li>
 						</ul>
 					</div>
