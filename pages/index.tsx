@@ -7,7 +7,7 @@ import { logPageView } from "../utils/analytics";
 import HeroHeader from "../components/modules/heroHeader";
 import Section from "../components/base/section";
 import { H1 } from "../components/base/titles";
-import Contact from "../components/modules/contact";
+import Contact from "../components/modules/contact/contact";
 import Toolbox from "../components/modules/toolbox";
 
 const SENTENCES = [
