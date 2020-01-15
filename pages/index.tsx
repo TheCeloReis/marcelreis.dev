@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 
 import Head from "../components/layout/main";
-import TypedSentences from "../components/base/typedSentences";
+import TypedSentences from "../components/modules/typedSentences";
 import { logPageView } from "../utils/analytics";
 
-import HeroHeader from "../components/modules/heroHeader";
+import HeroHeader from "../components/modules/heroHeader/heroHeader";
 import Section from "../components/base/section";
 import { H1 } from "../components/base/titles";
 import Contact from "../components/modules/contact";

@@ -1,15 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+
+import * as S from "./styled";
 
 import { Web } from "styled-icons/material/Web";
 import { Github } from "styled-icons/boxicons-logos/Github";
-
-const Container = styled.div`
-	display: grid;
-	grid-template-rows: 32px;
-	grid-template-columns: repeat(3, 32px);
-	column-gap: 16px;
-`;
 
 type PropsType = {
 	github?: string;
@@ -22,7 +16,7 @@ export default function ProjectLinks(props: PropsType) {
 	}
 
 	return (
-		<Container>
+		<S.Container>
 			{props.github ? (
 				<a href={props.github}>
 					<Github size="32px" role="img">
@@ -42,6 +36,6 @@ export default function ProjectLinks(props: PropsType) {
 			) : (
 				""
 			)}
-		</Container>
+		</S.Container>
 	);
 }

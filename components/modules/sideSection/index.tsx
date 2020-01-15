@@ -1,11 +1,9 @@
 import React from "react";
-import styled from "styled-components";
 import Link from "next/link";
-import { Ul } from "../base/list";
 
-const Container = styled.div`
-	display: grid;
-`;
+import * as S from "./styled";
+
+import { Ul } from "../../base/list";
 
 type PropsType = {
 	title: string;
@@ -18,7 +16,7 @@ type PropsType = {
 
 export default function SideSection(props: PropsType) {
 	return (
-		<Container>
+		<S.Container>
 			<span>{props.title}</span>
 			<Ul simple>
 				{props.links.map(link => {
@@ -31,6 +29,6 @@ export default function SideSection(props: PropsType) {
 					);
 				})}
 			</Ul>
-		</Container>
+		</S.Container>
 	);
 }

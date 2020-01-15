@@ -2,7 +2,7 @@ import React from "react";
 import { NextPageContext } from "next";
 import { ProjectType } from "../../types/projetc";
 
-import Redirect from "../../components/base/redirect";
+import Redirect from "../../utils/redirect";
 import { getProjects } from "../../utils/getContent";
 import Head from "../../components/layout/main";
 import { H1 } from "../../components/base/titles";
