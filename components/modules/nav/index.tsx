@@ -57,6 +57,7 @@ export default function Nav(props: PropsType) {
 					<SliderButton
 						active={props.isDarkMode}
 						onClick={props.toogleDarkMode}
+						label={"Modo Noturno"}
 					>
 						<S.StyledMoon size="32px" />
 						<S.StyledSun size="32px" />
