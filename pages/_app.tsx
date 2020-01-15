@@ -41,10 +41,10 @@ function App({ Component, pageProps, router }: any) {
 		<ThemeProvider theme={darkMode ? JsTheme : JsTheme}>
 			<Nav toogleDarkMode={toggleDarkMode} />
 			<PageTransition timeout={400} classNames="pt" skipInitialTransition>
-				<>
+				<React.Fragment key={router.route}>
 					<BackdropTransition className="pt-backdrop" />
-					<Component {...pageProps} key={router.route} />
-				</>
+					<Component {...pageProps} />
+				</React.Fragment>
 			</PageTransition>
 			<Footer />
 			<GlobalStyle />
