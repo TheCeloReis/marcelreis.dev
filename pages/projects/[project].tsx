@@ -10,6 +10,7 @@ import { Content } from "../../components/base/content";
 import ProjectLinks from "../../components/modules/projectLinks";
 import SideSection from "../../components/modules/sideSection";
 import { Header, StyledSection } from "../../components/pages/projectSection";
+import { Card } from "../../components/base/card";
 
 type PropsType = {
 	project: ProjectType | undefined;
@@ -38,12 +39,13 @@ const Post = (props: PropsType) => {
 					</Typography>
 
 					<Header>
-						<img
-							src={props.project.attributes.thumbnail}
-							alt={"Capura de tela do " + props.project.attributes.title}
-							style={{ margin: "auto" }}
-						/>
-
+						<div>
+							<Card
+								key={props.project.attributes.url}
+								title={props.project.attributes.description}
+								img200={props.project.attributes.thumbnail}
+							/>
+						</div>
 						<div>
 							<p>{props.project.attributes.description}</p>
 							<ProjectLinks
