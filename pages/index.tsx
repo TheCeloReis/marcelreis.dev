@@ -6,7 +6,7 @@ import { logPageView } from "../utils/analytics";
 
 import HeroHeader from "../components/modules/heroHeader/heroHeader";
 import Section from "../components/base/section";
-import { H1 } from "../components/base/typography";
+import { Typography } from "../components/base/typography";
 import Contact from "../components/modules/contact";
 import Toolbox from "../components/modules/toolbox";
 
@@ -32,7 +32,9 @@ export default function Index() {
 			</HeroHeader>
 
 			<Section>
-				<H1>Sobre</H1>
+				<Typography dash variant="h1" as="h2">
+					Sobre
+				</Typography>
 				<p>
 					Sou um estudante de Sistemas de Informação com uma trajetória bem
 					curiosa. Apaixonado pelo Front-end e por JavaScript em seus diversos
@@ -42,12 +44,16 @@ export default function Index() {
 			</Section>
 
 			<Section>
-				<H1>Skills</H1>
+				<Typography dash variant="h1" as="h2">
+					Skills
+				</Typography>
 				<Toolbox />
 			</Section>
 
 			<Section>
-				<H1>Contato</H1>
+				<Typography dash variant="h1" as="h2">
+					Contato
+				</Typography>
 				<Contact />
 			</Section>
 		</Head>

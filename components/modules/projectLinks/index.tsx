@@ -18,7 +18,10 @@ export default function ProjectLinks(props: PropsType) {
 	return (
 		<S.Container>
 			{props.github ? (
-				<a href={props.github}>
+				<a href={props.github} aria-label="GitHub Link">
+					<span aria-hidden="true" hidden>
+						GitHub
+					</span>
 					<Github size="32px" role="img">
 						<title>Github Logo</title>
 					</Github>
@@ -28,7 +31,10 @@ export default function ProjectLinks(props: PropsType) {
 			)}
 
 			{props.website ? (
-				<a href={props.website}>
+				<a href={props.website} aria-label="Webpage Link">
+					<span aria-hidden="true" hidden>
+						Webpage
+					</span>
 					<Web size="32px" role="img">
 						<title>Internet Symbol</title>
 					</Web>

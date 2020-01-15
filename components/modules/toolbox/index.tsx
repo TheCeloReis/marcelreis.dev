@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import * as S from "./styled";
+import { Ul } from "../../base/list";
 
 export default function Toolbox2() {
 	const [startAnimation, setStartAnimation] = useState(false);
@@ -30,12 +31,12 @@ export default function Toolbox2() {
 						</div>
 					</S.IconContainer>
 					<div>
-						<h4>React</h4>
-						<ul>
+						<p>React</p>
+						<Ul simple>
 							<li>Hooks</li>
 							<li>Redux</li>
 							<li>Router</li>
-						</ul>
+						</Ul>
 					</div>
 				</S.Skill>
 
@@ -46,12 +47,12 @@ export default function Toolbox2() {
 						</div>
 					</S.IconContainer>
 					<div>
-						<h4>CSS3</h4>
-						<ul>
+						<p>CSS3</p>
+						<Ul simple>
 							<li>Flexbox</li>
-							<li>Animations</li>
+							<li>CSS in JS</li>
 							<li>Sass</li>
-						</ul>
+						</Ul>
 					</div>
 				</S.Skill>
 
@@ -62,12 +63,12 @@ export default function Toolbox2() {
 						</div>
 					</S.IconContainer>
 					<div>
-						<h4>jQuery</h4>
-						<ul>
+						<p>jQuery</p>
+						<Ul simple>
 							<li>BackBone</li>
 							<li>Lodash</li>
 							<li>Resiliência</li>
-						</ul>
+						</Ul>
 					</div>
 				</S.Skill>
 			</S.SkillsRow>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import * as S from "./styled";
 
 import { Ul } from "../../base/list";
+import { Typography } from "../../base/typography";
 
 type PropsType = {
 	title: string;
@@ -17,7 +18,9 @@ type PropsType = {
 export default function SideSection(props: PropsType) {
 	return (
 		<S.Container>
-			<span>{props.title}</span>
+			<Typography dash variant="h2" as="span">
+				{props.title}
+			</Typography>
 			<Ul simple>
 				{props.links.map(link => {
 					return (

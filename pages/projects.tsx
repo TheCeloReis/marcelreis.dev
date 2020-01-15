@@ -5,7 +5,7 @@ import MainLayout from "../components/layout";
 import { logPageView } from "../utils/analytics";
 
 import Section from "../components/base/section";
-import { H1 } from "../components/base/typography";
+import { Typography } from "../components/base/typography";
 import { Card } from "../components/base/card";
 import { ProjectType } from "../types/projetc";
 import { getProjects } from "../utils/getContent";
@@ -26,7 +26,9 @@ function Projects(props: PropsType) {
 			description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
 		>
 			<Section>
-				<H1>Projetos</H1>
+				<Typography dash variant="h1" as="h1">
+					Projetos
+				</Typography>
 				<CardContainer>
 					{props.projects.map(project => {
 						return (
@@ -34,7 +36,6 @@ function Projects(props: PropsType) {
 								key={project.attributes.url}
 								overlayText={project.attributes.title}
 								title={project.attributes.description}
-								url={project.attributes.url}
 								img200={project.attributes.thumbnail}
 								link={{
 									href: "/projects/[project]",
