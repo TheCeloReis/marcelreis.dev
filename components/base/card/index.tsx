@@ -4,10 +4,11 @@ import Link from "next/link";
 import * as S from "./styled";
 
 type PropsType = {
-	overlayText: string;
-	title: string;
-	url: string;
 	img200: string;
+	title: string;
+	alt?: string;
+
+	overlayText?: string;
 
 	link?: {
 		href: string;
@@ -28,7 +29,7 @@ export const Card = (props: PropsType) => {
 				<S.Image
 					src={props.img200}
 					title={props.title}
-					alt={`${props.overlayText}`}
+					alt={`${props.alt || props.overlayText}`}
 				/>
 
 				{props.overlayText ? (
@@ -40,7 +41,7 @@ export const Card = (props: PropsType) => {
 				)}
 
 				{props.link ? (
-					<Link href={props.link?.href} as={"/projects/" + props.url}>
+					<Link href={props.link?.href} as={props.link?.as}>
 						<S.StyledButton>
 							<a>{props.link.title}</a>
 						</S.StyledButton>
