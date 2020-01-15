@@ -41,6 +41,11 @@ const Header = styled.div`
 
 type PropsType = {
 	project: ProjectType | undefined;
+	links: {
+		title: string;
+		href: string;
+		as: string;
+	}[];
 	query: string;
 };
 
@@ -48,14 +53,6 @@ const Post = (props: PropsType) => {
 	if (!props.project) {
 		return <Redirect path="/projects" />;
 	}
-
-	const links = getProjects().map(project => {
-		return {
-			title: project.attributes.title,
-			href: "/projects/[project]",
-			as: "/projects/" + project.attributes.url
-		};
-	});
 
 	return (
 		<Head
@@ -84,7 +81,7 @@ const Post = (props: PropsType) => {
 
 					<Content dangerouslySetInnerHTML={{ __html: props.project.html }} />
 				</main>
-				<SideSection title="Outros Projetos" links={links} />
+				<SideSection title="Outros Projetos" links={props.links} />
 			</StyledSection>
 		</Head>
 	);
@@ -95,8 +92,17 @@ Post.getInitialProps = (context: NextPageContext) => {
 		project => project.attributes.url === context.query.project
 	);
 
+	const links = getProjects().map(project => {
+		return {
+			title: project.attributes.title,
+			href: "/projects/[project]",
+			as: "/projects/" + project.attributes.url
+		};
+	});
+
 	return {
-		project: project
+		project,
+		links
 	};
 };
 
