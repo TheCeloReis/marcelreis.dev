@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { useState } from "react";
 import styled from "styled-components";
 
@@ -7,6 +8,7 @@ import { Css3 } from "styled-icons/boxicons-logos/Css3";
 import { ReactLogo } from "styled-icons/boxicons-logos/ReactLogo";
 
 import { outOfBox } from "../../theme/keyframes";
+import { Button } from "../base/button";
 
 const Container = styled.div`
 	display: flex;
@@ -15,39 +17,39 @@ const Container = styled.div`
 	position: relative;
 `;
 
-const SkillsRow: any = styled.ul`
+const SkillsRow = styled.ul<{ active: boolean }>`
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	width: 100%;
 	height: 0;
-	padding-bottom: ${(props: any) => (props.active ? "calc(33.33% + 6rem)" : 0)};
+	padding-bottom: ${({ active }) => (active ? "calc(33.33% + 6rem)" : 0)};
 	transition: 2s ease;
 `;
 
-const Skill: any = styled.li`
+const Skill = styled.li<{ order: number; open: boolean }>`
 	position: absolute;
 	top: 160px;
 	left: 33.33%;
 	width: 33.33%;
 	height: auto;
 	text-align: center;
-	z-index: ${(props: any) => 3 - props.order};
+	z-index: ${props => 3 - props.order};
 
-	transform: ${(props: any) => {
-		return props.order === 0
+	transform: ${({ order }) => {
+		return order === 0
 			? "translate(-100%, 0)"
-			: props.order === 1
+			: order === 1
 			? "translate(0%, 0)"
-			: props.order === 2
+			: order === 2
 			? "translate(100%, 0)"
 			: 0;
 	}};
 
-	animation-name: ${(props: any) => outOfBox(props.order)};
+	animation-name: ${props => outOfBox(props.order)};
 	animation-duration: 1.2s;
 	animation-timing-function: linear;
-	animation-play-state: ${(props: any) => (props.open ? "running" : "paused")};
+	animation-play-state: ${props => (props.open ? "running" : "paused")};
 
 	h4 {
 		font-size: 1.5rem;
@@ -65,11 +67,11 @@ const Skill: any = styled.li`
 	}
 `;
 
-const IconContainer: any = styled.div`
+const IconContainer = styled.div<{ relativeWidth: number }>`
 	position: relative;
 	height: 0;
-	width: ${(props: any) => props.relativeWidth}%;
-	padding-bottom: ${(props: any) => props.relativeWidth}%;
+	width: ${props => props.relativeWidth}%;
+	padding-bottom: ${props => props.relativeWidth}%;
 	margin: 0 auto;
 
 	div {
@@ -77,8 +79,9 @@ const IconContainer: any = styled.div`
 	}
 `;
 
-const ToolboxButton = styled.button`
+const ToolboxButton = styled(Button)`
 	margin: 0 auto 3.5rem auto;
+	padding: 0;
 	height: 128px;
 	background: ${({ theme }) => theme.colors.main[5]};
 	border-radius: 64px;

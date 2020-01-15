@@ -15,7 +15,7 @@ const StyledButton = styled(Button)`
 	left: 25%;
 
 	border-radius: 8px 8px 0 0;
-	background-color: ${({ theme }) => theme.colors.base[5]};
+	background-color: ${({ theme }) => theme.colors.base[0]};
 
 	a {
 		color: inherit;
@@ -29,7 +29,7 @@ const Overlay = styled.div`
 	width: 100%;
 	opacity: 0;
 	transition: 0.3s ease;
-	background-color: ${({ theme }) => theme.colors.main[3]};
+	background-color: ${({ theme }) => theme.colors.main[3]}dd;
 	user-select: none;
 
 	span {
@@ -71,10 +71,8 @@ const Image = styled.img`
 
 type PropsType = {
 	overlayText: string;
-
 	title: string;
 	url: string;
-
 	img200: string;
 };
 

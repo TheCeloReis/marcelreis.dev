@@ -29,7 +29,7 @@ const NavContainer = styled.div`
 	}
 `;
 
-const NavList: any = styled(Ul)`
+const NavList = styled(Ul)<{ active: boolean }>`
 	position: absolute;
 	top: 4rem;
 	width: 100%;
@@ -40,7 +40,7 @@ const NavList: any = styled(Ul)`
 		position: fixed;
 		right: 100%;
 		flex-direction: column;
-		transform: ${(props: any) =>
+		transform: ${props =>
 			props.active ? "translateX(100%)" : "translateX(0%)"};
 
 		background-color: ${({ theme }) => theme.colors.gray[8]};
