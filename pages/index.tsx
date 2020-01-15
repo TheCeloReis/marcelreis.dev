@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import Head from "../components/layout/main";
+import Head from "../components/layout";
 import TypedSentences from "../components/modules/typedSentences";
 import { logPageView } from "../utils/analytics";
 

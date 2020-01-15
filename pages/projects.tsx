@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import MainLayout from "../components/layout/main";
+import MainLayout from "../components/layout";
 
 import { logPageView } from "../utils/analytics";
 
