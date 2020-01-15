@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import * as S from "./styles/nav.styles";
+import * as S from "./nav.styles";
 
-import Logo from "./logo";
 import { SliderButton } from "../../base/buttons/sliderButton";
 
 type PropsType = {
@@ -30,7 +29,13 @@ export default function Nav(props: PropsType) {
 			<S.Background>
 				<S.Container>
 					<S.MenuIcon size={64} onClick={toggleNavbar} />
-					<Logo onClick={closeNavbar} />
+					<S.LogoContainer {...props}>
+						<div>
+							<Link href="/">
+								<span>MR</span>
+							</Link>
+						</div>
+					</S.LogoContainer>
 					<S.List simple horizontal active={activeNavbar}>
 						<S.Item onClick={closeNavbar}>
 							<Link href="/">
