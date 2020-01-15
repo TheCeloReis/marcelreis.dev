@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import * as S from "./nav.style";
+import * as S from "./styled";
 
 import { SliderButton } from "../../base/buttons/sliderButton";
 

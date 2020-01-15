@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as S from "./contact.style";
+import * as S from "./styled";
 
 import { Input } from "../../base/input";
 import { Textarea } from "../../base/textarea";
