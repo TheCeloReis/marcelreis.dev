@@ -21,7 +21,7 @@ type PropsType = {
 	};
 };
 
-export default function Card(props: PropsType) {
+export const Card = (props: PropsType) => {
 	return (
 		<S.Container>
 			<S.ImageContainer>
@@ -55,4 +55,4 @@ export default function Card(props: PropsType) {
 			</S.ImageContainer>
 		</S.Container>
 	);
-}
+};

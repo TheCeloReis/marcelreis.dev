@@ -1,24 +1,13 @@
 import React, { useState, useEffect } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { PageTransition } from "next-page-transitions";
+
+import { GlobalStyle } from "../theme/GlobalStyle";
 
 import Nav from "../components/modules/nav";
 import Footer from "../components/modules/footer";
 import JsTheme from "../theme/jsTheme";
-import { GlobalStyle } from "../theme/GlobalStyle";
-
-const BackdropTransition = styled.div`
-	transform: translateY(-100%);
-	transition: 300ms;
-	transition-timing-function: ease;
-	transition-property: transform;
-	z-index: 80;
-	background-color: ${({ theme }) => theme.colors.base[1]};
-	border-bottom: solid 2px ${({ theme }) => theme.colors.base[5]};
-	position: fixed;
-	width: 100%;
-	height: calc(100vh - 64px);
-`;
+import { BackdropTransition } from "../components/pages/backdropTransition";
 
 function App({ Component, pageProps, router }: any) {
 	const [darkMode, setDarkMode] = useState(false);

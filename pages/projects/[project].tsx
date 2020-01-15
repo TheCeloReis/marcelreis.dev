@@ -6,38 +6,10 @@ import Redirect from "../../utils/redirect";
 import { getProjects } from "../../utils/getContent";
 import Head from "../../components/layout/main";
 import { H1 } from "../../components/base/typography";
-import Section from "../../components/base/section";
 import { Content } from "../../components/base/content";
-import styled from "styled-components";
 import ProjectLinks from "../../components/modules/projectLinks";
 import SideSection from "../../components/modules/sideSection";
-
-const StyledSection = styled(Section)`
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-gap: 16px;
-
-	@media only screen and (min-width: 600px) {
-		grid-template-columns: 1fr 200px;
-	}
-
-	${Content} {
-		margin-top: 32px;
-	}
-`;
-const Header = styled.div`
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 16px;
-
-	@media only screen and (min-width: 600px) {
-		grid-template-columns: 1fr 300px;
-	}
-
-	p {
-		margin-bottom: 16px;
-	}
-`;
+import { Header, StyledSection } from "../../components/pages/projectSection";
 
 type PropsType = {
 	project: ProjectType | undefined;
