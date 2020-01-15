@@ -17,7 +17,6 @@ const Header = styled.div`
 		font-size: 3rem;
 		max-width: 800px;
 	}
-	font-size: 1.5rem;
 	text-align: center;
 `;
 

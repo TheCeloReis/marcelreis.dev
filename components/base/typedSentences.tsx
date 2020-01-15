@@ -3,11 +3,15 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 
 const Text = styled.h1`
-	font-size: 1.8em;
+	font-size: 2.5rem;
 	user-select: none;
 	color: #fff;
 	width: 100%;
 	font-family: "Roboto Mono", monospace;
+
+	@media screen and (min-width: 600px) {
+		font-size: 5.5rem;
+	}
 
 	::after {
 		position: absolute;
@@ -18,7 +22,7 @@ const Text = styled.h1`
 		animation: caret 1s steps(1) infinite;
 
 		@media screen and (min-width: 600px) {
-			height: 7rem;
+			height: 5.5rem;
 		}
 	}
 
