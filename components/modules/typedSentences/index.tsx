@@ -1,33 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/router";
-import styled from "styled-components";
 
-const Text = styled.h1`
-	font-size: 1.8em;
-	user-select: none;
-	color: #fff;
-	width: 100%;
-	font-family: "Roboto Mono", monospace;
-
-	::after {
-		position: absolute;
-		height: 3.5rem;
-		content: "";
-		border-left: 0.1em solid white;
-		margin-left: 0.5rem;
-		animation: caret 1s steps(1) infinite;
-
-		@media screen and (min-width: 600px) {
-			height: 7rem;
-		}
-	}
-
-	@keyframes caret {
-		50% {
-			border-color: transparent;
-		}
-	}
-`;
+import * as S from "./styled";
 
 type PropsType = {
 	sentences: string[];
@@ -114,5 +88,5 @@ export default function TypedSentences(props: PropsType) {
 		};
 	}, [index, memoizedSentenceHandler, props.speed]);
 
-	return <Text>{renderedLetters}</Text>;
+	return <S.Text>{renderedLetters}</S.Text>;
 }

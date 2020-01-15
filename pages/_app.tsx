@@ -1,31 +1,41 @@
-import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import React, { useState, useEffect } from "react";
+import { ThemeProvider } from "styled-components";
 import { PageTransition } from "next-page-transitions";
 
-import { jsTheme, GlobalStyle } from "../theme";
+import { GlobalStyle } from "../theme/GlobalStyle";
 
 import Nav from "../components/modules/nav";
 import Footer from "../components/modules/footer";
-
-const BackdropTransition = styled.div`
-	transform: translateY(-100%);
-	transition: transform 300ms;
-	z-index: 80;
-	background-color: ${(props: any) => props.theme.color.contrast};
-	position: fixed;
-	width: 100%;
-	height: calc(100vh - 64px);
-`;
+import { BackdropTransition } from "../components/pages/backdropTransition";
+import JsTheme from "../theme/jsTheme";
+import TsTheme from "../theme/tsTheme";
 
 function App({ Component, pageProps, router }: any) {
+	const [darkMode, setDarkMode] = useState(false);
+
+	useEffect(() => {
+		const isDarkMode =
+			window.localStorage.getItem("darkMode") === "1" ? true : false;
+		setDarkMode(isDarkMode);
+	}, []);
+
+	const toggleDarkMode = () => {
+		console.log("darkMode :", darkMode);
+		const isDarkMode =
+			window.localStorage.getItem("darkMode") === "1" ? true : false;
+
+		window.localStorage.setItem("darkMode", !isDarkMode ? "1" : "0");
+		setDarkMode(!isDarkMode);
+	};
+
 	return (
-		<ThemeProvider theme={jsTheme}>
-			<Nav />
-			<PageTransition timeout={300} classNames="pt" skipInitialTransition>
-				<>
+		<ThemeProvider theme={darkMode ? TsTheme : JsTheme}>
+			<Nav isDarkMode={darkMode} toogleDarkMode={toggleDarkMode} />
+			<PageTransition timeout={400} classNames="pt" skipInitialTransition>
+				<React.Fragment key={router.route}>
 					<BackdropTransition className="pt-backdrop" />
-					<Component {...pageProps} key={router.route} />
-				</>
+					<Component {...pageProps} />
+				</React.Fragment>
 			</PageTransition>
 			<Footer />
 			<GlobalStyle />

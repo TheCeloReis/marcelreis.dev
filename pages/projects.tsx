@@ -1,31 +1,15 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
 
-import MainLayout from "../components/layout/main";
+import MainLayout from "../components/layout";
 
 import { logPageView } from "../utils/analytics";
 
 import Section from "../components/base/section";
-import { H1 } from "../components/base/titles";
-import Card from "../components/base/card";
+import { H1 } from "../components/base/typography";
+import { Card } from "../components/base/card";
 import { ProjectType } from "../types/projetc";
 import { getProjects } from "../utils/getContent";
-
-const CardContainer = styled.div`
-	display: grid;
-	position: relative;
-	left: -1rem;
-	width: calc(100% + 2rem);
-	grid-template-columns: repeat(2, 1fr);
-	column-gap: 4px;
-	row-gap: 4px;
-
-	@media only screen and (min-width: 600px) {
-		grid-template-columns: repeat(3, 1fr);
-		column-gap: 8px;
-		row-gap: 8px;
-	}
-`;
+import { CardContainer } from "../components/pages/cardContainer";
 
 type PropsType = {
 	projects: ProjectType[];
@@ -52,6 +36,11 @@ function Projects(props: PropsType) {
 								title={project.attributes.description}
 								url={project.attributes.url}
 								img200={project.attributes.thumbnail}
+								link={{
+									href: "/projects/[project]",
+									as: "/projects/" + project.attributes.url,
+									title: "INFO"
+								}}
 							/>
 						);
 					})}

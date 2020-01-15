@@ -10,5 +10,5 @@ export default function Redirect(props: PropsType) {
 		Router.push(props.path);
 	}, [props.path]);
 
-	return <>Redirecting...</>;
+	return <></>;
 }

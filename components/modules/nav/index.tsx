@@ -1,118 +1,16 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-import { Menu } from "styled-icons/material/Menu";
+import { SliderButton } from "../../base/buttons/sliderButton";
 
-import styled from "styled-components";
-import Logo from "./logo";
+import * as S from "./styled";
 
-const NavBackground: any = styled.nav`
-	position: fixed;
-	z-index: 100;
-	width: 100%;
-	height: 4rem;
-	background-color: ${(props: any) => props.theme.color.primary};
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-`;
+type PropsType = {
+	isDarkMode: boolean;
+	toogleDarkMode: () => void;
+};
 
-const NavContainer = styled.div`
-	position: relative;
-	display: flex;
-	width: 100%;
-	height: 100%;
-	margin: auto;
-	max-width: 800px;
-	@media screen and (min-width: 768px) {
-	}
-`;
-
-const NavList: any = styled.ul`
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	position: absolute;
-	top: 4rem;
-	width: 100%;
-	height: 100vh;
-	display: flex;
-
-	@media screen and (max-width: 767px) {
-		right: 100%;
-		flex-direction: column;
-		transform: ${(props: any) =>
-		props.active ? "translateX(100%)" : "translateX(0%)"};
-		background-color: ${(props: any) => props.theme.color.gray[9]};
-		transition: transform 0.3s ease;
-	}
-	@media screen and (min-width: 768px) {
-		position: static;
-		height: 100%;
-		width: 25%;
-		justify-content: space-between;
-		align-items: center;
-	}
-`;
-
-const NavItem = styled.li`
-	height: 1.75rem;
-	transition: transform ease 0.6s;
-	border-bottom: 0.25rem solid transparent;
-	display: block;
-	font-weight: 700;
-	font-size: 1.25rem;
-	font-family: Arial, Helvetica, sans-serif;
-	text-transform: lowercase;
-	text-align: center;
-
-	&::after {
-		content: " ";
-		display: block;
-		width: 100%;
-		background-color: ${(props: any) => props.theme.color.contrast};
-		margin-top: 0.5rem;
-	}
-
-	@media screen and (max-width: 767px) {
-		width: 100%;
-		padding: 3rem;
-		a {
-			color: #fff;
-		}
-		&::after {
-			height: 0.125rem;
-			background-color: #fff;
-		}
-	}
-
-	@media screen and (min-width: 768px) {
-		margin: 0;
-
-		a {
-			color: ${(props: any) => props.theme.color.contrast};
-		}
-
-		&::after {
-			height: 0.25rem;
-			transform: scaleX(0);
-			transition: transform 0.3s ease;
-		}
-		:hover ::after {
-			transform: scaleX(1.1);
-			transition: transform 0.3s ease;
-		}
-	}
-`;
-
-const MenuIcon = styled(Menu)`
-	color: ${(props: any) => props.theme.color.contrast};
-	padding: 1rem;
-
-	@media screen and (min-width: 768px) {
-		display: none;
-	}
-`;
-
-export default function Nav() {
+export default function Nav(props: PropsType) {
 	const [activeNavbar, setActiveNavbar] = useState(false);
 
 	const closeNavbar = () => {
@@ -129,29 +27,42 @@ export default function Nav() {
 
 	return (
 		<>
-			<NavBackground>
-				<NavContainer>
-					<MenuIcon size={64} onClick={toggleNavbar} />
-					<Logo onClick={closeNavbar} />
-					<NavList active={activeNavbar}>
-						<NavItem onClick={closeNavbar}>
+			<S.Background>
+				<S.Container>
+					<S.MenuIcon size={64} onClick={toggleNavbar} />
+					<S.LogoContainer {...props}>
+						<div>
+							<Link href="/">
+								<span>MR</span>
+							</Link>
+						</div>
+					</S.LogoContainer>
+					<S.List simple horizontal active={activeNavbar}>
+						<S.Item onClick={closeNavbar}>
 							<Link href="/">
 								<a>home</a>
 							</Link>
-						</NavItem>
-						<NavItem onClick={closeNavbar}>
+						</S.Item>
+						<S.Item onClick={closeNavbar}>
 							<Link href="/projects">
 								<a>projects</a>
 							</Link>
-						</NavItem>
-						<NavItem onClick={closeNavbar}>
+						</S.Item>
+						<S.Item onClick={closeNavbar}>
 							<Link href="/">
 								<a>blog</a>
 							</Link>
-						</NavItem>
-					</NavList>
-				</NavContainer>
-			</NavBackground>
+						</S.Item>
+					</S.List>
+					<SliderButton
+						active={props.isDarkMode}
+						onClick={props.toogleDarkMode}
+					>
+						<S.StyledMoon size="32px" />
+						<S.StyledSun size="32px" />
+					</SliderButton>
+				</S.Container>
+			</S.Background>
 			<div style={{ height: "4rem" }} />
 		</>
 	);

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const H1Continer = styled.div`
 	width: 100%;
-	color: ${({ theme }: any) => theme.color.contrast};
+	color: ${({ theme }) => theme.colors.contrast[3]};
 	display: flex;
 	justify-content: center;
 	margin: 16px 0 32px 0;
@@ -22,7 +22,7 @@ const H1text = styled.h1`
 		margin-left: 12.5%;
 		width: 75%;
 		margin-top: 12px;
-		background-color: ${({ theme }) => theme.color.primary};
+		background-color: ${({ theme }) => theme.colors.main[5]};
 	}
 `;
 
