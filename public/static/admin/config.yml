@@ -80,6 +80,11 @@ collections:
         name: "description"
         widget: "string"
 
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field: { label: Tech, name: tech, widget: string }
+
       - label: "Featured Image"
         name: "thumbnail"
         widget: "image"
@@ -102,7 +107,7 @@ collections:
     files:
       - label: "About Page"
         name: "about"
-        file: "site/content/pages/index.json"
+        file: "content/pages/index.json"
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Intro, name: intro, widget: markdown }
@@ -115,7 +120,7 @@ collections:
               - { label: Photo, name: photo, widget: image }
       - label: "Locations Page"
         name: "locations"
-        file: "site/content/pages/projects.json"
+        file: "content/pages/projects.json"
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Intro, name: intro, widget: markdown }
