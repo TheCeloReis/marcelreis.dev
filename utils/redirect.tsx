@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 
 type PropsType = {
-	path: string;
+  path: string;
 };
 
 export default function Redirect(props: PropsType) {
-	useEffect(() => {
-		Router.push(props.path);
-	}, [props.path]);
+  useEffect(() => {
+    Router.push(props.path);
+  }, [props.path]);
 
-	return <></>;
+  return <></>;
 }
