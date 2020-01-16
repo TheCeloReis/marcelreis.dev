@@ -1,5 +1,6 @@
 export type ProjectType = {
   attributes: {
+    lang: "en" | "es" | "fr" | "pt";
     title: string;
     url: string;
     github?: string;

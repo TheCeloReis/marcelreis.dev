@@ -3,6 +3,12 @@ backend:
   branch: content
 media_folder: public/static/img
 public_folder: "/static/img"
+site_url: https://marcelreis.dev
+logo_url: https://marcelreis.dev/static/img/logo.png
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
 collections:
   - label: "Blog"
     name: "blog"
@@ -10,6 +16,11 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
+      - label: "Language"
+        name: "lang"
+        widget: "select"
+        options: ["en", "pt"]
+
       - label: "Title"
         name: "title"
         widget: "string"
@@ -35,12 +46,18 @@ collections:
         name: "body"
         widget: "markdown"
 
-  - label: "Project"
+  - label: "Projects"
+    description: "My portfolio, with all projects added"
     name: "project"
     folder: "content/projects"
     create: true
     slug: "{{year}}-{{month}}-{{slug}}"
     fields:
+      - label: "Language"
+        name: "lang"
+        widget: "select"
+        options: ["en", "es", "fr", "pt"]
+
       - label: "Title"
         name: "title"
         widget: "string"
@@ -79,3 +96,32 @@ collections:
       - label: "Body"
         name: "body"
         widget: "markdown"
+
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "site/content/pages/index.json"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Intro, name: intro, widget: markdown }
+          - label: Team
+            name: team
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Position, name: position, widget: string }
+              - { label: Photo, name: photo, widget: image }
+      - label: "Locations Page"
+        name: "locations"
+        file: "site/content/pages/projects.json"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Intro, name: intro, widget: markdown }
+          - label: Locations
+            name: locations
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Address, name: address, widget: string }
