@@ -10,38 +10,38 @@ dotenv.config();
 const staticRouter = require("./utils/staticRouter");
 
 module.exports = {
-	webpack: config => {
-		config.resolve.alias = {
-			...config.resolve.alias,
-			Content: path.resolve(__dirname, "content/")
-		};
+  webpack: config => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      Content: path.resolve(__dirname, "content/"),
+    };
 
-		config.module.rules = [
-			...config.module.rules,
-			{
-				test: /\.md$/,
-				use: "frontmatter-markdown-loader"
-			}
-		];
+    config.module.rules = [
+      ...config.module.rules,
+      {
+        test: /\.md$/,
+        use: "frontmatter-markdown-loader",
+      },
+    ];
 
-		const env = Object.keys(process.env).reduce((acc, curr) => {
-			acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
-			return acc;
-		}, {});
+    const env = Object.keys(process.env).reduce((acc, curr) => {
+      acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
+      return acc;
+    }, {});
 
-		config.plugins.push(new webpack.DefinePlugin(env));
+    config.plugins.push(new webpack.DefinePlugin(env));
 
-		return config;
-	},
+    return config;
+  },
 
-	exportPathMap: async function(
-		defaultPathMap,
-		{ dev, dir, outDir, distDir, buildId }
-	) {
-		return {
-			"/": { page: "/" },
-			"/projects": { page: "/projects" },
-			...staticRouter.getProjects()
-		};
-	}
+  exportPathMap: async function(
+    defaultPathMap,
+    { dev, dir, outDir, distDir, buildId }
+  ) {
+    return {
+      "/": { page: "/" },
+      "/projects": { page: "/projects" },
+      ...staticRouter.getProjects(),
+    };
+  },
 };

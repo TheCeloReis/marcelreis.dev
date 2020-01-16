@@ -7,31 +7,31 @@ import { Ul } from "../../base/list";
 import { Typography } from "../../base/typography";
 
 type PropsType = {
-	title: string;
-	links: {
-		title: string;
-		href: string;
-		as: string;
-	}[];
+  title: string;
+  links: {
+    title: string;
+    href: string;
+    as: string;
+  }[];
 };
 
 export default function SideSection(props: PropsType) {
-	return (
-		<S.Container>
-			<Typography dash variant="h2" as="span">
-				{props.title}
-			</Typography>
-			<Ul simple>
-				{props.links.map(link => {
-					return (
-						<li key={link.as}>
-							<Link href={link.href} as={link.as}>
-								<a>{link.title}</a>
-							</Link>
-						</li>
-					);
-				})}
-			</Ul>
-		</S.Container>
-	);
+  return (
+    <S.Container>
+      <Typography dash variant="h2" as="span">
+        {props.title}
+      </Typography>
+      <Ul simple>
+        {props.links.map(link => {
+          return (
+            <li key={link.as}>
+              <Link href={link.href} as={link.as}>
+                <a>{link.title}</a>
+              </Link>
+            </li>
+          );
+        })}
+      </Ul>
+    </S.Container>
+  );
 }

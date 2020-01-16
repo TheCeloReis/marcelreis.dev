@@ -7,34 +7,34 @@ const fs = require("fs");
 const parseMarkdown = require("front-matter-markdown");
 
 function getProjects() {
-	const markdownFiles = [];
+  const markdownFiles = [];
 
-	glob.sync("./content/projects/*.md").forEach(file => {
-		const parsed = parseMarkdown(fs.readFileSync(path.resolve(file), "utf8"));
-		markdownFiles.push(parsed);
-	});
+  glob.sync("./content/projects/*.md").forEach(file => {
+    const parsed = parseMarkdown(fs.readFileSync(path.resolve(file), "utf8"));
+    markdownFiles.push(parsed);
+  });
 
-	return markdownFiles;
+  return markdownFiles;
 }
 
 function getProjectRoutes() {
-	const projects = getProjects();
-	const routes = {};
+  const projects = getProjects();
+  const routes = {};
 
-	projects.forEach(project => {
-		const routePath = "/projects/" + project.url;
+  projects.forEach(project => {
+    const routePath = "/projects/" + project.url;
 
-		routes[routePath] = {
-			page: "/projects/[project]",
-			query: {
-				project: project.url
-			}
-		};
-	});
+    routes[routePath] = {
+      page: "/projects/[project]",
+      query: {
+        project: project.url,
+      },
+    };
+  });
 
-	return routes;
+  return routes;
 }
 
 module.exports = {
-	getProjects: getProjectRoutes
+  getProjects: getProjectRoutes,
 };

@@ -11,36 +11,36 @@ import JsTheme from "../theme/jsTheme";
 import TsTheme from "../theme/tsTheme";
 
 function App({ Component, pageProps, router }: any) {
-	const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
-	useEffect(() => {
-		const isDarkMode =
-			window.localStorage.getItem("darkMode") === "1" ? true : false;
-		setDarkMode(isDarkMode);
-	}, []);
+  useEffect(() => {
+    const isDarkMode =
+      window.localStorage.getItem("darkMode") === "1" ? true : false;
+    setDarkMode(isDarkMode);
+  }, []);
 
-	const toggleDarkMode = () => {
-		console.log("darkMode :", darkMode);
-		const isDarkMode =
-			window.localStorage.getItem("darkMode") === "1" ? true : false;
+  const toggleDarkMode = () => {
+    console.log("darkMode :", darkMode);
+    const isDarkMode =
+      window.localStorage.getItem("darkMode") === "1" ? true : false;
 
-		window.localStorage.setItem("darkMode", !isDarkMode ? "1" : "0");
-		setDarkMode(!isDarkMode);
-	};
+    window.localStorage.setItem("darkMode", !isDarkMode ? "1" : "0");
+    setDarkMode(!isDarkMode);
+  };
 
-	return (
-		<ThemeProvider theme={darkMode ? TsTheme : JsTheme}>
-			<Nav isDarkMode={darkMode} toogleDarkMode={toggleDarkMode} />
-			<PageTransition timeout={400} classNames="pt" skipInitialTransition>
-				<React.Fragment key={router.asPath}>
-					<BackdropTransition className="pt-backdrop" />
-					<Component {...pageProps} />
-				</React.Fragment>
-			</PageTransition>
-			<Footer />
-			<GlobalStyle />
-		</ThemeProvider>
-	);
+  return (
+    <ThemeProvider theme={darkMode ? TsTheme : JsTheme}>
+      <Nav isDarkMode={darkMode} toogleDarkMode={toggleDarkMode} />
+      <PageTransition timeout={400} classNames="pt" skipInitialTransition>
+        <React.Fragment key={router.asPath}>
+          <BackdropTransition className="pt-backdrop" />
+          <Component {...pageProps} />
+        </React.Fragment>
+      </PageTransition>
+      <Footer />
+      <GlobalStyle />
+    </ThemeProvider>
+  );
 }
 
 export default App;
