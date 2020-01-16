@@ -4,7 +4,7 @@ backend:
 media_folder: public/static/img
 public_folder: "/static/img"
 site_url: https://marcelreis.dev
-logo_url: https://marcelreis.dev/static/img/logo.png
+logo_url: https://marcelreis.dev/static/img/icon.png
 slug:
   encoding: "ascii"
   clean_accents: true
