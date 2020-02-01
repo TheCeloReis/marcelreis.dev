@@ -48,7 +48,7 @@ export const LogoContainer = styled.div`
     transform: translateX(50%);
   }
 
-  @media screen and (min-width: 768px) {
+  ${({ theme }) => theme.media.greaterThan.medium} {
     width: 60%;
     div {
       position: relative;

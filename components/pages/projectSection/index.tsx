@@ -7,7 +7,7 @@ export const StyledSection = styled(Section)`
   grid-template-columns: 1fr;
   grid-gap: 16px;
 
-  @media only screen and (min-width: 600px) {
+  ${({ theme }) => theme.media.greaterThan.medium} {
     grid-template-columns: 1fr 200px;
   }
 

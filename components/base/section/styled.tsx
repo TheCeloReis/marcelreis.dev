@@ -6,7 +6,7 @@ export const Background = styled.section`
   justify-content: center;
 
   :only-of-type {
-    @media screen and (max-width: 599px) {
+    ${({ theme }) => theme.media.greaterThan.medium} {
       min-height: calc(100vh - 7rem);
     }
   }
