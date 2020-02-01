@@ -19,6 +19,10 @@ export const Typography = styled.span<PropsType>`
   display: inline-block;
   margin: 0;
 
+  ${({ theme }) => theme.media.lessThan.small} {
+    text-align: center;
+  }
+
   ${({ variant }) => {
     switch (variant) {
       case "h1": {
@@ -82,6 +86,7 @@ export const Typography = styled.span<PropsType>`
           font-size: 1rem;
           letter-spacing: 0.5;
           font-weight: normal;
+          line-height: 1.5;
         `;
       }
       case "body2": {
@@ -89,6 +94,7 @@ export const Typography = styled.span<PropsType>`
           font-size: 0.875rem;
           letter-spacing: 0.25;
           font-weight: normal;
+          line-height: 1.25;
         `;
       }
 

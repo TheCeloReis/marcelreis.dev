@@ -34,7 +34,7 @@ const Post = (props: PropsType) => {
     >
       <StyledSection>
         <main>
-          <Typography dash variant="h1" as="h1">
+          <Typography dash variant="h3" as="h1">
             {props.project.attributes.title}
           </Typography>
 

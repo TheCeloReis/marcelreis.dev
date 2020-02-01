@@ -32,26 +32,26 @@ export default function Index() {
       </HeroHeader>
 
       <Section>
-        <Typography dash variant="h1" as="h2">
+        <Typography dash variant="h3" as="h2">
           Sobre
         </Typography>
-        <p>
-          Sou um estudante de Sistemas de Informação com uma trajetória bem
-          curiosa. Apaixonado pelo Front-end e por JavaScript em seus diversos
-          flavours, procuro sempre estar atento as novidades. Membro de diversos
-          grupos de desenvolvedores em BH, acredito no poder das comunidades.
-        </p>
+        <Typography variant="body1" as="p">
+          Sou um desenvolvedor front end apaixado pelo que faz. Trabalho
+          principalmente com React e Typescript, mas mexo com qualquer coisa que
+          tenha Javascript (sim, Node.js). Posso ser facilmente encontrado em
+          algum Meetup acontecendo em Belo Horizonte.
+        </Typography>
       </Section>
 
       <Section>
-        <Typography dash variant="h1" as="h2">
+        <Typography dash variant="h3" as="h2">
           Skills
         </Typography>
         <Toolbox />
       </Section>
 
       <Section>
-        <Typography dash variant="h1" as="h2">
+        <Typography dash variant="h3" as="h2">
           Contato
         </Typography>
         <Contact />

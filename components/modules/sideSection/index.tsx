@@ -18,7 +18,7 @@ type PropsType = {
 export default function SideSection(props: PropsType) {
   return (
     <S.Container>
-      <Typography dash variant="h2" as="span">
+      <Typography dash variant="h5" as="span">
         {props.title}
       </Typography>
       <Ul simple>
