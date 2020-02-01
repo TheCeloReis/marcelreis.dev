@@ -26,12 +26,12 @@ const JsTheme: DefaultTheme = {
       small: `@media (max-width: ${breakpoint.small}px)`,
     },
     between: {
-      smallAndMedium: ` @media (min-width: ${breakpoint.small}px) and (max-width: ${breakpoint.medium}px)`,
-      smallAndLarge: ` @media (min-width: ${breakpoint.small}px) and (max-width: ${breakpoint.large}px)`,
-      smallAndHuge: ` @media (min-width: ${breakpoint.small}px) and (max-width: ${breakpoint.huge}px)`,
-      mediumAndLarge: ` @media (min-width: ${breakpoint.medium}px) and (max-width: ${breakpoint.large}px)`,
-      mediumAndHuge: ` @media (min-width: ${breakpoint.medium}px) and (max-width: ${breakpoint.huge}px)`,
-      largeAndHuge: ` @media (min-width: ${breakpoint.large}px) and (max-width: ${breakpoint.huge}px)`,
+      smallAndMedium: `@media (min-width: ${breakpoint.small}px) and (max-width: ${breakpoint.medium}px)`,
+      smallAndLarge: `@media (min-width: ${breakpoint.small}px) and (max-width: ${breakpoint.large}px)`,
+      smallAndHuge: `@media (min-width: ${breakpoint.small}px) and (max-width: ${breakpoint.huge}px)`,
+      mediumAndLarge: `@media (min-width: ${breakpoint.medium}px) and (max-width: ${breakpoint.large}px)`,
+      mediumAndHuge: `@media (min-width: ${breakpoint.medium}px) and (max-width: ${breakpoint.huge}px)`,
+      largeAndHuge: `@media (min-width: ${breakpoint.large}px) and (max-width: ${breakpoint.huge}px)`,
     },
     greaterThan: {
       huge: `@media (min-width: ${breakpoint.huge}px)`,
