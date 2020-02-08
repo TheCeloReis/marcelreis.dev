@@ -20,7 +20,6 @@ function App({ Component, pageProps, router }: any) {
   }, []);
 
   const toggleDarkMode = () => {
-    console.log("darkMode :", darkMode);
     const isDarkMode =
       window.localStorage.getItem("darkMode") === "1" ? true : false;
 
