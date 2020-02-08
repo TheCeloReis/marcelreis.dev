@@ -40,6 +40,7 @@ module.exports = {
   ) {
     return {
       "/": { page: "/" },
+      "/blog": { page: "/blog" },
       "/projects": { page: "/projects" },
       ...staticRouter.getProjects(),
     };

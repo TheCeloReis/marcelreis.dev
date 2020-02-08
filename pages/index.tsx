@@ -35,7 +35,7 @@ export default function Index() {
         <Typography dash variant="h3" as="h2">
           Sobre
         </Typography>
-        <Typography variant="body1" as="p">
+        <Typography variant="body1" as="p" centerInMobile>
           Sou um desenvolvedor front end apaixado pelo que faz. Trabalho
           principalmente com React e Typescript, mas mexo com qualquer coisa que
           tenha Javascript (sim, Node.js). Posso ser facilmente encontrado em

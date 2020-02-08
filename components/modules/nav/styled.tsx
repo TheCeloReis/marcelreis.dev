@@ -22,7 +22,7 @@ export const Container = styled.div`
   column-gap: 16px;
   height: 100%;
   margin: auto;
-  max-width: 800px;
+  max-width: 768px;
 
   button:last-of-type {
     position: absolute;

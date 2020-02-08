@@ -49,7 +49,7 @@ export default function Nav(props: PropsType) {
               </Link>
             </S.Item>
             <S.Item onClick={closeNavbar}>
-              <Link href="/">
+              <Link href="/blog">
                 <a>blog</a>
               </Link>
             </S.Item>

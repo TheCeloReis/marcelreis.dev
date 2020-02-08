@@ -14,7 +14,7 @@ export const Background = styled.div`
 export const Header = styled.div`
   ${({ theme }) => theme.media.greaterThan.medium} {
     font-size: 3rem;
-    max-width: 800px;
+    max-width: 768px;
   }
 
   text-align: center;

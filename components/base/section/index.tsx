@@ -17,7 +17,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  max-width: 800px;
+  max-width: 768px;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.base[0]};
 

@@ -13,15 +13,22 @@ type PropsType = {
     | "body1"
     | "body2";
   dash?: boolean;
+  centerInMobile?: boolean;
 };
 
 export const Typography = styled.span<PropsType>`
   display: inline-block;
   margin: 0;
-
-  ${({ theme }) => theme.media.lessThan.small} {
-    text-align: center;
-  }
+  
+  ${({ centerInMobile }) => {
+    if (centerInMobile) {
+      return css`
+        ${({ theme }) => theme.media.lessThan.small} {
+          text-align: center;
+        }
+      `;
+    }
+  }}
 
   ${({ variant }) => {
     switch (variant) {
