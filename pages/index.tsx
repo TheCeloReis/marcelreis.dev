@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
 import Head from "../components/layout";
 import TypedSentences from "../components/modules/typedSentences";
@@ -8,7 +9,7 @@ import HeroHeader from "../components/modules/heroHeader/heroHeader";
 import Section from "../components/base/section";
 import { Typography } from "../components/base/typography";
 import Contact from "../components/modules/contact";
-import Toolbox from "../components/modules/toolbox";
+const Toolbox = dynamic(() => import("../components/modules/toolbox"));
 
 const SENTENCES = [
   "Oi, eu sou Marcelo Reis",
@@ -18,8 +19,14 @@ const SENTENCES = [
 ];
 
 export default function Index() {
+  const [lazy, setLazy] = useState(false);
+
   useEffect(() => {
     logPageView();
+
+    if (process.browser) {
+      setLazy(true);
+    }
   }, []);
 
   return (
@@ -30,7 +37,6 @@ export default function Index() {
       <HeroHeader>
         <TypedSentences sentences={SENTENCES} speed={50} />
       </HeroHeader>
-
       <Section>
         <Typography dash variant="h3" as="h2">
           Sobre
@@ -43,13 +49,14 @@ export default function Index() {
         </Typography>
       </Section>
 
-      <Section>
-        <Typography dash variant="h3" as="h2">
-          Skills
-        </Typography>
-        <Toolbox />
-      </Section>
-
+      {lazy && (
+        <Section>
+          <Typography dash variant="h3" as="h2">
+            Skills
+          </Typography>
+          <Toolbox />
+        </Section>
+      )}
       <Section>
         <Typography dash variant="h3" as="h2">
           Contato
