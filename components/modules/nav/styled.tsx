@@ -22,7 +22,7 @@ export const Container = styled.div`
   column-gap: 16px;
   height: 100%;
   margin: auto;
-  max-width: 800px;
+  max-width: 768px;
 
   button:last-of-type {
     position: absolute;
@@ -48,7 +48,7 @@ export const LogoContainer = styled.div`
     transform: translateX(50%);
   }
 
-  @media screen and (min-width: 768px) {
+  ${({ theme }) => theme.media.greaterThan.medium} {
     width: 60%;
     div {
       position: relative;

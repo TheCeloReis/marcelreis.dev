@@ -7,7 +7,7 @@ export const Text = styled.h1`
   width: 100%;
   font-family: "Roboto Mono", monospace;
 
-  @media screen and (min-width: 600px) {
+  ${({ theme }) => theme.media.greaterThan.medium} {
     font-size: 5.5rem;
   }
 
@@ -19,7 +19,7 @@ export const Text = styled.h1`
     margin-left: 0.5rem;
     animation: caret 1s steps(1) infinite;
 
-    @media screen and (min-width: 600px) {
+    ${({ theme }) => theme.media.greaterThan.medium} {
       height: 5.5rem;
     }
   }

@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 
-import MainLayout from "../components/layout";
+import MainLayout from "../../components/layout";
 
-import { logPageView } from "../utils/analytics";
+import { logPageView } from "../../utils/analytics";
 
-import Section from "../components/base/section";
-import { Typography } from "../components/base/typography";
-import { Card } from "../components/base/card";
-import { ProjectType } from "../types/projetc";
-import { getProjects } from "../utils/getContent";
-import { CardContainer } from "../components/pages/cardContainer";
+import Section from "../../components/base/section";
+import { Typography } from "../../components/base/typography";
+import { Card } from "../../components/base/card";
+import { ProjectType } from "../../types/projetc";
+import { getProjects } from "../../utils/getContent";
+import { CardContainer } from "../../components/pages/cardContainer";
 
 type PropsType = {
   projects: ProjectType[];
@@ -26,7 +26,7 @@ function Projects(props: PropsType) {
       description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
     >
       <Section>
-        <Typography dash variant="h1" as="h1">
+        <Typography dash variant="h3" as="h1">
           Projetos
         </Typography>
         <CardContainer>

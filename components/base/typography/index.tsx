@@ -1,43 +1,108 @@
 import styled, { css } from "styled-components";
 
 type PropsType = {
-  variant: "h1" | "h2" | "h3" | "body1";
+  variant:
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6"
+    | "subtitle1"
+    | "subtitle2"
+    | "body1"
+    | "body2";
   dash?: boolean;
+  centerInMobile?: boolean;
 };
 
 export const Typography = styled.span<PropsType>`
-	display: inline-block;
-
-  ${({ variant }) => {
-    if (["h1", "h2", "h3"].includes(variant)) {
-      return "margin-top: 1rem";
+  display: inline-block;
+  margin: 0;
+  
+  ${({ centerInMobile }) => {
+    if (centerInMobile) {
+      return css`
+        ${({ theme }) => theme.media.lessThan.small} {
+          text-align: center;
+        }
+      `;
     }
-
-    return "margin-top: 0.5rem;";
   }}
 
-	${({ variant }) => {
+  ${({ variant }) => {
     switch (variant) {
       case "h1": {
         return css`
-          font-size: 1.75rem;
-          letter-spacing: 8px;
+          font-size: 6rem;
+          letter-spacing: -1.5;
+          font-weight: light;
         `;
       }
       case "h2": {
         return css`
-          letter-spacing: 4px;
-          font-size: 1.5rem;
+          font-size: 3.75rem;
+          letter-spacing: -0.5;
+          font-weight: light;
         `;
       }
       case "h3": {
         return css`
+          font-size: 3rem;
+          letter-spacing: 0;
           font-weight: normal;
+        `;
+      }
+      case "h4": {
+        return css`
+          font-size: 2.125rem;
+          letter-spacing: 0.25;
+          font-weight: normal;
+        `;
+      }
+      case "h5": {
+        return css`
+          font-size: 1.5rem;
+          letter-spacing: 0;
+          font-weight: normal;
+        `;
+      }
+      case "h6": {
+        return css`
           font-size: 1.25rem;
+          letter-spacing: 0.15;
+          font-weight: normal;
+        `;
+      }
+      case "subtitle1": {
+        return css`
+          font-size: 1rem;
+          letter-spacing: 0.15;
+          font-weight: normal;
+        `;
+      }
+      case "subtitle2": {
+        return css`
+          font-size: 0.875rem;
+          letter-spacing: 0.1;
+          font-weight: normal;
         `;
       }
       case "body1": {
-        return css``;
+        return css`
+          font-size: 1rem;
+          letter-spacing: 0.5;
+          font-weight: normal;
+          line-height: 1.5;
+        `;
+      }
+      case "body2": {
+        return css`
+          font-size: 0.875rem;
+          letter-spacing: 0.25;
+          font-weight: normal;
+          line-height: 1.25;
+        `;
       }
 
       default:
@@ -45,7 +110,7 @@ export const Typography = styled.span<PropsType>`
     }
   }}
 
-	${({ dash }) =>
+  ${({ dash }) =>
     dash
       ? css`
           position: relative;
