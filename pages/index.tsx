@@ -32,7 +32,7 @@ export default function Index() {
   return (
     <Head
       title="MarcelReis FrontEnd Developer"
-      description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
+      description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typescript, jQuery, Backbone e SASS"
     >
       <HeroHeader>
         <TypedSentences sentences={SENTENCES} speed={50} />
