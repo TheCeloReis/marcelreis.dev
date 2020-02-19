@@ -3,17 +3,18 @@ import styled from "styled-components";
 
 const Background = styled.section`
   display: flex;
-  width: 100%;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
   :only-of-type {
     ${({ theme }) => theme.media.greaterThan.medium} {
       min-height: calc(100vh - 7rem);
-    }
-  }
 
-  :last-of-type > div {
-    margin-bottom: 32px;
+      :last-of-type > div {
+        margin-bottom: 32px;
+      }
+    }
   }
 `;
 
