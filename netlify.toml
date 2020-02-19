@@ -1,7 +1,7 @@
 [build]
   base = "/"
   publish = "out/"
-  command = "npm run build"
+  command = "npm run export"
 
 [context.deploy-preview.environment]
   NODE_ENV = "development"
