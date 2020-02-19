@@ -1,7 +1,7 @@
 import React from "react";
 
-import MainLayout from "../components/layout";
-import { BlogCard } from "../components/modules/blogCard";
+import MainLayout from "../../components/layout";
+import { BlogCard } from "../../components/modules/blogCard";
 
 export default function Blog() {
   return (
