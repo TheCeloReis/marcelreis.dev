@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import { logPageView } from "../../utils/analytics";
 
 import MainLayout from "../../components/layout";
 
 export default function Blog() {
+  useEffect(() => {
+    logPageView();
+  }, []);
+
   return (
     <MainLayout
       title="Blog do MarcelReis"

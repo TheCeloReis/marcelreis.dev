@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NextPageContext } from "next";
 import { ProjectType } from "../../types/projetc";
 
+import { logPageView } from "../../utils/analytics";
 import Redirect from "../../utils/redirect";
+
 import { getProjects } from "../../utils/getContent";
 import Head from "../../components/layout";
 import { Typography } from "../../components/base/typography";
@@ -23,6 +25,10 @@ type PropsType = {
 };
 
 const Post = (props: PropsType) => {
+  useEffect(() => {
+    logPageView();
+  }, []);
+
   if (!props.project) {
     return <Redirect path="/projects" />;
   }
