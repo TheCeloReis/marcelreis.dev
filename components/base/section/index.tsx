@@ -11,6 +11,10 @@ const Background = styled.section`
       min-height: calc(100vh - 7rem);
     }
   }
+
+  :last-of-type > div {
+    margin-bottom: 32px;
+  }
 `;
 
 const Container = styled.div`
@@ -25,7 +29,7 @@ const Container = styled.div`
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
       0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     border-radius: 2px;
-    margin: 2rem 1rem 2rem 1rem;
+    margin: 32px 16px 0 16px;
   }
 `;
 
