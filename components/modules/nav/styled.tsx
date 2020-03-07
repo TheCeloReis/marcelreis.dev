@@ -104,39 +104,36 @@ export const Item = styled.li`
   display: block;
   font-weight: 700;
   font-size: 1.25rem;
+  padding: 3rem;
 
   &::after {
     content: " ";
+    height: 0.125rem;
     display: block;
     width: 100%;
-    background-color: ${({ theme }) => theme.colors.contrast[0]};
+    background-color: #fff;
     margin-top: 0.5rem;
   }
 
-  ${({ theme }) => theme.media.lessThan.medium} {
-    width: 100%;
-    padding: 3rem;
-    a {
-      color: #fff;
-    }
-    &::after {
-      height: 0.125rem;
-      background-color: #fff;
-    }
+  > a {
+    color: #fff !important;
   }
 
   ${({ theme }) => theme.media.greaterThan.medium} {
     margin: 0;
+    padding: 0;
 
-    a {
+    > a {
       transition: color 0.3s;
-      color: ${({ theme }) => theme.colors.contrast[0]};
+      color: ${({ theme }) => theme.colors.contrast[0]} !important;
     }
 
     &::after {
+      padding: 0;
       height: 0.25rem;
       transform: scaleX(0);
       transition: transform 0.3s ease;
+      background-color: ${({ theme }) => theme.colors.contrast[0]};
     }
     :hover ::after {
       transform: scaleX(1.1);

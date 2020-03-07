@@ -30,33 +30,17 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-
+  
   .pt-enter > .pt-backdrop {
-    transform: translateX(0);
+    height: calc(100vh - 64px);
   }
   .pt-enter-active > .pt-backdrop {
-    transform: translateX(100%);
+    height: 0px;
   }
   .pt-exit > .pt-backdrop {
-    transform: translateX(100%);
+    height: 0px;
   }
   .pt-exit-active > .pt-backdrop {
-      transform: translateX(0);
+    height: calc(100vh - 64px);
   }
-
-  ${({ theme }) => theme.media.greaterThan.medium} {
-    .pt-enter > .pt-backdrop {
-      transform: translateY(0);
-    }
-    .pt-enter-active > .pt-backdrop {
-      transform: translateY(-100%);
-    }
-    .pt-exit > .pt-backdrop {
-      transform: translateY(-100%);
-    }
-    .pt-exit-active > .pt-backdrop {
-        transform: translateY(0);
-    }
-  }
-  /* PAGE TRANSITION */
 `;

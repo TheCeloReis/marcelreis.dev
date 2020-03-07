@@ -7,7 +7,7 @@ export const Background = styled.div<{ height?: string }>`
   align-items: center;
   padding: 8px;
 
-  height: calc(${({ height }) => height || 100}vh - 64px);
+  min-height: calc(${({ height }) => height || 100}vh - 64px);
   background-color: #171717;
 `;
 

@@ -1,32 +1,24 @@
 import React, { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
 
 import Head from "../components/layout";
 import TypedSentences from "../components/modules/typedSentences";
 import { logPageView } from "../utils/analytics";
 
-import HeroHeader from "../components/modules/heroHeader/heroHeader";
+import HeroHeader from "../components/modules/heroHeader";
 import Section from "../components/base/section";
 import { Typography } from "../components/base/typography";
 import Contact from "../components/modules/contact";
-const Toolbox = dynamic(() => import("../components/modules/toolbox"));
 
 const SENTENCES = [
-  "Oi, eu sou Marcelo Reis",
-  "Front-End Developer no Letras",
-  "WebDesigner Entusiasta nas horas vagas",
-  "E amante do Javascript e Typescript",
+  "Hi, I'm Marcelo Reis",
+  "Front-End Developer",
+  "WebDesigner Enthusiast",
+  "And a Javascript Lover",
 ];
 
 export default function Index() {
-  const [lazy, setLazy] = useState(false);
-
   useEffect(() => {
     logPageView();
-
-    if (process.browser) {
-      setLazy(true);
-    }
   }, []);
 
   return (
@@ -34,11 +26,11 @@ export default function Index() {
       title="MarcelReis FrontEnd Developer"
       description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typescript, jQuery, Backbone e SASS"
     >
-      <HeroHeader>
+      <HeroHeader height="66">
         <TypedSentences sentences={SENTENCES} speed={50} />
       </HeroHeader>
       <Section>
-        <Typography dash variant="h3" as="h2">
+        <Typography dash variant="h4" as="h2">
           Sobre
         </Typography>
         <Typography variant="body1" as="p" centerInMobile>
@@ -49,16 +41,8 @@ export default function Index() {
         </Typography>
       </Section>
 
-      {lazy && (
-        <Section>
-          <Typography dash variant="h3" as="h2">
-            Skills
-          </Typography>
-          <Toolbox />
-        </Section>
-      )}
       <Section>
-        <Typography dash variant="h3" as="h2">
+        <Typography dash variant="h4" as="h2">
           Contato
         </Typography>
         <Contact />
