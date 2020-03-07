@@ -2,7 +2,7 @@ import React from "react";
 
 import MainLayout from "../../components/layout";
 import { BlogCard } from "../../components/modules/blogCard";
-import HeroHeader from "../../components/modules/heroHeader/heroHeader";
+import HeroHeader from "../../components/modules/heroHeader";
 import { Typography } from "../../components/base/typography";
 import { PageHeader } from "../../components/modules/pageHeader";
 
