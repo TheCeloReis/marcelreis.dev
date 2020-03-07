@@ -12,7 +12,5 @@ export const BackdropTransition = styled.div`
   width: 100%;
   height: calc(100vh - 64px);
 
-  ${({ theme }) => theme.media.greaterThan.medium} {
-    transform: translateY(-100%);
-  }
+  transform: translateY(-100%);
 `;
