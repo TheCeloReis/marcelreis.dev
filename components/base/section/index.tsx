@@ -7,14 +7,8 @@ const Background = styled.section`
   align-items: center;
   justify-content: flex-start;
 
-  :only-of-type {
-    ${({ theme }) => theme.media.greaterThan.medium} {
-      min-height: calc(100vh - 7rem);
-
-      :last-of-type > div {
-        margin-bottom: 32px;
-      }
-    }
+  &:last-of-type {
+    margin-bottom: 32px;
   }
 `;
 
