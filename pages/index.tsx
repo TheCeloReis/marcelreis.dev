@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
 
 import Head from "../components/layout";
 import TypedSentences from "../components/modules/typedSentences";
@@ -9,7 +8,6 @@ import HeroHeader from "../components/modules/heroHeader";
 import Section from "../components/base/section";
 import { Typography } from "../components/base/typography";
 import Contact from "../components/modules/contact";
-const Toolbox = dynamic(() => import("../components/modules/toolbox"));
 
 const SENTENCES = [
   "Hi, I'm Marcelo Reis",
@@ -19,14 +17,8 @@ const SENTENCES = [
 ];
 
 export default function Index() {
-  const [lazy, setLazy] = useState(false);
-
   useEffect(() => {
     logPageView();
-
-    if (process.browser) {
-      setLazy(true);
-    }
   }, []);
 
   return (
@@ -49,14 +41,6 @@ export default function Index() {
         </Typography>
       </Section>
 
-      {lazy && (
-        <Section>
-          <Typography dash variant="h3" as="h2">
-            Skills
-          </Typography>
-          <Toolbox />
-        </Section>
-      )}
       <Section>
         <Typography dash variant="h3" as="h2">
           Contato
