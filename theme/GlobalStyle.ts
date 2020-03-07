@@ -32,15 +32,15 @@ export const GlobalStyle = createGlobalStyle`
 
   
   .pt-enter > .pt-backdrop {
-    transform: translateY(0);
+    height: calc(100vh - 64px);
   }
   .pt-enter-active > .pt-backdrop {
-    transform: translateY(-100%);
+    height: 0px;
   }
   .pt-exit > .pt-backdrop {
-    transform: translateY(-100%);
+    height: 0px;
   }
   .pt-exit-active > .pt-backdrop {
-      transform: translateY(0);
+    height: calc(100vh - 64px);
   }
 `;
