@@ -15,7 +15,7 @@ export default function Blog() {
       <HeroHeader height="33">
         <PageHeader>
           <Typography variant="h3" as="h1">
-            Blog do Marcelo
+            Blog
           </Typography>
           <br />
           <Typography variant="h6" as="span">

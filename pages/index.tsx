@@ -30,7 +30,7 @@ export default function Index() {
         <TypedSentences sentences={SENTENCES} speed={50} />
       </HeroHeader>
       <Section>
-        <Typography dash variant="h3" as="h2">
+        <Typography dash variant="h4" as="h2">
           Sobre
         </Typography>
         <Typography variant="body1" as="p" centerInMobile>
@@ -42,7 +42,7 @@ export default function Index() {
       </Section>
 
       <Section>
-        <Typography dash variant="h3" as="h2">
+        <Typography dash variant="h4" as="h2">
           Contato
         </Typography>
         <Contact />

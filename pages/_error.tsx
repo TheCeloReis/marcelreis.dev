@@ -18,7 +18,7 @@ export default function Error() {
       description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
     >
       <Section>
-        <Typography dash variant="h1" as="h1">
+        <Typography dash variant="h3" as="h1">
           Página não encontrada
         </Typography>
       </Section>
