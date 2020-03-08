@@ -4,8 +4,9 @@ import MainLayout from "../components/layout";
 
 import { logPageView } from "../utils/analytics";
 
-import Section from "../components/base/section";
 import { Typography } from "../components/base/typography";
+import HeroHeader from "../components/modules/heroHeader";
+import { PageHeader } from "../components/modules/pageHeader";
 
 export default function Error() {
   useEffect(() => {
@@ -14,14 +15,20 @@ export default function Error() {
 
   return (
     <MainLayout
-      title="MarcelReis FrontEnd Developer"
+      title="MarcelReis Front End Developer"
       description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
     >
-      <Section>
-        <Typography dash variant="h3" as="h1">
-          Page not found
-        </Typography>
-      </Section>
+      <HeroHeader height="33">
+        <PageHeader>
+          <Typography variant="h3" as="h1">
+            Sorry
+          </Typography>
+          <br />
+          <Typography variant="h6" as="span">
+            Page not found
+          </Typography>
+        </PageHeader>
+      </HeroHeader>
     </MainLayout>
   );
 }
