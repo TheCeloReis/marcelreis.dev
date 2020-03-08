@@ -19,7 +19,7 @@ export default function Error() {
     >
       <Section>
         <Typography dash variant="h3" as="h1">
-          Página não encontrada
+          Page not found
         </Typography>
       </Section>
     </MainLayout>
