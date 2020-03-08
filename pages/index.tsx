@@ -1,52 +1,60 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-import Head from "../components/layout";
 import TypedSentences from "../components/modules/typedSentences";
 import { logPageView } from "../utils/analytics";
 
+import Head from "../components/layout";
 import HeroHeader from "../components/modules/heroHeader";
 import Section from "../components/base/section";
 import { Typography } from "../components/base/typography";
 import Contact from "../components/modules/contact";
 
-const SENTENCES = [
-  "Hi, I'm Marcelo Reis",
-  "Front-End Developer",
-  "WebDesigner Enthusiast",
-  "And a Javascript Lover",
-];
+import { getPage } from "../utils/getContent";
 
-export default function Index() {
+import { IndexPage } from "../types/pages";
+
+type PropsType = {
+  pageData: IndexPage;
+};
+
+const Index = (props: PropsType) => {
   useEffect(() => {
     logPageView();
+
+    console.log(getPage());
   }, []);
 
   return (
     <Head
-      title="MarcelReis FrontEnd Developer"
-      description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typescript, jQuery, Backbone e SASS"
+      title={props.pageData.seo.title}
+      description={props.pageData.seo.description}
     >
       <HeroHeader height="66">
-        <TypedSentences sentences={SENTENCES} speed={50} />
+        <TypedSentences sentences={props.pageData.phrases} speed={50} />
       </HeroHeader>
       <Section>
         <Typography dash variant="h4" as="h2">
-          Sobre
+          About
         </Typography>
         <Typography variant="body1" as="p" centerInMobile>
-          Sou um desenvolvedor front end apaixado pelo que faz. Trabalho
-          principalmente com React e Typescript, mas mexo com qualquer coisa que
-          tenha Javascript (sim, Node.js). Posso ser facilmente encontrado em
-          algum Meetup acontecendo em Belo Horizonte.
+          {props.pageData.description}
         </Typography>
       </Section>
 
       <Section>
         <Typography dash variant="h4" as="h2">
-          Contato
+          Contact
         </Typography>
         <Contact />
       </Section>
     </Head>
   );
-}
+};
+
+Index.getInitialProps = () => {
+  return {
+    pageData: getPage(),
+  };
+};
+
+export default Index;
