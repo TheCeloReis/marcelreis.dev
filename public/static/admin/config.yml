@@ -121,5 +121,11 @@ collections:
                   widget: "image",
                   default: "/logo.svg",
                 }
-          - { label: "Phrases", name: "phrases", widget: "list" }
+          - {
+              label: "Phrases",
+              name: "phrases",
+              widget: "list",
+              allow_add: true,
+              field: { label: Phrase, name: phrase, widget: string },
+            }
           - { label: "Description", name: "description", widget: "string" }
