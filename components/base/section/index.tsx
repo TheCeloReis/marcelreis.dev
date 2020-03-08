@@ -7,8 +7,10 @@ const Background = styled.section`
   align-items: center;
   justify-content: flex-start;
 
-  &:last-of-type {
-    margin-bottom: 32px;
+  ${({ theme }) => theme.media.greaterThan.medium} {
+    &:last-of-type {
+      margin-bottom: 32px;
+    }
   }
 `;
 
