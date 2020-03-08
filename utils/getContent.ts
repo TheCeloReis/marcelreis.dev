@@ -11,8 +11,8 @@ export function getProjects() {
   return markdownFiles;
 }
 
-export function getPage() {
-  const page = pageContext.keys().find(page => page.includes("index"));
+export function getPage(url: string) {
+  const page = pageContext.keys().find(page => page.includes(url));
 
   return !page ? undefined : pageContext(page);
 }

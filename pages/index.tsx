@@ -20,8 +20,6 @@ type PropsType = {
 const Index = (props: PropsType) => {
   useEffect(() => {
     logPageView();
-
-    console.log(getPage());
   }, []);
 
   return (
@@ -53,7 +51,7 @@ const Index = (props: PropsType) => {
 
 Index.getInitialProps = () => {
   return {
-    pageData: getPage(),
+    pageData: getPage("index"),
   };
 };
 
