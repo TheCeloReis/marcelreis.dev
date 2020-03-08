@@ -13,7 +13,7 @@ module.exports = {
   webpack: config => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      Content: path.resolve(__dirname, "content/"),
+      content: path.resolve(__dirname, "content/"),
     };
 
     config.module.rules = [
