@@ -42,7 +42,7 @@ module.exports = {
       "/": { page: "/" },
       "/blog": { page: "/blog" },
       "/projects": { page: "/projects" },
-      "/under-development": { page: "under-development" },
+      "/under-development": { page: "/underDevelopment" },
       ...staticRouter.getProjects(),
     };
   },
