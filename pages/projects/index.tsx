@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { NextRouter } from "next/router";
 
 import MainLayout from "../../components/layout";
-
-import { logPageView } from "../../utils/analytics";
 
 import Section from "../../components/base/section";
 import { Typography } from "../../components/base/typography";
@@ -13,12 +12,14 @@ import { CardContainer } from "../../components/pages/cardContainer";
 
 type PropsType = {
   projects: ProjectType[];
+  router: NextRouter;
 };
 
 function Projects(props: PropsType) {
-  useEffect(() => {
-    logPageView();
-  }, []);
+  if (process.env.NODE_ENV !== "development") {
+    props.router.replace("/under-development");
+    return;
+  }
 
   return (
     <MainLayout

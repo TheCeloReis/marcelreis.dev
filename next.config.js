@@ -42,6 +42,7 @@ module.exports = {
       "/": { page: "/" },
       "/blog": { page: "/blog" },
       "/projects": { page: "/projects" },
+      "/under-development": { page: "under-development" },
       ...staticRouter.getProjects(),
     };
   },

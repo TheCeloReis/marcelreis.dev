@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import TypedSentences from "../components/modules/typedSentences";
-import { logPageView } from "../utils/analytics";
 
 import Head from "../components/layout";
 import HeroHeader from "../components/modules/heroHeader";
@@ -18,10 +17,6 @@ type PropsType = {
 };
 
 const Index = (props: PropsType) => {
-  useEffect(() => {
-    logPageView();
-  }, []);
-
   return (
     <Head
       title={props.pageData.seo.title}

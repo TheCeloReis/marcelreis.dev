@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { NextRouter } from "next/router";
 import { NextPageContext } from "next";
-import { ProjectType } from "../../types/projetc";
-
-import { logPageView } from "../../utils/analytics";
-import Redirect from "../../utils/redirect";
 
 import { getProjects } from "../../utils/getContent";
 import Head from "../../components/layout";
@@ -14,6 +11,10 @@ import SideSection from "../../components/modules/sideSection";
 import { Header, StyledSection } from "../../components/pages/projectSection";
 import { Card } from "../../components/base/card";
 
+import { ProjectType } from "../../types/projetc";
+
+import Redirect from "../../utils/redirect";
+
 type PropsType = {
   project: ProjectType | undefined;
   links: {
@@ -22,15 +23,16 @@ type PropsType = {
     as: string;
   }[];
   query: string;
+  router: NextRouter;
 };
 
 const Post = (props: PropsType) => {
-  useEffect(() => {
-    logPageView();
-  }, []);
-
   if (!props.project) {
     return <Redirect path="/projects" />;
+  }
+
+  if (process.env.NODE_ENV !== "development") {
+    props.router.replace("/under-development");
   }
 
   return (

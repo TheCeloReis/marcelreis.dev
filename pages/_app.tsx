@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { NextRouter } from "next/router";
 import { ThemeProvider } from "styled-components";
 import { PageTransition } from "next-page-transitions";
 
@@ -9,15 +10,31 @@ import Footer from "../components/modules/footer";
 import { BackdropTransition } from "../components/pages/backdropTransition";
 import JsTheme from "../theme/jsTheme";
 import TsTheme from "../theme/tsTheme";
+import { logPageView } from "../utils/analytics";
 
-function App({ Component, pageProps, router }: any) {
+import { usePrevious } from "../hooks/usePrevious";
+
+type PropsType = {
+  Component: any;
+  pageProps: any;
+  router: NextRouter;
+};
+
+function App({ Component, pageProps, router }: PropsType) {
   const [darkMode, setDarkMode] = useState(false);
+  const prevPage = usePrevious(router.pathname);
 
   useEffect(() => {
     const isDarkMode =
       window.localStorage.getItem("darkMode") === "1" ? true : false;
     setDarkMode(isDarkMode);
   }, []);
+
+  useEffect(() => {
+    if (prevPage && prevPage !== router.pathname) {
+      logPageView();
+    }
+  }, [router.pathname, prevPage]);
 
   const toggleDarkMode = () => {
     const isDarkMode =

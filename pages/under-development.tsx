@@ -1,17 +1,13 @@
 import React from "react";
 
 import MainLayout from "../components/layout";
-
-import { Typography } from "../components/base/typography";
 import HeroHeader from "../components/modules/heroHeader";
 import { PageHeader } from "../components/modules/pageHeader";
+import { Typography } from "../components/base/typography";
 
-export default function Error() {
+const UnderDevelopment = () => {
   return (
-    <MainLayout
-      title="MarcelReis Front End Developer"
-      description="Desenvolvedor FrontEnd no Letras. Amante do Javascript, trabalho principalmente com React, Typesript, jQuery, Backbone e SASS"
-    >
+    <MainLayout title="MarcelReis Blog" description="Page under development">
       <HeroHeader height="33">
         <PageHeader>
           <Typography variant="h3" as="h1">
@@ -19,10 +15,12 @@ export default function Error() {
           </Typography>
           <br />
           <Typography variant="h6" as="span">
-            Page not found
+            Page under development
           </Typography>
         </PageHeader>
       </HeroHeader>
     </MainLayout>
   );
-}
+};
+
+export default UnderDevelopment;
