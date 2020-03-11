@@ -1,14 +1,11 @@
 import React from "react";
-import { NextRouter } from "next/router";
 
 import MainLayout from "../../components/layout";
-type PropsType = {
-  router: NextRouter;
-};
+import Redirect from "../../utils/redirect";
 
-export default function Blog(props: PropsType) {
+export default function Blog() {
   if (process.env.NODE_ENV !== "development") {
-    props.router.replace("/under-development");
+    return <Redirect path="/under-development" />;
   }
 
   return (

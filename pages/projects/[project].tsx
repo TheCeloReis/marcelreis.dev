@@ -1,5 +1,4 @@
 import React from "react";
-import { NextRouter } from "next/router";
 import { NextPageContext } from "next";
 
 import { getProjects } from "../../utils/getContent";
@@ -23,16 +22,15 @@ type PropsType = {
     as: string;
   }[];
   query: string;
-  router: NextRouter;
 };
 
 const Post = (props: PropsType) => {
-  if (!props.project) {
-    return <Redirect path="/projects" />;
+  if (process.env.NODE_ENV !== "development") {
+    return <Redirect path="/under-development" />;
   }
 
-  if (process.env.NODE_ENV !== "development") {
-    props.router.replace("/under-development");
+  if (!props.project) {
+    return <Redirect path="/projects" />;
   }
 
   return (

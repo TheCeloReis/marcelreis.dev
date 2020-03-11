@@ -9,6 +9,7 @@ import { Card } from "../../components/base/card";
 import { ProjectType } from "../../types/projetc";
 import { getProjects } from "../../utils/getContent";
 import { CardContainer } from "../../components/pages/cardContainer";
+import Redirect from "../../utils/redirect";
 
 type PropsType = {
   projects: ProjectType[];
@@ -17,8 +18,7 @@ type PropsType = {
 
 function Projects(props: PropsType) {
   if (process.env.NODE_ENV !== "development") {
-    props.router.replace("/under-development");
-    return;
+    return <Redirect path="/under-development" />;
   }
 
   return (
