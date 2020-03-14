@@ -16,7 +16,7 @@ type PropsType = {
   router: NextRouter;
 };
 
-function Projects(props: PropsType) {
+const Projects = (props: PropsType) => {
   if (process.env.NODE_ENV !== "development") {
     return <Redirect path="/under-development" />;
   }
@@ -50,7 +50,7 @@ function Projects(props: PropsType) {
       </Section>
     </MainLayout>
   );
-}
+};
 
 Projects.getInitialProps = () => {
   return {

@@ -20,7 +20,7 @@ type PropsType = {
   router: NextRouter;
 };
 
-function App({ Component, pageProps, router }: PropsType) {
+const App = ({ Component, pageProps, router }: PropsType) => {
   const [darkMode, setDarkMode] = useState(false);
   const prevPage = usePrevious(router.pathname);
 
@@ -57,6 +57,6 @@ function App({ Component, pageProps, router }: PropsType) {
       <GlobalStyle />
     </ThemeProvider>
   );
-}
+};
 
 export default App;

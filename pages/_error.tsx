@@ -6,7 +6,7 @@ import { Typography } from "../components/base/typography";
 import HeroHeader from "../components/modules/heroHeader";
 import { PageHeader } from "../components/modules/pageHeader";
 
-export default function Error() {
+const Error = () => {
   return (
     <MainLayout
       title="MarcelReis Front End Developer"
@@ -25,4 +25,6 @@ export default function Error() {
       </HeroHeader>
     </MainLayout>
   );
-}
+};
+
+export default Error;
