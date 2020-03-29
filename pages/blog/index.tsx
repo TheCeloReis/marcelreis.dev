@@ -7,7 +7,7 @@ import { Typography } from "../../components/base/typography";
 import { PageHeader } from "../../components/modules/pageHeader";
 import Redirect from "../../utils/redirect";
 
-export default function Blog() {
+const Blog = () => {
   if (process.env.NODE_ENV !== "development") {
     return <Redirect path="/under-development" />;
   }
@@ -31,4 +31,6 @@ export default function Blog() {
       <BlogCard></BlogCard>
     </MainLayout>
   );
-}
+};
+
+export default Blog;

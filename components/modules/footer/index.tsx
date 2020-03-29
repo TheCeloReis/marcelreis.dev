@@ -13,7 +13,7 @@ export default function Footer() {
         <a
           href="https://github.com/MarcelReis"
           target="_blank"
-          title="Perfil do GitHub"
+          title="GitHub Profile"
           rel="noopener noreferrer"
         >
           <Github size={32}>GitHub</Github>
@@ -21,7 +21,7 @@ export default function Footer() {
         <a
           href="https://www.linkedin.com/in/marcelreis/"
           target="_blank"
-          title="Perfil do Linkedin"
+          title="Linkedin Profile"
           rel="noopener noreferrer"
         >
           <LinkedinSquare size={32}>Linkedin</LinkedinSquare>
