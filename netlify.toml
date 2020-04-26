@@ -3,6 +3,13 @@
   publish = "out/"
   command = "npm run export"
 
+[dev]
+  command = "npm run dev" 
+  port = 8888 
+  targetPort = 3000 
+  publish = "dist" 
+  autoLaunch = true 
+
 [context.deploy-preview.environment]
   NODE_ENV = "development"
 

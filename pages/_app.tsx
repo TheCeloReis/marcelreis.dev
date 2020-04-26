@@ -21,7 +21,7 @@ type PropsType = {
 };
 
 const App = ({ Component, pageProps, router }: PropsType) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const prevPage = usePrevious(router.pathname);
 
   useEffect(() => {

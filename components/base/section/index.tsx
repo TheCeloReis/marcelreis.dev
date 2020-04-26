@@ -21,6 +21,7 @@ const Container = styled.div`
   max-width: 768px;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.base[0]};
+  transition: background-color 0.2s ease;
 
   ${({ theme }) => theme.media.greaterThan.medium} {
     box-shadow: ${({ theme }) => theme.boxShadow[0]};
