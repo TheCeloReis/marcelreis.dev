@@ -7,8 +7,6 @@ const webpack = require("webpack");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const staticRouter = require("./utils/staticRouter");
-
 module.exports = {
   webpack: (config) => {
     config.resolve.alias = {
@@ -40,7 +38,6 @@ module.exports = {
   ) {
     return {
       "/": { page: "/" },
-      ...staticRouter.getProjects(),
     };
   },
 };
