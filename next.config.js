@@ -10,7 +10,7 @@ dotenv.config();
 const staticRouter = require("./utils/staticRouter");
 
 module.exports = {
-  webpack: config => {
+  webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       content: path.resolve(__dirname, "content/"),
@@ -34,15 +34,12 @@ module.exports = {
     return config;
   },
 
-  exportPathMap: async function(
+  exportPathMap: async function (
     defaultPathMap,
     { dev, dir, outDir, distDir, buildId }
   ) {
     return {
       "/": { page: "/" },
-      "/blog": { page: "/blog" },
-      "/projects": { page: "/projects" },
-      "/under-development": { page: "/underDevelopment" },
       ...staticRouter.getProjects(),
     };
   },
