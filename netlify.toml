@@ -1,7 +1,8 @@
 [build]
   base = "/"
-  publish = "out/"
-  command = "npm run export"
+  publish = "public"
+  command = "npm run build"
+  functions = "lambda"
 
 [dev]
   command = "npm run dev" 
