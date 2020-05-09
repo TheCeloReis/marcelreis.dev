@@ -57,7 +57,7 @@ exports.createPages = ({ actions, graphql }) => {
       }
     });
     // Eliminate duplicate tags
-    tags = _.uniq(tags);
+    tags = [...new Set(tags)];
 
     // Make tag pages
     tags.forEach((tag) => {

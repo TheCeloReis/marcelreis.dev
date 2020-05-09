@@ -2,21 +2,14 @@
   base = "/"
   publish = "public"
   command = "npm run build"
-  functions = "lambda"
 
 [dev]
-  command = "npm run dev" 
-  port = 8888 
-  targetPort = 3000 
-  publish = "dist" 
+  framework = "#custom"
+  command = "yarn run develop" 
+  port = 8080 
+  targetPort = 8000 
+  publish = "publish" 
   autoLaunch = true 
-
-[context.deploy-preview.environment]
-  NODE_ENV = "development"
-
-[[redirects]]
-  from = "/admin"
-  to = "/static/admin/index.html"
 
 [[headers]]
   for = "/*"

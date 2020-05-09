@@ -2,11 +2,11 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
+import { withPrefix } from "gatsby";
 
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import useSiteMetadata from "../SiteMetadata";
-import { withPrefix } from "gatsby";
 
 import { theme } from "../../utils/theme";
 import { GlobalStyle } from "../../utils/globalStyles";
