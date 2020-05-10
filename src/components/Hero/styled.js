@@ -1,9 +1,18 @@
 import styled, { keyframes } from "styled-components";
 
 export const Header = styled.div`
-  position: relative;
+  position: absolute;
   width: 100%;
-  height: ${({ height }) => height || "75vh"};
+  height: ${({ height }) => {
+    switch (height) {
+      case "full":
+        return "100vh";
+      case "hero":
+        return "75vh";
+      default:
+        return "72px";
+    }
+  }};
   z-index: 10;
   overflow: hidden;
 
@@ -21,7 +30,7 @@ export const Header = styled.div`
   background-size: 200% 200%;
   background-position-x: 50%;
 
-  transition: height 0.2s ease;
+  transition: height 1s ease-in-out;
 `;
 
 const wave = keyframes`
@@ -71,7 +80,7 @@ const Star = styled.div`
   bottom: 10%;
   transform: translate(-50%, -50%);
   background-color: transparent;
-  box-shadow: ${({ stars }) => stars} 0px 0px #fff;
+  box-shadow: ${({ stars }) => stars};
 `;
 
 export const Star1 = styled(Star)`

@@ -7,35 +7,41 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 
+import { heroService } from "../components/Hero/machine";
+
 export const IndexPageTemplate = ({
-  // image,
-  // title,
+  image,
+  title,
   heading,
-  // subheading,
+  subheading,
   mainpitch,
   description,
   intro,
 }) => {
-  // const typedRef = useRef(null);
+  const typedRef = useRef(null);
 
-  // useEffect(() => {
-  //   new Typed(typedRef.current, {
-  //     strings: [
-  //       title,
-  //       "<i>First</i> sentence.",
-  //       "<i>First</i> a second sentence.",
-  //     ],
-  //     loop: true,
-  //     startDelay: 2000,
-  //     typeSpeed: 50,
-  //     backSpeed: 25,
-  //     smartBackspace: true,
-  //   });
-  // }, []);
+  useEffect(() => {
+    new Typed(typedRef.current, {
+      strings: [
+        title,
+        "<i>First</i> sentence.",
+        "<i>First</i> a second sentence.",
+      ],
+      loop: true,
+      startDelay: 2000,
+      typeSpeed: 50,
+      backSpeed: 25,
+      smartBackspace: true,
+    });
+
+    heroService.send("HERO");
+
+    return () => heroService.send("NORMAL");
+  }, []);
 
   return (
-    <div>
-      {/* <div
+    <div style={{ marginTop: "calc(75vh - 72px)" }}>
+      <div
         className="full-width-image margin-top-0"
         style={{
           backgroundImage: `url(${
@@ -81,7 +87,7 @@ export const IndexPageTemplate = ({
             {subheading}
           </h3>
         </div>
-      </div> */}
+      </div>
       <section className="section section--gradient">
         <div className="container">
           <div className="section">

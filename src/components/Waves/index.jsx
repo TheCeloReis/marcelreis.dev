@@ -6,7 +6,28 @@ import * as S from "./styled";
 const WavePropTypes = {
   color: PropTypes.string,
   className: PropTypes.string,
+  position: PropTypes.string,
 };
+
+export const Waves = ({ color, className, position }) => {
+  return (
+    <S.WaveArea className={className} position={position}>
+      <S.WaveContainer delay={0}>
+        <Wave1 color={color} />
+      </S.WaveContainer>
+      <S.WaveContainer delay={4}>
+        <Wave2 color={color} />
+      </S.WaveContainer>
+      <S.WaveContainer delay={8}>
+        <Wave1 color={color} />
+      </S.WaveContainer>
+      <S.WaveContainer delay={12}>
+        <Wave2 color={color} />
+      </S.WaveContainer>
+    </S.WaveArea>
+  );
+};
+Waves.propTypes = WavePropTypes;
 
 export const Wave1 = ({ color, className }) => {
   return (

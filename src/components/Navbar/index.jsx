@@ -1,38 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import { Wave1, Wave2 } from "../Waves";
+import Hero from "../Hero";
 
 import * as S from "./styled";
-import Heaven from "./starts";
-
-const Background = ({ height }) => {
-  return (
-    <S.Header height={height}>
-      <S.WaveArea>
-        <S.WaveContainer delay={0}>
-          <Wave1 />
-        </S.WaveContainer>
-        <S.WaveContainer delay={4}>
-          <Wave2 />
-        </S.WaveContainer>
-        <S.WaveContainer delay={8}>
-          <Wave1 />
-        </S.WaveContainer>
-        <S.WaveContainer delay={12}>
-          <Wave2 />
-        </S.WaveContainer>
-      </S.WaveArea>
-      <Heaven />
-    </S.Header>
-  );
-};
-Background.propTypes = {
-  height: PropTypes.string,
-};
 
 const Navbar = () => {
-  return <Background></Background>;
+  return <Hero></Hero>;
 };
 
 export default Navbar;

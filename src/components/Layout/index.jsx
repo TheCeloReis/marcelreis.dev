@@ -10,6 +10,7 @@ import useSiteMetadata from "../SiteMetadata";
 
 import { theme } from "../../utils/theme";
 import { GlobalStyle } from "../../utils/globalStyles";
+import * as S from "./styled";
 
 import "../all.sass";
 
@@ -58,7 +59,7 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+      <S.Main>{children}</S.Main>
       <Footer />
     </ThemeProvider>
   );

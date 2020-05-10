@@ -4,6 +4,8 @@
   "version": "1.1.3",
   "author": "Austin Green",
   "dependencies": {
+    "@xstate/fsm": "^1.4.0",
+    "@xstate/react": "^0.8.1",
     "babel-plugin-styled-components": "^1.10.7",
     "bulma": "^0.8.0",
     "gatsby": "^2.20.35",

@@ -14,4 +14,8 @@ export const GlobalStyle = createGlobalStyle`
   *::after {
     box-sizing: inherit;
   }
+
+  #___gatsby {
+    position: relative;
+  }
 `;
