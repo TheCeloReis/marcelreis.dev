@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Wave1, Wave2 } from "../Waves";
 
 import * as S from "./styled";
+import Heaven from "./starts";
 
 const Background = ({ height }) => {
   return (
@@ -22,6 +23,7 @@ const Background = ({ height }) => {
           <Wave2 />
         </S.WaveContainer>
       </S.WaveArea>
+      <Heaven />
     </S.Header>
   );
 };

@@ -3,8 +3,9 @@ import styled, { keyframes } from "styled-components";
 export const Header = styled.div`
   position: relative;
   width: 100%;
-  height: ${({ height }) => height ?? "75vh"};
+  height: ${({ height }) => height || "75vh"};
   z-index: 10;
+  overflow: hidden;
 
   background: linear-gradient(
       0deg,
@@ -13,8 +14,7 @@ export const Header = styled.div`
     ),
     radial-gradient(
       circle,
-      rgba(209, 114, 253, 1) 0%,
-      rgba(139, 82, 190, 1) 25%,
+      rgba(139, 82, 190, 1) 0%,
       rgba(105, 62, 148, 1) 50%,
       rgba(50, 26, 71, 1) 75%
     );
@@ -45,7 +45,6 @@ export const WaveArea = styled.div`
   width: 200%;
   height: 64px;
   overflow: hidden;
-  z-index: -1;
 `;
 
 export const WaveContainer = styled.div`
