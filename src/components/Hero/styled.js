@@ -6,7 +6,7 @@ export const Header = styled.div`
   height: ${({ height }) => {
     switch (height) {
       case "full":
-        return "100vh";
+        return "100%";
       case "hero":
         return "75vh";
       default:
@@ -99,4 +99,38 @@ export const Star3 = styled(Star)`
   width: 3px;
   height: 3px;
   animation: ${star} 128s linear infinite;
+`;
+
+const entering = keyframes`
+  from {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0%);
+    opacity: 1;
+  }
+`;
+
+export const NavContainer = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+  height: 64px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+
+  animation-play-state: paused;
+  animation: ${entering} 2s ease;
+`;
+
+export const HeroContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 64px;
 `;

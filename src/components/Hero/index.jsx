@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useService } from "@xstate/react";
 
-import { Wave1, Wave2, Waves } from "../Waves";
+import { Waves } from "../Waves";
 
 import * as S from "./styled";
 import { heroService } from "./machine";
@@ -27,12 +27,12 @@ function getCordinates(radius) {
   };
 }
 
-const Hero = () => {
+const Hero = ({ children }) => {
   const [stars, setStars] = useState({ small: "", medium: "", large: "" });
   const [radius, setRadius] = useState(0);
   const [state, send] = useService(heroService);
 
-  console.log("state", state.value);
+  console.log("state", state);
 
   useEffect(() => {
     send("NORMAL");
@@ -62,6 +62,9 @@ const Hero = () => {
       <S.Star1 stars={stars.small} />
       <S.Star2 stars={stars.medium} />
       <S.Star3 stars={stars.large} />
+
+      <S.NavContainer>{children}</S.NavContainer>
+      <S.HeroContainer>{state.context.Component}</S.HeroContainer>
     </S.Header>
   );
 };
