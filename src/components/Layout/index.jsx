@@ -1,5 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { withPrefix } from "gatsby";
@@ -8,18 +7,15 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import useSiteMetadata from "../SiteMetadata";
 
-import { theme } from "../../utils/theme";
-import { GlobalStyle } from "../../utils/globalStyles";
 import * as S from "./styled";
 
-import "../all.sass";
+import "../../scss/index.scss";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+    <>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -61,7 +57,7 @@ const TemplateWrapper = ({ children }) => {
       <Navbar />
       <S.Main>{children}</S.Main>
       <Footer />
-    </ThemeProvider>
+    </>
   );
 };
 
