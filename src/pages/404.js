@@ -4,8 +4,6 @@ import styled from "styled-components";
 
 import { heroService } from "../components/Hero/machine";
 
-import Layout from "../components/Layout";
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -47,7 +45,7 @@ const NotFoundPage = () => {
     return () => send("NORMAL");
   }, []);
 
-  return <Layout />;
+  return null;
 };
 
 export default NotFoundPage;
