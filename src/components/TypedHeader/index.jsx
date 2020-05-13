@@ -15,7 +15,7 @@ const TypedHeader = () => {
     new Typed(typedRef.current, {
       strings: [
         "Front end developer",
-        " Enthusiast",
+        "WebDesigner Enthusiast",
         "Explaning code with words",
       ],
       typeSpeed: 30,
@@ -30,7 +30,7 @@ const TypedHeader = () => {
 
   return (
     <S.Container>
-      <S.FirstWebDesignerLine>Hello, I'm Marcelo Reis</S.FirstLine>
+      <S.FirstLine>Hello, I'm Marcelo Reis</S.FirstLine>
       <br />
       <S.SecondLine ref={typedRef}></S.SecondLine>
     </S.Container>
