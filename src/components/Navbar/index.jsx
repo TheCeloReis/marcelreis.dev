@@ -15,7 +15,7 @@ const Navbar = () => {
       <S.Nav>
         <S.StyledLink to="about">me</S.StyledLink>
         <S.StyledLink to="blog">blog</S.StyledLink>
-        <S.StyledLink to="products">labs</S.StyledLink>
+        <S.StyledLink to="labs">labs</S.StyledLink>
       </S.Nav>
     </Hero>
   );

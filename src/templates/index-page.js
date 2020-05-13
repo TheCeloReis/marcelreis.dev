@@ -1,11 +1,11 @@
-import React, { useRef, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-import Typed from "typed.js";
 
-import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
+import TypedHeader from "../components/TypedHeader";
 
 import { heroService } from "../components/Hero/machine";
 
@@ -18,10 +18,8 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => {
-  const typedRef = useRef(null);
-
   useEffect(() => {
-    heroService.send({ type: "HERO", Component: <div>Cool Hero</div> });
+    heroService.send({ type: "HERO", Component: <TypedHeader /> });
 
     return () => heroService.send("NORMAL");
   }, []);

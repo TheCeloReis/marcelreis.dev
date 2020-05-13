@@ -42,13 +42,11 @@ body {
 
   --accent: var(--green);
 
-  --base-low: var(--gray1);
+  --base-low: var(--white);
   --base: var(--gray2);
-  --base-dark: var(--gray3);
+  --base-high: var(--gray3);
 
   --contrast-low: var(--gray9);
   --contrast: var(--gray10);
-  --contrast-dark: var(--black);
-
-  line-height: 1.65;
+  --contrast-high: var(--black);
 }
