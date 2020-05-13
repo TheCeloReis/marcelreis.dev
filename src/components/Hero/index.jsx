@@ -32,8 +32,6 @@ const Hero = ({ children }) => {
   const [radius, setRadius] = useState(0);
   const [state, send] = useService(heroService);
 
-  console.log("state", state);
-
   useEffect(() => {
     send("NORMAL");
 
