@@ -2,8 +2,10 @@
   base = "/"
   publish = "out/"
   command = "npm run export"
+  functions = "functions/"
 
 [dev]
+  framework = "#custom"
   command = "npm run dev" 
   port = 8888 
   targetPort = 3000 
