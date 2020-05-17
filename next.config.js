@@ -1,43 +1,10 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-var-requires */
-
-const path = require("path");
-const webpack = require("webpack");
-const dotenv = require("dotenv");
-dotenv.config();
-
 module.exports = {
-  webpack: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      content: path.resolve(__dirname, "content/"),
-    };
-
-    config.module.rules = [
-      ...config.module.rules,
-      {
-        test: /\.md$/,
-        use: "frontmatter-markdown-loader",
-      },
-    ];
-
-    const env = Object.keys(process.env).reduce((acc, curr) => {
-      acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
-      return acc;
-    }, {});
-
-    config.plugins.push(new webpack.DefinePlugin(env));
-
+  target: "serverless",
+  webpack: function (config) {
+    config.module.rules.push({
+      test: /\.md$/,
+      use: "raw-loader",
+    });
     return config;
-  },
-
-  exportPathMap: async function (
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
-    return {
-      "/": { page: "/" },
-    };
   },
 };
