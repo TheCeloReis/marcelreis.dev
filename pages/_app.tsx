@@ -1,4 +1,4 @@
-const MyApp = ({ Component, pageProps }: any) => {
+const MyApp = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
 };
 

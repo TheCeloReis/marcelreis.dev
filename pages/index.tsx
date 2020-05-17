@@ -7,7 +7,10 @@ const RootPage = () => {
 
   if (process.browser) {
     const lang: any = navigator.language.toLowerCase();
-    router.push(`/${supportedLangs.includes(lang) ? lang : supportedLangs[0]}`);
+    router.replace(
+      "/[lang]",
+      `/${supportedLangs.includes(lang) ? lang : supportedLangs[0]}`
+    );
   }
 
   return null;

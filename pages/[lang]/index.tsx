@@ -6,8 +6,9 @@ const HomePage = () => {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Marcel Reis - Front End Developer</title>
       </Head>
+
       <Link href="/[lang]/blog" as="/en-us/blog">
         <a>blog</a>
       </Link>

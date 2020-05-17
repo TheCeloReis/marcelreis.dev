@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { GetStaticProps, GetStaticPaths } from "next";
+import Head from "next/head";
 
 import { getPaths, getPosts, langEnum } from "../../../utils/lang";
 
@@ -20,24 +21,29 @@ const BlogPage = (props: PropsType) => {
   }
 
   return (
-    <div>
-      {!props.posts && <div>No posts!</div>}
-      <ul>
-        {props.posts &&
-          props.posts.map((post) => {
-            return (
-              <li key={post.slug}>
-                <Link
-                  href="/[lang]/blog/[post]"
-                  as={`/${lang}/blog/${post.slug}`}
-                >
-                  <a>{post.frontmatter.title}</a>
-                </Link>
-              </li>
-            );
-          })}
-      </ul>
-    </div>
+    <>
+      <Head>
+        <title>Blog - Marcelo Reis</title>
+      </Head>
+      <div>
+        {!props.posts && <div>No posts!</div>}
+        <ul>
+          {props.posts &&
+            props.posts.map((post) => {
+              return (
+                <li key={post.slug}>
+                  <Link
+                    href="/[lang]/blog/[post]"
+                    as={`/${lang}/blog/${post.slug}`}
+                  >
+                    <a>{post.frontmatter.title}</a>
+                  </Link>
+                </li>
+              );
+            })}
+        </ul>
+      </div>
+    </>
   );
 };
 

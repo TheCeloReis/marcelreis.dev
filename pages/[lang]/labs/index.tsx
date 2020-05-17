@@ -1,7 +1,14 @@
 import React from "react";
+import Head from "next/head";
 
 const LabsPage = () => {
-  return <div></div>;
+  return (
+    <>
+      <Head>
+        <title>Labs - Marcelo Reis</title>
+      </Head>
+    </>
+  );
 };
 
 export const getStaticPaths = () => {
