@@ -1,7 +1,7 @@
 import Link from "next/link";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
-import { context, supportedLangs, getSlugs } from "../../../../utils/lang";
+import { supportedLangs, getSlugs } from "../../../../utils/lang";
 
 const BlogPage = ({ siteTitle, frontmatter, markdownBody }) => {
   if (!frontmatter) return <></>;

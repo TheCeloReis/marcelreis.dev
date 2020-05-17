@@ -1,7 +1,16 @@
 import React from "react";
+import { supportedLangs } from "../utils/lang";
+import { useRouter } from "next/router";
 
 const RootPage = () => {
-  return <div></div>;
+  const router = useRouter();
+
+  if (process.browser) {
+    const lang: any = navigator.language.toLowerCase();
+    router.push(`/${supportedLangs.includes(lang) ? lang : supportedLangs[0]}`);
+  }
+
+  return null;
 };
 
 export default RootPage;
