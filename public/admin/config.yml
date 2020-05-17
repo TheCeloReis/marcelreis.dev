@@ -10,8 +10,7 @@ publish_mode: editorial_workflow
 collections:
   - name: en-us-blog
     label: English Blog
-    filter: { field: "lang", value: "en-us" }
-    folder: content/posts
+    folder: content/en-us/posts
     create: true
     slug: '{{slug}}'
     fields:
@@ -26,8 +25,7 @@ collections:
 
   - name: pt-br-blog
     label: Portuguese Blog
-    filter: { field: "lang", value: "pt-br" }
-    folder: content/posts
+    folder: content/pt-br/posts
     create: true
     slug: '{{slug}}'
     fields:

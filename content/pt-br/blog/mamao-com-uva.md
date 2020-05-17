@@ -1,10 +1,9 @@
 ---
-title: "Lidando com a quarentena do COVID-19"
+title: "Mamão com uva"
 date: 2020-03-22 00:00:01
 description: "De certa forma o mundo mudou. É importante entender a situação e buscar formas de nos adaptar nesses estranhos tempos que estamos vivendo."
 image: /assets/2020-03-22-cover.png
 tags: ["lifestyle", "misc"]
-lang: "en-us"
 ---
 
 A última vez que escrevi por aqui foi em novembro, ou seja, cinco meses atrás. Naquele momento o coronavírus estava silenciosamente fazendo seus primeiros contágios na China.

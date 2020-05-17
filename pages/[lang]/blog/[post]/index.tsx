@@ -1,11 +1,10 @@
 import Link from "next/link";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
+import { context, supportedLangs, getSlugs } from "../../../../utils/lang";
 
 const BlogPage = ({ siteTitle, frontmatter, markdownBody }) => {
   if (!frontmatter) return <></>;
-
-  console.log(frontmatter);
 
   return (
     <>
@@ -23,9 +22,9 @@ const BlogPage = ({ siteTitle, frontmatter, markdownBody }) => {
 };
 
 export const getStaticProps = async ({ ...ctx }) => {
-  const { pid } = ctx.params;
+  const { post, lang } = ctx.params;
 
-  const content = await import(`../../../../content/posts/${pid}.md`);
+  const content = await import(`../../../../content/${lang}/blog/${post}.md`);
   const data = matter(content.default);
 
   data.data.date = data.data.date.toString();
@@ -40,17 +39,10 @@ export const getStaticProps = async ({ ...ctx }) => {
 };
 
 export const getStaticPaths = () => {
-  const blogSlugs = ((context) => {
-    const keys = context.keys();
-    const data = keys.map((key, index) => {
-      let slug = key.replace(/^.*[\\\/]/, "").slice(0, -3);
-
-      return slug;
-    });
-    return data;
-  })(require.context("../../../../content/posts/", true, /\.md$/));
-
-  const paths = blogSlugs.map((slug: string) => `/en-us/blog/${slug}`);
+  const paths = supportedLangs.reduce((paths, lang): any => {
+    const slugs = getSlugs(lang);
+    return [...paths, ...slugs.map((slug) => `/${lang}/blog/${slug}`)];
+  }, []);
 
   return {
     paths,

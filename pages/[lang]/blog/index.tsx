@@ -1,21 +1,36 @@
 import React from "react";
 import Link from "next/link";
-import matter from "gray-matter";
+import { useRouter } from "next/router";
+import { GetStaticProps, GetStaticPaths } from "next";
 
-const BlogPage = ({ posts }) => {
-  if (posts === "undefined") {
+import { getPaths, getPosts, langEnum } from "../../../utils/lang";
+
+type PropsType = {
+  posts?: any[];
+  title: string;
+  description: string;
+};
+
+const BlogPage = (props: PropsType) => {
+  const router = useRouter();
+  const { lang } = router.query;
+
+  if (!props.posts) {
     return null;
   }
 
   return (
     <div>
-      {!posts && <div>No posts!</div>}
+      {!props.posts && <div>No posts!</div>}
       <ul>
-        {posts &&
-          posts.map((post) => {
+        {props.posts &&
+          props.posts.map((post) => {
             return (
               <li key={post.slug}>
-                <Link href="/[lang]/blog/[pid]" as={`/en-us/blog/${post.slug}`}>
+                <Link
+                  href="/[lang]/blog/[post]"
+                  as={`/${lang}/blog/${post.slug}`}
+                >
                   <a>{post.frontmatter.title}</a>
                 </Link>
               </li>
@@ -26,38 +41,23 @@ const BlogPage = ({ posts }) => {
   );
 };
 
-export const getStaticProps = () => {
-  const posts = ((context) => {
-    const keys = context.keys();
-    const values: any = keys.map(context);
+export const getStaticProps: GetStaticProps<{}, { lang: langEnum }> = async ({
+  ...ctx
+}) => {
+  const { lang } = ctx.params;
+  const posts = getPosts(lang);
 
-    const data = keys.map((key, index) => {
-      let slug = key.replace(/^.*[\\\/]/, "").slice(0, -3);
-      const value = values[index];
-      const document = matter(value.default);
-
-      document.data.date = document.data.date.toString();
-
-      return {
-        frontmatter: document.data,
-        markdownBody: document.content,
-        slug,
-      };
-    });
-    return data;
-  })(require.context("../../../content/posts", true, /\.md$/));
-
-  return {
-    props: {
-      posts,
-      title: "a",
-      description: "a",
-    },
+  const props: PropsType = {
+    posts,
+    title: "Blog",
+    description: "My blog",
   };
+
+  return { props };
 };
 
-export const getStaticPaths = () => {
-  return { paths: ["/en-us/blog", "/pt-br/blog"], fallback: false };
+export const getStaticPaths: GetStaticPaths = async () => {
+  return { paths: getPaths("/blog"), fallback: false };
 };
 
 export default BlogPage;
