@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { supportedLangs, getSlugs } from "../../../../utils/lang";
 
 const BlogPage = ({ siteTitle, frontmatter, markdownBody }) => {
+  debugger;
   if (!frontmatter) return <></>;
 
   return (
@@ -24,7 +25,9 @@ const BlogPage = ({ siteTitle, frontmatter, markdownBody }) => {
 export const getStaticProps = async ({ ...ctx }) => {
   const { post, lang } = ctx.params;
 
-  const content = await import(`../../../../content/${lang}/blog/${post}.md`);
+  const content = await import(
+    `../../../../../content/${lang}/blog/${post}.md`
+  );
   const data = matter(content.default);
 
   data.data.date = data.data.date.toString();
