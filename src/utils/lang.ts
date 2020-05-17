@@ -45,12 +45,12 @@ export const getPosts = (lang: langEnum) => {
 const context = {
   "en-us": {
     blog: {
-      posts: require.context("../content/en-us/blog", true, /\.md$/),
+      posts: require.context("../../content/en-us/blog", true, /\.md$/),
     },
   },
   "pt-br": {
     blog: {
-      posts: require.context("../content/pt-br/blog", true, /\.md$/),
+      posts: require.context("../../content/pt-br/blog", true, /\.md$/),
     },
   },
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import { supportedLangs } from "../utils/lang";
 import { useRouter } from "next/router";
 
