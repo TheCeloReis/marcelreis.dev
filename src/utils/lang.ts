@@ -1,5 +1,8 @@
 import matter from "gray-matter";
 
+const POSTS_EN_US = require.context("../../content/en-us/blog", true, /\.md$/);
+const POSTS_PT_BR = require.context("../../content/pt-br/blog", true, /\.md$/);
+
 export enum langEnum {
   EN_US = "en-us",
   PT_BR = "pt-br",
@@ -45,12 +48,12 @@ export const getPosts = (lang: langEnum) => {
 const context = {
   "en-us": {
     blog: {
-      posts: require.context("../../content/en-us/blog", true, /\.md$/),
+      posts: POSTS_EN_US,
     },
   },
   "pt-br": {
     blog: {
-      posts: require.context("../../content/pt-br/blog", true, /\.md$/),
+      posts: POSTS_PT_BR,
     },
   },
 };
