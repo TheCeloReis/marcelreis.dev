@@ -10,14 +10,13 @@ publish_mode: editorial_workflow
 collections:
   - name: en-us-blog
     label: English Blog
-    folder: content/en-us/posts
+    folder: content/en-us/blog
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: Date, name: created, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
-      - { label: Date, name: updated, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
+      - { label: Created, name: created, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
+      - { label: Updated, name: updated, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
       - { label: Cover, name: image, widget: image }
-      - { label: Language, name: "lang", widget: "select", options: ["en-us", "pt-br"] }
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: string, pattern: ['.{,160}', "Must have up to 160 characters"] }
       - { label: Tags, name: tags, widget: list, default: [''] }
@@ -25,14 +24,13 @@ collections:
 
   - name: pt-br-blog
     label: Portuguese Blog
-    folder: content/pt-br/posts
+    folder: content/pt-br/blog
     create: true
     slug: '{{slug}}'
     fields:
-      - { label: Date, name: created, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
-      - { label: Date, name: updated, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
+      - { label: Created, name: created, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
+      - { label: Updated, name: updated, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
       - { label: Cover, name: image, widget: image }
-      - { label: Language, name: "lang", widget: "select", options: ["en-us", "pt-br"] }
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: string, pattern: ['.{,160}', "Must have up to 160 characters"] }
       - { label: Tags, name: tags, widget: list, default: [''] }
