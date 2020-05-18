@@ -1,9 +1,16 @@
 import React from "react";
 
 import { getPaths } from "../../../utils/lang";
+import Head from "next/head";
 
 const HomePage = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Head>
+        <title>Home | Marcelo</title>
+      </Head>
+    </div>
+  );
 };
 
 export const getStaticProps = () => ({ props: {} });

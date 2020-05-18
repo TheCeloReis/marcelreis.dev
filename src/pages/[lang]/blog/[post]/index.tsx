@@ -9,7 +9,7 @@ const BlogPage = ({ siteTitle, frontmatter, markdownBody }) => {
 
   return (
     <>
-      <Link href="/">
+      <Link href="../">
         <a>Back to post list</a>
       </Link>
       <Content as="article">

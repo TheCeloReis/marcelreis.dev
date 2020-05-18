@@ -1,11 +1,13 @@
 import React from "react";
 import Head from "next/head";
 
+import { getPaths } from "../../../utils/lang";
+
 const LabsPage = () => {
   return (
     <>
       <Head>
-        <title>Labs - Marcelo Reis</title>
+        <title>Labs | Marcelo Reis</title>
       </Head>
       Lab
     </>
@@ -13,7 +15,7 @@ const LabsPage = () => {
 };
 
 export const getStaticPaths = () => {
-  return { paths: ["/en-us/labs", "/pt-br/labs"], fallback: false };
+  return { paths: getPaths("/labs/"), fallback: false };
 };
 
 export const getStaticProps = () => ({ props: {} });

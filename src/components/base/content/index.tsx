@@ -3,7 +3,7 @@ import React, { ReactChildren } from "react";
 import * as S from "./styled";
 
 type PropsType = {
-  as: string;
+  as: any;
   children: any | any[];
 };
 

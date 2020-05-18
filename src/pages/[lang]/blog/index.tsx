@@ -28,7 +28,7 @@ const BlogPage = (props: PropsType) => {
   return (
     <>
       <Head>
-        <title>Blog - Marcelo Reis</title>
+        <title>Blog | Marcelo Reis</title>
       </Head>
       <div>
         {!props.posts && <div>No posts!</div>}
