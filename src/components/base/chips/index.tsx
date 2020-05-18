@@ -9,7 +9,6 @@ export const Chip = styled.span`
 
 export const ChipContainer = styled.div`
   display: flex;
-  overflow: scroll;
   > ${Chip} {
     margin-right: var(--spacing-2);
   }
