@@ -16,7 +16,7 @@ const HomePage = () => {
 export const getStaticProps = () => ({ props: {} });
 
 export const getStaticPaths = () => {
-  return { paths: getPaths("/home/"), fallback: false };
+  return { paths: getPaths("/home"), fallback: false };
 };
 
 export default HomePage;

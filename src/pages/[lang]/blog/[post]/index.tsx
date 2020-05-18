@@ -14,7 +14,7 @@ const BlogPage = ({ siteTitle, frontmatter, markdownBody }) => {
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
       </Head>
-      <Link href="../">
+      <Link href="..">
         <a>Back to post list</a>
       </Link>
       <Content as="article">
@@ -48,7 +48,7 @@ export const getStaticProps = async ({ ...ctx }) => {
 export const getStaticPaths = () => {
   const paths = supportedLangs.reduce((paths, lang): any => {
     const slugs = getSlugs(lang);
-    return [...paths, ...slugs.map((slug) => `/${lang}/blog/${slug}/`)];
+    return [...paths, ...slugs.map((slug) => `/${lang}/blog/${slug}`)];
   }, []);
 
   return {

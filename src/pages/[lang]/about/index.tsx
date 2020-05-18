@@ -17,7 +17,7 @@ const AboutPage = () => {
 export const getStaticProps = () => ({ props: {} });
 
 export const getStaticPaths = () => {
-  return { paths: getPaths("/about/"), fallback: false };
+  return { paths: getPaths("/about"), fallback: false };
 };
 
 export default AboutPage;

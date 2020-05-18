@@ -7,7 +7,7 @@ import * as S from "./styled";
 const Footer = () => {
   return (
     <S.Footer>
-      <S.Button href="https://linkedin.com/in/marcelreis/">
+      <S.Button href="https://linkedin.com/in/marcelreis">
         <Linkedin size={"36px"}>Linkedin</Linkedin>
       </S.Button>
       <S.Button href="https://github.com/marcelreis">

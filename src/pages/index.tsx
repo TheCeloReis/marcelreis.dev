@@ -7,8 +7,8 @@ const RootPage = () => {
   if (process.browser) {
     const lang: any = navigator.language.toLowerCase();
     router.replace(
-      "/[lang]/home/",
-      `/${supportedLangs.includes(lang) ? lang : supportedLangs[0]}/home/`
+      "/[lang]/home",
+      `/${supportedLangs.includes(lang) ? lang : supportedLangs[0]}/home`
     );
   }
 

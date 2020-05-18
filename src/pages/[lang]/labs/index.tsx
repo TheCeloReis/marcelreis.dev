@@ -15,7 +15,7 @@ const LabsPage = () => {
 };
 
 export const getStaticPaths = () => {
-  return { paths: getPaths("/labs/"), fallback: false };
+  return { paths: getPaths("/labs"), fallback: false };
 };
 
 export const getStaticProps = () => ({ props: {} });

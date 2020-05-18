@@ -38,8 +38,8 @@ const BlogPage = (props: PropsType) => {
               return (
                 <Card>
                   <Link
-                    href={"/[lang]/blog/[post]/"}
-                    as={`/${lang}/blog/${post.slug}/`}
+                    href={"/[lang]/blog/[post]"}
+                    as={`/${lang}/blog/${post.slug}`}
                   >
                     <a>
                       <PostBrief>
@@ -78,7 +78,7 @@ export const getStaticProps: GetStaticProps<{}, { lang: langEnum }> = async ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return { paths: getPaths("/blog/"), fallback: false };
+  return { paths: getPaths("/blog"), fallback: false };
 };
 
 export default BlogPage;
