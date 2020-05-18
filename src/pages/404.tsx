@@ -5,15 +5,11 @@ import { supportedLangs } from "../utils/lang";
 const NotFoundPage = () => {
   const router = useRouter();
 
-  if (process.browser) {
-    const lang: any = navigator.language.toLowerCase();
-    router.replace(
-      "/[lang]/not-found",
-      `/${supportedLangs.includes(lang) ? lang : supportedLangs[0]}/not-found`
-    );
+  if (process.browser && !router.pathname.endsWith("/")) {
+    router.replace(router.pathname + "/");
   }
 
-  return null;
+  return <div>Not Found</div>;
 };
 
 export default NotFoundPage;

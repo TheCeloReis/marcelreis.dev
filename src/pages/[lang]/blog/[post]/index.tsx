@@ -2,22 +2,20 @@ import Link from "next/link";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import { supportedLangs, getSlugs } from "../../../../utils/lang";
+import Content from "../../../../components/base/content";
 
 const BlogPage = ({ siteTitle, frontmatter, markdownBody }) => {
-  debugger;
-  if (!frontmatter) return <></>;
+  if (!frontmatter) return null;
 
   return (
     <>
       <Link href="/">
         <a>Back to post list</a>
       </Link>
-      <article>
+      <Content as="article">
         <h1>{frontmatter.title}</h1>
-        <div>
-          <ReactMarkdown source={markdownBody} />
-        </div>
-      </article>
+        <ReactMarkdown source={markdownBody} />
+      </Content>
     </>
   );
 };
@@ -44,7 +42,7 @@ export const getStaticProps = async ({ ...ctx }) => {
 export const getStaticPaths = () => {
   const paths = supportedLangs.reduce((paths, lang): any => {
     const slugs = getSlugs(lang);
-    return [...paths, ...slugs.map((slug) => `/${lang}/blog/${slug}`)];
+    return [...paths, ...slugs.map((slug) => `/${lang}/blog/${slug}/`)];
   }, []);
 
   return {

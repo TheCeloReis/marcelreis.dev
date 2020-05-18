@@ -5,6 +5,11 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 
 import { getPaths, getPosts, langEnum } from "../../../utils/lang";
+import { Grid } from "../../../components/base/flex";
+import { Card } from "../../../components/base/card";
+import { Heading4, Body1 } from "../../../components/base/typography";
+import { Chip, ChipContainer } from "../../../components/base/chips";
+import { PostBrief } from "../../../components/modules/postBrief";
 
 type PropsType = {
   posts?: any[];
@@ -27,21 +32,31 @@ const BlogPage = (props: PropsType) => {
       </Head>
       <div>
         {!props.posts && <div>No posts!</div>}
-        <ul>
+        <Grid>
           {props.posts &&
             props.posts.map((post) => {
               return (
-                <li key={post.slug}>
+                <Card>
                   <Link
-                    href="/[lang]/blog/[post]"
-                    as={`/${lang}/blog/${post.slug}`}
+                    href={"/[lang]/blog/[post]/"}
+                    as={`/${lang}/blog/${post.slug}/`}
                   >
-                    <a>{post.frontmatter.title}</a>
+                    <a>
+                      <PostBrief>
+                        <Heading4 as="h2">{post.frontmatter.title}</Heading4>
+                        <Body1 as="p">{post.frontmatter.description}</Body1>
+                        <ChipContainer>
+                          {post.frontmatter.tags.map((tag: string) => (
+                            <Chip>{tag}</Chip>
+                          ))}
+                        </ChipContainer>
+                      </PostBrief>
+                    </a>
                   </Link>
-                </li>
+                </Card>
               );
             })}
-        </ul>
+        </Grid>
       </div>
     </>
   );
@@ -63,7 +78,7 @@ export const getStaticProps: GetStaticProps<{}, { lang: langEnum }> = async ({
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  return { paths: getPaths("/blog"), fallback: false };
+  return { paths: getPaths("/blog/"), fallback: false };
 };
 
 export default BlogPage;

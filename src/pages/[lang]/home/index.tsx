@@ -2,14 +2,14 @@ import React from "react";
 
 import { getPaths } from "../../../utils/lang";
 
-const AboutPage = () => {
-  return <div></div>;
+const HomePage = () => {
+  return <div>Home</div>;
 };
 
 export const getStaticProps = () => ({ props: {} });
 
 export const getStaticPaths = () => {
-  return { paths: getPaths("/about/"), fallback: false };
+  return { paths: getPaths("/home/"), fallback: false };
 };
 
-export default AboutPage;
+export default HomePage;

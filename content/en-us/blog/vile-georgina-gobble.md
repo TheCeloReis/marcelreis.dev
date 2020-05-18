@@ -1,9 +1,9 @@
 ---
 title: "Vile Georgina Gobble"
 date: 2020-03-22 00:00:01
-description: "Vile Georgina Gobble, a short story by Marcelo Reis"
+description: "It was a slippery slope and he was willing to slide all the way to the deepest depths"
 image:
-tags: ["lifestyle", "misc"]
+tags: ["chaology", "supellex", "wheelhouse", "headquarters"]
 ---
 
 Georgina Gobble was thinking about Heather Barker again. Heather was a creepy do gooder with tall legs and fluffy lips.
