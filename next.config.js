@@ -7,5 +7,4 @@ module.exports = {
     });
     return config;
   },
-  exportTrailingSlash: true,
 };
