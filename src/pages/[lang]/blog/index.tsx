@@ -9,12 +9,17 @@ import { Grid } from "../../../components/base/flex";
 import { Card } from "../../../components/base/card";
 import { Heading4, Body1 } from "../../../components/base/typography";
 import { Chip, ChipContainer } from "../../../components/base/chips";
-import { PostBrief } from "../../../components/modules/postBrief";
+
+import { PostType } from "../../../types/content";
+
+import * as S from "./.styled";
 
 type PropsType = {
-  posts?: any[];
-  title: string;
-  description: string;
+  posts: {
+    frontmatter: PostType;
+    body: string;
+    slug: string;
+  }[];
 };
 
 const BlogPage = (props: PropsType) => {
@@ -34,15 +39,15 @@ const BlogPage = (props: PropsType) => {
         {!props.posts && <div>No posts!</div>}
         <Grid>
           {props.posts &&
-            props.posts.map((post) => {
+            props.posts.map((post, index) => {
               return (
-                <Card>
+                <Card key={index}>
                   <Link
                     href={"/[lang]/blog/[post]"}
                     as={`/${lang}/blog/${post.slug}`}
                   >
                     <a>
-                      <PostBrief>
+                      <S.PostBrief>
                         <Heading4 as="h2">{post.frontmatter.title}</Heading4>
                         <Body1 as="p">{post.frontmatter.description}</Body1>
                         <ChipContainer>
@@ -50,7 +55,7 @@ const BlogPage = (props: PropsType) => {
                             <Chip>{tag}</Chip>
                           ))}
                         </ChipContainer>
-                      </PostBrief>
+                      </S.PostBrief>
                     </a>
                   </Link>
                 </Card>
@@ -70,8 +75,6 @@ export const getStaticProps: GetStaticProps<{}, { lang: langEnum }> = async ({
 
   const props: PropsType = {
     posts,
-    title: "Blog",
-    description: "My blog",
   };
 
   return { props };

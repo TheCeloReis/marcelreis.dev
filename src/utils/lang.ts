@@ -1,4 +1,5 @@
 import matter from "gray-matter";
+import { PostType } from "../types/content";
 
 const POSTS_EN_US = require.context("../../content/en-us/blog", true, /\.md$/);
 const POSTS_PT_BR = require.context("../../content/pt-br/blog", true, /\.md$/);
@@ -34,10 +35,8 @@ export const getPosts = (lang: langEnum) => {
     const value = values[index];
     const document = matter(value.default);
 
-    document.data.date = document.data.date.toString();
-
     return {
-      frontmatter: document.data,
+      frontmatter: document.data as PostType,
       markdownBody: document.content,
       slug,
     };

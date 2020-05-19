@@ -5,5 +5,4 @@ export type PostType = {
   title: string;
   description: string;
   tags: string[];
-  body: any;
 };
