@@ -4,8 +4,14 @@ import ReactMarkdown from "react-markdown";
 import { supportedLangs, getSlugs } from "../../../../utils/lang";
 import Content from "../../../../components/base/content";
 import Head from "next/head";
+import { PostType } from "../../../../types/content";
 
-const BlogPage = ({ siteTitle, frontmatter, markdownBody }) => {
+type PropsType = {
+  frontmatter: PostType;
+  markdownBody: string;
+};
+
+const BlogPage = ({ frontmatter, markdownBody }: PropsType) => {
   if (!frontmatter) return null;
 
   return (
@@ -36,7 +42,6 @@ export const getStaticProps = async ({ ...ctx }) => {
 
   return {
     props: {
-      siteTitle: "123",
       frontmatter: data.data,
       markdownBody: data.content,
     },

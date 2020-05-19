@@ -17,9 +17,9 @@ export const Footer = styled.footer`
   width: 100%;
   background-color: var(--base-high);
   display: flex;
-  height: 50px;
+  height: 48px;
   justify-content: center;
-  border-top: 2px var(--base-low) solid;
+  border-top: 1px var(--base-low) solid;
 
   animation: ${fadeIn} 1s ease 0s;
   a {

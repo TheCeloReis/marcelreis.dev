@@ -1,15 +1,18 @@
 import React from "react";
+import Head from "next/head";
+
+import Hero from "../../../components/modules/hero";
 
 import { getPaths } from "../../../utils/lang";
-import Head from "next/head";
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>Home | Marcelo</title>
       </Head>
-    </div>
+      <Hero />
+    </>
   );
 };
 

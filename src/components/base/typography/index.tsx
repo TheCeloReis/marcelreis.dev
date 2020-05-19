@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Typography = styled.span`
+export const Typography = styled.span`
   margin: 0;
   font-weight: 400;
 `;
