@@ -10,7 +10,7 @@ publish_mode: editorial_workflow
 collections:
   - name: en-us-blog
     label: English Blog
-    folder: content/en-us/blog
+    folder: content/en/blog
     create: true
     slug: '{{slug}}'
     fields:
