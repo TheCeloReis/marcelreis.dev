@@ -34,8 +34,6 @@ export const getStaticProps = async ({ ...ctx }) => {
   );
   const data = matter(content.default);
 
-  data.data.date = data.data.date.toString();
-
   return {
     props: {
       siteTitle: "123",

@@ -1,6 +1,5 @@
 ---
 title: "The Sun that Shone like Gyrating Puppies"
-date: 2020-03-22 00:00:01
 description: "The shark-infested South Pine channel was the only way in or out"
 image: /assets/2020-03-22-cover.png
 tags: ["lifestyle", "misc"]

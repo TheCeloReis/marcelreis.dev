@@ -1,6 +1,5 @@
 ---
 title: "Vile Georgina Gobble"
-date: 2020-03-22 00:00:01
 description: "It was a slippery slope and he was willing to slide all the way to the deepest depths"
 image:
 tags: ["chaology", "supellex", "wheelhouse", "headquarters"]

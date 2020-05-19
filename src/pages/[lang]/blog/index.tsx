@@ -9,10 +9,9 @@ import { Grid } from "../../../components/base/flex";
 import { Card } from "../../../components/base/card";
 import { Heading4, Body1 } from "../../../components/base/typography";
 import { Chip, ChipContainer } from "../../../components/base/chips";
+import { PostBrief } from "../../../components/modules/postBrief";
 
 import { PostType } from "../../../types/content";
-
-import * as S from "./.styled";
 
 type PropsType = {
   posts: {
@@ -47,7 +46,7 @@ const BlogPage = (props: PropsType) => {
                     as={`/${lang}/blog/${post.slug}`}
                   >
                     <a>
-                      <S.PostBrief>
+                      <PostBrief>
                         <Heading4 as="h2">{post.frontmatter.title}</Heading4>
                         <Body1 as="p">{post.frontmatter.description}</Body1>
                         <ChipContainer>
@@ -55,7 +54,7 @@ const BlogPage = (props: PropsType) => {
                             <Chip>{tag}</Chip>
                           ))}
                         </ChipContainer>
-                      </S.PostBrief>
+                      </PostBrief>
                     </a>
                   </Link>
                 </Card>
