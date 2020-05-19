@@ -17,7 +17,7 @@ import * as S from "./.styled";
 type PropsType = {
   posts: {
     frontmatter: PostType;
-    body: string;
+    markdownBody: string;
     slug: string;
   }[];
 };
