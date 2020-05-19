@@ -8,13 +8,16 @@ const Footer = () => {
   return (
     <S.Footer>
       <S.Button href="https://linkedin.com/in/marcelreis">
-        <Linkedin size={"36px"}>Linkedin</Linkedin>
+        Linkedin
+        <Linkedin size={"36px"} />
       </S.Button>
       <S.Button href="https://github.com/marcelreis">
-        <Github size={"36px"}>Github</Github>
+        Github
+        <Github size={"36px"} />
       </S.Button>
       <S.Button href="https://twitter.com/_marcelreis">
-        <Twitter size={"36px"}>Twitter</Twitter>
+        Twitter
+        <Twitter size={"36px"} />
       </S.Button>
     </S.Footer>
   );

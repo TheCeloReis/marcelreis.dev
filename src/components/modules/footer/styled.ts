@@ -34,6 +34,7 @@ export const Button = styled.a`
   padding: 8px;
   margin: 0 16px;
   color: var(--base);
+  font-size: 0px;
 
   transition: color 0.2s ease, transform 0.2s ease;
 
