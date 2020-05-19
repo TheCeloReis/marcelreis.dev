@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
 
 import Navbar from "../components/modules/navbar";
@@ -8,17 +6,13 @@ import Background from "../components/modules/background";
 
 import "../sass/index.scss";
 
-const MyApp = ({ Component, pageProps }) => {
-  const [background, setBackground] = useState("normal");
-  const router = useRouter();
-
-  useEffect(() => {
-    setBackground("full");
-
-    setTimeout(() => {
-      setBackground("normal");
-    }, 600);
-  }, [router.pathname]);
+const MyApp = ({ Component, pageProps, router }: any) => {
+  const initialHeader =
+    router.pathname === "/[lang]/home"
+      ? "hero"
+      : router.pathname === "/[lang]/not-found"
+      ? "full"
+      : "normal";
 
   return (
     <>
@@ -33,8 +27,8 @@ const MyApp = ({ Component, pageProps }) => {
           content="My website, it's under development, expect bugs and Lorem Ipsum's!"
         />
       </Head>
-      <Background mode={background} />
-      <Navbar />
+      <Background initialState={initialHeader} />
+      <Navbar initialState={initialHeader} lang={router.query.lang} />
       <div style={{ paddingTop: "72px", paddingBottom: "50px" }}>
         <Component {...pageProps} />
       </div>

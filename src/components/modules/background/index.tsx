@@ -25,7 +25,11 @@ function getCordinates(radius: number) {
   };
 }
 
-const Background = ({ mode }) => {
+type PropTypes = {
+  initialState: "full" | "normal" | "hero";
+};
+
+const Background = ({ initialState }: PropTypes) => {
   const [stars, setStars] = useState({ small: "", medium: "", large: "" });
   const [radius, setRadius] = useState(0);
   const [overlay, setOverlay] = useState(false);
@@ -44,7 +48,7 @@ const Background = ({ mode }) => {
   }, []);
 
   useEffect(() => {
-    if (mode === "full") {
+    if (initialState === "full") {
       setOverlay(true);
       window.requestAnimationFrame(() => {
         header.current.addEventListener(
@@ -54,7 +58,7 @@ const Background = ({ mode }) => {
         );
       });
     }
-  }, [mode]);
+  }, [initialState]);
 
   useEffect(() => {
     setStars({
@@ -66,7 +70,7 @@ const Background = ({ mode }) => {
 
   return (
     <>
-      <S.Header ref={header} height={mode}>
+      <S.Header ref={header} height={initialState}>
         <Waves color="#fff" position={"bottom"} />
         <S.Star1 stars={stars.small} />
         <S.Star2 stars={stars.medium} />
