@@ -23,9 +23,9 @@ export const Header = styled.div<{ height: string }>`
     ),
     radial-gradient(
       circle,
-      rgba(139, 82, 190, 1) 0%,
-      rgba(105, 62, 148, 1) 50%,
-      rgba(50, 26, 71, 1) 75%
+      var(--primary-light) 0%,
+      var(--primary) 50%,
+      var(--primary-dark) 75%
     );
   background-size: 200% 200%;
   background-position-x: 50%;

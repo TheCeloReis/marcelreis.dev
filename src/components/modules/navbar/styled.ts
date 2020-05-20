@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Background = styled.div`
   position: absolute;
-  z-index: 20;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 20;
+`;
+
+export const Container = styled.div`
+  margin: auto;
   height: 64px;
+  width: 100%;
+  max-width: 800px;
 
   padding: var(--spacing-1) var(--spacing-3);
 
@@ -25,8 +31,13 @@ export const Nav = styled.div`
 export const Logo = styled.div`
   width: 48px;
   height: 48px;
+  overflow: hidden;
   border-radius: 50%;
-  background: var(--gray-9);
+`;
+
+export const Image = styled.img`
+  width: 48px;
+  height: 48px;
 `;
 
 export const NavItem = styled.div`
