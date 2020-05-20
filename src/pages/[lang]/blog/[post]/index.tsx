@@ -1,10 +1,12 @@
 import Link from "next/link";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
-import { supportedLangs, getSlugs } from "../../../../utils/lang";
-import Content from "../../../../components/base/content";
 import Head from "next/head";
+
+import { Content } from "../../../../components/base/content";
 import { PostType } from "../../../../types/content";
+
+import { supportedLangs, getSlugs } from "../../../../utils/lang";
 
 type PropsType = {
   frontmatter: PostType;

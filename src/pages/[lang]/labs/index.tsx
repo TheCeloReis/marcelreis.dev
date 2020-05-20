@@ -9,7 +9,7 @@ const LabsPage = () => {
       <Head>
         <title>Labs | Marcelo Reis</title>
       </Head>
-      Lab
+      <div>Fine</div>
     </>
   );
 };

@@ -1,5 +1,7 @@
 import Head from "next/head";
 
+import { PageContainer } from "../components/base/flex";
+
 import Navbar from "../components/modules/navbar";
 import Footer from "../components/modules/footer";
 import Background from "../components/modules/background";
@@ -29,9 +31,9 @@ const MyApp = ({ Component, pageProps, router }: any) => {
       </Head>
       <Background initialState={initialHeader} />
       <Navbar initialState={initialHeader} lang={router.query.lang} />
-      <div style={{ paddingTop: "72px", paddingBottom: "50px" }}>
+      <PageContainer>
         <Component {...pageProps} />
-      </div>
+      </PageContainer>
       <Footer />
     </>
   );

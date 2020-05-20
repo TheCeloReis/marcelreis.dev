@@ -7,8 +7,6 @@ type PropsType = {
   children: any | any[];
 };
 
-const Content = ({ children, as }: PropsType) => {
+export const Content = ({ children, as }: PropsType) => {
   return <S.Background as={as}>{children}</S.Background>;
 };
-
-export default Content;

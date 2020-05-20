@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Background = styled.div<{ as: any }>`
+export const Background = styled.div`
   max-width: 800px;
   margin: auto;
   padding: var(--spacing-3);

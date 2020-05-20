@@ -9,3 +9,11 @@ export const Grid = styled.div<{}>`
   width: 100%;
   max-width: var(--max-width);
 `;
+
+export const PageContainer = styled.div`
+  display: grid;
+  justify-content: center;
+  grid-template-columns: minmax(auto, 800px);
+  padding-top: 72px;
+  padding-bottom: 50px;
+`;
