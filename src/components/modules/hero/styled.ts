@@ -5,7 +5,7 @@ export const Container = styled.div`
   position: absolute;
   z-index: 10;
   line-height: 1;
-  top: calc(75vh / 2);
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -39,6 +39,7 @@ const fadeDown = keyframes`
 
 export const Lines = styled.div`
   position: relative;
+  height: var(--heading-3);
   margin-top: var(--spacing-2);
 
   & > ${Heading3} {

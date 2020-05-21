@@ -11,7 +11,7 @@ const Hero = () => {
       <S.Lines>
         <Heading3>Front-end Developer</Heading3>
         <Heading3>Web Designer Enthusiast</Heading3>
-        <Heading3>Explaining code with words</Heading3>
+        <Heading3>Passionate Astronaut</Heading3>
       </S.Lines>
     </S.Container>
   );

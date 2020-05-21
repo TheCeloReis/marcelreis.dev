@@ -8,7 +8,7 @@ export const Header = styled.div<{ height: string }>`
       case "full":
         return "calc(100vh - 48px)";
       case "hero":
-        return "75vh";
+        return "90vh";
       default:
         return "72px";
     }
@@ -21,12 +21,7 @@ export const Header = styled.div<{ height: string }>`
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0.33) 100%
     ),
-    radial-gradient(
-      circle,
-      var(--primary-light) 0%,
-      var(--primary) 50%,
-      var(--primary-dark) 75%
-    );
+    radial-gradient(circle, #1879ce 0%, #0f4c81 33%, #0d4372 66%);
   background-size: 200% 200%;
   background-position-x: 50%;
 
@@ -94,17 +89,17 @@ const Star = styled.div<{ stars: string }>`
 export const Star1 = styled(Star)`
   width: 1px;
   height: 1px;
-  animation: ${star} 360s linear infinite;
+  animation: ${star} 2048s linear infinite;
 `;
 
 export const Star2 = styled(Star)`
   width: 2px;
   height: 2px;
-  animation: ${star} 300s linear infinite;
+  animation: ${star} 1536s linear infinite;
 `;
 
 export const Star3 = styled(Star)`
   width: 3px;
   height: 3px;
-  animation: ${star} 240s linear infinite;
+  animation: ${star} 1152s linear infinite;
 `;

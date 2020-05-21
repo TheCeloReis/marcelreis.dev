@@ -38,7 +38,7 @@ const Background = ({ initialState }: PropTypes) => {
   useEffect(() => {
     const resize = () =>
       window.requestAnimationFrame(() =>
-        setRadius(Math.max(window.innerHeight * 0.75, window.innerWidth))
+        setRadius(Math.max(window.innerHeight, window.innerWidth))
       );
 
     resize();
