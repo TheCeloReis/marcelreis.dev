@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { Waves } from "./waves";
@@ -31,8 +31,6 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
       setBackgroundState(pageState);
     }, 500);
   }, [transitionOn]);
-
-  const [overlay, setOverlay] = useState(false);
 
   const stars = useStars();
 

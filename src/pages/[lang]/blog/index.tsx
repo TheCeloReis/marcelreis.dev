@@ -51,9 +51,11 @@ const BlogPage = (props: PropsType) => {
                       <Heading4 as="h2">{post.frontmatter.title}</Heading4>
                       <Body1 as="p">{post.frontmatter.description}</Body1>
                       <ChipContainer>
-                        {post.frontmatter.tags.map((tag: string) => (
-                          <Chip>{tag}</Chip>
-                        ))}
+                        {post.frontmatter.tags.map(
+                          (tag: string, index: number) => (
+                            <Chip key={index}>{tag}</Chip>
+                          )
+                        )}
                       </ChipContainer>
                     </PostBrief>
                   </a>
@@ -66,7 +68,7 @@ const BlogPage = (props: PropsType) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<{}, { lang: langEnum }> = async ({
+export const getStaticProps: GetStaticProps<any, { lang: langEnum }> = async ({
   ...ctx
 }) => {
   const { lang } = ctx.params;

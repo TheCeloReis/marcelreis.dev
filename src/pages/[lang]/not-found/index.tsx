@@ -1,3 +1,5 @@
+import React from "react";
+
 import { getPaths } from "../../../utils/lang";
 
 const NotFoundPage = () => {

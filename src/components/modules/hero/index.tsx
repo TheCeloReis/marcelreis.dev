@@ -7,7 +7,7 @@ import { Heading1, Heading3 } from "../../base/typography";
 const Hero = () => {
   return (
     <S.Container>
-      <Heading1>I'm Marcelo Reis</Heading1>
+      <Heading1>I&apos;m Marcelo Reis</Heading1>
       <S.Lines>
         <Heading3>Front-end Developer</Heading3>
         <Heading3>Web Designer Enthusiast</Heading3>

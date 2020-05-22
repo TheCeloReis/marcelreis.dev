@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 
 import Navbar from "../components/modules/navbar";
@@ -5,7 +6,6 @@ import Footer from "../components/modules/footer";
 import Background from "../components/modules/background";
 
 import "../sass/index.scss";
-import { Router } from "next/router";
 
 const MyApp = (props: any) => {
   console.log(props);

@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";

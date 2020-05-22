@@ -1,19 +1,20 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+
 import { useRouter } from "next/router";
 import Head from "next/head";
 
 import { supportedLangs } from "../utils/lang";
 
 const RootPage = () => {
-  const router = useRouter();
+  const { replace } = useRouter();
 
   useEffect(() => {
     const lang: any = navigator.language.toLowerCase();
-    router.replace(
+    replace(
       "/[lang]/home",
       `/${supportedLangs.includes(lang) ? lang : supportedLangs[0]}/home`
     );
-  }, []);
+  }, [replace]);
 
   return (
     <Head>

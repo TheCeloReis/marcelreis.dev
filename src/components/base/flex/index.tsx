@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Grid = styled.div<{}>`
+export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: var(--spacing-3);
