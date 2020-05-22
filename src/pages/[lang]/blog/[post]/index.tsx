@@ -7,6 +7,7 @@ import { Content } from "../../../../components/base/content";
 import { PostType } from "../../../../types/content";
 
 import { supportedLangs, getSlugs } from "../../../../utils/lang";
+import Layout from "../../../../components/modules/layout";
 
 type PropsType = {
   frontmatter: PostType;
@@ -17,7 +18,7 @@ const BlogPage = ({ frontmatter, markdownBody }: PropsType) => {
   if (!frontmatter) return null;
 
   return (
-    <div>
+    <Layout>
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
@@ -30,7 +31,7 @@ const BlogPage = ({ frontmatter, markdownBody }: PropsType) => {
         <h3>{frontmatter.description}</h3>
         <ReactMarkdown source={markdownBody} />
       </Content>
-    </div>
+    </Layout>
   );
 };
 

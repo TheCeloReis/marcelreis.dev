@@ -22,4 +22,6 @@ const RootPage = () => {
   );
 };
 
+export const getStaticProps = () => ({ props: { background: "full" } });
+
 export default RootPage;

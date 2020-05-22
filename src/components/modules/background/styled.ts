@@ -1,13 +1,16 @@
-import styled, { keyframes, css } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
-export const Header = styled.div<{ height: string }>`
+type HeaderProps = {
+  height: "full" | "tall" | "fixed" | "hidden";
+};
+export const Header = styled.div<HeaderProps>`
   position: ${({ height }) => (height === "full" ? "fixed" : "absolute")};
   width: 100%;
   height: ${({ height }) => {
     switch (height) {
       case "full":
         return "calc(100vh - 48px)";
-      case "hero":
+      case "tall":
         return "90vh";
       default:
         return "72px";

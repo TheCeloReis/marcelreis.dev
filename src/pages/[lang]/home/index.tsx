@@ -16,7 +16,7 @@ const HomePage = () => {
   );
 };
 
-export const getStaticProps = () => ({ props: {} });
+export const getStaticProps = () => ({ props: { background: "tall" } });
 
 export const getStaticPaths = () => {
   return { paths: getPaths("/home"), fallback: false };

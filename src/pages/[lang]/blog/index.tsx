@@ -11,6 +11,8 @@ import { Heading4, Body1 } from "../../../components/base/typography";
 import { Chip, ChipContainer } from "../../../components/base/chips";
 import { PostBrief } from "../../../components/modules/postBrief";
 
+import Layout from "../../../components/modules/layout";
+
 import { PostType } from "../../../types/content";
 
 type PropsType = {
@@ -30,39 +32,37 @@ const BlogPage = (props: PropsType) => {
   }
 
   return (
-    <>
+    <Layout>
       <Head>
         <title>Blog | Marcelo Reis</title>
       </Head>
-      <div>
-        {!props.posts && <div>No posts!</div>}
-        <Grid>
-          {props.posts &&
-            props.posts.map((post, index) => {
-              return (
-                <Card key={index}>
-                  <Link
-                    href={"/[lang]/blog/[post]"}
-                    as={`/${lang}/blog/${post.slug}`}
-                  >
-                    <a>
-                      <PostBrief>
-                        <Heading4 as="h2">{post.frontmatter.title}</Heading4>
-                        <Body1 as="p">{post.frontmatter.description}</Body1>
-                        <ChipContainer>
-                          {post.frontmatter.tags.map((tag: string) => (
-                            <Chip>{tag}</Chip>
-                          ))}
-                        </ChipContainer>
-                      </PostBrief>
-                    </a>
-                  </Link>
-                </Card>
-              );
-            })}
-        </Grid>
-      </div>
-    </>
+      {!props.posts && <div>No posts!</div>}
+      <Grid>
+        {props.posts &&
+          props.posts.map((post, index) => {
+            return (
+              <Card key={index}>
+                <Link
+                  href={"/[lang]/blog/[post]"}
+                  as={`/${lang}/blog/${post.slug}`}
+                >
+                  <a>
+                    <PostBrief>
+                      <Heading4 as="h2">{post.frontmatter.title}</Heading4>
+                      <Body1 as="p">{post.frontmatter.description}</Body1>
+                      <ChipContainer>
+                        {post.frontmatter.tags.map((tag: string) => (
+                          <Chip>{tag}</Chip>
+                        ))}
+                      </ChipContainer>
+                    </PostBrief>
+                  </a>
+                </Link>
+              </Card>
+            );
+          })}
+      </Grid>
+    </Layout>
   );
 };
 

@@ -5,14 +5,10 @@ import Footer from "../components/modules/footer";
 import Background from "../components/modules/background";
 
 import "../sass/index.scss";
+import { Router } from "next/router";
 
-const MyApp = ({ Component, pageProps, router }: any) => {
-  const initialHeader =
-    router.pathname === "/[lang]/home"
-      ? "hero"
-      : router.pathname === "/[lang]/not-found"
-      ? "full"
-      : "normal";
+const MyApp = (props: any) => {
+  console.log(props);
 
   return (
     <>
@@ -27,9 +23,15 @@ const MyApp = ({ Component, pageProps, router }: any) => {
           content="My website, it's under development, expect bugs and Lorem Ipsum's!"
         />
       </Head>
-      <Background initialState={initialHeader} />
-      <Navbar initialState={initialHeader} lang={router.query.lang} />
-      <Component {...pageProps} />
+      <Background
+        pageState={props.pageProps.background}
+        transitionOn={props.router.pathname}
+      />
+      <Navbar
+        initialState={props.pageProps.background}
+        lang={props.router.query.lang}
+      />
+      <props.Component {...props.pageProps} />
       <Footer />
     </>
   );
