@@ -7,18 +7,18 @@ import { useStars } from "./hooks";
 import * as S from "./styled";
 
 type PropTypes = {
-  pageState: "full" | "tall" | "fixed";
+  pageState: "full" | "fixed";
   transitionOn: string;
 };
 
 const Background = ({ pageState, transitionOn }: PropTypes) => {
   const [backgroundState, setBackgroundState] = useState<
-    "full" | "tall" | "fixed" | "hidden" | null
+    "full" | "fixed" | "hidden" | null
   >(null);
 
   useEffect(() => {
     setBackgroundState(pageState);
-  }, []);
+  }, [pageState]);
 
   useEffect(() => {
     if (backgroundState === null) {

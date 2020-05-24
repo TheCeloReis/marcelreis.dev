@@ -29,8 +29,8 @@ export const Footer = styled.footer`
 `;
 
 export const Button = styled.a`
-  width: 48px;
-  height: 48px;
+  width: 47px;
+  height: 47px;
   padding: 8px;
   margin: 0 16px;
   color: var(--base);

@@ -1,15 +1,15 @@
-import React, { ReactChildren } from "react";
+import React from "react";
 
 import * as S from "./styled";
 
 type PropsType = {
-  variant?: "blog" | "home";
+  variant?: "blog" | "hero";
   transitionKey?: string;
-  children: any;
+  children: React.ReactChild | React.ReactChild[];
 };
 
 const Layout = (props: PropsType) => {
-  return <S.Layout>{props.children}</S.Layout>;
+  return <S.Container variant={props.variant}>{props.children}</S.Container>;
 };
 
 export default Layout;

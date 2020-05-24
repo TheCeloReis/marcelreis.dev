@@ -5,7 +5,7 @@ export const Container = styled.div`
   position: absolute;
   z-index: 10;
   line-height: 1;
-  top: 50%;
+  top: 50vh;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;

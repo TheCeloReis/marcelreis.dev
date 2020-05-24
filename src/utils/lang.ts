@@ -48,6 +48,9 @@ export const getPosts = (lang: langEnum): PostDocumentType[] => {
       slug,
     };
   });
+
+  data.sort((a, b) => (a.frontmatter.created > b.frontmatter.created ? 1 : -1));
+
   return data;
 };
 

@@ -8,8 +8,6 @@ import Background from "../components/modules/background";
 import "../sass/index.scss";
 
 const MyApp = (props: any) => {
-  console.log(props);
-
   return (
     <>
       <Head>

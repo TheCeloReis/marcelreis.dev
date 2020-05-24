@@ -1,7 +1,9 @@
 import React from "react";
+import Head from "next/head";
+
+import Layout from "../../../components/modules/layout/";
 
 import { getPaths } from "../../../utils/lang";
-import Head from "next/head";
 
 const AboutPage = () => {
   return (
@@ -9,7 +11,9 @@ const AboutPage = () => {
       <Head>
         <title>About | Marcelo</title>
       </Head>
-      about
+      <Layout>
+        <h1>This is me</h1>
+      </Layout>
     </div>
   );
 };

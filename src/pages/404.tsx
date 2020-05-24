@@ -13,7 +13,7 @@ const NotFoundPage = () => {
       "/[lang]/not-found",
       `/${supportedLangs.includes(lang) ? lang : supportedLangs[0]}/not-found`
     );
-  }, []);
+  }, [router]);
 
   return (
     <Head>

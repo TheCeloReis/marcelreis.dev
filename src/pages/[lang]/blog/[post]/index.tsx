@@ -5,10 +5,10 @@ import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
 import { Content } from "../../../../components/base/content";
-import { PostType } from "../../../../types/content";
-
-import { supportedLangs, getSlugs } from "../../../../utils/lang";
 import Layout from "../../../../components/modules/layout";
+
+import { PostType } from "../../../../types/content";
+import { supportedLangs, getSlugs } from "../../../../utils/lang";
 
 type PropsType = {
   frontmatter: PostType;
@@ -24,13 +24,11 @@ const BlogPage = ({ frontmatter, markdownBody }: PropsType) => {
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
       </Head>
-      <Link href="..">
-        <a>Back to post list</a>
-      </Link>
+
       <Content as="article">
         <h1>{frontmatter.title}</h1>
         <h3>{frontmatter.description}</h3>
-        <ReactMarkdown source={markdownBody} />
+        <ReactMarkdown source={markdownBody} escapeHtml={false} />
       </Content>
     </Layout>
   );

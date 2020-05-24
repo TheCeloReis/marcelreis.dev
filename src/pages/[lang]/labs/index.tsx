@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 
 import { getPaths } from "../../../utils/lang";
+import Layout from "../../../components/modules/layout";
 
 const LabsPage = () => {
   return (
@@ -9,7 +10,7 @@ const LabsPage = () => {
       <Head>
         <title>Labs | Marcelo Reis</title>
       </Head>
-      <div>Fine</div>
+      <Layout>Labs</Layout>
     </>
   );
 };
