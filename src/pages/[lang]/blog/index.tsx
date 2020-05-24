@@ -1,29 +1,21 @@
 import React from "react";
-import { useRouter } from "next/router";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 
-import { getPaths, getPosts, langEnum } from "../../../utils/lang";
+import { getPaths, langEnum } from "../../../utils/lang";
 import { Grid } from "../../../components/base/flex";
 
 import PostCard from "../../../components/modules/postCard";
 
 import Layout from "../../../components/modules/layout";
 
-import { PostType } from "../../../types/content";
+import { getLatestPosts, PostType } from "../../../cms/post";
 
 type PropsType = {
-  posts: {
-    frontmatter: PostType;
-    markdownBody: string;
-    slug: string;
-  }[];
+  posts: PostType[];
 };
 
 const BlogPage = (props: PropsType) => {
-  const router = useRouter();
-  const { lang } = router.query;
-
   if (!props.posts) {
     return null;
   }
@@ -38,11 +30,11 @@ const BlogPage = (props: PropsType) => {
         {props.posts &&
           props.posts.map((post) => (
             <PostCard
-              key={post.slug}
-              title={post.frontmatter.title}
-              description={post.frontmatter.description}
-              tags={post.frontmatter.tags}
-              slug={post.slug}
+              key={post.url}
+              title={post.title}
+              description={post.description}
+              tags={post.tags}
+              slug={post.url}
             />
           ))}
       </Grid>
@@ -53,11 +45,8 @@ const BlogPage = (props: PropsType) => {
 export const getStaticProps: GetStaticProps<any, { lang: langEnum }> = async ({
   ...ctx
 }) => {
-  const { lang } = ctx.params;
-  const posts = getPosts(lang);
-
   const props: PropsType = {
-    posts,
+    posts: getLatestPosts(ctx.params.lang),
   };
 
   return { props };
