@@ -1,34 +1,29 @@
 import React from "react";
-import Link from "next/link";
-import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
 import { Content } from "../../../../components/base/content";
 import Layout from "../../../../components/modules/layout";
 
-import { PostType } from "../../../../types/content";
 import { supportedLangs, getSlugs } from "../../../../utils/lang";
+import { getPostByURL, PostType, getPostsURLs } from "../../../../cms/post";
 
 type PropsType = {
-  frontmatter: PostType;
-  markdownBody: string;
+  post: PostType;
 };
 
-const BlogPage = ({ frontmatter, markdownBody }: PropsType) => {
-  if (!frontmatter) return null;
-
+const BlogPage = ({ post }: PropsType) => {
   return (
     <Layout>
       <Head>
-        <title>{frontmatter.title}</title>
-        <meta name="description" content={frontmatter.description} />
+        <title>{post.title}</title>
+        <meta name="description" content={post.description} />
       </Head>
 
       <Content as="article">
-        <h1>{frontmatter.title}</h1>
-        <h3>{frontmatter.description}</h3>
-        <ReactMarkdown source={markdownBody} escapeHtml={false} />
+        <h1>{post.title}</h1>
+        <h3>{post.description}</h3>
+        <ReactMarkdown source={post.markdown} escapeHtml={false} />
       </Content>
     </Layout>
   );
@@ -37,22 +32,17 @@ const BlogPage = ({ frontmatter, markdownBody }: PropsType) => {
 export const getStaticProps = async ({ ...ctx }) => {
   const { post, lang } = ctx.params;
 
-  const content = await import(
-    `../../../../../content/${lang}/blog/${post}.md`
-  );
-  const data = matter(content.default);
-
   return {
     props: {
-      frontmatter: data.data,
-      markdownBody: data.content,
+      post: getPostByURL(post, lang),
     },
   };
 };
 
 export const getStaticPaths = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const paths = supportedLangs.reduce((paths, lang): any => {
-    const slugs = getSlugs(lang);
+    const slugs = getPostsURLs(lang);
     return [...paths, ...slugs.map((slug) => `/${lang}/blog/${slug}`)];
   }, []);
 

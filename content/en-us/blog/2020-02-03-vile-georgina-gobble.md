@@ -1,7 +1,7 @@
 ---
 title: "Vile Georgina Gobble"
 description: "It was a slippery slope and he was willing to slide all the way to the deepest depths"
-image:
+image: ""
 tags: ["chaology", "supellex", "wheelhouse", "headquarters"]
 ---
 

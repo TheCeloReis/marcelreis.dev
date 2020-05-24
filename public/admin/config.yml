@@ -12,7 +12,7 @@ collections:
     label: English Blog
     folder: content/en-us/blog
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: Created, name: created, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
       - { label: Updated, name: updated, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
@@ -26,7 +26,7 @@ collections:
     label: Portuguese Blog
     folder: content/pt-br/blog
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: Created, name: created, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
       - { label: Updated, name: updated, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
