@@ -5,7 +5,7 @@ import Head from "next/head";
 import { Content } from "../../../../components/base/content";
 import Layout from "../../../../components/modules/layout";
 
-import { supportedLangs, getSlugs } from "../../../../utils/lang";
+import { supportedLangs } from "../../../../utils/lang";
 import { getPostByURL, PostType, getPostsURLs } from "../../../../cms/post";
 
 type PropsType = {
