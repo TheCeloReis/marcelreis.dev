@@ -1,8 +1,12 @@
 ---
-title: "Tight-fisted Bob Jones"
-description: "Bob Jones had always loved magical Upper Boggington with its handsome, hollow hills. It was a place where he felt sparkly."
-image: /assets/2020-05-01-cover.png
-tags: ["lifestyle", "misc"]
+created: '2020-05-24 12:00:00'
+title: Tight-fisted Bob Jones
+description: >-
+  Bob Jones had always loved magical Upper Boggington with its handsome, hollow
+  hills. It was a place where he felt sparkly.
+tags:
+  - lifestyle
+  - misc
 ---
 
 Bob Jones had always loved magical Upper Boggington with its handsome, hollow hills. It was a place where he felt sparkly.
