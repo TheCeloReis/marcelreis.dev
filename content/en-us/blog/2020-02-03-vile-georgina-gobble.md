@@ -1,8 +1,14 @@
 ---
-title: "Vile Georgina Gobble"
-description: "It was a slippery slope and he was willing to slide all the way to the deepest depths"
-image: ""
-tags: ["chaology", "supellex", "wheelhouse", "headquarters"]
+created: '2020-05-24 12:00:00'
+title: Vile Georgina Gobble
+description: >-
+  It was a slippery slope and he was willing to slide all the way to the deepest
+  depths
+tags:
+  - chaology
+  - supellex
+  - wheelhouse
+  - headquarters
 ---
 
 Georgina Gobble was thinking about Heather Barker again. Heather was a creepy do gooder with tall legs and fluffy lips.
