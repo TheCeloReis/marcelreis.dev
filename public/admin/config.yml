@@ -37,7 +37,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - name: "about en-us"
+      - name: "about-en-us"
         label: "About en-us"
         file: "content/en-us/pages/about.md"
         fields: 
@@ -46,7 +46,7 @@ collections:
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
 
-      - name: "about pt-br"
+      - name: "about-pt-br"
         label: "About pt-br"
         file: "content/pt-br/pages/about.md"
         fields: 
@@ -55,7 +55,7 @@ collections:
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
 
-      - name: "home en-us"
+      - name: "home-en-us"
         label: "Home en-us"
         file: "content/en-us/pages/home.md"
         fields: 
@@ -64,7 +64,7 @@ collections:
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
 
-      - name: "home pt-br"
+      - name: "home-pt-br"
         label: "Home pt-br"
         file: "content/pt-br/pages/home.md"
         fields: 
@@ -73,7 +73,7 @@ collections:
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
 
-      - name: "labs en-us"
+      - name: "labs-en-us"
         label: "Labs en-us"
         file: "content/en-us/pages/labs.md"
         fields: 
@@ -82,7 +82,7 @@ collections:
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
 
-      - name: "labs pt-br"
+      - name: "labs-pt-br"
         label: "Labs pt-br"
         file: "content/pt-br/pages/labs.md"
         fields: 
@@ -91,7 +91,7 @@ collections:
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
 
-      - name: "blog en-us"
+      - name: "blog-en-us"
         label: "Blog en-us"
         file: "content/en-us/pages/blog.md"
         fields: 
@@ -100,7 +100,7 @@ collections:
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
 
-      - name: "blog pt-br"
+      - name: "blog-pt-br"
         label: "Blog pt-br"
         file: "content/pt-br/pages/blog.md"
         fields: 
