@@ -33,7 +33,6 @@ collections:
       - { label: Description, name: description, widget: string }
       - { label: Tags, name: tags, widget: list, default: [""] }
       - { label: Body, name: body, widget: markdown }
-      - { label: Canonical, name: canonical, widget: "relation", collection: "en-us-blog", searchFields: ["title"], valueField: "{{ slug }}" }
 
   - name: "pages"
     label: "Pages"
