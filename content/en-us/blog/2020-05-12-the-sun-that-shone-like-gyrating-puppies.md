@@ -1,8 +1,10 @@
 ---
-title: "The Sun that Shone like Gyrating Puppies"
-description: "The shark-infested South Pine channel was the only way in or out"
-image: /assets/2020-03-22-cover.png
-tags: ["lifestyle", "misc"]
+created: '2020-05-24 12:00:00'
+title: The Sun that Shone like Gyrating Puppies
+description: The shark-infested South Pine channel was the only way in or out
+tags:
+  - lifestyle
+  - misc
 ---
 
 Simon Snozcumber looked at the weathered rock in his hands and felt sad.
