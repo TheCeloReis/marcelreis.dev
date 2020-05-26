@@ -45,7 +45,6 @@ collections:
           - { label: Description, name: description, widget: string }
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
-
       - name: "about-pt-br"
         label: "About pt-br"
         file: "content/pt-br/pages/about.md"
@@ -63,7 +62,6 @@ collections:
           - { label: Description, name: description, widget: string }
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
-
       - name: "home-pt-br"
         label: "Home pt-br"
         file: "content/pt-br/pages/home.md"
@@ -81,7 +79,6 @@ collections:
           - { label: Description, name: description, widget: string }
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
-
       - name: "labs-pt-br"
         label: "Labs pt-br"
         file: "content/pt-br/pages/labs.md"
@@ -99,10 +96,26 @@ collections:
           - { label: Description, name: description, widget: string }
           - { label: Thumb, name: thumbnail, widget: image, required: false }
           - { label: Body, name: body, widget: markdown }
-
       - name: "blog-pt-br"
         label: "Blog pt-br"
         file: "content/pt-br/pages/blog.md"
+        fields: 
+          - { label: Title, name: title, widget: string } 
+          - { label: Description, name: description, widget: string }
+          - { label: Thumb, name: thumbnail, widget: image, required: false }
+          - { label: Body, name: body, widget: markdown }
+
+      - name: "not-found-en-us"
+        label: "Not Found en-us"
+        file: "content/en-us/pages/not-found.md"
+        fields: 
+          - { label: Title, name: title, widget: string } 
+          - { label: Description, name: description, widget: string }
+          - { label: Thumb, name: thumbnail, widget: image, required: false }
+          - { label: Body, name: body, widget: markdown }
+      - name: "not-found-pt-br"
+        label: "Not Found pt-br"
+        file: "content/pt-br/pages/not-found.md"
         fields: 
           - { label: Title, name: title, widget: string } 
           - { label: Description, name: description, widget: string }

@@ -10,14 +10,14 @@ import * as S from "./styled";
 type PropsType = {
   title: string;
   description: string;
-  slug: string;
+  url: string;
   tags: string[];
 };
 
 const PostCard = (props: PropsType) => {
   return (
     <Card>
-      <Link href={"/[lang]/blog/[post]"} as={`/en-us/blog/${props.slug}`}>
+      <Link href={"/[lang]/blog/[post]"} as={props.url}>
         <a>
           <S.PostBrief>
             <Heading4 as="h2">{props.title}</Heading4>

@@ -5,8 +5,9 @@ import Head from "next/head";
 import { Content } from "../../../../components/base/content";
 import Layout from "../../../../components/modules/layout";
 
-import { supportedLangs } from "../../../../utils/lang";
+import { supportedLangs, langEnum } from "../../../../utils/lang";
 import { getPostByURL, PostType, getPostsURLs } from "../../../../cms/post";
+import { GetStaticProps, GetStaticPaths } from "next";
 
 type PropsType = {
   post: PostType;
@@ -29,17 +30,19 @@ const BlogPage = ({ post }: PropsType) => {
   );
 };
 
-export const getStaticProps = async ({ ...ctx }) => {
-  const { post, lang } = ctx.params;
-
-  return {
-    props: {
-      post: getPostByURL(post, lang),
-    },
+export const getStaticProps: GetStaticProps<
+  PropsType,
+  { post: string; lang: langEnum }
+> = async (ctx) => {
+  const props = {
+    post: getPostByURL(ctx.params.post, ctx.params.lang),
+    lang: langEnum,
   };
+
+  return { props };
 };
 
-export const getStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const paths = supportedLangs.reduce((paths, lang): any => {
     const slugs = getPostsURLs(lang);
