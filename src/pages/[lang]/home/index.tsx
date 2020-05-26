@@ -5,13 +5,19 @@ import Hero from "../../../components/modules/hero";
 import Layout from "../../../components/modules/layout";
 import { Heading2 } from "../../../components/base/typography";
 
-import { getPaths } from "../../../utils/lang";
+import { getPaths, langEnum } from "../../../utils/lang";
+import { getPage, PageType } from "../../../cms/pages";
+import { GetStaticProps } from "next";
 
-const HomePage = () => {
+type PropsType = PageType & {
+  background: string;
+};
+const HomePage = (props: PropsType) => {
   return (
     <>
       <Head>
-        <title>Home | Marcelo</title>
+        <title>{props.title}</title>
+        <meta name="description" content={props.description} />
       </Head>
       <Hero />
       <Layout variant="hero">
@@ -36,9 +42,19 @@ const HomePage = () => {
   );
 };
 
-export const getStaticProps = () => ({ props: { background: "tall" } });
+export const getStaticProps: GetStaticProps<
+  PropsType,
+  { lang: langEnum }
+> = async (ctx) => {
+  const props = {
+    background: "tall",
+    ...getPage(ctx.params.lang, "/home"),
+  };
 
-export const getStaticPaths = () => {
+  return { props };
+};
+
+export const getStaticPaths = async () => {
   return { paths: getPaths("/home"), fallback: false };
 };
 

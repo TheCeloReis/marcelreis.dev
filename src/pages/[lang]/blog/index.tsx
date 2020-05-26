@@ -1,20 +1,20 @@
 import React from "react";
-import { GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
+import { GetStaticProps, GetStaticPaths } from "next";
 
-import { getPaths, langEnum } from "../../../utils/lang";
 import { Grid } from "../../../components/base/flex";
-
 import PostCard from "../../../components/modules/postCard";
-
 import Layout from "../../../components/modules/layout";
 
+import { getPaths, langEnum } from "../../../utils/lang";
 import { getLatestPosts, PostType } from "../../../cms/post";
 
-type PropsType = {
-  posts: PostType[];
-};
+import { PageType, getPage } from "../../../cms/pages";
 
+type PropsType = PageType & {
+  posts: PostType[];
+  lang: langEnum;
+};
 const BlogPage = (props: PropsType) => {
   if (!props.posts) {
     return null;
@@ -23,7 +23,8 @@ const BlogPage = (props: PropsType) => {
   return (
     <Layout>
       <Head>
-        <title>Blog | Marcelo Reis</title>
+        <title>{props.title}</title>
+        <meta name="description" content={props.description} />
       </Head>
       {!props.posts && <div>No posts!</div>}
       <Grid>
@@ -34,7 +35,7 @@ const BlogPage = (props: PropsType) => {
               title={post.title}
               description={post.description}
               tags={post.tags}
-              slug={post.url}
+              url={`/${props.lang}/blog/${post.url}`}
             />
           ))}
       </Grid>
@@ -42,13 +43,15 @@ const BlogPage = (props: PropsType) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<any, { lang: langEnum }> = async ({
-  ...ctx
-}) => {
-  const props: PropsType = {
+export const getStaticProps: GetStaticProps<
+  PropsType,
+  { lang: langEnum }
+> = async (ctx) => {
+  const props = {
+    ...getPage(ctx.params.lang, "/blog"),
     posts: getLatestPosts(ctx.params.lang),
+    lang: ctx.params.lang,
   };
-
   return { props };
 };
 

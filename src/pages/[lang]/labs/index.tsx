@@ -1,24 +1,36 @@
 import React from "react";
 import Head from "next/head";
 
-import { getPaths } from "../../../utils/lang";
+import { getPaths, langEnum } from "../../../utils/lang";
 import Layout from "../../../components/modules/layout";
+import { GetStaticProps, GetStaticPaths } from "next";
+import { getPage, PageType } from "../../../cms/pages";
 
-const LabsPage = () => {
+type PropsType = PageType;
+const LabsPage = (props: PageType) => {
   return (
     <>
       <Head>
-        <title>Labs | Marcelo Reis</title>
+        <title>{props.title}</title>
+        <meta name="description" content={props.description} />
       </Head>
       <Layout>Labs</Layout>
     </>
   );
 };
 
-export const getStaticPaths = () => {
-  return { paths: getPaths("/labs"), fallback: false };
+export const getStaticProps: GetStaticProps<
+  PropsType,
+  { lang: langEnum }
+> = async (ctx) => {
+  const props = {
+    ...getPage(ctx.params.lang, "/labs"),
+  };
+  return { props };
 };
 
-export const getStaticProps = () => ({ props: {} });
+export const getStaticPaths: GetStaticPaths = async () => {
+  return { paths: getPaths("/labs"), fallback: false };
+};
 
 export default LabsPage;
