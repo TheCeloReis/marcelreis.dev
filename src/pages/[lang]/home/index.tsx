@@ -6,10 +6,10 @@ import Layout from "../../../components/modules/layout";
 import { Heading2 } from "../../../components/base/typography";
 
 import { getPaths, langEnum } from "../../../utils/lang";
-import { getPage, PageType } from "../../../cms/pages";
+import { getPage, HomePageType } from "../../../cms/pages";
 import { GetStaticProps } from "next";
 
-type PropsType = PageType & {
+type PropsType = HomePageType & {
   background: string;
 };
 const HomePage = (props: PropsType) => {
@@ -19,7 +19,10 @@ const HomePage = (props: PropsType) => {
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
       </Head>
-      <Hero />
+      <Hero
+        title={props.heroSentences[0]}
+        sentences={props.heroSentences.slice(1, 4)}
+      />
       <Layout variant="hero">
         <Heading2 as="h2">Last Posts</Heading2>
         <div>1</div>

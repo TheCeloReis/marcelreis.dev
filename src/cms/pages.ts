@@ -9,7 +9,11 @@ export type PageType = PageMeta & {
   url: string;
   markdown: string;
 };
-export function getPage(lang: langEnum, url: string): PageType {
+export type HomePageType = PageType & {
+  heroSentences?: [string, string, string, string];
+};
+
+export function getPage(lang: langEnum, url: string): PageType & HomePageType {
   const file = fs.readFileSync(
     path.join(process.cwd(), `./content/${lang}/pages${url}.md`)
   );
