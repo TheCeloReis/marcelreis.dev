@@ -43,7 +43,7 @@ export function getPostByURL(postURL: string, lang: langEnum): PostType {
   };
 }
 
-export function getLatestPosts(lang: langEnum): any {
+export function getLatestPosts(lang: langEnum): PostType[] {
   return getPostsURLs(lang).map((postURL) => getPostByURL(postURL, lang));
 }
 

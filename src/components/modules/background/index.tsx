@@ -30,6 +30,7 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
     setTimeout(() => {
       setBackgroundState(pageState);
     }, 500);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [transitionOn]);
 
   const stars = useStars();

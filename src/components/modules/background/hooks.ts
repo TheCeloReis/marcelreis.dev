@@ -20,7 +20,12 @@ function getCordinates(radius: number) {
   };
 }
 
-export const useStars = () => {
+type StarsType = {
+  small: string;
+  medium: string;
+  large: string;
+};
+export const useStars = (): StarsType => {
   const [stars, setStars] = useState({ small: "", medium: "", large: "" });
   const [radius, setRadius] = useState(0);
 

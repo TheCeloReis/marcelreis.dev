@@ -1,13 +1,15 @@
 import React from "react";
 import Head from "next/head";
+import { AppPropsType } from "next/dist/next-server/lib/utils";
 
 import Navbar from "../components/modules/navbar";
 import Footer from "../components/modules/footer";
 import Background from "../components/modules/background";
 
 import "../sass/index.scss";
+import { langEnum } from "../utils/lang";
 
-const MyApp = (props: any) => {
+const MyApp = (props: AppPropsType) => {
   return (
     <>
       <Head>
@@ -27,7 +29,7 @@ const MyApp = (props: any) => {
       />
       <Navbar
         initialState={props.pageProps.background}
-        lang={props.router.query.lang}
+        lang={props.router.query.lang as langEnum}
       />
       <props.Component {...props.pageProps} />
       <Footer />

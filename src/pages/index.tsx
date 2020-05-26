@@ -9,10 +9,11 @@ const RootPage = () => {
   const { replace } = useRouter();
 
   useEffect(() => {
-    const lang: any = navigator.language.toLowerCase();
+    const lang: string = navigator.language.toLowerCase();
     replace(
       "/[lang]/home",
-      `/${supportedLangs.includes(lang) ? lang : supportedLangs[0]}/home`
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      `/${supportedLangs.includes(lang as any) ? lang : supportedLangs[0]}/home`
     );
   }, [replace]);
 

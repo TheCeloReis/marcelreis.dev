@@ -2,16 +2,18 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import { supportedLangs } from "../utils/lang";
+import { supportedLangs, langEnum } from "../utils/lang";
 
 const NotFoundPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const lang: any = navigator.language.toLowerCase();
+    const lang = navigator.language.toLowerCase();
     router.replace(
       "/[lang]/not-found",
-      `/${supportedLangs.includes(lang) ? lang : supportedLangs[0]}/not-found`
+      `/${
+        supportedLangs.includes(lang as langEnum) ? lang : supportedLangs[0]
+      }/not-found`
     );
   }, [router]);
 
