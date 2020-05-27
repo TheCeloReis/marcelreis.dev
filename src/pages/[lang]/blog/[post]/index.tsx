@@ -2,8 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
-import { Content } from "../../../../components/base/content";
-import Layout from "../../../../components/modules/layout";
+import { Layout } from "../../../../components/modules/layout";
 
 import { supportedLangs, langEnum } from "../../../../utils/lang";
 import { getPostByURL, PostType, getPostsURLs } from "../../../../cms/post";
@@ -15,17 +14,15 @@ type PropsType = {
 
 const BlogPage = ({ post }: PropsType) => {
   return (
-    <Layout>
+    <Layout as="article">
       <Head>
         <title>{post.title}</title>
         <meta name="description" content={post.description} />
       </Head>
 
-      <Content as="article">
-        <h1>{post.title}</h1>
-        <h3>{post.description}</h3>
-        <ReactMarkdown source={post.markdown} escapeHtml={false} />
-      </Content>
+      <h1>{post.title}</h1>
+      <h3>{post.description}</h3>
+      <ReactMarkdown source={post.markdown} escapeHtml={false} />
     </Layout>
   );
 };

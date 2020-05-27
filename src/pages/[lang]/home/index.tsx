@@ -1,13 +1,15 @@
 import React from "react";
 import Head from "next/head";
+import { GetStaticProps } from "next";
 
 import Hero from "../../../components/modules/hero";
 import Layout from "../../../components/modules/layout";
 import { Heading2 } from "../../../components/base/typography";
+import { Grid } from "../../../components/base/grid";
+import { Card } from "../../../components/base/card";
 
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getPage, HomePageType } from "../../../cms/pages";
-import { GetStaticProps } from "next";
 
 type PropsType = HomePageType & {
   background: string;
@@ -25,21 +27,23 @@ const HomePage = (props: PropsType) => {
       />
       <Layout variant="hero">
         <Heading2 as="h2">Last Posts</Heading2>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
+        <Grid sm={1} lg={2}>
+          <Card>Post 1</Card>
+          <Card>Post 2</Card>
+          <Card>Post 3</Card>
+          <Card>Post 4</Card>
+        </Grid>
 
         <Heading2 as="h2">Projects Highlights</Heading2>
-        <div>1</div>
-        <div>2</div>
+        <Grid sm={2} lg={4}>
+          <Card>Projeto 1</Card>
+          <Card>Projeto 2</Card>
+          <Card>Projeto 3</Card>
+          <Card>Projeto 4</Card>
+        </Grid>
 
         <Heading2 as="h2">About</Heading2>
         <div>1</div>
-        <div>2</div>
-
-        <Heading2 as="h2">Contact me</Heading2>
-        <div>1</div>
-        <div>2</div>
       </Layout>
     </>
   );

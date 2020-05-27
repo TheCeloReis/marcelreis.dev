@@ -2,32 +2,28 @@ import React from "react";
 import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
-import { Grid } from "../../../components/base/flex";
 import PostCard from "../../../components/modules/postCard";
 import Layout from "../../../components/modules/layout";
+import { Grid } from "../../../components/base/grid";
 
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getLatestPosts, PostType } from "../../../cms/post";
 
 import { PageType, getPage } from "../../../cms/pages";
+import styled from "styled-components";
 
 type PropsType = PageType & {
   posts: PostType[];
   lang: langEnum;
 };
 const BlogPage = (props: PropsType) => {
-  if (!props.posts) {
-    return null;
-  }
-
   return (
     <Layout>
       <Head>
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
       </Head>
-      {!props.posts && <div>No posts!</div>}
-      <Grid>
+      <PostGrid sm={1}>
         {props.posts &&
           props.posts.map((post) => (
             <PostCard
@@ -38,10 +34,14 @@ const BlogPage = (props: PropsType) => {
               url={`/${props.lang}/blog/${post.url}`}
             />
           ))}
-      </Grid>
+      </PostGrid>
     </Layout>
   );
 };
+
+const PostGrid = styled(Grid)`
+  padding-top: var(--spacing-3);
+`;
 
 export const getStaticProps: GetStaticProps<
   PropsType,

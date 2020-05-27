@@ -1,15 +1,21 @@
-import React from "react";
+import styled, { keyframes } from "styled-components";
 
-import * as S from "./styled";
+const fadeIn = keyframes`
+  0% { opacity: 0 }
+  75% { opacity: 0 }
+  100% { opacity: 1 }
+`;
 
 type PropsType = {
   variant?: "blog" | "hero";
-  transitionKey?: string;
-  children: React.ReactChild | React.ReactChild[];
 };
-
-const Layout = (props: PropsType) => {
-  return <S.Container variant={props.variant}>{props.children}</S.Container>;
-};
+export const Layout = styled.div<PropsType>`
+  display: grid;
+  justify-content: center;
+  grid-template-columns: minmax(auto, 800px);
+  padding: ${({ variant }) => (variant === "hero" ? "100vh" : "72px")}
+    var(--spacing-3) var(--spacing-6) var(--spacing-3);
+  animation: ${fadeIn} 1s ease-out 1;
+`;
 
 export default Layout;
