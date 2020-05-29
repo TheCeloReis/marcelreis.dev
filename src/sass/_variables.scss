@@ -1,11 +1,12 @@
 :root {
   /* COLORS */
-  --purple-l: #e1bee7;
   --purple: #9c27b0;
-  --purple-d: #7b1fa2;
   --green: #c2c921;
   --white: #fff;
   --black: #000;
+  --blue-l: #1879ce;
+  --blue: #0f4c81;
+  --blue-d: #0d4372;
 
   /* GRAY SCALE - (THEY STILL COLOURS BTW) */
   --gray-1: #fafafa;
@@ -49,10 +50,9 @@
   --elevation-5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 
   /* THEMING */
-
-  --primary-light: var(--purple);
-  --primary: var(--purple);
-  --primary-dark: var(--purple-d);
+  --primary-light: var(--blue-l);
+  --primary: var(--blue);
+  --primary-dark: var(--blue-d);
 
   --accent: var(--green);
 

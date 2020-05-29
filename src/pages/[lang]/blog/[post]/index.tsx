@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
-import { Layout } from "../../../../components/modules/layout";
+import { Layout } from "../../../../components/base/layout";
 
 import { supportedLangs, langEnum } from "../../../../utils/lang";
 import { getPostByURL, PostType, getPostsURLs } from "../../../../cms/post";

@@ -1,14 +1,4 @@
-import styled, { keyframes } from "styled-components";
-
-const fadeIn = keyframes`
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
+import styled from "styled-components";
 
 export const Footer = styled.footer`
   position: absolute;
@@ -21,7 +11,6 @@ export const Footer = styled.footer`
   justify-content: center;
   border-top: 1px var(--base-low) solid;
 
-  animation: ${fadeIn} 1s ease 0s;
   a {
     --base: var(--contrast);
     --base-low: var(--contrast-low);

@@ -3,7 +3,7 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import { getPaths, langEnum } from "../../../utils/lang";
-import Layout from "../../../components/modules/layout";
+import Layout from "../../../components/base/layout";
 import { getPage, PageType } from "../../../cms/pages";
 import { Heading1 } from "../../../components/base/typography";
 import { Grid } from "../../../components/base/grid";

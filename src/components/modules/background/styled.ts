@@ -16,31 +16,22 @@ export const Header = styled.div<HeaderProps>`
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0.33) 100%
     ),
-    radial-gradient(circle, #1879ce 0%, #0f4c81 33%, #0d4372 66%);
+    radial-gradient(
+      circle,
+      var(--primary-light) 0%,
+      var(--primary) 33%,
+      var(--primary-dark) 66%
+    );
   background-size: 200% 200%;
   background-position-x: 50%;
 
   transition: height 0.3s ease-in-out;
 `;
 
-export const Overlay = styled.div`
-  position: absolute;
-  z-index: 9;
-  width: 100%;
-  height: 100vh;
-  background: var(--base-high);
-`;
-
 const wave = keyframes`
-  0% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
+  0% { transform: translateX(0%) }
+  50% { transform: translateX(-50%) }
+  100% { transform: translateX(0%) }
 `;
 
 export const WaveArea = styled.div`

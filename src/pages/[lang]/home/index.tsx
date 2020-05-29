@@ -3,7 +3,7 @@ import Head from "next/head";
 import { GetStaticProps } from "next";
 
 import Hero from "../../../components/modules/hero";
-import Layout from "../../../components/modules/layout";
+import Layout from "../../../components/base/layout";
 import { Heading2 } from "../../../components/base/typography";
 import { Grid } from "../../../components/base/grid";
 import { Card } from "../../../components/base/card";
