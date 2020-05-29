@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 
-import Layout from "../../../components/modules/layout/";
+import Layout from "../../../components/base/layout";
 
 import { getPaths, langEnum } from "../../../utils/lang";
 import { GetStaticProps, GetStaticPaths } from "next";
