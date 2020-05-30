@@ -1,0 +1,58 @@
+@keyframes star {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.star {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+
+  &:nth-child(1) {
+    width: 1px;
+    height: 1px;
+    animation: star 2048s linear infinite;
+  }
+
+  &:nth-child(2) {
+    width: 2px;
+    height: 2px;
+    animation: star 1536s linear infinite;
+  }
+
+  &:nth-child(3) {
+    width: 3px;
+    height: 3px;
+    animation: star 1152s linear infinite;
+  }
+}
+
+.header {
+  position: absolute;
+  height: 72px;
+  z-index: 10;
+  overflow: hidden;
+  width: 100%;
+
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.33) 100%
+    ),
+    radial-gradient(
+      circle,
+      var(--primary-light) 0%,
+      var(--primary) 33%,
+      var(--primary-dark) 66%
+    );
+  background-size: 200% 200%;
+  background-position-x: 50%;
+
+  transition: height 0.3s ease-in-out;
+}

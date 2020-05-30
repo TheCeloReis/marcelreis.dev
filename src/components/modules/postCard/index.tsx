@@ -5,7 +5,7 @@ import { Card } from "../../base/card";
 import { Heading4, Body1 } from "../../base/typography";
 import { ChipContainer, Chip } from "../../base/chips";
 
-import * as S from "./styled";
+import styles from "./.module.scss";
 
 type PropsType = {
   title: string;
@@ -19,7 +19,7 @@ const PostCard = (props: PropsType) => {
     <Card>
       <Link href={"/[lang]/blog/[post]"} as={props.url}>
         <a>
-          <S.PostBrief>
+          <div className={styles.postsContainers}>
             <Heading4 as="h2">{props.title}</Heading4>
             <Body1 as="p">{props.description}</Body1>
             <ChipContainer>
@@ -27,7 +27,7 @@ const PostCard = (props: PropsType) => {
                 <Chip key={index}>{tag}</Chip>
               ))}
             </ChipContainer>
-          </S.PostBrief>
+          </div>
         </a>
       </Link>
     </Card>

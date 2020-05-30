@@ -1,6 +1,7 @@
 import React from "react";
 
 import * as S from "./styled";
+import styles from "./.module.scss";
 
 import { Heading1, Heading3 } from "../../base/typography";
 

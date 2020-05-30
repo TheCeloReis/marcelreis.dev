@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps<
   { lang: langEnum }
 > = async (ctx) => {
   const props = {
-    background: "tall",
+    background: "full",
     ...getPage(ctx.params.lang, "/home"),
   };
 

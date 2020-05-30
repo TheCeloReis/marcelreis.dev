@@ -8,7 +8,7 @@ import Background from "../components/modules/background";
 
 const Footer = dynamic(() => import("../components/modules/footer"));
 
-import "../sass/index.scss";
+import "../styles/index.scss";
 import { langEnum } from "../utils/lang";
 
 const MyApp = (props: AppPropsType) => {
