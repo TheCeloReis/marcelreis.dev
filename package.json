@@ -40,6 +40,7 @@
     "gray-matter": "^4.0.2",
     "jest": "^26.0.1",
     "sass": "^1.26.5",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.2",
+    "typescript-plugin-css-modules": "^2.3.0"
   }
 }
