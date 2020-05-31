@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Linkedin, Twitter, Github } from "@styled-icons/boxicons-logos";
-
 import styles from "./.module.scss";
 
 const Footer = () => {
@@ -13,7 +11,7 @@ const Footer = () => {
         href="https://linkedin.com/in/marcelreis"
       >
         Linkedin
-        <Linkedin size={"36px"} />
+        <div />
       </a>
       <a
         className={styles.button}
@@ -21,7 +19,7 @@ const Footer = () => {
         href="https://github.com/marcelreis"
       >
         Github
-        <Github size={"36px"} />
+        <div />
       </a>
       <a
         className={styles.button}
@@ -29,7 +27,7 @@ const Footer = () => {
         href="https://twitter.com/_marcelreis"
       >
         Twitter
-        <Twitter size={"36px"} />
+        <div />
       </a>
     </footer>
   );

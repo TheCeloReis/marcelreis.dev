@@ -3,12 +3,15 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import { AppPropsType } from "next/dist/next-server/lib/utils";
 
-import Navbar from "../components/modules/navbar";
-import Background from "../components/modules/background";
+import Navbar from "components/modules/navbar";
+import Background from "components/modules/background";
 
-const Footer = dynamic(() => import("../components/modules/footer"));
+const Footer = dynamic(() => import("components/modules/footer"));
 
-import "../styles/index.scss";
+import "../styles/variables.global.scss";
+import "../styles/reset.global.scss";
+import "../styles/base.global.scss";
+
 import { langEnum } from "../utils/lang";
 
 const MyApp = (props: AppPropsType) => {

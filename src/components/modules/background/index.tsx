@@ -7,13 +7,13 @@ import { useStars } from "./hooks";
 import styles from "./.module.scss";
 
 type PropTypes = {
-  pageState: "full" | "fixed";
+  pageState: "full" | "tall" | "fixed";
   transitionOn: string;
 };
 
 const Background = ({ pageState, transitionOn }: PropTypes) => {
   const [backgroundState, setBackgroundState] = useState<
-    "full" | "fixed" | "hidden" | null
+    "full" | "tall" | "fixed" | null
   >(null);
 
   useEffect(() => {
@@ -42,7 +42,8 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
       className={styles.header}
       style={{
         position: state === "full" ? "fixed" : "absolute",
-        height: state === "full" ? "calc(100vh - 72px)" : "72px",
+        height:
+          state === "full" || state === "tall" ? "calc(100vh - 72px)" : "72px",
       }}
     >
       <Waves />

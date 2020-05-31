@@ -3,11 +3,12 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import { getPaths, langEnum } from "../../../utils/lang";
-import Layout from "../../../components/base/layout";
 import { getPage, PageType } from "../../../cms/pages";
-import { Heading1 } from "../../../components/base/typography";
-import { Grid } from "../../../components/base/grid";
-import { Card } from "../../../components/base/card";
+
+import cardStyles from "styles/card.module.scss";
+import gridStyles from "styles/grid.module.scss";
+import containerStyles from "styles/container.module.scss";
+import typographyStyles from "styles/typography.module.scss";
 
 type PropsType = PageType;
 const LabsPage = (props: PageType) => {
@@ -17,20 +18,36 @@ const LabsPage = (props: PageType) => {
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
       </Head>
-      <Layout>
-        <Heading1>Labs</Heading1>
-        <Grid sm={1} md={2}>
-          <Card>Project 1</Card>
-          <Card>Project 2</Card>
-        </Grid>
+      <div className={containerStyles.content}>
+        <h1 className={typographyStyles.heading_1}>Labs</h1>
+        <div
+          className={[
+            gridStyles.container,
+            gridStyles.col_1,
+            gridStyles.col_lg_2,
+          ].join(" ")}
+        >
+          {[1, 2].map((n) => (
+            <div key={n} className={cardStyles.card}>
+              project {n}
+            </div>
+          ))}
+        </div>
         &nbsp;
-        <Grid sm={2} md={4}>
-          <Card>Project 1</Card>
-          <Card>Project 2</Card>
-          <Card>Project 3</Card>
-          <Card>Project 4</Card>
-        </Grid>
-      </Layout>
+        <div
+          className={[
+            gridStyles.container,
+            gridStyles.col_2,
+            gridStyles.col_lg_4,
+          ].join(" ")}
+        >
+          {[1, 2, 3, 4].map((n) => (
+            <div key={n} className={cardStyles.card}>
+              project {n}
+            </div>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

@@ -5,4 +5,8 @@ module.exports = {
     "!**/node_modules/**",
     "!**/vendor/**",
   ],
+  moduleNameMapper: {
+    "^components(.*)$": "<rootDir>/src/components$1",
+    "\\.(scss)$": "identity-obj-proxy",
+  },
 };
