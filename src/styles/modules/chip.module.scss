@@ -1,16 +1,16 @@
-import styled from "styled-components";
-
-export const Chip = styled.span`
+.chip {
   padding: var(--spacing-0) var(--spacing-2);
   border: 2px solid var(--base-low);
   font-size: var(--small-text);
   border-radius: var(--spacing-3);
-`;
+}
 
-export const ChipContainer = styled.div`
+.container {
   display: flex;
-  overflow: hidden;
-  > ${Chip} {
+  overflow: auto;
+  padding-bottom: var(--spacing-1);
+  margin-bottom: calc(var(--spacing-1) * -1);
+  > .chip {
     margin-right: var(--spacing-2);
   }
-`;
+}

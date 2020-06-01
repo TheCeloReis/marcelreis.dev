@@ -4,16 +4,16 @@ import PropTypes from "prop-types";
 import { Waves } from "../waves";
 import { useStars } from "./hooks";
 
-import * as S from "./styled";
+import styles from "./.module.scss";
 
 type PropTypes = {
-  pageState: "full" | "fixed";
+  pageState: "full" | "tall" | "fixed";
   transitionOn: string;
 };
 
 const Background = ({ pageState, transitionOn }: PropTypes) => {
   const [backgroundState, setBackgroundState] = useState<
-    "full" | "fixed" | "hidden" | null
+    "full" | "tall" | "fixed" | null
   >(null);
 
   useEffect(() => {
@@ -35,13 +35,22 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
 
   const stars = useStars();
 
+  const state = backgroundState ?? pageState;
+
   return (
-    <S.Header height={backgroundState ?? pageState}>
-      <Waves position={"bottom"} />
-      <S.Star1 stars={stars.small} />
-      <S.Star2 stars={stars.medium} />
-      <S.Star3 stars={stars.large} />
-    </S.Header>
+    <div
+      className={styles.header}
+      style={{
+        position: state === "full" ? "fixed" : "absolute",
+        height:
+          state === "full" || state === "tall" ? "calc(100vh - 72px)" : "72px",
+      }}
+    >
+      <Waves />
+      <div className={styles.star} style={{ boxShadow: stars.small }} />
+      <div className={styles.star} style={{ boxShadow: stars.medium }} />
+      <div className={styles.star} style={{ boxShadow: stars.large }} />
+    </div>
   );
 };
 

@@ -1,44 +1,46 @@
 import React from "react";
 import Link from "next/link";
 
-import * as S from "./styled";
+import styles from "./.module.scss";
 
 type PropTypes = {
   lang: string;
   initialState: string;
 };
-
 const Navbar = ({ lang }: PropTypes) => {
   return (
-    <S.Background as="nav">
-      <S.Container>
-        <S.Logo>
+    <div className={styles.background}>
+      <div className={styles.container}>
+        <div className={styles.logo}>
           <Link href="/[lang]/home" as={`/${lang}/home`}>
             <a>
-              <S.Image src="https://placekitten.com/48/48" />
+              <img
+                className={styles.logo}
+                src="https://placekitten.com/48/48"
+              />
             </a>
           </Link>
-        </S.Logo>
+        </div>
 
-        <S.NavItem>
+        <div className={styles.navItem}>
           <Link href="/[lang]/blog" as={`/${lang}/blog`}>
             <a>blog</a>
           </Link>
-        </S.NavItem>
+        </div>
 
-        <S.NavItem>
+        <div className={styles.navItem}>
           <Link href="/[lang]/labs" as={`/${lang}/labs`}>
             <a>labs</a>
           </Link>
-        </S.NavItem>
+        </div>
 
-        <S.NavItem>
+        <div className={styles.navItem}>
           <Link href="/[lang]/about" as={`/${lang}/about`}>
             <a>about</a>
           </Link>
-        </S.NavItem>
-      </S.Container>
-    </S.Background>
+        </div>
+      </div>
+    </div>
   );
 };
 

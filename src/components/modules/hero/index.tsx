@@ -1,8 +1,6 @@
 import React from "react";
 
-import * as S from "./styled";
-
-import { Heading1, Heading3 } from "../../base/typography";
+import styles from "./.module.scss";
 
 type PropsType = {
   title: string;
@@ -10,14 +8,16 @@ type PropsType = {
 };
 const Hero = (props: PropsType) => {
   return (
-    <S.Container>
-      <Heading1 as="h1">{props.title}</Heading1>
-      <S.Lines>
+    <div className={styles.container}>
+      <h1>{props.title}</h1>
+      <div className={styles.lines}>
         {props.sentences.map((sentence, index) => (
-          <Heading3 key={index}>{sentence}</Heading3>
+          <span key={index} className={styles.line}>
+            {sentence}
+          </span>
         ))}
-      </S.Lines>
-    </S.Container>
+      </div>
+    </div>
   );
 };
 

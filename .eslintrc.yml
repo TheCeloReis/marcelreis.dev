@@ -33,6 +33,3 @@ overrides:
     rules:
       "@typescript-eslint/explicit-module-boundary-types": "off"
       "@typescript-eslint/explicit-function-return-type": "off"
-  - files: "styled.ts"
-    rules:
-      "@typescript-eslint/explicit-module-boundary-types": "off"

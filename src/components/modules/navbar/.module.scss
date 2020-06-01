@@ -1,14 +1,12 @@
-import styled from "styled-components";
-
-export const Background = styled.div`
+.background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 20;
-`;
+}
 
-export const Container = styled.div`
+.container {
   margin: auto;
   height: 64px;
   width: 100%;
@@ -20,29 +18,29 @@ export const Container = styled.div`
   justify-content: flex-end;
   grid-template-columns: 1fr repeat(3, auto);
   grid-gap: var(--spacing-3);
-`;
+}
 
-export const Nav = styled.div`
+.nav {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-`;
+}
 
-export const Logo = styled.div`
+.logo {
   width: 48px;
   height: 48px;
   overflow: hidden;
   border-radius: 50%;
-`;
+}
 
-export const Image = styled.img`
+.image {
   width: 48px;
   height: 48px;
-`;
+}
 
-export const NavItem = styled.div`
+.navItem {
   color: var(--white);
   font-size: var(--heading-5);
   cursor: pointer;
   align-self: center;
-`;
+}

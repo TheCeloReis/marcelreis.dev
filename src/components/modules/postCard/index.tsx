@@ -1,11 +1,10 @@
 import React from "react";
 import Link from "next/link";
 
-import { Card } from "../../base/card";
-import { Heading4, Body1 } from "../../base/typography";
-import { ChipContainer, Chip } from "../../base/chips";
-
-import * as S from "./styled";
+import styles from "./.module.scss";
+import cardStyles from "styles/card.module.scss";
+import chipStyles from "styles/chip.module.scss";
+import typographyStyles from "styles/typography.module.scss";
 
 type PropsType = {
   title: string;
@@ -16,21 +15,23 @@ type PropsType = {
 
 const PostCard = (props: PropsType) => {
   return (
-    <Card>
+    <div className={cardStyles.card}>
       <Link href={"/[lang]/blog/[post]"} as={props.url}>
         <a>
-          <S.PostBrief>
-            <Heading4 as="h2">{props.title}</Heading4>
-            <Body1 as="p">{props.description}</Body1>
-            <ChipContainer>
+          <div className={styles.postsContainers}>
+            <h2 className={typographyStyles.heading_4}>{props.title}</h2>
+            <p className={typographyStyles.body_1}>{props.description}</p>
+            <div className={chipStyles.container}>
               {props.tags.map((tag: string, index: number) => (
-                <Chip key={index}>{tag}</Chip>
+                <div className={chipStyles.chip} key={index}>
+                  {tag}
+                </div>
               ))}
-            </ChipContainer>
-          </S.PostBrief>
+            </div>
+          </div>
         </a>
       </Link>
-    </Card>
+    </div>
   );
 };
 

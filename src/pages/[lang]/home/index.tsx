@@ -2,14 +2,15 @@ import React from "react";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 
-import Hero from "../../../components/modules/hero";
-import Layout from "../../../components/base/layout";
-import { Heading2 } from "../../../components/base/typography";
-import { Grid } from "../../../components/base/grid";
-import { Card } from "../../../components/base/card";
+import Hero from "components/modules/hero";
 
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getPage, HomePageType } from "../../../cms/pages";
+
+import cardStyles from "styles/card.module.scss";
+import gridStyles from "styles/grid.module.scss";
+import containerStyles from "styles/container.module.scss";
+import typographyStyles from "styles/typography.module.scss";
 
 type PropsType = HomePageType & {
   background: string;
@@ -25,26 +26,40 @@ const HomePage = (props: PropsType) => {
         title={props.heroSentences[0]}
         sentences={props.heroSentences.slice(1, 4)}
       />
-      <Layout variant="hero">
-        <Heading2 as="h2">Last Posts</Heading2>
-        <Grid sm={1} lg={2}>
-          <Card>Post 1</Card>
-          <Card>Post 2</Card>
-          <Card>Post 3</Card>
-          <Card>Post 4</Card>
-        </Grid>
+      <div className={`${containerStyles.content} ${containerStyles.withHero}`}>
+        <h2 className={typographyStyles.heading_2}>Last Posts</h2>
+        <div
+          className={[
+            gridStyles.container,
+            gridStyles.col_1,
+            gridStyles.col_lg_2,
+          ].join(" ")}
+        >
+          {[1, 2, 3, 4].map((n) => (
+            <div key={n} className={cardStyles.card}>
+              Post {n}
+            </div>
+          ))}
+        </div>
 
-        <Heading2 as="h2">Projects Highlights</Heading2>
-        <Grid sm={2} lg={4}>
-          <Card>Projeto 1</Card>
-          <Card>Projeto 2</Card>
-          <Card>Projeto 3</Card>
-          <Card>Projeto 4</Card>
-        </Grid>
+        <h2 className={typographyStyles.heading_2}>Projects Highlights</h2>
+        <div
+          className={[
+            gridStyles.container,
+            gridStyles.col_2,
+            gridStyles.col_lg_4,
+          ].join(" ")}
+        >
+          {[1, 2, 3, 4].map((n) => (
+            <div key={n} className={cardStyles.card}>
+              Post {n}
+            </div>
+          ))}
+        </div>
 
-        <Heading2 as="h2">About</Heading2>
+        <h2 className={typographyStyles.heading_2}>About</h2>
         <div>1</div>
-      </Layout>
+      </div>
     </>
   );
 };
