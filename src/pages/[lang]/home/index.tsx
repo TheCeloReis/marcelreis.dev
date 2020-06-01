@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 
-import Hero from "components/modules/hero";
+import Hero from "components/hero";
 
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getPage, HomePageType } from "../../../cms/pages";

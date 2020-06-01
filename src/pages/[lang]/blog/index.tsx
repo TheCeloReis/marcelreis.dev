@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
-import PostCard from "components/modules/postCard";
+import PostCard from "components/postCard";
 
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getLatestPosts, PostType } from "../../../cms/post";

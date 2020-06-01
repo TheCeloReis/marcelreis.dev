@@ -3,10 +3,10 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import { AppPropsType } from "next/dist/next-server/lib/utils";
 
-import Navbar from "components/modules/navbar";
-import Background from "components/modules/background";
+import Navbar from "components/navbar";
+import Background from "components/background";
 
-const Footer = dynamic(() => import("components/modules/footer"));
+const Footer = dynamic(() => import("components/footer"));
 
 import "../styles/variables.global.scss";
 import "../styles/reset.global.scss";
