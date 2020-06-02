@@ -46,7 +46,7 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
           state === "full" || state === "tall" ? "calc(100vh - 72px)" : "72px",
       }}
     >
-      <Waves />
+      <Waves className={styles.wave} />
       <div className={styles.star} style={{ boxShadow: stars.small }} />
       <div className={styles.star} style={{ boxShadow: stars.medium }} />
       <div className={styles.star} style={{ boxShadow: stars.large }} />

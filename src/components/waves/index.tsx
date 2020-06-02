@@ -2,13 +2,18 @@ import React from "react";
 
 import styles from "./.module.scss";
 
-export const Waves = () => (
-  <div className={styles.waveArea}>
-    {[0, 1, 0, 1].map((variant, index) => (
-      <div className={styles.waveContainer} key={index}>
-        <Wave variant={variant} />
-      </div>
-    ))}
+type WavesPropsType = {
+  className?: string;
+};
+export const Waves = ({ className }: WavesPropsType) => (
+  <div className={`${styles.wrapper} ${className}`}>
+    <div className={styles.waveArea}>
+      {[0, 0, 1, 1].map((variant, index) => (
+        <div className={styles.waveContainer} key={index}>
+          <Wave variant={variant} />
+        </div>
+      ))}
+    </div>
   </div>
 );
 

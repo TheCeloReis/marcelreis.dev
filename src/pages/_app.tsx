@@ -40,7 +40,7 @@ const MyApp = (props: AppPropsType) => {
         lang={props.router.query.lang as langEnum}
       />
       <props.Component {...props.pageProps} />
-      <Footer />
+      {props.pageProps.background !== "full" && <Footer />}
     </>
   );
 };
