@@ -9,7 +9,8 @@ html {
   height: 100%;
 }
 
-#__next {
+// Workarround, plugin was 'purging' the 'unused' id selector
+body > div:first-child {
   position: relative;
   min-height: 100%;
 }
