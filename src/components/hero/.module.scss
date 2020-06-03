@@ -32,13 +32,18 @@
   }
 }
 
+.header {
+  font-size: var(--heading-1);
+}
+
 .lines {
   position: relative;
-  height: var(--heading-3);
+  height: var(--heading-2);
   margin-top: var(--spacing-2);
 }
 
 .line {
+  font-size: var(--heading-2);
   font-weight: 400;
   position: absolute;
   left: 50%;
