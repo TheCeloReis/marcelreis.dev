@@ -5,7 +5,8 @@
   justify-items: center;
   grid-template-columns: minmax(auto, var(--max-width));
   grid-gap: var(--spacing-4);
-  position: relative;
+  position: absolute;
+  bottom: 0px;
   z-index: 10;
   width: 100%;
   padding: var(--spacing-4) var(--spacing-2) 0 var(--spacing-2);
@@ -34,6 +35,8 @@
 }
 
 .waves {
+  position: absolute;
+  bottom: 193px;
   path {
     fill: var(--accent);
   }

@@ -11,6 +11,12 @@ import cardStyles from "styles/card.module.scss";
 import gridStyles from "styles/grid.module.scss";
 import typographyStyles from "styles/typography.module.scss";
 import containerStyles from "styles/container.module.scss";
+import Card from "components/card";
+
+const img = {
+  src: "https://placekitten.com/200/200",
+  alt: "Kitten",
+};
 
 type PropsType = HomePageType & {
   background: string;
@@ -36,9 +42,15 @@ const HomePage = (props: PropsType) => {
           ].join(" ")}
         >
           {[1, 2, 3, 4].map((n) => (
-            <div key={n} className={cardStyles.card}>
-              Post {n}
-            </div>
+            <Card key={n} img={img}>
+              <h3>Titulo</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Dolorem repudiandae, iste optio unde ducimus officia laborum
+                iure quisquam necessitatibus sequi, doloribus officiis. Dolor
+                omnis earum quae inventore temporibus iusto eligendi!
+              </p>
+            </Card>
           ))}
         </div>
 

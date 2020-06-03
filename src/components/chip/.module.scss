@@ -1,0 +1,22 @@
+.chip {
+  height: 32px;
+  padding: var(--spacing-0) var(--spacing-2);
+  border: 2px solid var(--base-low);
+  font-size: var(--base-text);
+  font-weight: bold;
+  color: var(--contrast-low);
+  border-radius: var(--spacing-3);
+}
+
+.container {
+  height: 48px;
+  display: flex;
+  overflow: auto hidden;
+  padding-bottom: var(--spacing-3);
+  margin-bottom: calc(var(--spacing-3) * -1);
+  align-self: end;
+
+  > .chip {
+    margin-right: var(--spacing-1);
+  }
+}

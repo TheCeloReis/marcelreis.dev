@@ -14,7 +14,7 @@
   display: grid;
   justify-content: center;
   grid-template-columns: minmax(auto, 800px);
-  padding: 88px var(--spacing-3) var(--spacing-6) var(--spacing-3);
+  padding: 88px var(--spacing-3) 278px var(--spacing-3);
   animation-name: fadeIn;
   animation-duration: 1s;
 }
