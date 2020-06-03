@@ -9,8 +9,8 @@ import { getPage, HomePageType } from "../../../cms/pages";
 
 import cardStyles from "styles/card.module.scss";
 import gridStyles from "styles/grid.module.scss";
-import containerStyles from "styles/container.module.scss";
 import typographyStyles from "styles/typography.module.scss";
+import containerStyles from "styles/container.module.scss";
 
 type PropsType = HomePageType & {
   background: string;
