@@ -10,11 +10,6 @@
 
   color: var(--white);
   text-align: center;
-
-  @media screen and (max-width: 576px) {
-    --heading-1: var(--heading-2);
-    --heading-3: var(--heading-4);
-  }
 }
 
 @keyframes fadeDown {
@@ -33,7 +28,11 @@
 }
 
 .header {
-  font-size: var(--heading-1);
+  font-size: var(--heading-2);
+
+  @media screen and (min-width: 575px) {
+    font-size: var(--heading-1);
+  }
 }
 
 .lines {
@@ -43,7 +42,7 @@
 }
 
 .line {
-  font-size: var(--heading-2);
+  font-size: var(--heading-4);
   font-weight: 400;
   position: absolute;
   left: 50%;
@@ -55,6 +54,10 @@
   animation-duration: 12s;
   animation-timing-function: ease;
   animation-iteration-count: infinite;
+
+  @media screen and (min-width: 575px) {
+    font-size: var(--heading-2);
+  }
 
   &:nth-of-type(1) {
     animation-delay: -8s;
