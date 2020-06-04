@@ -17,10 +17,6 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
   >(null);
 
   useEffect(() => {
-    setBackgroundState(pageState);
-  }, [pageState]);
-
-  useEffect(() => {
     if (backgroundState === null) {
       return setBackgroundState(pageState);
     }
@@ -36,7 +32,6 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
   const stars = useStars();
 
   const state = backgroundState ?? pageState;
-
   return (
     <div
       className={styles.header}

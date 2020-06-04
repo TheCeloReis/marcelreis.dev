@@ -36,7 +36,7 @@ const HomePage = (props: PropsType) => {
         title={props.heroSentences[0]}
         sentences={props.heroSentences.slice(1, 4)}
       />
-      <h2 className={typographyStyles.heading_2}>Last Posts</h2>
+      <h2 className={typographyStyles.heading_2}>Lastest Posts</h2>
       <div className={[gridStyles.container, gridStyles.col_1].join(" ")}>
         {props.latestPosts &&
           props.latestPosts.map((post) => (
