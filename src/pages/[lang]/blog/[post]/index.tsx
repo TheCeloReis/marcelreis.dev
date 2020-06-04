@@ -6,7 +6,7 @@ import { supportedLangs, langEnum } from "../../../../utils/lang";
 import { getPostByURL, PostType, getPostsURLs } from "../../../../cms/post";
 import { GetStaticProps, GetStaticPaths } from "next";
 
-import containerStyles from "styles/container.module.scss";
+import Layout from "components/layout";
 
 type PropsType = {
   post: PostType;
@@ -14,7 +14,7 @@ type PropsType = {
 
 const BlogPage = ({ post }: PropsType) => {
   return (
-    <article className={containerStyles.content}>
+    <Layout>
       <Head>
         <title>{post.title}</title>
         <meta name="description" content={post.description} />
@@ -23,7 +23,7 @@ const BlogPage = ({ post }: PropsType) => {
       <h1>{post.title}</h1>
       <h3>{post.description}</h3>
       <ReactMarkdown source={post.markdown} escapeHtml={false} />
-    </article>
+    </Layout>
   );
 };
 

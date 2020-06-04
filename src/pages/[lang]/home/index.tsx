@@ -6,12 +6,14 @@ import Hero from "components/hero";
 
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getPage, HomePageType } from "../../../cms/pages";
+import { getLatestPosts, PostType } from "src/cms/post";
 
-import cardStyles from "styles/card.module.scss";
 import gridStyles from "styles/grid.module.scss";
 import typographyStyles from "styles/typography.module.scss";
-import containerStyles from "styles/container.module.scss";
-import Card from "components/card";
+
+import { PostCard } from "components/card";
+import ReactMarkdown from "react-markdown";
+import Layout from "components/layout";
 
 const img = {
   src: "https://placekitten.com/200/200",
@@ -20,10 +22,12 @@ const img = {
 
 type PropsType = HomePageType & {
   background: string;
+  latestPosts: PostType[];
+  lang: langEnum;
 };
 const HomePage = (props: PropsType) => {
   return (
-    <>
+    <Layout padding={"hero"}>
       <Head>
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
@@ -32,47 +36,22 @@ const HomePage = (props: PropsType) => {
         title={props.heroSentences[0]}
         sentences={props.heroSentences.slice(1, 4)}
       />
-      <div className={`${containerStyles.content} ${containerStyles.withHero}`}>
-        <h2 className={typographyStyles.heading_2}>Last Posts</h2>
-        <div
-          className={[
-            gridStyles.container,
-            gridStyles.col_1,
-            gridStyles.col_lg_2,
-          ].join(" ")}
-        >
-          {[1, 2, 3, 4].map((n) => (
-            <Card key={n} img={img}>
-              <h3>Titulo</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Dolorem repudiandae, iste optio unde ducimus officia laborum
-                iure quisquam necessitatibus sequi, doloribus officiis. Dolor
-                omnis earum quae inventore temporibus iusto eligendi!
-              </p>
-            </Card>
+      <h2 className={typographyStyles.heading_2}>Last Posts</h2>
+      <div className={[gridStyles.container, gridStyles.col_1].join(" ")}>
+        {props.latestPosts &&
+          props.latestPosts.map((post) => (
+            <PostCard
+              key={post.url}
+              title={post.title}
+              description={post.description}
+              tags={post.tags}
+              img={img}
+              url={`/${props.lang}/blog/${post.url}`}
+            />
           ))}
-        </div>
-
-        <h2 className={typographyStyles.heading_2}>Projects Highlights</h2>
-        <div
-          className={[
-            gridStyles.container,
-            gridStyles.col_2,
-            gridStyles.col_lg_4,
-          ].join(" ")}
-        >
-          {[1, 2, 3, 4].map((n) => (
-            <div key={n} className={cardStyles.card}>
-              Post {n}
-            </div>
-          ))}
-        </div>
-
-        <h2 className={typographyStyles.heading_2}>About</h2>
-        <div>1</div>
       </div>
-    </>
+      <ReactMarkdown source={props.markdown} escapeHtml={false} />
+    </Layout>
   );
 };
 
@@ -83,6 +62,8 @@ export const getStaticProps: GetStaticProps<
   const props = {
     background: "tall",
     ...getPage(ctx.params.lang, "/home"),
+    latestPosts: getLatestPosts(ctx.params.lang, 3),
+    lang: ctx.params.lang,
   };
 
   return { props };

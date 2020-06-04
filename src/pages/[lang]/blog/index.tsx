@@ -7,10 +7,10 @@ import { getLatestPosts, PostType } from "../../../cms/post";
 
 import { PageType, getPage } from "../../../cms/pages";
 
-import containerStyles from "styles/container.module.scss";
 import styles from "pageStyles/blog.module.scss";
 
 import { PostCard } from "components/card";
+import Layout from "components/layout";
 
 type PropsType = PageType & {
   posts: PostType[];
@@ -20,7 +20,7 @@ const BlogPage = (props: PropsType) => {
   const img = { src: "https://placekitten.com/200/200", alt: "" };
 
   return (
-    <div className={`${containerStyles.content}`}>
+    <Layout>
       <Head>
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
@@ -47,7 +47,7 @@ const BlogPage = (props: PropsType) => {
             />
           ))}
       </div>
-    </div>
+    </Layout>
   );
 };
 
