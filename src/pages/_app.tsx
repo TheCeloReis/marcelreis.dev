@@ -30,6 +30,7 @@ const MyApp = (props: AppPropsType) => {
           name="description"
           content="My website, it's under development, expect bugs and Lorem Ipsum's!"
         />
+        <link rel="shortcut icon" href="/img/logo-32.png"></link>
       </Head>
       <Background
         pageState={props.pageProps.background}

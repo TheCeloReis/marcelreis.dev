@@ -13,7 +13,7 @@
 .content {
   display: grid;
   justify-content: center;
-  grid-template-columns: minmax(auto, 800px);
+  grid-template-columns: minmax(auto, var(--max-width));
   padding: 88px var(--spacing-3) 278px var(--spacing-3);
   animation-name: fadeIn;
   animation-duration: 1s;

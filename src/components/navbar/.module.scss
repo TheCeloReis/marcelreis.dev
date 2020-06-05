@@ -10,7 +10,7 @@
   margin: auto;
   height: 64px;
   width: 100%;
-  max-width: 800px;
+  max-width: var(--max-width);
 
   padding: var(--spacing-1) var(--spacing-3);
 
@@ -30,7 +30,7 @@
   width: 48px;
   height: 48px;
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: var(--spacing-0);
 }
 
 .image {

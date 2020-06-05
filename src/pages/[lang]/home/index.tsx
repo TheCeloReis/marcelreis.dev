@@ -8,12 +8,13 @@ import { getPaths, langEnum } from "../../../utils/lang";
 import { getPage, HomePageType } from "../../../cms/pages";
 import { getLatestPosts, PostType } from "src/cms/post";
 
-import gridStyles from "styles/grid.module.scss";
-import typographyStyles from "styles/typography.module.scss";
+// import gridStyles from "styles/grid.module.scss";
+// import typographyStyles from "styles/typography.module.scss";
 
-import { PostCard } from "components/card";
+// import { PostCard } from "components/card";
 import ReactMarkdown from "react-markdown";
 import Layout from "components/layout";
+import Content from "components/content";
 
 const img = {
   src: "https://placekitten.com/200/200",
@@ -36,7 +37,7 @@ const HomePage = (props: PropsType) => {
         title={props.heroSentences[0]}
         sentences={props.heroSentences.slice(1, 4)}
       />
-      <h2 className={typographyStyles.heading_2}>Lastest Posts</h2>
+      {/* <h2 className={typographyStyles.heading_2}>Lastest Posts</h2>
       <div className={[gridStyles.container, gridStyles.col_1].join(" ")}>
         {props.latestPosts &&
           props.latestPosts.map((post) => (
@@ -49,8 +50,10 @@ const HomePage = (props: PropsType) => {
               url={`/${props.lang}/blog/${post.url}`}
             />
           ))}
-      </div>
-      <ReactMarkdown source={props.markdown} escapeHtml={false} />
+      </div> */}
+      <Content>
+        <ReactMarkdown source={props.markdown} escapeHtml={false} />
+      </Content>
     </Layout>
   );
 };
