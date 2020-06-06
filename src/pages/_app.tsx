@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { AppPropsType } from "next/dist/next-server/lib/utils";
@@ -13,8 +14,19 @@ import "../styles/reset.global.scss";
 import "../styles/base.global.scss";
 
 import { langEnum } from "../utils/lang";
+import { initGA, logPageView } from "src/utils/analytics";
 
 const MyApp = (props: AppPropsType) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  useEffect(() => {
+    logPageView();
+  }, [router.pathname]);
+
   return (
     <>
       <Head>
@@ -30,7 +42,7 @@ const MyApp = (props: AppPropsType) => {
           name="description"
           content="My website, it's under development, expect bugs and Lorem Ipsum's!"
         />
-        <link rel="shortcut icon" href="/img/logo-32.png"></link>
+        <link rel="shortcut icon" href="/img/logo-32.png" />
       </Head>
       <Background
         pageState={props.pageProps.background}
