@@ -9,18 +9,20 @@ html {
   height: 100%;
 }
 
-#__next {
+// Workarround, plugin was 'purging' the 'unused' id selector
+body > div:first-child {
   position: relative;
   min-height: 100%;
 }
 
 html {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  color: var(--contrast);
 }
 
 a {

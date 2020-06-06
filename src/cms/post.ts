@@ -13,8 +13,14 @@ export const extractPostURL = (urls: string): string => {
   return urls.match(/[a-z].+(?=\.md)/)[0];
 };
 
-export function getPostsURLs(lang: langEnum): string[] {
-  return BLOG_FILES[lang].map((file) => extractPostURL(file));
+export function getPostsURLs(lang: langEnum, qnt?: number): string[] {
+  const postUrls = BLOG_FILES[lang].map((file) => extractPostURL(file));
+
+  if (qnt) {
+    return postUrls.slice(0, qnt);
+  }
+
+  return postUrls;
 }
 
 export function findPostByURL(url: string, fileNames: string[]): string {
@@ -43,8 +49,8 @@ export function getPostByURL(postURL: string, lang: langEnum): PostType {
   };
 }
 
-export function getLatestPosts(lang: langEnum): PostType[] {
-  return getPostsURLs(lang).map((postURL) => getPostByURL(postURL, lang));
+export function getLatestPosts(lang: langEnum, qnt?: number): PostType[] {
+  return getPostsURLs(lang, qnt).map((postURL) => getPostByURL(postURL, lang));
 }
 
 function initPostFiles() {

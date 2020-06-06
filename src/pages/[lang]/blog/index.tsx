@@ -2,27 +2,39 @@ import React from "react";
 import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
-import PostCard from "components/modules/postCard";
-
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getLatestPosts, PostType } from "../../../cms/post";
 
 import { PageType, getPage } from "../../../cms/pages";
 
-import containerStyles from "styles/container.module.scss";
+import styles from "pageStyles/blog.module.scss";
+
+import { PostCard } from "components/card";
+import Layout from "components/layout";
 
 type PropsType = PageType & {
   posts: PostType[];
   lang: langEnum;
 };
 const BlogPage = (props: PropsType) => {
+  const img = { src: "https://placekitten.com/200/200", alt: "" };
+
   return (
-    <div className={`${containerStyles.content}`}>
+    <Layout>
       <Head>
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
       </Head>
-      <div>
+      <header>
+        <h1 className={styles.header}>My awesome future blog</h1>
+        <p className={styles.description}>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem tempore,
+          deleniti architecto.
+        </p>
+      </header>
+
+      <h2 className={styles.subHeader}>Latest Posts</h2>
+      <div className={styles.grid}>
         {props.posts &&
           props.posts.map((post) => (
             <PostCard
@@ -30,11 +42,12 @@ const BlogPage = (props: PropsType) => {
               title={post.title}
               description={post.description}
               tags={post.tags}
+              img={img}
               url={`/${props.lang}/blog/${post.url}`}
             />
           ))}
       </div>
-    </div>
+    </Layout>
   );
 };
 

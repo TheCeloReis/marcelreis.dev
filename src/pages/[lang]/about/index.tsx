@@ -5,12 +5,12 @@ import { getPaths, langEnum } from "../../../utils/lang";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { getPage, PageType } from "../../../cms/pages";
 
-import containerStyles from "styles/container.module.scss";
+import Layout from "components/layout";
 
 type PropsType = PageType;
 const AboutPage = (props: PropsType) => {
   return (
-    <div className={containerStyles.content}>
+    <Layout>
       <Head>
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
@@ -18,7 +18,7 @@ const AboutPage = (props: PropsType) => {
       <div>
         <h1>This is me</h1>
       </div>
-    </div>
+    </Layout>
   );
 };
 

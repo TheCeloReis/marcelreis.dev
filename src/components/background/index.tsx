@@ -17,10 +17,6 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
   >(null);
 
   useEffect(() => {
-    setBackgroundState(pageState);
-  }, [pageState]);
-
-  useEffect(() => {
     if (backgroundState === null) {
       return setBackgroundState(pageState);
     }
@@ -36,7 +32,6 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
   const stars = useStars();
 
   const state = backgroundState ?? pageState;
-
   return (
     <div
       className={styles.header}
@@ -46,7 +41,7 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
           state === "full" || state === "tall" ? "calc(100vh - 72px)" : "72px",
       }}
     >
-      <Waves />
+      <Waves className={styles.wave} />
       <div className={styles.star} style={{ boxShadow: stars.small }} />
       <div className={styles.star} style={{ boxShadow: stars.medium }} />
       <div className={styles.star} style={{ boxShadow: stars.large }} />

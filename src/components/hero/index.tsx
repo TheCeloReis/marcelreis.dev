@@ -9,7 +9,7 @@ type PropsType = {
 const Hero = (props: PropsType) => {
   return (
     <div className={styles.container}>
-      <h1>{props.title}</h1>
+      <h1 className={styles.header}>{props.title}</h1>
       <div className={styles.lines}>
         {props.sentences.map((sentence, index) => (
           <span key={index} className={styles.line}>

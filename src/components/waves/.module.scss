@@ -32,13 +32,17 @@
   }
 }
 
+.wrapper {
+  height: 64px;
+  width: 100%;
+  overflow: hidden;
+}
+
 .waveArea {
-  position: absolute;
-  bottom: 0px;
+  position: relative;
   min-width: 1024px;
   width: 200%;
-  height: 64px;
-  overflow: hidden;
+  height: 100%;
 }
 
 .svg {

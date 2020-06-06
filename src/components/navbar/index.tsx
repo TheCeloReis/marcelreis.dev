@@ -14,31 +14,26 @@ const Navbar = ({ lang }: PropTypes) => {
         <div className={styles.logo}>
           <Link href="/[lang]/home" as={`/${lang}/home`}>
             <a>
-              <img
-                className={styles.logo}
-                src="https://placekitten.com/48/48"
-              />
+              <img className={styles.logo} src="/img/logo-64.png" />
             </a>
           </Link>
         </div>
 
-        <div className={styles.navItem}>
+        {/* <div className={styles.navItem}>
           <Link href="/[lang]/blog" as={`/${lang}/blog`}>
             <a>blog</a>
           </Link>
         </div>
-
         <div className={styles.navItem}>
           <Link href="/[lang]/labs" as={`/${lang}/labs`}>
             <a>labs</a>
           </Link>
         </div>
-
         <div className={styles.navItem}>
           <Link href="/[lang]/about" as={`/${lang}/about`}>
             <a>about</a>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );

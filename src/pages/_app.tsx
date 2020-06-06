@@ -3,10 +3,10 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import { AppPropsType } from "next/dist/next-server/lib/utils";
 
-import Navbar from "components/modules/navbar";
-import Background from "components/modules/background";
+import Navbar from "components/navbar";
+import Background from "components/background";
 
-const Footer = dynamic(() => import("components/modules/footer"));
+const Footer = dynamic(() => import("components/footer"));
 
 import "../styles/variables.global.scss";
 import "../styles/reset.global.scss";
@@ -30,6 +30,7 @@ const MyApp = (props: AppPropsType) => {
           name="description"
           content="My website, it's under development, expect bugs and Lorem Ipsum's!"
         />
+        <link rel="shortcut icon" href="/img/logo-32.png"></link>
       </Head>
       <Background
         pageState={props.pageProps.background}
@@ -40,7 +41,7 @@ const MyApp = (props: AppPropsType) => {
         lang={props.router.query.lang as langEnum}
       />
       <props.Component {...props.pageProps} />
-      <Footer />
+      {props.pageProps.background !== "full" && <Footer />}
     </>
   );
 };
