@@ -1,6 +1,6 @@
 ---
 title: Início | Marcelo Reis
-description: Doris gostava de bater as unhas na mesa para incomodar todos. Ela usou o próprio cabelo na sopa para dar mais sabor.
+description: Desenvolvedor Frontend, apaixonado por Javascript, Typescript e React. Residindo em Belo Horizonte e se aventurando no mundo Open Source
 heroSentences:
   - Eu sou Marcelo Reis
   - Desenvolvedor Front-end
@@ -8,4 +8,14 @@ heroSentences:
   - Explorador do Espaço
 ---
 
-## The trick to getting kids to eat anything is to put catchup on it.
+## Uma curta história sobre mim
+
+### Quantas vezes você recomeçaria de novo antes de saber que está fazendo o que ama?
+
+Eu estudava administração de empresas e trabalhava com faturamento hospitalar. Antes disso, eu era um suporte de TI, principalmente em redes, antes ainda aspirava em ser um engenheiro eletrônico, e antes disso tudo, não me lembro bem.
+
+Pelo menos toda vez que recomeçava, adquiri conhecimentos que levo até hoje. Mas a cada passo nessa jornada contínua e tediosa, uma coisa nunca me deixava: programação. Às vezes, automatizava algumas tarefas sem maçantes ou escrevia um script para configurar um computador ou criava um bot para enviar spam a alguns grupos do WhatsApp (história engraçada).
+
+Depois de perceber isso, tentei explorar o mundo do desenvolvimento, participando de vários encontros em toda a cidade. Logo achei o desenvolvimento web incrivelmente desafiador e fascinante para mim. Então, larguei meu emprego anterior e comecei a estudar Javascript em tempo integral (o que não é a coisa mais senstata).
+
+Felizmente, depois de um tempo, convenci alguém a me contratar e tive um estágio fenomenal. Comecei a trabalhar com React, Typcript e, bem, jQuery. Desde então, sou um desenvolvedor de front-end energitco e curioso, e tenho gostado muito do que estou fazendo no [Letras](https://letras.com).
