@@ -1,4 +1,14 @@
 .container {
   font-size: 1.25rem;
   line-height: 1.5em;
+
+  a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--primary-light);
+    }
+  }
 }
