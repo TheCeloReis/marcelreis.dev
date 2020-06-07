@@ -12,7 +12,7 @@ heroSentences:
 
 ### How many times would you start over again before you know that you're doing what you love?
 
-I used to study business administration and work with medical billing. Before this, I was an IT support (networks), and before that I was aspiring to be an Electronics Engineer, and before this, I can't quite remember be honest.
+I used to study business administration and work with medical billing. Before this, I was an IT support (networks), and before that I was aspiring to be an Electronics Engineer, and before this, I can't quite remember to be honest.
 
 At least every time I started over again, I have gained knowledge, that I still have and use. But every step in this continuous and tedious journey, one thing never left me, programming. Sometimes I automated some dull tasks, or wrote a script to set up a computer or created a bot to spam some WhatsApp groups (funny story).
 

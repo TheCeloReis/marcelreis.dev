@@ -16,10 +16,10 @@ import ReactMarkdown from "react-markdown";
 import Layout from "components/layout";
 import Content from "components/content";
 
-const img = {
-  src: "https://placekitten.com/200/200",
-  alt: "Kitten",
-};
+// const img = {
+//   src: "https://placekitten.com/200/200",
+//   alt: "Kitten",
+// };
 
 type PropsType = HomePageType & {
   background: string;
