@@ -1,28 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { useRouter } from "next/router";
 import Head from "next/head";
 
-import { supportedLangs } from "../utils/lang";
-
-const RootPage = () => {
-  const { replace } = useRouter();
-
-  useEffect(() => {
-    const lang: string = navigator.language.toLowerCase();
-    replace(
-      "/[lang]/home",
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      `/${supportedLangs.includes(lang as any) ? lang : supportedLangs[0]}/home`
-    );
-  }, [replace]);
-
-  return (
-    <Head>
-      <meta name="robots" content="noindex, nofollow" />
-    </Head>
-  );
-};
+const RootPage = () => (
+  <Head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Frontend developer, passionate about Javascript, Typescript and React. Living in Belo Horizonte and trying to develop some awesome stuff"
+    />
+  </Head>
+);
 
 export const getStaticProps = () => ({ props: { background: "full" } });
 
