@@ -40,7 +40,7 @@ const MyApp = (props: AppPropsType) => {
         <title>Marcelo Reis</title>
         <meta
           name="description"
-          content="My website, it's under development, expect bugs and Lorem Ipsum's!"
+          content="Frontend developer, passionate about Javascript, Typescript and React. Living in Belo Horizonte and trying to develop some awesome stuff"
         />
         <link rel="shortcut icon" href="/img/logo-32.png" />
       </Head>

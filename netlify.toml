@@ -4,29 +4,26 @@
   command = "npm run export"
   functions = "src/functions/"
 
-[context.deploy-preview.environment]
-  ACCESS_TOKEN = "not so secret"
-
 [[redirects]]
   from = "/*"
-  to = "/blog/:splat"
-
+  to = "/pt-us/not-found"
+  status = 404
+  conditions = {Language = ["pt"]}
 [[redirects]]
   from = "/*"
-  to = "/"
-  status = 200
-  conditions = {Language = ["en"], Country = ["US"]}
-
-[[redirects]]
-  from = "/"
-  to = "/en-us/home"
-  conditions = {Language = ["en"]}
-  status = 200
+  to = "/en-us/not-found"
+  status = 404
 
 [[redirects]]
   from = "/"
   to = "/pt-br/home"
+  force = true
+  status = 200
   conditions = {Language = ["pt"]}
+[[redirects]]
+  from = "/"
+  to = "/en-us/home"
+  force = true
   status = 200
 
 [[headers]]
