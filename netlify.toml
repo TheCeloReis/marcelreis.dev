@@ -4,27 +4,32 @@
   command = "npm run export"
   functions = "src/functions/"
 
+[dev]
+  framework = "#static"
+  port = 8888
+  publish = "out"
+
+[[redirects]]
+  from = ""
+  to = "/pt-br/home"
+  force = true
+  status = 301
+  conditions = {Language = ["pt"]}
+[[redirects]]
+  from = ""
+  to = "/en-us/home"
+  force = true
+  status = 301
+
 [[redirects]]
   from = "/*"
-  to = "/pt-us/not-found"
+  to = "/pt-br/not-found"
   status = 404
   conditions = {Language = ["pt"]}
 [[redirects]]
   from = "/*"
   to = "/en-us/not-found"
   status = 404
-
-[[redirects]]
-  from = "/"
-  to = "/pt-br/home"
-  force = true
-  status = 200
-  conditions = {Language = ["pt"]}
-[[redirects]]
-  from = "/"
-  to = "/en-us/home"
-  force = true
-  status = 200
 
 [[headers]]
   for = "/*"
