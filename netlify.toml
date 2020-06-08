@@ -10,13 +10,13 @@
   publish = "out"
 
 [[redirects]]
-  from = ""
+  from = "/"
   to = "/pt-br/home"
   force = true
   status = 301
   conditions = {Language = ["pt"]}
 [[redirects]]
-  from = ""
+  from = "/"
   to = "/en-us/home"
   force = true
   status = 301
