@@ -2,7 +2,14 @@
 
 # marcelreis.dev
 
-My personal website and blog (work in progress).
+My personal website.
+
+## Core Technologies
+ - React
+ - Typescript
+ - Next.js
+ - CSS Modules
+ - Netlify CMS
 
 Execute
-`yarn install`, then `yarn dev`, a development server will open in `localhost:8000`
+`yarn`, then `yarn dev`, a development server will open in `localhost:8000`
