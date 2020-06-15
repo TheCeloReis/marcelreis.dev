@@ -10,6 +10,3 @@ My personal website.
  - Next.js
  - CSS Modules
  - Netlify CMS
-
-Execute
-`yarn`, then `yarn dev`, a development server will open in `localhost:8000`
