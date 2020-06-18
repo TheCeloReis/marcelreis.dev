@@ -27,15 +27,19 @@
 }
 
 .logo {
-  width: 48px;
-  height: 48px;
-  overflow: hidden;
-  border-radius: var(--spacing-0);
+  color: #fff;
 }
-
-.image {
+.logoText {
+  display: block;
+  font-weight: 600;
+  line-height: 48px;
   width: 48px;
-  height: 48px;
+  font-size: 24px;
+  text-align: center;
+  transition: transform 200ms ease;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .navItem {
@@ -67,5 +71,15 @@
     bottom: -8px;
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out 0.2s;
+  }
+}
+.navItemOff {
+  cursor: not-allowed;
+  color: var(--gray-6);
+  &:hover {
+    transform: scale(1);
+    &::after {
+      transform: scaleX(0);
+    }
   }
 }

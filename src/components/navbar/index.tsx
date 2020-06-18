@@ -13,27 +13,25 @@ const Navbar = ({ lang }: PropTypes) => {
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link href="/[lang]/home" as={`/${lang}/home`}>
-            <a>
-              <img className={styles.logo} src="/img/logo-64.png" />
-            </a>
+            <a className={styles.logoText}>MR</a>
           </Link>
         </div>
 
-        {/* <div className={styles.navItem}>
-          <Link href="/[lang]/blog" as={`/${lang}/blog`}>
-            <a>blog</a>
-          </Link>
+        <div aria-disabled className={`${styles.navItem} ${styles.navItemOff}`}>
+          {/* <Link href="/[lang]/blog" as={`/${lang}/blog`}> */}
+          <a href="#">blog</a>
+          {/* </Link> */}
         </div>
-        <div className={styles.navItem}>
-          <Link href="/[lang]/labs" as={`/${lang}/labs`}>
-            <a>labs</a>
-          </Link>
+        <div aria-disabled className={`${styles.navItem} ${styles.navItemOff}`}>
+          {/* <Link href="/[lang]/labs" as={`/${lang}/labs`}> */}
+          <a href="#">labs</a>
+          {/* </Link> */}
         </div>
-        <div className={styles.navItem}>
+        <div className={`${styles.navItem}`}>
           <Link href="/[lang]/about" as={`/${lang}/about`}>
             <a>about</a>
           </Link>
-        </div> */}
+        </div>
       </div>
     </div>
   );

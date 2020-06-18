@@ -10,25 +10,8 @@
   publish = "out"
 
 [[redirects]]
-  from = "/"
-  to = "/pt-br/home"
-  force = true
-  status = 301
-  conditions = {Language = ["pt"]}
-[[redirects]]
-  from = "/"
-  to = "/en-us/home"
-  force = true
-  status = 301
-
-[[redirects]]
   from = "/*"
-  to = "/pt-br/not-found"
-  status = 404
-  conditions = {Language = ["pt"]}
-[[redirects]]
-  from = "/*"
-  to = "/en-us/not-found"
+  to = "/"
   status = 404
 
 [[headers]]

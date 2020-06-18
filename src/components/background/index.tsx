@@ -33,19 +33,28 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
 
   const state = backgroundState ?? pageState;
   return (
-    <div
-      className={styles.header}
-      style={{
-        position: state === "full" ? "fixed" : "absolute",
-        height:
-          state === "full" || state === "tall" ? "calc(100vh - 72px)" : "72px",
-      }}
-    >
-      <Waves className={styles.wave} />
-      <div className={styles.star} style={{ boxShadow: stars.small }} />
-      <div className={styles.star} style={{ boxShadow: stars.medium }} />
-      <div className={styles.star} style={{ boxShadow: stars.large }} />
-    </div>
+    <>
+      <div
+        className={`${styles.overlay} ${
+          state === "full" || state === "tall" ? styles.overlayOn : ""
+        }`}
+      />
+      <div
+        className={styles.header}
+        style={{
+          position: state === "full" ? "fixed" : "absolute",
+          height:
+            state === "full" || state === "tall"
+              ? "calc(100vh - 72px)"
+              : "72px",
+        }}
+      >
+        <Waves className={styles.wave} />
+        <div className={styles.star} style={{ boxShadow: stars.small }} />
+        <div className={styles.star} style={{ boxShadow: stars.medium }} />
+        <div className={styles.star} style={{ boxShadow: stars.large }} />
+      </div>
+    </>
   );
 };
 
