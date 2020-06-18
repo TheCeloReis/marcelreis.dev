@@ -1,14 +1,14 @@
 import React from "react";
 
 import { render, screen } from "@testing-library/react";
-import Footer from "../footer";
+import Footer from ".";
 
 describe("The component <Footer />", () => {
   it("Should render social icons", async () => {
     render(<Footer />);
 
-    expect(screen.getByText("Linkedin")).toBeTruthy();
-    expect(screen.getByText("Github")).toBeTruthy();
-    expect(screen.getByText("Twitter")).toBeTruthy();
+    expect(screen.getByTitle("Linkedin")).toBeTruthy();
+    expect(screen.getByTitle("Github")).toBeTruthy();
+    expect(screen.getByTitle("Twitter")).toBeTruthy();
   });
 });
