@@ -5,14 +5,15 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getPage, PageType } from "../../../cms/pages";
 
-import cardStyles from "styles/card.module.scss";
-import gridStyles from "styles/grid.module.scss";
 import typographyStyles from "styles/typography.module.scss";
 
 import Layout from "components/layout";
+import { getProjects, ProjectType } from "src/cms/projects";
 
-type PropsType = PageType;
-const LabsPage = (props: PageType) => {
+type PropsType = PageType & {
+  projects: ProjectType[];
+};
+const LabsPage = (props: PropsType) => {
   return (
     <Layout>
       <Head>
@@ -20,33 +21,6 @@ const LabsPage = (props: PageType) => {
         <meta name="description" content={props.description} />
       </Head>
       <h1 className={typographyStyles.heading_1}>Labs</h1>
-      <div
-        className={[
-          gridStyles.container,
-          gridStyles.col_1,
-          gridStyles.col_lg_2,
-        ].join(" ")}
-      >
-        {[1, 2].map((n) => (
-          <div key={n} className={cardStyles.card}>
-            project {n}
-          </div>
-        ))}
-      </div>
-      &nbsp;
-      <div
-        className={[
-          gridStyles.container,
-          gridStyles.col_2,
-          gridStyles.col_lg_4,
-        ].join(" ")}
-      >
-        {[1, 2, 3, 4].map((n) => (
-          <div key={n} className={cardStyles.card}>
-            project {n}
-          </div>
-        ))}
-      </div>
     </Layout>
   );
 };
@@ -55,8 +29,11 @@ export const getStaticProps: GetStaticProps<
   PropsType,
   { lang: langEnum }
 > = async (ctx) => {
+  const projects = getProjects(ctx.params.lang) || [];
+
   const props = {
     ...getPage(ctx.params.lang, "/labs"),
+    projects,
   };
   return { props };
 };

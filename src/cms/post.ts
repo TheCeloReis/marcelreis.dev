@@ -7,7 +7,15 @@ import { PostData } from "../types/content";
 
 const BLOG_FILES: { [key in langEnum]?: string[] } = {};
 
-initPostFiles();
+(function initPostFiles() {
+  const langDirs = fs.readdirSync(path.join(process.cwd(), "./content/"));
+  langDirs.forEach((lang: langEnum): void => {
+    const dir = path.join(process.cwd(), `./content/${lang}/blog/`);
+    const files = fs.readdirSync(dir);
+
+    BLOG_FILES[lang] = files.sort((a, b) => (a > b ? -1 : 1));
+  });
+})();
 
 export const extractPostURL = (urls: string): string => {
   return urls.match(/[a-z].+(?=\.md)/)[0];
@@ -51,14 +59,4 @@ export function getPostByURL(postURL: string, lang: langEnum): PostType {
 
 export function getLatestPosts(lang: langEnum, qnt?: number): PostType[] {
   return getPostsURLs(lang, qnt).map((postURL) => getPostByURL(postURL, lang));
-}
-
-function initPostFiles() {
-  const langDirs = fs.readdirSync(path.join(process.cwd(), "./content/"));
-  langDirs.forEach((lang: langEnum): void => {
-    const dir = path.join(process.cwd(), `./content/${lang}/blog/`);
-    const files = fs.readdirSync(dir);
-
-    BLOG_FILES[lang] = files.sort((a, b) => (a > b ? -1 : 1));
-  });
 }

@@ -22,10 +22,10 @@ const Navbar = ({ lang }: PropTypes) => {
           <a href="#">blog</a>
           {/* </Link> */}
         </div>
-        <div aria-disabled className={`${styles.navItem} ${styles.navItemOff}`}>
-          {/* <Link href="/[lang]/labs" as={`/${lang}/labs`}> */}
-          <a href="#">labs</a>
-          {/* </Link> */}
+        <div className={`${styles.navItem}`}>
+          <Link href="/[lang]/labs" as={`/${lang}/labs`}>
+            <a>labs</a>
+          </Link>
         </div>
         <div className={`${styles.navItem}`}>
           <Link href="/[lang]/about" as={`/${lang}/about`}>
