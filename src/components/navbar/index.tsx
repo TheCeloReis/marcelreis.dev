@@ -19,7 +19,7 @@ const Navbar = ({ lang }: PropTypes) => {
 
         <div aria-disabled className={`${styles.navItem} ${styles.navItemOff}`}>
           {/* <Link href="/[lang]/blog" as={`/${lang}/blog`}> */}
-          <a href="#">blog</a>
+          <span>blog</span>
           {/* </Link> */}
         </div>
         <div className={`${styles.navItem}`}>
@@ -32,7 +32,7 @@ const Navbar = ({ lang }: PropTypes) => {
               aria-disabled
               className={`${styles.navItem} ${styles.navItemOff}`}
             >
-              <a href="#">labs</a>
+              <span>labs</span>
             </div>
           )}
         </div>

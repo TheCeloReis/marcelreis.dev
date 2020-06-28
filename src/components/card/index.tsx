@@ -27,7 +27,7 @@ export const PostCard = (props: PostCardType) => (
     <a>
       <article className={`${styles.container} ${styles.postContainer}`}>
         <div className={styles.imgContainer}>
-          <img {...props.img} loading="lazy" />
+          <img {...props.img} alt="" loading="lazy" />
         </div>
         <div className={styles.body}>
           <h3 className={styles.title}>{props.title}</h3>
