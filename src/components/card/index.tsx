@@ -5,9 +5,11 @@ import styles from "./.module.scss";
 import Link from "next/link";
 import { ChipContainer, Chip } from "components/chip";
 
-export const Card = (props) => {
-  // eslint-disable-next-line react/prop-types
-  return <div className={styles.container}>{props.children}</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const Card = (props: any) => {
+  return (
+    <div {...props} className={`${props.className} ${styles.container}`} />
+  );
 };
 
 type PostCardType = {
@@ -40,7 +42,5 @@ export const PostCard = (props: PostCardType) => (
     </a>
   </Link>
 );
-
-export const ProjectCard = () => null;
 
 export default Card;

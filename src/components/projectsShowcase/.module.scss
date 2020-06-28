@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  margin-top: var(--spacing-5);
+  gap: var(--spacing-3);
+}
+
+.title {
+  font-size: var(--heading-4);
+  margin: 0;
+}

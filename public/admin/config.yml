@@ -18,6 +18,8 @@ collections:
       - { label: Thumb, name: thumbnail, widget: image, required: false }
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: string }
+      - { label: Github, name: github, widget: string }
+      - { label: Website, name: website, widget: string }
       - { label: Stack, name: tags, widget: list, default: [""] }
       - { label: Body, name: body, widget: markdown }
 

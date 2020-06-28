@@ -10,6 +10,8 @@ import typographyStyles from "styles/typography.module.scss";
 import Layout from "components/layout";
 import { getProjects, ProjectType } from "src/cms/projects";
 
+import ProjectShowcase from "components/projectsShowcase";
+
 type PropsType = PageType & {
   projects: ProjectType[];
 };
@@ -20,7 +22,8 @@ const LabsPage = (props: PropsType) => {
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
       </Head>
-      <h1 className={typographyStyles.heading_1}>Labs</h1>
+      <h1 className={typographyStyles.heading_2}>Labs</h1>
+      <ProjectShowcase projects={props.projects} />
     </Layout>
   );
 };

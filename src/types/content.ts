@@ -12,4 +12,6 @@ export type PostData = PageMeta & {
 export type ProjectData = PageMeta & {
   created: string;
   stack: string[];
+  github?: string;
+  website?: string;
 };
