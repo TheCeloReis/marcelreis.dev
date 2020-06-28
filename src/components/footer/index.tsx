@@ -1,6 +1,7 @@
 import React from "react";
 
-import { Linkedin, GitHub, Twitter } from "components/icons";
+import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+
 import { Waves } from "components/waves";
 
 import styles from "./.module.scss";
@@ -11,16 +12,16 @@ const Footer = () => {
     <>
       <Waves className={styles.waves} />
       <footer className={`${styles.footer}`}>
-        <h4 className={typographyStyles.heading_3}>Contact Me</h4>
+        <h2 className={typographyStyles.heading_3}>Contact Me</h2>
         <div className={styles.socialLinks}>
           <a title="Linkedin" href="https://linkedin.com/in/marcelreis">
-            <Linkedin />
+            <FaLinkedin />
           </a>
           <a title="Github" href="https://github.com/marcelreis">
-            <GitHub />
+            <FaGithub />
           </a>
           <a title="Twitter" href="https://twitter.com/_marcelreis">
-            <Twitter />
+            <FaTwitter />
           </a>
         </div>
         <small className={styles.copyright}>

@@ -36,7 +36,7 @@ const Background = ({ pageState, transitionOn }: PropTypes) => {
     <>
       <div
         className={`${styles.overlay} ${
-          state === "full" || state === "tall" ? styles.overlayOn : ""
+          state === "full" ? styles.overlayOn : ""
         }`}
       />
       <div

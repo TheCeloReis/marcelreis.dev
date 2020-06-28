@@ -8,6 +8,21 @@ media_folder_relative: true
 publish_mode: editorial_workflow
 
 collections:
+  - name: en-us-projects
+    label: English Projects
+    folder: content/en-us/projects
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Created, name: created, widget: datetime, format: YYYY-MM-DD hh:mm:ss }
+      - { label: Thumb, name: thumbnail, widget: image, required: false }
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: Github, name: github, widget: string }
+      - { label: Website, name: website, widget: string }
+      - { label: Stack, name: tags, widget: list, default: [""] }
+      - { label: Body, name: body, widget: markdown }
+
   - name: en-us-blog
     label: English Blog
     folder: content/en-us/blog
