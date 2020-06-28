@@ -1,5 +1,7 @@
 import React from "react";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+import ReactMarkdown from "react-markdown";
 import { GetStaticProps } from "next";
 
 import Hero from "components/hero";
@@ -12,9 +14,10 @@ import { getLatestPosts, PostType } from "src/cms/post";
 // import typographyStyles from "styles/typography.module.scss";
 
 // import { PostCard } from "components/card";
-import ReactMarkdown from "react-markdown";
 import Layout from "components/layout";
 import Content from "components/content";
+
+const CovidTimer = dynamic(() => import("components/covidTimer"));
 
 // const img = {
 //   src: "https://placekitten.com/200/200",
@@ -54,6 +57,7 @@ const HomePage = (props: PropsType) => {
       <Content>
         <ReactMarkdown source={props.markdown} escapeHtml={false} />
       </Content>
+      <CovidTimer />
     </Layout>
   );
 };

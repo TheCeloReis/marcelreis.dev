@@ -30,7 +30,7 @@
 .header {
   font-size: var(--heading-2);
 
-  @media screen and (min-width: 575px) {
+  @media screen and (min-width: 600px) {
     font-size: var(--heading-1);
   }
 }
@@ -55,7 +55,7 @@
   animation-timing-function: ease;
   animation-iteration-count: infinite;
 
-  @media screen and (min-width: 575px) {
+  @media screen and (min-width: 600px) {
     font-size: var(--heading-2);
   }
 

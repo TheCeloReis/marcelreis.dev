@@ -8,7 +8,7 @@ import { ChipContainer, Chip } from "components/chip";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Card = (props: any) => {
   return (
-    <div {...props} className={`${props.className} ${styles.container}`} />
+    <div {...props} className={`${styles.container} ${props.className}`} />
   );
 };
 
