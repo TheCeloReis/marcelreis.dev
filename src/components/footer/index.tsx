@@ -12,7 +12,7 @@ const Footer = () => {
     <>
       <Waves className={styles.waves} />
       <footer className={`${styles.footer}`}>
-        <h4 className={typographyStyles.heading_3}>Contact Me</h4>
+        <h2 className={typographyStyles.heading_3}>Contact Me</h2>
         <div className={styles.socialLinks}>
           <a title="Linkedin" href="https://linkedin.com/in/marcelreis">
             <FaLinkedin />
