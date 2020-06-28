@@ -22,6 +22,7 @@ const ProjectShowcase = ({ projects }: PropsType) => {
             {project.github && (
               <div>
                 <a className={styles.icon} href={project.github}>
+                  Repository
                   <FaGithub />
                 </a>
               </div>
@@ -30,6 +31,7 @@ const ProjectShowcase = ({ projects }: PropsType) => {
             {project.website && (
               <div>
                 <a className={styles.icon} href={project.website}>
+                  Website
                   <FiGlobe />
                 </a>
               </div>
