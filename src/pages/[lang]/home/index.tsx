@@ -9,26 +9,27 @@ import Hero from "components/hero";
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getLatestPosts, PostType } from "src/cms/post";
 
-// import gridStyles from "styles/grid.module.scss";
-// import typographyStyles from "styles/typography.module.scss";
-
-// import { PostCard } from "components/card";
+import { PostCard } from "components/card";
 import Layout from "components/layout";
 import Content from "components/content";
 import { getContent, MetaPage } from "src/cms/cms";
+import { useRouter } from "next/router";
 
 const CovidTimer = dynamic(() => import("components/covidTimer"));
 
-// const img = {
-//   src: "https://placekitten.com/200/200",
-//   alt: "Kitten",
-// };
+const img = {
+  src: "https://placekitten.com/200/200",
+  alt: "Kitten",
+};
 
 type PropsType = MetaPage & {
   latestPosts: PostType[];
   heroSentences: string[];
 };
 const HomePage = (props: PropsType) => {
+  const { query } = useRouter();
+  const lang = query.lang;
+
   return (
     <Layout padding={"hero"}>
       <Head>
@@ -39,8 +40,13 @@ const HomePage = (props: PropsType) => {
         title={props.heroSentences[0]}
         sentences={props.heroSentences.slice(1, 4)}
       />
-      {/* <h2 className={typographyStyles.heading_2}>Lastest Posts</h2>
-      <div className={[gridStyles.container, gridStyles.col_1].join(" ")}>
+
+      <Content>
+        <ReactMarkdown source={props.markdown} escapeHtml={false} />
+      </Content>
+
+      <h2 className="">Lastest Posts</h2>
+      <div className="">
         {props.latestPosts &&
           props.latestPosts.map((post) => (
             <PostCard
@@ -49,13 +55,10 @@ const HomePage = (props: PropsType) => {
               description={post.description}
               tags={post.tags}
               img={img}
-              url={`/${props.lang}/blog/${post.url}`}
+              url={`/${lang}/blog/${post.url}`}
             />
           ))}
-      </div> */}
-      <Content>
-        <ReactMarkdown source={props.markdown} escapeHtml={false} />
-      </Content>
+      </div>
       <CovidTimer />
     </Layout>
   );

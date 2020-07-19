@@ -17,25 +17,18 @@ const Navbar = ({ lang }: PropTypes) => {
           </Link>
         </div>
 
-        <div aria-disabled className={`${styles.navItem} ${styles.navItemOff}`}>
-          {/* <Link href="/[lang]/blog" as={`/${lang}/blog`}> */}
-          <span>blog</span>
-          {/* </Link> */}
-        </div>
         <div className={`${styles.navItem}`}>
-          {lang === "en-us" ? (
-            <Link href="/[lang]/labs" as={`/${lang}/labs`}>
-              <a>labs</a>
-            </Link>
-          ) : (
-            <div
-              aria-disabled
-              className={`${styles.navItem} ${styles.navItemOff}`}
-            >
-              <span>labs</span>
-            </div>
-          )}
+          <Link href="/[lang]/blog" as={`/${lang}/blog`}>
+            <a>blog</a>
+          </Link>
         </div>
+
+        <div className={`${styles.navItem}`}>
+          <Link href="/[lang]/labs" as={`/${lang}/labs`}>
+            <a>labs</a>
+          </Link>
+        </div>
+
         <div className={`${styles.navItem}`}>
           <Link href="/[lang]/about" as={`/${lang}/about`}>
             <a>about</a>

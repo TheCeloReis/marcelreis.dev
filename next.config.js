@@ -15,14 +15,6 @@ module.exports = withSass({
   },
 
   webpack: function (config) {
-    config.resolve.alias["styles"] = path.resolve(
-      __dirname,
-      "src/styles/modules/"
-    );
-    config.resolve.alias["pageStyles"] = path.resolve(
-      __dirname,
-      "src/styles/pages/"
-    );
     config.resolve.alias["components"] = path.resolve(
       __dirname,
       "src/components/"

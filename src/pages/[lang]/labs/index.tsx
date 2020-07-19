@@ -4,8 +4,6 @@ import { GetStaticProps, GetStaticPaths } from "next";
 
 import { getPaths, langEnum } from "../../../utils/lang";
 
-import typographyStyles from "styles/typography.module.scss";
-
 import Layout from "components/layout";
 import { getProjects, ProjectType } from "src/cms/projects";
 
@@ -22,7 +20,7 @@ const LabsPage = (props: PropsType) => {
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
       </Head>
-      <h1 className={typographyStyles.heading_2}>Labs</h1>
+      <h1 className="">Labs</h1>
       <ProjectShowcase projects={props.projects} />
     </Layout>
   );
