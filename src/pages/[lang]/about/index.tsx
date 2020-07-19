@@ -2,14 +2,18 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
-import { getPaths, langEnum } from "../../../utils/lang";
+import { getPaths } from "../../../utils/lang";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { getPage, PageType } from "../../../cms/pages";
 
 import Layout from "components/layout";
 import Content from "components/content";
+import { getContent, MetaPage } from "src/cms/cms";
 
-type PropsType = PageType;
+import { FaReact } from "react-icons/fa";
+
+import styles from "./_.module.scss";
+
+type PropsType = MetaPage;
 const AboutPage = (props: PropsType) => {
   return (
     <Layout>
@@ -17,6 +21,11 @@ const AboutPage = (props: PropsType) => {
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
       </Head>
+
+      <div className={styles.skills}>
+        <FaReact className={`${styles.react} ${styles.reactBack}`} />
+        <FaReact className={styles.react} />
+      </div>
       <Content>
         <ReactMarkdown source={props.markdown} escapeHtml={false} />
       </Content>
@@ -26,9 +35,9 @@ const AboutPage = (props: PropsType) => {
 
 export const getStaticProps: GetStaticProps<
   PropsType,
-  { lang: langEnum }
+  { lang: string }
 > = async (ctx) => {
-  return { props: getPage(ctx.params.lang, "/about") };
+  return { props: getContent("/about", ctx.params.lang) };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

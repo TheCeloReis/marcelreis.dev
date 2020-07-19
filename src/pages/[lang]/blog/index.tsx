@@ -5,14 +5,13 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getLatestPosts, PostType } from "../../../cms/post";
 
-import { PageType, getPage } from "../../../cms/pages";
-
 import styles from "pageStyles/blog.module.scss";
 
 import { PostCard } from "components/card";
 import Layout from "components/layout";
+import { getContent, MetaPage } from "src/cms/cms";
 
-type PropsType = PageType & {
+type PropsType = MetaPage & {
   posts: PostType[];
   lang: langEnum;
 };
@@ -56,7 +55,7 @@ export const getStaticProps: GetStaticProps<
   { lang: langEnum }
 > = async (ctx) => {
   const props = {
-    ...getPage(ctx.params.lang, "/blog"),
+    ...getContent("/blog", ctx.params.lang),
     posts: getLatestPosts(ctx.params.lang),
     lang: ctx.params.lang,
   };

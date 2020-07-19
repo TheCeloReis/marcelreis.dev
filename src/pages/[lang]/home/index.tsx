@@ -7,7 +7,6 @@ import { GetStaticProps } from "next";
 import Hero from "components/hero";
 
 import { getPaths, langEnum } from "../../../utils/lang";
-import { getPage, HomePageType } from "../../../cms/pages";
 import { getLatestPosts, PostType } from "src/cms/post";
 
 // import gridStyles from "styles/grid.module.scss";
@@ -16,6 +15,7 @@ import { getLatestPosts, PostType } from "src/cms/post";
 // import { PostCard } from "components/card";
 import Layout from "components/layout";
 import Content from "components/content";
+import { getContent, MetaPage } from "src/cms/cms";
 
 const CovidTimer = dynamic(() => import("components/covidTimer"));
 
@@ -24,10 +24,9 @@ const CovidTimer = dynamic(() => import("components/covidTimer"));
 //   alt: "Kitten",
 // };
 
-type PropsType = HomePageType & {
-  background: string;
+type PropsType = MetaPage & {
   latestPosts: PostType[];
-  lang: langEnum;
+  heroSentences: string[];
 };
 const HomePage = (props: PropsType) => {
   return (
@@ -67,10 +66,9 @@ export const getStaticProps: GetStaticProps<
   { lang: langEnum }
 > = async (ctx) => {
   const props = {
+    ...getContent<{ heroSentences: string[] }>("/home", ctx.params.lang),
     background: "tall",
-    ...getPage(ctx.params.lang, "/home"),
     latestPosts: getLatestPosts(ctx.params.lang, 3),
-    lang: ctx.params.lang,
   };
 
   return { props };

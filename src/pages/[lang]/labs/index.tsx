@@ -3,7 +3,6 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import { getPaths, langEnum } from "../../../utils/lang";
-import { getPage, PageType } from "../../../cms/pages";
 
 import typographyStyles from "styles/typography.module.scss";
 
@@ -11,8 +10,9 @@ import Layout from "components/layout";
 import { getProjects, ProjectType } from "src/cms/projects";
 
 import ProjectShowcase from "components/projectsShowcase";
+import { getContent, MetaPage } from "src/cms/cms";
 
-type PropsType = PageType & {
+type PropsType = MetaPage & {
   projects: ProjectType[];
 };
 const LabsPage = (props: PropsType) => {
@@ -35,7 +35,7 @@ export const getStaticProps: GetStaticProps<
   const projects = getProjects(ctx.params.lang) || [];
 
   const props = {
-    ...getPage(ctx.params.lang, "/labs"),
+    ...getContent("/labs", ctx.params.lang),
     projects,
   };
   return { props };
