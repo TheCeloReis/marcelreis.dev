@@ -13,6 +13,11 @@
   color: var(--white);
 }
 
+.title {
+  font-size: var(--heading-3);
+  margin: 0;
+}
+
 .socialLinks {
   display: grid;
   grid-gap: var(--spacing-2);

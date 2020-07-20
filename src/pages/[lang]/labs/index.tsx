@@ -3,16 +3,13 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import { getPaths, langEnum } from "../../../utils/lang";
-import { getPage, PageType } from "../../../cms/pages";
-
-import typographyStyles from "styles/typography.module.scss";
+import { getLatestItems, getContent, MetaPage, ProjectType } from "src/cms";
 
 import Layout from "components/layout";
-import { getProjects, ProjectType } from "src/cms/projects";
 
 import ProjectShowcase from "components/projectsShowcase";
 
-type PropsType = PageType & {
+type PropsType = MetaPage & {
   projects: ProjectType[];
 };
 const LabsPage = (props: PropsType) => {
@@ -22,7 +19,7 @@ const LabsPage = (props: PropsType) => {
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
       </Head>
-      <h1 className={typographyStyles.heading_2}>Labs</h1>
+      <h1 className="">Labs</h1>
       <ProjectShowcase projects={props.projects} />
     </Layout>
   );
@@ -32,10 +29,13 @@ export const getStaticProps: GetStaticProps<
   PropsType,
   { lang: langEnum }
 > = async (ctx) => {
-  const projects = getProjects(ctx.params.lang) || [];
+  const projects = getLatestItems<ProjectType>({
+    collection: "projects",
+    lang: ctx.params.lang,
+  });
 
   const props = {
-    ...getPage(ctx.params.lang, "/labs"),
+    ...getContent("/labs", ctx.params.lang),
     projects,
   };
   return { props };

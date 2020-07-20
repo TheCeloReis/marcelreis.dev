@@ -1,28 +1,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const withSass = require("@zeit/next-sass");
 const path = require("path");
 const webpack = require("webpack");
 const dotenv = require("dotenv");
 
 dotenv.config();
 
-module.exports = withSass({
-  cssModules: true,
-  cssLoaderOptions: {
-    importLoaders: 1,
-    localIdentName: "[hash:base64:5]",
-    modules: true,
-  },
-
+module.exports = {
   webpack: function (config) {
-    config.resolve.alias["styles"] = path.resolve(
-      __dirname,
-      "src/styles/modules/"
-    );
-    config.resolve.alias["pageStyles"] = path.resolve(
-      __dirname,
-      "src/styles/pages/"
-    );
     config.resolve.alias["components"] = path.resolve(
       __dirname,
       "src/components/"
@@ -37,4 +21,4 @@ module.exports = withSass({
 
     return config;
   },
-});
+};

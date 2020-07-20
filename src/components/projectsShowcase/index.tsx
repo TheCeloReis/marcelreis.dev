@@ -2,9 +2,9 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { FiGlobe } from "react-icons/fi";
 
-import styles from "./.module.scss";
+import { ProjectType } from "src/cms";
 
-import { ProjectType } from "src/cms/projects";
+import styles from "./.module.scss";
 
 import Card from "components/card";
 import { ChipContainer, Chip } from "components/chip";

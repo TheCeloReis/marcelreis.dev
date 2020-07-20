@@ -5,14 +5,13 @@ import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { Waves } from "components/waves";
 
 import styles from "./.module.scss";
-import typographyStyles from "styles/typography.module.scss";
 
 const Footer = () => {
   return (
     <>
       <Waves className={styles.waves} />
       <footer className={`${styles.footer}`}>
-        <h2 className={typographyStyles.heading_3}>Contact Me</h2>
+        <h2 className={styles.title}>Contact Me</h2>
         <div className={styles.socialLinks}>
           <a title="Linkedin" href="https://linkedin.com/in/marcelreis">
             <FaLinkedin />

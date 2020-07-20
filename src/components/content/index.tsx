@@ -2,9 +2,9 @@ import React from "react";
 
 import styles from "./.module.scss";
 
-const Content = (props) => {
-  // eslint-disable-next-line react/prop-types
-  return <div className={styles.container}>{props.children}</div>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Content = ({ children }: { children: any }) => {
+  return <div className={styles.container}>{children}</div>;
 };
 
 export default Content;

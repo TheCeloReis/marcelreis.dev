@@ -1,11 +1,11 @@
 import React from "react";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 
 import { getPaths, langEnum } from "../../../utils/lang";
-import { GetStaticProps } from "next";
-import { getPage, PageType } from "../../../cms/pages";
+import { getContent, MetaPage } from "src/cms";
 
-type PropsType = PageType & {
+type PropsType = MetaPage & {
   background: string;
 };
 const NotFoundPage = (props: PropsType) => {
@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<
   { lang: langEnum }
 > = async (ctx) => {
   const props = {
-    ...getPage(ctx.params.lang, "/about"),
+    ...getContent("/about", ctx.params.lang),
     background: "full",
   };
 
