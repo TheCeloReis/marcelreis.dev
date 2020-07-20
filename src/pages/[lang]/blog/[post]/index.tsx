@@ -1,12 +1,13 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
-
-import { supportedLangs, langEnum } from "../../../../utils/lang";
 import { GetStaticProps, GetStaticPaths } from "next";
 
-import Layout from "components/layout";
+import { supportedLangs, langEnum } from "../../../../utils/lang";
 import { getCollectionURLs, getItem, PostType } from "src/cms";
+
+import Layout from "components/layout";
+import Content from "components/content";
 
 type PropsType = {
   post: PostType;
@@ -22,7 +23,10 @@ const BlogPage = ({ post }: PropsType) => {
 
       <h1>{post.title}</h1>
       <h3>{post.description}</h3>
-      <ReactMarkdown source={post.markdown} escapeHtml={false} />
+
+      <Content>
+        <ReactMarkdown source={post.markdown} escapeHtml={false} />
+      </Content>
     </Layout>
   );
 };

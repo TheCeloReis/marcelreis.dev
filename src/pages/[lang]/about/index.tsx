@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
 import { getPaths } from "../../../utils/lang";
-import { MetaPage } from "src/cms";
+import { MetaPage, getContent } from "src/cms";
 
 import Layout from "components/layout";
 import Content from "components/content";
