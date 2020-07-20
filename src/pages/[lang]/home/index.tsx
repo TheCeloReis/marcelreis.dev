@@ -7,12 +7,11 @@ import { GetStaticProps } from "next";
 import Hero from "components/hero";
 
 import { getPaths, langEnum } from "../../../utils/lang";
-import { getLatestPosts, PostType } from "src/cms/post";
+import { getContent, MetaPage, getLatestItems, PostType } from "src/cms";
 
 import { PostCard } from "components/card";
 import Layout from "components/layout";
 import Content from "components/content";
-import { getContent, MetaPage } from "src/cms/cms";
 import { useRouter } from "next/router";
 
 const CovidTimer = dynamic(() => import("components/covidTimer"));
@@ -71,7 +70,10 @@ export const getStaticProps: GetStaticProps<
   const props = {
     ...getContent<{ heroSentences: string[] }>("/home", ctx.params.lang),
     background: "tall",
-    latestPosts: getLatestPosts(ctx.params.lang, 3),
+    latestPosts: getLatestItems<PostType>({
+      collection: "posts",
+      lang: ctx.params.lang,
+    }),
   };
 
   return { props };

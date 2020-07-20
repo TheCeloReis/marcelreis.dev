@@ -3,10 +3,10 @@ import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
 import { supportedLangs, langEnum } from "../../../../utils/lang";
-import { getPostByURL, PostType, getPostsURLs } from "../../../../cms/post";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import Layout from "components/layout";
+import { getCollectionURLs, getItem, PostType } from "src/cms";
 
 type PropsType = {
   post: PostType;
@@ -32,7 +32,11 @@ export const getStaticProps: GetStaticProps<
   { post: string; lang: langEnum }
 > = async (ctx) => {
   const props = {
-    post: getPostByURL(ctx.params.post, ctx.params.lang),
+    post: getItem<PostType>({
+      collection: "posts",
+      url: ctx.params.post,
+      lang: ctx.params.lang,
+    }),
     lang: langEnum,
   };
 
@@ -42,7 +46,7 @@ export const getStaticProps: GetStaticProps<
 export const getStaticPaths: GetStaticPaths = async () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const paths = supportedLangs.reduce((paths, lang): any => {
-    const slugs = getPostsURLs(lang);
+    const slugs = getCollectionURLs({ collection: "posts", lang });
     return [...paths, ...slugs.map((slug) => `/${lang}/blog/${slug}`)];
   }, []);
 

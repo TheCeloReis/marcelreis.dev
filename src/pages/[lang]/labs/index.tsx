@@ -3,12 +3,11 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import { getPaths, langEnum } from "../../../utils/lang";
+import { getLatestItems, getContent, MetaPage, ProjectType } from "src/cms";
 
 import Layout from "components/layout";
-import { getProjects, ProjectType } from "src/cms/projects";
 
 import ProjectShowcase from "components/projectsShowcase";
-import { getContent, MetaPage } from "src/cms/cms";
 
 type PropsType = MetaPage & {
   projects: ProjectType[];
@@ -30,7 +29,10 @@ export const getStaticProps: GetStaticProps<
   PropsType,
   { lang: langEnum }
 > = async (ctx) => {
-  const projects = getProjects(ctx.params.lang) || [];
+  const projects = getLatestItems<ProjectType>({
+    collection: "projects",
+    lang: ctx.params.lang,
+  });
 
   const props = {
     ...getContent("/labs", ctx.params.lang),

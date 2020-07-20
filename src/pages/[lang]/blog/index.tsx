@@ -3,13 +3,10 @@ import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import { getPaths, langEnum } from "../../../utils/lang";
-import { getLatestPosts, PostType } from "../../../cms/post";
-
-import styles from "pageStyles/blog.module.scss";
+import { getContent, getLatestItems, MetaPage, PostType } from "src/cms";
 
 import { PostCard } from "components/card";
 import Layout from "components/layout";
-import { getContent, MetaPage } from "src/cms/cms";
 
 type PropsType = MetaPage & {
   posts: PostType[];
@@ -24,16 +21,17 @@ const BlogPage = (props: PropsType) => {
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
       </Head>
+
       <header>
-        <h1 className={styles.header}>My awesome future blog</h1>
-        <p className={styles.description}>
+        <h1 className="">My awesome future blog</h1>
+        <p className="">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem tempore,
           deleniti architecto.
         </p>
       </header>
 
-      <h2 className={styles.subHeader}>Latest Posts</h2>
-      <div className={styles.grid}>
+      <h2 className="">Latest Posts</h2>
+      <div className="">
         {props.posts &&
           props.posts.map((post) => (
             <PostCard
@@ -54,9 +52,14 @@ export const getStaticProps: GetStaticProps<
   PropsType,
   { lang: langEnum }
 > = async (ctx) => {
+  const posts = getLatestItems<PostType>({
+    collection: "posts",
+    lang: ctx.params.lang,
+  });
+
   const props = {
     ...getContent("/blog", ctx.params.lang),
-    posts: getLatestPosts(ctx.params.lang),
+    posts,
     lang: ctx.params.lang,
   };
   return { props };

@@ -1,13 +1,13 @@
 import React from "react";
+import { GetStaticProps, GetStaticPaths } from "next";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
 import { getPaths } from "../../../utils/lang";
-import { GetStaticProps, GetStaticPaths } from "next";
+import { MetaPage } from "src/cms";
 
 import Layout from "components/layout";
 import Content from "components/content";
-import { getContent, MetaPage } from "src/cms/cms";
 
 import { FaReact } from "react-icons/fa";
 
@@ -26,6 +26,7 @@ const AboutPage = (props: PropsType) => {
         <FaReact className={`${styles.react} ${styles.reactBack}`} />
         <FaReact className={styles.react} />
       </div>
+
       <Content>
         <ReactMarkdown source={props.markdown} escapeHtml={false} />
       </Content>
