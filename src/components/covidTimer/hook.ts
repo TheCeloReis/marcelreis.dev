@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function useTimeSince(since: Date) {
+export function useTimeSince(
+  since: Date
+): { hours: string; minutes: string; seconds: string } {
   const [timeSince, setTimeSince] = useState({
-    hours: "xxx",
+    hours: "xxxx",
     minutes: "xx",
     seconds: "xx",
   });
@@ -21,7 +22,7 @@ export function useTimeSince(since: Date) {
         minutes: (minutes % 60).toString(),
         seconds: (seconds % 60).toString(),
       });
-    });
+    }, 1000);
     return () => clearInterval(interval);
   }, [since]);
 
