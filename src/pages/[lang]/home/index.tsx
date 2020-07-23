@@ -20,17 +20,23 @@ const CovidTimer = dynamic(() => import("components/covidTimer"), {
 });
 
 import styles from "./_.module.scss";
+import { useTranslation } from "src/cms/translation";
 
 const img = {
   src: "https://placekitten.com/200/200",
   alt: "Kitten",
 };
 
-type PropsType = MetaPage & {
-  latestPosts: PostType[];
+type ContentType = {
   heroSentences: string[];
+  t: { [key: string]: string };
 };
+type PropsType = MetaPage &
+  ContentType & {
+    latestPosts: PostType[];
+  };
 const HomePage = (props: PropsType) => {
+  const t = useTranslation(props.t);
   const { query } = useRouter();
   const lang = query.lang;
 
@@ -51,7 +57,7 @@ const HomePage = (props: PropsType) => {
         <ReactMarkdown source={props.markdown} escapeHtml={false} />
       </Content>
 
-      <h2 className="">Lastest Posts</h2>
+      <h2 className="">{t("latestPosts")}</h2>
       <div className="">
         {props.latestPosts &&
           props.latestPosts.map((post) => (
@@ -75,10 +81,7 @@ export const getStaticProps: GetStaticProps<
   { lang: langEnum }
 > = async (ctx) => {
   const props = {
-    ...getContent<{ heroSentences: string[]; langs: any }>(
-      "/home",
-      ctx.params.lang
-    ),
+    ...getContent<ContentType>("/home", ctx.params.lang),
     background: "tall",
     latestPosts: getLatestItems<PostType>({
       collection: "posts",

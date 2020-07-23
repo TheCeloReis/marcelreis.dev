@@ -6,8 +6,14 @@ heroSentences:
   - Desenvolvedor Front-end
   - Designer Entusiasta
   - Explorador do Espaço
+t:
+  latestPosts: Últimos Posts
+  hours: horas
+  minutes: minutos
+  seconds: segundos
+  myCovidQuarantine: Minha Quarentena
 ---
 
-### Aqui pretendo escrever, mas tenho que criar esse habito primeiro
+## Olá!
 
 Sou um desenvolvedor front end, gosto bastante de tipos (não confunda com typos). Trabalho principalmente com Javascrit, Typescript, React/Redux, SASS e jQuery.

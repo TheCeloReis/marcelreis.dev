@@ -6,6 +6,12 @@ heroSentences:
   - Front-end Developer
   - Web Designer Enthusiast
   - Space Explorer
+t:
+  latestPosts: Latest Posts
+  hours: hours
+  minutes: minutos
+  seconds: seconds
+  myCovidQuarantine: My Quarantine
 ---
 
 ## Hi There!

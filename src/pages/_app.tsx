@@ -15,6 +15,7 @@ import "../styles/base.global.scss";
 
 import { langEnum } from "../utils/lang";
 import { initGA, logPageView } from "src/utils/analytics";
+import LangProvider from "src/cms/translation";
 
 const MyApp = (props: AppPropsType) => {
   const router = useRouter();
@@ -28,7 +29,7 @@ const MyApp = (props: AppPropsType) => {
   }, [router.pathname]);
 
   return (
-    <>
+    <LangProvider value={{ initialized: false, t: {} }}>
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
@@ -54,7 +55,7 @@ const MyApp = (props: AppPropsType) => {
       />
       <props.Component {...props.pageProps} />
       <Footer />
-    </>
+    </LangProvider>
   );
 };
 
