@@ -5,7 +5,7 @@ import styles from "./.module.scss";
 type PropsType = {
   value: string;
   options: { value: string; text: string }[];
-  className: string;
+  className?: string;
   onChange: (value: string) => void;
 };
 function Select(props: PropsType) {
