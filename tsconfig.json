@@ -16,7 +16,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "components/*": ["src/components/*"]
+      "components/*": ["src/components/*"],
+      "uiKit/*": ["src/uiKit/*"]
     }
   },
   "exclude": ["node_modules"],

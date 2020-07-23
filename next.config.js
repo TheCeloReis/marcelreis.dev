@@ -11,6 +11,7 @@ module.exports = {
       __dirname,
       "src/components/"
     );
+    config.resolve.alias["uiKit"] = path.resolve(__dirname, "src/uiKit/");
 
     const env = Object.keys(process.env).reduce((acc, curr) => {
       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);

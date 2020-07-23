@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Select from "src/ui/select";
+import Select from "uiKit/select";
 
 const options = [
   { value: "en-us", text: "English" },
