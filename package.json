@@ -8,7 +8,7 @@
     "start": "next start",
     "export": "next export",
     "test": "jest",
-    "prettier": "prettier 'src/**/*.*'",
+    "prettier": "prettier 'src/**/*.*' --check",
     "eslint": "eslint 'src/**/*.{tsx,ts,js,jsx}'",
     "tsc": "tsc --noEmit"
   },
