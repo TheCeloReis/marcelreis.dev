@@ -3,6 +3,7 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import ReactMarkdown from "react-markdown";
 import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
 
 import Hero from "components/hero";
 
@@ -12,9 +13,13 @@ import { getContent, MetaPage, getLatestItems, PostType } from "src/cms";
 import { PostCard } from "components/card";
 import Layout from "components/layout";
 import Content from "components/content";
-import { useRouter } from "next/router";
+import LanguageSelector from "components/languageSelector";
 
-const CovidTimer = dynamic(() => import("components/covidTimer"));
+const CovidTimer = dynamic(() => import("components/covidTimer"), {
+  ssr: false,
+});
+
+import styles from "./_.module.scss";
 
 const img = {
   src: "https://placekitten.com/200/200",
@@ -39,6 +44,8 @@ const HomePage = (props: PropsType) => {
         title={props.heroSentences[0]}
         sentences={props.heroSentences.slice(1, 4)}
       />
+
+      <LanguageSelector className={styles.languageSelector} />
 
       <Content>
         <ReactMarkdown source={props.markdown} escapeHtml={false} />
@@ -68,7 +75,10 @@ export const getStaticProps: GetStaticProps<
   { lang: langEnum }
 > = async (ctx) => {
   const props = {
-    ...getContent<{ heroSentences: string[] }>("/home", ctx.params.lang),
+    ...getContent<{ heroSentences: string[]; langs: any }>(
+      "/home",
+      ctx.params.lang
+    ),
     background: "tall",
     latestPosts: getLatestItems<PostType>({
       collection: "posts",
