@@ -9,9 +9,9 @@ import { MetaPage, getContent } from "src/cms";
 import Layout from "components/layout";
 import Content from "components/content";
 
-import { FaReact } from "react-icons/fa";
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from "./_.module.scss";
+import { ReactHeader } from "components/reactHeader";
 
 type PropsType = MetaPage;
 const AboutPage = (props: PropsType) => {
@@ -22,10 +22,7 @@ const AboutPage = (props: PropsType) => {
         <meta name="description" content={props.description} />
       </Head>
 
-      <div className={styles.skills}>
-        <FaReact className={`${styles.react} ${styles.reactBack}`} />
-        <FaReact className={styles.react} />
-      </div>
+      <ReactHeader title={"Marcelo Reis"} subtitle={"Front end Developer"} />
 
       <Content>
         <ReactMarkdown source={props.markdown} escapeHtml={false} />
