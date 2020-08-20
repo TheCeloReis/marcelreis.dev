@@ -1,0 +1,18 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--spacing-3);
+  width: 100%;
+  border-radius: var(--spacing-1);
+  border: 2px solid var(--base-low);
+  padding: var(--spacing-3);
+  background-color: var(--base-high);
+
+  transition: transform 0.3s ease 0.2s, box-shadow 0.3s ease 0.2s;
+}
+
+.hoverable:hover {
+  transition-delay: 0s;
+  transform: translateY(-4px);
+  box-shadow: var(--elevation-1);
+}

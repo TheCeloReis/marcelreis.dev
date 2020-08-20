@@ -10,7 +10,7 @@ import Hero from "components/hero";
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getContent, MetaPage, getLatestItems, PostType } from "src/cms";
 
-import { PostCard } from "components/card";
+import { PostCard } from "components/postCard";
 import Layout from "components/layout";
 import Content from "components/content";
 import LanguageSelector from "components/languageSelector";

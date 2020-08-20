@@ -13,6 +13,11 @@ import Content from "components/content";
 import styles from "./_.module.scss";
 import { ReactHeader } from "components/reactHeader";
 
+import { SiTypescript } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
+
+import Card from "uiKit/card";
+
 type PropsType = MetaPage;
 const AboutPage = (props: PropsType) => {
   return (
@@ -24,9 +29,37 @@ const AboutPage = (props: PropsType) => {
 
       <ReactHeader title={"Marcelo Reis"} subtitle={"Front end Developer"} />
 
-      <Content>
-        <ReactMarkdown source={props.markdown} escapeHtml={false} />
-      </Content>
+      <div>
+        <h2 className={styles.heading}>Top Skills</h2>
+        <ul className={styles.highlights}>
+          <li>
+            <Card className={styles.highlight} inline>
+              <SiTypescript className={`${styles.icon} ${styles.typescript}`} />
+              <span>Typescript</span>
+            </Card>
+          </li>
+          <li>
+            <Card className={styles.highlight} inline>
+              <FaReact className={`${styles.icon} ${styles.react}`} />
+              <span>React</span>
+            </Card>
+          </li>
+        </ul>
+
+        <h2 className={styles.heading}>Others</h2>
+        <ul className={styles.skillList}>
+          <li>Javascript</li>
+          <li>Jest / RTL</li>
+          <li>HTML/CSS</li>
+          <li>SASS</li>
+          <li>Backbone.js</li>
+          <li>jQuery</li>
+          <li>Go (Golang)</li>
+          <li>Webpack</li>
+          <li>AWS</li>
+          <li>Next.js</li>
+        </ul>
+      </div>
     </Layout>
   );
 };
