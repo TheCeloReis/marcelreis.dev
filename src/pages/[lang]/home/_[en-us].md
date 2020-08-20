@@ -9,7 +9,7 @@ heroSentences:
 t:
   latestPosts: Latest Posts
   hours: hours
-  minutes: minutos
+  minutes: minutes
   seconds: seconds
   myCovidQuarantine: My Quarantine
 ---
