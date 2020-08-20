@@ -1,13 +1,11 @@
 import React from "react";
 import { GetStaticProps, GetStaticPaths } from "next";
-import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 
 import { getPaths } from "../../../utils/lang";
 import { MetaPage, getContent } from "src/cms";
 
 import Layout from "components/layout";
-import Content from "components/content";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from "./_.module.scss";

@@ -1,6 +1,6 @@
 .postContainer {
   @media screen and (min-width: 600px) {
-    grid-template-columns: minmax(20%, 128px) auto;
+    grid-template-columns: minmax(20%, 128px) auto !important;
   }
 
   > :nth-child(1) {
