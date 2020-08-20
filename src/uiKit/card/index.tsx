@@ -13,9 +13,8 @@ type PropsType = {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Card(props: PropsType) {
   const classes = [styles.container];
-
-  props.hoverable && classes.push(styles.hoverable);
   props.className && classes.push(props.className);
+  props.hoverable && classes.push(styles.hoverable);
 
   if (props.inline) {
     return (

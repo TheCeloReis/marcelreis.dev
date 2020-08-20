@@ -4,8 +4,8 @@ description: Desenvolvedor Frontend, apaixonado por Javascript, Typescript e Rea
 heroSentences:
   - Eu sou Marcelo Reis
   - Desenvolvedor Front-end
-  - Designer Entusiasta
-  - Explorador do Espaço
+  - Sempre Curioso
+  - Sempre Aprendendo
 t:
   latestPosts: Últimos Posts
   hours: horas
@@ -16,4 +16,4 @@ t:
 
 ## Olá!
 
-Sou um desenvolvedor front end, gosto bastante de tipos (não confunda com typos). Trabalho principalmente com Javascrit, Typescript, React/Redux, SASS e jQuery.
+Sou um desenvolvedor front end, aprecio tipagem e testes. No meu tempo livre gosto de aprender novas tecnologias.
