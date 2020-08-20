@@ -1,0 +1,66 @@
+.skills {
+  position: relative;
+  overflow: hidden;
+  background-color: #282c34;
+  padding: var(--spacing-4);
+  border-radius: var(--spacing-1);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.react {
+  font-size: 7.55rem;
+  color: #61dafb;
+  animation: spin 64s linear infinite;
+
+  @media screen and (min-width: 600px) {
+    font-size: 10rem;
+  }
+}
+
+.reactBack {
+  color: #32363e;
+  position: absolute;
+  animation-duration: 256s;
+  font-size: 20rem;
+  right: -5rem;
+  bottom: -5rem;
+  transform: translate(50% 50%);
+}
+
+.header {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+  color: var(--white);
+  padding-right: var(--spacing-4);
+
+  .title {
+    font-size: var(--heading-3);
+  }
+  .subtitle {
+    font-size: var(--heading-6);
+  }
+  .title,
+  .subtitle {
+    margin: var(--spacing-1) 0;
+  }
+
+  @media screen and (min-width: 600px) {
+    .title {
+      font-size: var(--heading-2);
+    }
+    .subtitle {
+      font-size: var(--heading-5);
+    }
+  }
+}
