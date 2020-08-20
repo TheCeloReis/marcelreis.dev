@@ -1,0 +1,61 @@
+.heading {
+  text-align: center;
+  margin: var(--spacing-5);
+}
+
+.highlights {
+  list-style: none;
+  padding: 0;
+  column-count: 1;
+  text-align: center;
+
+  li {
+    margin-bottom: var(--spacing-2);
+  }
+
+  @media screen and (min-width: 600px) {
+    column-count: 2;
+  }
+}
+
+.highlight {
+  grid-template-columns: 64px 1fr;
+
+  span {
+    margin: auto;
+    font-size: var(--heading-4);
+  }
+}
+
+.icon {
+  font-size: 4rem;
+
+  &.react {
+    color: var(--brand-color-react);
+  }
+  &.typescript {
+    color: var(--brand-color-typescript);
+  }
+}
+
+.skillList {
+  list-style: none;
+  padding: 0;
+  column-count: 2;
+  text-align: center;
+
+  li {
+    padding: var(--spacing-1) var(--spacing-2);
+    margin-bottom: var(--spacing-2);
+    border: 2px solid var(--base-low);
+    border-radius: var(--spacing-1);
+  }
+
+  @media screen and (min-width: 600px) {
+    column-count: 3;
+
+    :last-child {
+      display: none;
+    }
+  }
+}

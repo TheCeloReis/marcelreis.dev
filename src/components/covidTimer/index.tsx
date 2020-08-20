@@ -2,9 +2,10 @@ import React from "react";
 
 import styles from "./.module.scss";
 
-import Card from "components/card";
 import { useTimeSince } from "./hook";
 import { useTranslation } from "src/cms/translation";
+
+import Card from "uiKit/card";
 
 const lastDay = new Date("Tue Mar 17 2020 20:29:00 GMT-0300");
 

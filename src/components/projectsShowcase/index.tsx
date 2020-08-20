@@ -6,8 +6,9 @@ import { ProjectType } from "src/cms";
 
 import styles from "./.module.scss";
 
-import Card from "components/card";
 import { ChipContainer, Chip } from "components/chip";
+
+import Card from "uiKit/card";
 
 type PropsType = {
   projects: ProjectType[];

@@ -17,7 +17,7 @@
 
 .react {
   font-size: 7.55rem;
-  color: #61dafb;
+  color: var(--brand-color-react);
   animation: spin 64s linear infinite;
 
   @media screen and (min-width: 600px) {

@@ -5,7 +5,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { getPaths, langEnum } from "../../../utils/lang";
 import { getContent, getLatestItems, MetaPage, PostType } from "src/cms";
 
-import { PostCard } from "components/card";
+import { PostCard } from "components/postCard";
 import Layout from "components/layout";
 
 type PropsType = MetaPage & {
