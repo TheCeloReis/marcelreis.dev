@@ -14,6 +14,3 @@ t:
   myCovidQuarantine: Minha Quarentena
 ---
 
-## Olá!
-
-Sou um desenvolvedor front end, aprecio tipagem e testes. No meu tempo livre gosto de aprender novas tecnologias.

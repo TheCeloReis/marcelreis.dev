@@ -4,8 +4,8 @@ description: Frontend developer, passionate about Javascript, Typescript and Rea
 heroSentences:
   - I'm Marcelo Reis
   - Front-end Developer
+  - Always Thinking
   - Always Tinkering
-  - Always Learning
 t:
   latestPosts: Latest Posts
   hours: hours
@@ -14,6 +14,5 @@ t:
   myCovidQuarantine: My Quarantine
 ---
 
-## Hi There!
 
-I'm a front end developer, I enjoy types and tests. In my spare time I like to learn new technologies.
+
