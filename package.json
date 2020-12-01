@@ -1,55 +1,13 @@
 {
-  "name": "marcelreis.dev",
-  "version": "0.1.0",
+  "name": "root",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export",
-    "test": "jest",
-    "prettier": "prettier 'src/**/*.*' --check",
-    "eslint": "eslint 'src/**/*.{tsx,ts,js,jsx}'",
-    "tsc": "tsc --noEmit"
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.22.1"
   },
   "dependencies": {
-    "next": "^9.5.0",
-    "node-sass": "^4.14.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-ga": "^3.0.0",
-    "react-icons": "^3.11.0",
-    "react-markdown": "^4.3.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
-    "@babel/preset-typescript": "^7.10.4",
-    "@testing-library/jest-dom": "^5.11.1",
-    "@testing-library/react": "^10.0.4",
-    "@testing-library/user-event": "^12.0.12",
-    "@types/jest": "^26.0.5",
-    "@types/node": "^14.0.1",
-    "@types/react": "^16.9.35",
-    "@types/webpack-env": "^1.15.2",
-    "@typescript-eslint/eslint-plugin": "^3.6.1",
-    "@typescript-eslint/parser": "^3.6.1",
-    "@zeit/next-sass": "^1.0.1",
-    "babel-jest": "^26.0.1",
-    "dotenv": "^8.2.0",
-    "eslint": "^7.5.0",
-    "eslint-plugin-jest-dom": "^3.1.4",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.2",
-    "eslint-plugin-testing-library": "^3.3.2",
-    "globby": "^11.0.1",
-    "gray-matter": "^4.0.2",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^26.1.0",
-    "prettier": "^2.0.5",
-    "typescript": "^3.9.7",
-    "typescript-plugin-css-modules": "^2.4.0"
+    "firebase-tools": "^8.16.2"
   }
 }

@@ -1,11 +1,9 @@
-build:
-	yarn build
-	yarn export
+deploy:
+	lerna run lint
+	lerna run test
+	lerna run build
+	lerna run export
 
 	node sitemap.js
 
-check:
-	yarn run prettier
-	yarn run eslint
-	yarn run tsc
-	yarn run test
+	firebase deploy
