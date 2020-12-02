@@ -13,7 +13,6 @@ import "../styles/variables.global.scss";
 import "../styles/reset.global.scss";
 import "../styles/base.global.scss";
 
-import { langEnum } from "../utils/lang";
 import { initGA, logPageView } from "src/utils/analytics";
 import LangProvider from "src/cms/translation";
 
@@ -49,10 +48,7 @@ const MyApp = (props: AppPropsType) => {
         pageState={props.pageProps.background}
         transitionOn={props.router.pathname}
       />
-      <Navbar
-        initialState={props.pageProps.background}
-        lang={props.router.query.lang as langEnum}
-      />
+      <Navbar />
       <props.Component {...props.pageProps} />
       <Footer />
     </LangProvider>

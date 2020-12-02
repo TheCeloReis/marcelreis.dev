@@ -15,7 +15,7 @@ export default class MyDocument extends Document<{ lang: string }> {
 
   render() {
     return (
-      <Html lang={this.props.lang || "en-us"}>
+      <Html lang={"en-us"}>
         <Head />
         <body>
           <Main />

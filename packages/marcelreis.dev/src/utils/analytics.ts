@@ -3,8 +3,7 @@ import ReactGA from "react-ga";
 const isProduction = (): boolean =>
   !(
     process.env.NODE_ENV === "development" ||
-    window.location.href.includes("localhost") ||
-    window.location.href.includes("netlify.com")
+    window.location.href.includes("localhost")
   );
 
 export const initGA = (): void => {
@@ -14,6 +13,7 @@ export const initGA = (): void => {
   }
   console.log("GA: Initialized in development");
 };
+
 export const logPageView = (): void => {
   if (isProduction()) {
     ReactGA.pageview(window.location.pathname);
@@ -21,6 +21,7 @@ export const logPageView = (): void => {
   }
   console.log(`GA: Logging pageview for ${window.location.pathname}`);
 };
+
 export const logEvent = (category: string, action: string): void => {
   if (isProduction()) {
     ReactGA.event({ category, action });
@@ -28,6 +29,7 @@ export const logEvent = (category: string, action: string): void => {
   }
   console.log(`GA: Logging event for ${category}/${action}`);
 };
+
 export const logException = (description: string, fatal: boolean): void => {
   if (isProduction() && description) {
     ReactGA.exception({ description, fatal });

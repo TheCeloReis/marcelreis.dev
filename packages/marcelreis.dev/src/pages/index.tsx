@@ -1,16 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { getLang } from "src/utils/lang";
 
 const RootPage = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.replace("/[lang]/home", `/${getLang()}/home`);
-  }, [router]);
-
   return (
     <Head>
       <meta name="robots" content="noindex, nofollow" />
