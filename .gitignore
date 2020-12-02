@@ -3,3 +3,5 @@
 /.firebase
 
 /node_modules
+
+/lerna-debug.log

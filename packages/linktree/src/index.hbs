@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link rel="shortcut icon" href="/img/logo-32.png">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Marcelo Reis</h1>
+  </header>
+
+  <main class="container">
+    <ul class="linkList">
+
+      {{#each links}}
+      <li class="linkList__item">
+        <a class="linkList__anchor" href={{this.href}} target="_blank">
+          <div class="linkList__icon">
+            <i class="icon icon--{{this.slug}}"></i>
+          </div>
+          <p class="linkList__text">
+            {{this.name}}
+          </p>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+  </main>
+</body>
+
+</html>
