@@ -1,6 +1,6 @@
 {
   "name": "@marcelreis/linktree",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "> TODO: description",
   "author": "Marcelo Reis <oi@marcelreis.dev>",
   "homepage": "https://github.com/MarcelReis/marcelreis.dev#readme",
@@ -21,6 +21,7 @@
     "url": "https://github.com/MarcelReis/marcelreis.dev/issues"
   },
   "devDependencies": {
+    "@marcelreis/marcelreis.dev": "^0.0.1",
     "css-loader": "^5.0.1",
     "handlebars-loader": "^1.7.1",
     "html-webpack-plugin": "^4.5.0",
@@ -29,8 +30,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.9.0",
     "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0",
-    "@marcelreis/marcelreis.dev": "*"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
