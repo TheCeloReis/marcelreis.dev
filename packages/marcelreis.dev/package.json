@@ -8,19 +8,21 @@
     "start": "next start",
     "export": "next export -o ../../out",
     "test": "jest",
-    "check:*": "npm-run-all lint:*",
-    "check:prettier": "prettier 'src/**/*.*' --check",
-    "check:eslint": "eslint 'src/**/*.{tsx,ts,js,jsx}'",
-    "check:tsc": "tsc --noEmit"
+    "lint": "npm-run-all lint:*",
+    "lint:prettier": "prettier 'src/**/*.*' --check",
+    "lint:eslint": "eslint 'src/**/*.{tsx,ts,js,jsx}'",
+    "lint:tsc": "tsc --noEmit"
   },
   "dependencies": {
+    "@marcelreis/ui-kit": "^0.0.1",
     "next": "^10.0.3",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-ga": "^3.0.0",
     "react-icons": "^3.11.0",
-    "react-markdown": "^4.3.1"
+    "react-markdown": "^4.3.1",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -38,6 +40,7 @@
     "@typescript-eslint/parser": "^3.6.1",
     "@zeit/next-sass": "^1.0.1",
     "babel-jest": "^26.0.1",
+    "babel-plugin-styled-components": "^1.12.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.5.0",
     "eslint-plugin-jest-dom": "^3.1.4",

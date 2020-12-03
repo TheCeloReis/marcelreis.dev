@@ -1,0 +1,58 @@
+{
+  "name": "@marcelreis/ui-kit",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "Marcelo Reis <oi@marcelreis.dev>",
+  "homepage": "https://github.com/MarcelReis/marcelreis.dev#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcelReis/marcelreis.dev.git"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w && tsc --emitDeclarationOnly --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "bugs": {
+    "url": "https://github.com/MarcelReis/marcelreis.dev/issues"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "dependencies": {
+    "styled-reset": "^4.3.1",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@types/node": "^14.14.10",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/styled-components": "^5.1.4",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "rollup": "^2.34.0",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "styled-components": "^5.2.1"
+  }
+}

@@ -1,20 +1,14 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 import { AppPropsType } from "next/dist/next-server/lib/utils";
-
-import Navbar from "components/navbar";
-import Background from "components/background";
-
-const Footer = dynamic(() => import("components/footer"));
 
 import "../styles/variables.global.scss";
 import "../styles/reset.global.scss";
 import "../styles/base.global.scss";
 
 import { initGA, logPageView } from "src/utils/analytics";
-import LangProvider from "src/cms/translation";
+import { NightSky } from "@marcelreis/ui-kit";
 
 const MyApp = (props: AppPropsType) => {
   const router = useRouter();
@@ -28,7 +22,7 @@ const MyApp = (props: AppPropsType) => {
   }, [router.pathname]);
 
   return (
-    <LangProvider value={{ initialized: false, t: {} }}>
+    <>
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
@@ -44,14 +38,9 @@ const MyApp = (props: AppPropsType) => {
         />
         <link rel="shortcut icon" href="/img/logo-32.png" />
       </Head>
-      <Background
-        pageState={props.pageProps.background}
-        transitionOn={props.router.pathname}
-      />
-      <Navbar />
+      <NightSky />
       <props.Component {...props.pageProps} />
-      <Footer />
-    </LangProvider>
+    </>
   );
 };
 
