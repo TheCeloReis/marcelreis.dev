@@ -1,7 +1,3 @@
-import React, { PropsWithChildren } from "react";
-
-const Typography = (props: PropsWithChildren<{}>) => {
-  return <div>This is {props.children}</div>;
-};
+import Typography from "./Typography";
 
 export default Typography;

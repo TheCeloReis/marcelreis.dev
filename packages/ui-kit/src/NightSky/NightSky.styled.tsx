@@ -28,7 +28,8 @@ export const Overlay = styled.div<{ full: boolean }>`
 
 export const Body = styled.div`
   position: absolute;
-  height: calc(100% - 72px);
+  height: calc(100vh - 72px);
+  max-height: calc(100% - 72px);
   z-index: 10;
   overflow: hidden;
   width: 100%;

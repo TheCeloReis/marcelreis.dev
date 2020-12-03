@@ -1,7 +1,3 @@
-import React from "react";
-
-const ThemeProvider = () => {
-  return <div></div>;
-};
+import ThemeProvider from "./ThemeProvider";
 
 export default ThemeProvider;

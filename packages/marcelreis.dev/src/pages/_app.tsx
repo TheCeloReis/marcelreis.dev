@@ -3,12 +3,8 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import { AppPropsType } from "next/dist/next-server/lib/utils";
 
-import "../styles/variables.global.scss";
-import "../styles/reset.global.scss";
-import "../styles/base.global.scss";
-
 import { initGA, logPageView } from "src/utils/analytics";
-import { NightSky } from "@marcelreis/ui-kit";
+import { NightSky, ThemeProvider } from "@marcelreis/ui-kit";
 
 const MyApp = (props: AppPropsType) => {
   const router = useRouter();
@@ -22,7 +18,7 @@ const MyApp = (props: AppPropsType) => {
   }, [router.pathname]);
 
   return (
-    <>
+    <ThemeProvider>
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
@@ -38,9 +34,11 @@ const MyApp = (props: AppPropsType) => {
         />
         <link rel="shortcut icon" href="/img/logo-32.png" />
       </Head>
+
       <NightSky />
+
       <props.Component {...props.pageProps} />
-    </>
+    </ThemeProvider>
   );
 };
 

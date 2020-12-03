@@ -1,22 +1,40 @@
 import React from "react";
 import Head from "next/head";
 
-import { Button } from "@marcelreis/ui-kit";
+import HeroHeader from "components/HeroHeader";
 
-const RootPage = () => {
+import styled from "styled-components";
+
+const H1 = styled.h1`
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
+`;
+
+const P = styled.p`
+  color: #fff;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  margin-top: 0.75rem;
+`;
+
+const Home = () => {
   return (
     <>
       <Head>
-        <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
           content="Frontend developer, passionate about Javascript, Typescript and React. Living in Belo Horizonte and trying to develop some awesome stuff"
         />
       </Head>
+
+      <HeroHeader>
+        <H1>Marcelo Reis</H1>
+        <P>Front-end Developer</P>
+      </HeroHeader>
     </>
   );
 };
 
-export const getStaticProps = () => ({ props: { background: "full" } });
-
-export default RootPage;
+export default Home;

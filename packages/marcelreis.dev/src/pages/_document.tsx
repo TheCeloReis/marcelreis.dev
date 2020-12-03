@@ -8,6 +8,8 @@ import Document, {
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
+import { ThemeProvider } from "@marcelreis/ui-kit";
+
 export default class MyDocument extends Document<{ lang: string }> {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
@@ -15,6 +17,8 @@ export default class MyDocument extends Document<{ lang: string }> {
     const page = ctx.renderPage((App) => (props) =>
       sheet.collectStyles(<App {...props} />)
     );
+
+    sheet.collectStyles(<ThemeProvider />);
 
     const styleTags = sheet.getStyleElement();
     return { ...page, styleTags };
