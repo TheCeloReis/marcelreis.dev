@@ -1,6 +1,6 @@
 {
   "name": "@marcelreis/marcelreis.dev",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,7 +14,7 @@
     "lint:tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "@marcelreis/ui-kit": "^0.0.1",
+    "@marcelreis/ui-kit": "^0.0.2",
     "next": "^10.0.3",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
