@@ -10,7 +10,9 @@ import { ServerStyleSheet } from "styled-components";
 
 import { ThemeProvider } from "@marcelreis/ui-kit";
 
-export default class MyDocument extends Document<{ lang: string }> {
+export default class MyDocument extends Document<{
+  styleTags: React.ReactNode;
+}> {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
 
@@ -27,7 +29,7 @@ export default class MyDocument extends Document<{ lang: string }> {
   render() {
     return (
       <Html lang="en-us">
-        <Head />
+        <Head>{this.props.styleTags}</Head>
         <body>
           <Main />
           <NextScript />
