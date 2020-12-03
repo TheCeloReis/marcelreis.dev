@@ -1,6 +1,7 @@
 {
   "name": "@marcelreis/ui-kit",
   "version": "0.0.1",
+  "private": "true",
   "description": "> TODO: description",
   "author": "Marcelo Reis <oi@marcelreis.dev>",
   "homepage": "https://github.com/MarcelReis/marcelreis.dev#readme",
