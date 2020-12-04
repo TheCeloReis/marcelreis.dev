@@ -5,6 +5,8 @@ import { AppPropsType } from "next/dist/next-server/lib/utils";
 
 import { initGA, logPageView } from "src/utils/analytics";
 import { NightSky, ThemeProvider } from "@marcelreis/ui-kit";
+import Footer from "components/Footer";
+import Layout from "components/Layout";
 
 const MyApp = (props: AppPropsType) => {
   const router = useRouter();
@@ -37,7 +39,11 @@ const MyApp = (props: AppPropsType) => {
 
       <NightSky />
 
-      <props.Component {...props.pageProps} />
+      <Layout>
+        <props.Component {...props.pageProps} />
+      </Layout>
+
+      <Footer />
     </ThemeProvider>
   );
 };

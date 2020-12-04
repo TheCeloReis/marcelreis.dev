@@ -60,6 +60,11 @@ const rotate = keyframes`
   }
 `;
 
+export const Spacer = styled.div`
+  height: calc(100vh - 72px);
+  max-height: calc(100% - 72px);
+`;
+
 export const Stars = styled.div`
   position: absolute;
   left: 50%;

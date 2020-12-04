@@ -9,6 +9,7 @@ import Document, {
 import { ServerStyleSheet } from "styled-components";
 
 import { ThemeProvider } from "@marcelreis/ui-kit";
+import Footer from "components/Footer";
 
 export default class MyDocument extends Document<{
   styleTags: React.ReactNode;
@@ -21,6 +22,7 @@ export default class MyDocument extends Document<{
     );
 
     sheet.collectStyles(<ThemeProvider />);
+    sheet.collectStyles(<Footer />);
 
     const styleTags = sheet.getStyleElement();
     return { ...page, styleTags };

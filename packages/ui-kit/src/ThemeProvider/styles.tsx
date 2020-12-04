@@ -17,6 +17,7 @@ const styles = css`
   }
 
   body {
+    position: relative;
     box-sizing: border-box;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     color: var(--contrast);

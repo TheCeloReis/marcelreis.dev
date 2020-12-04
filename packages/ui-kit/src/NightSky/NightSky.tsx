@@ -8,13 +8,13 @@ function NightSky() {
 
   return (
     <>
-      <S.Overlay full={true} />
       <S.Body>
         <S.Waves />
         <S.Stars style={{ boxShadow: stars.small }} />
         <S.Stars style={{ boxShadow: stars.medium }} />
         <S.Stars style={{ boxShadow: stars.large }} />
       </S.Body>
+      <S.Spacer style={{ height: "100vh" }} />
     </>
   );
 }
