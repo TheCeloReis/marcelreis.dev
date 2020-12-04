@@ -1,6 +1,6 @@
 {
   "name": "@marcelreis/linktree",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": "true",
   "description": "> TODO: description",
   "author": "Marcelo Reis <oi@marcelreis.dev>",
@@ -22,7 +22,7 @@
     "url": "https://github.com/MarcelReis/marcelreis.dev/issues"
   },
   "devDependencies": {
-    "@marcelreis/marcelreis.dev": "^0.0.2",
+    "@marcelreis/marcelreis.dev": "^0.0.3",
     "css-loader": "^5.0.1",
     "handlebars-loader": "^1.7.1",
     "html-webpack-plugin": "^4.5.0",
