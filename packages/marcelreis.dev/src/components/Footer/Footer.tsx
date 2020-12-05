@@ -20,7 +20,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Github size="32px" />
+            <Linkedin size="32px" />
           </a>
           <a
             href="https://github.com/MarcelReis/"
@@ -28,7 +28,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <Linkedin size="32px" />
+            <Github size="32px" />
           </a>
           <a
             href="https://www.instagram.com/_marcelreis/"
