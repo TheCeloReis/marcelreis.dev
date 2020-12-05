@@ -4,6 +4,7 @@ import Head from "next/head";
 import HeroHeader from "components/HeroHeader";
 
 import styled from "styled-components";
+import RecentWork from "components/RecentWork";
 
 const H1 = styled.h1`
   color: #fff;
@@ -33,6 +34,8 @@ const Home = () => {
         <H1>Marcelo Reis</H1>
         <P>Front-end Developer</P>
       </HeroHeader>
+
+      <RecentWork />
     </>
   );
 };
