@@ -1,24 +1,18 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
-const webpack = require("webpack");
 const dotenv = require("dotenv");
 
 dotenv.config();
 
 module.exports = {
+  env: {
+    GA_TOKEN: process.env.GA_TOKEN,
+  },
   webpack: function (config) {
     config.resolve.alias["components"] = path.resolve(
       __dirname,
       "src/components/"
     );
-    config.resolve.alias["uiKit"] = path.resolve(__dirname, "src/uiKit/");
-
-    const env = Object.keys(process.env).reduce((acc, curr) => {
-      acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
-      return acc;
-    }, {});
-
-    config.plugins.push(new webpack.DefinePlugin(env));
 
     return config;
   },
