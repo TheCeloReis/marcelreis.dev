@@ -32,7 +32,7 @@ const Home = () => {
 
       <HeroHeader>
         <H1>Marcelo Reis</H1>
-        <P>Front-end Developer</P>
+        <P>Devesenvolvedor Frontend</P>
       </HeroHeader>
 
       <RecentWork />
