@@ -7,6 +7,7 @@ import { initGA, logPageView } from "src/utils/analytics";
 import { NightSky, ThemeProvider } from "@marcelreis/ui-kit";
 import Footer from "components/Footer";
 import Layout from "components/Layout";
+import Navbar from "components/Navbar";
 
 const MyApp = (props: AppPropsType) => {
   const router = useRouter();
@@ -22,20 +23,14 @@ const MyApp = (props: AppPropsType) => {
   return (
     <ThemeProvider>
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
-          rel="preload"
-          as="font"
-          crossOrigin=""
-          type="text/css"
-        />
         <title>Marcelo Reis</title>
         <meta
           name="description"
           content="Frontend developer, passionate about Javascript, Typescript and React. Living in Belo Horizonte and trying to develop some awesome stuff"
         />
-        <link rel="shortcut icon" href="/img/logo-32.png" />
       </Head>
+
+      <Navbar />
 
       <NightSky />
 
