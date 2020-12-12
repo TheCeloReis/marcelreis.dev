@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Menu } from "@styled-icons/material/Menu";
 
 import * as S from "./Navbar.styled";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  }, [isOpen]);
+
   return (
     <S.Container>
-      <div>MR</div>
+      <S.Logo src="/img/logo.svg" alt="Marcelo Reis" />
 
-      <S.NavList>
-        <li>1. Sobre</li>
-        <li>2. Experiência</li>
-        <li>3. Projetos</li>
-        <li>4. Contato</li>
+      <S.MenuButton onClick={() => setIsOpen(!isOpen)}>
+        <Menu size="2rem" />
+      </S.MenuButton>
+
+      <S.NavList isOpen={isOpen}>
+        <S.NavItem>Sobre</S.NavItem>
+        <S.NavItem>Experiência</S.NavItem>
+        <S.NavItem>Projetos</S.NavItem>
+        <S.NavItem>Contato</S.NavItem>
       </S.NavList>
     </S.Container>
   );
