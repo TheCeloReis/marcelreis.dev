@@ -6,8 +6,8 @@ const Experiences = () => {
   const [tab, setTab] = useState(0);
 
   return (
-    <section id="experience">
-      <h2>Experiencias</h2>
+    <S.Section id="experience">
+      <S.SectionHeading>Experiência</S.SectionHeading>
 
       <S.Container>
         <S.Tabs>
@@ -22,20 +22,46 @@ const Experiences = () => {
         <S.ContentContainer>
           <div style={{ transform: `translateX(-${tab * 50}%)` }}>
             <S.Content>
-              <h3>Letras</h3>
-              <p>Desenvolvedor Frontend</p>
-              <p>07/2019 - Atualmente</p>
+              <S.JobHeader>
+                <S.Title>Desenvolvedor Frontend</S.Title>
+                <S.Company>Letras</S.Company>
+                <S.Time>07/2019 - Atualmente</S.Time>
+              </S.JobHeader>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur hic, porro impedit aliquid cupiditate accusamus
+                provident ipsa dolores et, alias tempore magni sed placeat,
+                cumque qui! Quasi corporis vitae labore!
+              </p>
+              <br />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+                beatae atque quaerat saepe asperiores, vero commodi omnis iste
+                suscipit accusantium, fuga in pariatur veniam porro vitae!
+                Inventore tempora voluptates veniam.
+              </p>
             </S.Content>
 
             <S.Content>
-              <h3>Radioterapia São Francisco</h3>
-              <p>Auxiliar Administrativo</p>
-              <p>03/2017 - 01/2019</p>
+              <S.JobHeader>
+                <S.Title>Auxiliar Administrativo</S.Title>
+                <S.Company>Radioterapia São Francisco</S.Company>
+                <S.Time>03/2017 - 01/2019</S.Time>
+              </S.JobHeader>
+
+              <p>
+                Auxiliava atividades do setor administrativo e era responsável
+                pelo faturamento e controle de contas a pagar de diversos
+                convênios. Fiz o controle de contratos e contato com os
+                convênios para acordo de tabelas. Quando necessário, auxiliava o
+                atendimento ao cliente na recepção.
+              </p>
             </S.Content>
           </div>
         </S.ContentContainer>
       </S.Container>
-    </section>
+    </S.Section>
   );
 };
 

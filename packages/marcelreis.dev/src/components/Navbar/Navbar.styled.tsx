@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import media from "styled-media-query";
-import Link from "next/link";
 
 export const Container = styled.div`
   position: fixed;
@@ -37,16 +36,16 @@ export const NavList = styled.ol<{ isOpen: boolean }>`
     media.lessThan("medium")`
     transform: translateX(100%);
   `}
-
   ${media.greaterThan("medium")`
     background-color: var(--white);
+    border: 2px solid var(--gray-3);
     border-radius: 0 0 16px 16px;
     align-self: self-end;
   `}
 `;
 
 export const NavItem = styled.li`
-  font-weight: 600;
+  font-weight: 700;
   color: var(--gray-8);
 
   a {

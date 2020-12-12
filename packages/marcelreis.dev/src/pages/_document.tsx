@@ -33,7 +33,7 @@ export default class MyDocument extends Document<{
       <Html lang="pt-br">
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
             rel="preload"
             as="font"
             crossOrigin=""
