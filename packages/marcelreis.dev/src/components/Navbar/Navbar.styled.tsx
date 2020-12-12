@@ -50,13 +50,19 @@ export const MenuButton = styled.button`
   top: 0;
   left: 0;
   margin: 0;
-  padding: 1rem;
+  padding: 0.75rem;
   z-index: 10;
   background: var(--white);
   border: 2px solid var(--gray-4);
   border-width: 0 2px 2px 0;
   border-radius: 0 0 32px 0;
   color: var(--blue);
+
+  svg {
+    position: relative;
+    left: -2px;
+    top: -2px;
+  }
 
   ${media.greaterThan("medium")`
     display: none;
