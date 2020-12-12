@@ -1,17 +1,21 @@
 import styled from "styled-components";
 import media from "styled-media-query";
+import Link from "next/link";
 
 export const Container = styled.div`
   position: fixed;
   top: 0;
-  right: 0;
+  right: 50%;
   z-index: 20;
   width: 100%;
+  max-width: 1200px;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 16px;
+
+  transform: translateX(50%);
 `;
 
 export const NavList = styled.ol<{ isOpen: boolean }>`
@@ -43,6 +47,8 @@ export const NavList = styled.ol<{ isOpen: boolean }>`
 
 export const NavItem = styled.li`
   padding: 1rem 2rem;
+  font-weight: 600;
+  color: var(--gray-8);
 `;
 
 export const MenuButton = styled.button`

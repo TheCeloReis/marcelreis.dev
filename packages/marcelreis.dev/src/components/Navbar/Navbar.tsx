@@ -19,10 +19,21 @@ const Navbar = () => {
       </S.MenuButton>
 
       <S.NavList isOpen={isOpen}>
-        <S.NavItem>Sobre</S.NavItem>
-        <S.NavItem>Experiência</S.NavItem>
-        <S.NavItem>Projetos</S.NavItem>
-        <S.NavItem>Contato</S.NavItem>
+        <S.NavItem>
+          <a href="#about">Sobre</a>
+        </S.NavItem>
+
+        <S.NavItem>
+          <a href="#experience">Experiência</a>
+        </S.NavItem>
+
+        <S.NavItem>
+          <a href="#projects">Projetos</a>
+        </S.NavItem>
+
+        <S.NavItem>
+          <a href="#contacts">Contato</a>
+        </S.NavItem>
       </S.NavList>
     </S.Container>
   );
