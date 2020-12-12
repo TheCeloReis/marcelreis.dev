@@ -46,9 +46,13 @@ export const NavList = styled.ol<{ isOpen: boolean }>`
 `;
 
 export const NavItem = styled.li`
-  padding: 1rem 2rem;
   font-weight: 600;
   color: var(--gray-8);
+
+  a {
+    display: block;
+    padding: 1rem 2rem;
+  }
 `;
 
 export const MenuButton = styled.button`
