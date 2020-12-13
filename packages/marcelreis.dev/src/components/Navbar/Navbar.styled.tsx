@@ -40,7 +40,7 @@ export const NavList = styled.ol<{ isOpen: boolean }>`
     background-color: var(--white);
     border: 2px solid var(--gray-3);
     border-radius: 0 0 16px 16px;
-    align-self: self-end;
+    align-self: flex-start;
   `}
 `;
 
