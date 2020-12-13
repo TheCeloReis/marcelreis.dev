@@ -1,6 +1,6 @@
 {
   "name": "@marcelreis/marcelreis.dev",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,7 +14,7 @@
     "lint:tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "@marcelreis/ui-kit": "^0.0.6",
+    "@marcelreis/ui-kit": "^0.0.7",
     "next": "^10.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
