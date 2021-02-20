@@ -7,7 +7,7 @@ const Experiences = () => {
 
   return (
     <S.Section id="experience">
-      <S.SectionHeading>Experiência</S.SectionHeading>
+      <S.SectionHeading>Experiências</S.SectionHeading>
 
       <S.Container>
         <S.Tabs>
@@ -29,17 +29,23 @@ const Experiences = () => {
               </S.JobHeader>
 
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Pariatur hic, porro impedit aliquid cupiditate accusamus
-                provident ipsa dolores et, alias tempore magni sed placeat,
-                cumque qui! Quasi corporis vitae labore!
+                Faço manutenção e desenvolvimento de páginas com alto trafégo,
+                como Letras.mus.br e Ouvirmusica.
               </p>
               <br />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                beatae atque quaerat saepe asperiores, vero commodi omnis iste
-                suscipit accusantium, fuga in pariatur veniam porro vitae!
-                Inventore tempora voluptates veniam.
+                Auxilio usuarios internos na resolução de problemas, bug e
+                criação de soluções personalizadas.
+              </p>
+              <br />
+              <p>
+                Contribui na implementação de melhores práticas de teste e type
+                safety.
+              </p>
+              <br />
+              <p>
+                Trabalhei na codificação de diversas interfaces complexas e
+                landing page.
               </p>
             </S.Content>
 
@@ -53,9 +59,17 @@ const Experiences = () => {
               <p>
                 Auxiliava atividades do setor administrativo e era responsável
                 pelo faturamento e controle de contas a pagar de diversos
-                convênios. Fiz o controle de contratos e contato com os
-                convênios para acordo de tabelas. Quando necessário, auxiliava o
-                atendimento ao cliente na recepção.
+                convênios.
+              </p>
+              <br />
+              <p>
+                Fiz o controle de contratos e contato com os convênios para
+                acordo de tabelas.
+              </p>
+              <br />
+              <p>
+                Quando necessário, auxiliava o atendimento ao cliente na
+                recepção.
               </p>
             </S.Content>
           </div>

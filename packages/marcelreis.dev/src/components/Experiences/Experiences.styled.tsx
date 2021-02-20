@@ -66,6 +66,7 @@ export const Tab = styled.li<{ isActive: boolean }>`
 
 export const ContentContainer = styled.div`
   overflow: hidden;
+  line-height: 1.25;
 
   ${media.greaterThan("medium")`
     width: 75%;
