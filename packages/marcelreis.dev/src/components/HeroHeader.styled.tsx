@@ -2,6 +2,8 @@ import styled from "styled-components";
 import media from "styled-media-query";
 
 export const Container = styled.header`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   left: 50%;
   top: 50%;
