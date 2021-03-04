@@ -39,7 +39,7 @@ export default class MyDocument extends Document<{
 
   render() {
     return (
-      <Html lang="pt-br">
+      <Html lang="en-us">
         <Head>
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
