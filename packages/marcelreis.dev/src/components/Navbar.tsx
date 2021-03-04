@@ -20,19 +20,15 @@ const Navbar = () => {
 
       <S.NavList isOpen={isOpen}>
         <S.NavItem>
-          <a href="#about">Sobre</a>
+          <a href="#about">Home</a>
         </S.NavItem>
 
         <S.NavItem>
-          <a href="#experience">Experiência</a>
+          <a href="#projects">Projects</a>
         </S.NavItem>
 
         <S.NavItem>
-          <a href="#projects">Projetos</a>
-        </S.NavItem>
-
-        <S.NavItem>
-          <a href="#contacts">Contato</a>
+          <a href="#contacts">Contact</a>
         </S.NavItem>
       </S.NavList>
     </S.Container>

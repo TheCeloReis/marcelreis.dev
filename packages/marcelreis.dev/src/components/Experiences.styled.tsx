@@ -72,7 +72,7 @@ export const ContentContainer = styled.div`
     width: 75%;
   `}
 
-  div {
+  > div {
     display: flex;
     width: 200%;
     transition: transform 200ms ease;
@@ -88,6 +88,12 @@ export const Content = styled.div`
 
 export const JobHeader = styled.header`
   margin-bottom: 0.75rem;
+`;
+
+export const JobContent = styled.div`
+  p {
+    padding: 0.25rem 0;
+  }
 `;
 
 export const Title = styled.h3`

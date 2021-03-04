@@ -48,11 +48,11 @@ function RecentWork() {
   return (
     <S.Container>
       <S.Header>
-        <S.Title>Trabalhos recentes</S.Title>
+        <S.Title>Recent Projects</S.Title>
         <S.Subtitle>
-          Alguns projetos que contribui recentemente, quer saber mais?{" "}
+          Some projects that I recently contributed, do you want to know more?{" "}
           <S.Link href="mailto:oi@marcelreis.dev" target="_blank">
-            Entre em contato
+            Contact me
           </S.Link>
         </S.Subtitle>
       </S.Header>
