@@ -5,7 +5,7 @@ import HeroHeader from "components/HeroHeader";
 import RecentWork from "components/RecentWork";
 import Experiences from "components/Experiences";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Head>
@@ -22,4 +22,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

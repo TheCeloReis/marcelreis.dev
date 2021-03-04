@@ -1,4 +1,5 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 import { Github } from "@styled-icons/fa-brands/Github";
 import { Linkedin } from "@styled-icons/fa-brands/Linkedin";
@@ -8,6 +9,12 @@ import { Instagram } from "@styled-icons/fa-brands/Instagram";
 import * as S from "./Footer.styled";
 
 const Footer = () => {
+  const router = useRouter();
+
+  if (router.pathname === "/links") {
+    return null;
+  }
+
   return (
     <S.Container>
       <S.Waves />
