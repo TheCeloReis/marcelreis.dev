@@ -2,8 +2,6 @@ import React from "react";
 import Head from "next/head";
 
 import HeroHeader from "components/HeroHeader";
-import RecentWork from "components/RecentWork";
-import Experiences from "components/Experiences";
 
 const HomePage = () => {
   return (
@@ -16,8 +14,6 @@ const HomePage = () => {
       </Head>
 
       <HeroHeader />
-      <Experiences />
-      <RecentWork />
     </>
   );
 };

@@ -24,11 +24,14 @@ const Navbar = () => {
     <S.Container>
       <S.Logo src="/img/logo.svg" alt="Marcelo Reis" />
 
-      <S.MenuButton onClick={() => setIsOpen(!isOpen)}>
+      <S.MenuButton
+        onClick={() => setIsOpen(!isOpen)}
+        style={{ display: "none" }}
+      >
         <Menu size="2rem" />
       </S.MenuButton>
 
-      <S.NavList isOpen={isOpen}>
+      <S.NavList isOpen={isOpen} style={{ display: "none" }}>
         <S.NavItem>
           <a href="#about">Home</a>
         </S.NavItem>
