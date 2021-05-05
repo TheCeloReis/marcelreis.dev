@@ -4,10 +4,11 @@ import Head from "next/head";
 import { AppPropsType } from "next/dist/next-server/lib/utils";
 
 import { initGA, logPageView } from "src/utils/analytics";
-import { NightSky, ThemeProvider } from "@marcelreis/ui-kit";
 import Footer from "components/Footer";
 import Layout from "components/Layout";
 import Navbar from "components/Navbar";
+import NightSky from "components/NightSky";
+import ThemeProvider from "components/ThemeProvider";
 
 const MyApp = (props: AppPropsType) => {
   const router = useRouter();

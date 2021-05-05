@@ -33,15 +33,15 @@ const Navbar = () => {
 
       <S.NavList isOpen={isOpen} style={{ display: "none" }}>
         <S.NavItem>
-          <a href="#about">Home</a>
+          <a href="#">Home</a>
         </S.NavItem>
 
         <S.NavItem>
-          <a href="#projects">Projects</a>
+          <a href="#">Projects</a>
         </S.NavItem>
 
         <S.NavItem>
-          <a href="#contacts">Contact</a>
+          <a href="#">Contact</a>
         </S.NavItem>
       </S.NavList>
     </S.Container>

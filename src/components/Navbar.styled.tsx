@@ -62,7 +62,8 @@ export const MenuButton = styled.button`
   padding: 0.75rem;
   z-index: 10;
   background: var(--white);
-  border: 2px solid var(--gray-4);
+  border-style: solid;
+  border-color: var(--gray-4);
   border-width: 0 2px 2px 0;
   border-radius: 0 0 32px 0;
   color: var(--blue);

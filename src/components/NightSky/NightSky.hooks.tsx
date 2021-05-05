@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-
-declare const process: any;
+import { useEffect, useState } from "react";
 
 function generateStars(dimension: number, quantity: number) {
   if (!process.browser) {
@@ -22,14 +20,6 @@ function getCordinates(radius: number) {
   return {
     x: r * Math.cos(a),
     y: r * Math.sin(a),
-  };
-}
-
-function getStars(radius: number) {
-  return {
-    small: generateStars(radius, radius * 2),
-    medium: generateStars(radius, radius * 0.25),
-    large: generateStars(radius, radius * 0.0625),
   };
 }
 

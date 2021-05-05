@@ -16,7 +16,6 @@ const LinkList = styled.ul`
   width: 100%;
   max-width: 600px;
   z-index: 10;
-  width: 100%;
   padding: 0 16px;
   margin: 0;
   list-style: none;

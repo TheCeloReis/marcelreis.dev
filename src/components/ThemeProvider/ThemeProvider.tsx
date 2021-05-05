@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   ${styles}
 `;
 
-function ThemeProvider(props: any) {
+function ThemeProvider(props: {children: React.ReactNode}) {
   return (
     <>
       <GlobalStyle />

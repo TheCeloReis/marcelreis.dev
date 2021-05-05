@@ -92,5 +92,5 @@ export const Stars = styled.div`
 
 export const Waves = styled(BaseWaves)`
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
 `;

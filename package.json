@@ -1,14 +1,56 @@
 {
-  "name": "root",
+  "name": "@marcelreis/marcelreis.dev",
+  "version": "0.0.7",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "devDependencies": {
-    "lerna": "^3.22.1"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export -o ../../out",
+    "test": "jest",
+    "lint": "npm-run-all lint:*",
+    "lint:prettier": "prettier 'src/**/*.*' --check",
+    "lint:eslint": "eslint 'src/**/*.{tsx,ts,js,jsx}'",
+    "lint:tsc": "tsc --noEmit"
   },
   "dependencies": {
-    "firebase-tools": "^8.16.2",
-    "npm-run-all": "^4.1.5"
+    "next": "^10.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-ga": "^3.0.0",
+    "react-markdown": "^4.3.1",
+    "styled-components": "^5.2.1",
+    "styled-icons": "^10.22.0",
+    "styled-media-query": "^2.1.2",
+    "styled-reset": "^4.3.4",
+    "typewriter-effect": "^2.17.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.0.4",
+    "@testing-library/user-event": "^12.0.12",
+    "@types/jest": "^26.0.5",
+    "@types/node": "^14.0.1",
+    "@types/react": "^16.9.35",
+    "@types/webpack-env": "^1.15.2",
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "babel-jest": "^26.0.1",
+    "babel-plugin-styled-components": "^1.12.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.5.0",
+    "eslint-plugin-jest-dom": "^3.1.4",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.2",
+    "eslint-plugin-testing-library": "^3.3.2",
+    "jest": "^26.1.0",
+    "prettier": "^2.0.5",
+    "typescript": "^4.1.2",
+    "typescript-plugin-css-modules": "^2.4.0"
   }
 }

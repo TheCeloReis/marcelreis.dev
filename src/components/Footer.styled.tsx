@@ -1,4 +1,4 @@
-import { Waves as BaseWaves } from "@marcelreis/ui-kit";
+import { Waves as BaseWaves } from "../components/Waves/Waves";
 import styled from "styled-components";
 
 export const Container = styled.footer`
