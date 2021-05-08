@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <S.Container>
-      <S.Logo src="/img/logo.svg" alt="Marcelo Reis" />
+      <S.Logo src="/img/logo.svg" alt="Marcelo Reis" hidden />
 
       <S.MenuButton
         onClick={() => setIsOpen(!isOpen)}

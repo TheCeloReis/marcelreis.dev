@@ -22,7 +22,7 @@ export const H1 = styled.h1`
   `}
 `;
 
-export const P = styled.p`
+export const P = styled.div`
   color: #fff;
   font-size: 1.5rem;
   white-space: nowrap;
