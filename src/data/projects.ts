@@ -17,9 +17,9 @@ const odinbook: Project = {
 
 const aircall: Project = {
   uri: "aircall",
-  name: "Aircall Clone",
+  name: "Aircall",
   description:
-    "This is a desktop implementation of the famous Aircall app, using the Tracktor Design System.",
+    "This is a web responsive implementation of the famous Aircall app, using the Tracktor Design System.",
   github: "https://github.com/MarcelReis/aircall",
   website: "https://aircall.marcelreis.dev/",
 };
