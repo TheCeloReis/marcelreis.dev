@@ -6,6 +6,15 @@ type Project = {
   website: string;
 };
 
+const portalSpaceX: Project = {
+  uri: "portal-spaceX",
+  name: "Portal SpaceX",
+  description:
+    "Vue 3 project consuming the SpaceX Rest API. See the latest information about launches, rocketes and even more",
+  github: "https://github.com/MarcelReis/portalSpaceX",
+  website: "https://portal-spacex.marcelreis.dev/",
+};
+
 const odinbook: Project = {
   uri: "odinbook",
   name: "Odinbook",
@@ -33,4 +42,4 @@ const fashionista: Project = {
   website: "https://undefined.netlify.app/",
 };
 
-export const projects = [odinbook, aircall, fashionista];
+export const projects = [portalSpaceX, odinbook, aircall, fashionista];
